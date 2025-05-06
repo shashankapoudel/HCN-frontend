@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Edensor&display=swap');
+
+/* index.css or App.css */
+/* .perspective {
+    perspective: 1000px;
+}
+
+.flip-container {
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+} */
+
+
+
+@keyframes rotate360 {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.flip-rotate {
+    animation: rotate360 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
