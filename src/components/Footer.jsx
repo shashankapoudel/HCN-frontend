@@ -6,7 +6,7 @@ const Footer = () => {
 
     const [email, setEmail] = useState("")
     const [error, setError] = useState('')
-    
+
     const handleChange = (e) => {
         setEmail(e.target.value)
     }
@@ -40,7 +40,7 @@ const Footer = () => {
                     className='object-cover w-12 h-12'
                     alt="Logo"
                 />
-                <p className='hidden md:flex text-[#00B0A7] font-bold text-sm'>
+                <p className='hidden md:flex text-[#0B4D81] font-bold text-sm'>
                     Himalayas Craft Nepal
                 </p>
             </div>
@@ -102,7 +102,7 @@ const Footer = () => {
                         />
                         <button
                             onClick={handleSubmit}
-                            className='bg-[#00B0A7] text-white px-4 py-2'>
+                            className='bg-[#0B4D81] text-white px-4 py-2'>
                             Subscribe now
                         </button>
                     </div>

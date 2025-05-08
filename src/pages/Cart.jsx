@@ -138,13 +138,13 @@ const Cart = () => {
                 <div className='flex flex-col gap-3' >
                     <button
                         onClick={handleCheckout}
-                        className='bg-[#00B0A7] w-full p-2 text-[#FFFFFF]'
+                        className='bg-[#0B4D81] w-full p-2 text-[#FFFFFF]'
                     >
                         Checkout
                     </button>
 
                     <button
-                        className='text-[#00B0A7] border border-[#00B0A7] w-full p-2 bg-[#FFFFFF]'
+                        className='text-[#0B4D81] border border-[#0B4D81] w-full p-2 bg-[#FFFFFF]'
                     >
                         Continue to shopping
                     </button>

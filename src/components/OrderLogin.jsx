@@ -31,7 +31,7 @@ const OrderLogin = ({ email, setEmail, orderID, setOrderID, onTrackOrder }) => {
             </div>
 
             <button
-                className='border w-1/4 p-2 text-[#FFFFFF] bg-[#00ADA4]'
+                className='border w-1/4 p-2 text-[#FFFFFF] bg-[#0B4D81]'
                 onClick={onTrackOrder}
             >
                 Track your Order

@@ -101,7 +101,7 @@ const ShippingAddress = ({ nextStep, prevStep }) => {
 
             <div className="flex justify-between mt-6">
                 <button onClick={prevStep} className="bg-[#FFFFFF] text-[#D0D5DD] px-6 py-2 rounded border">Previous</button>
-                <button onClick={nextStep} className="bg-teal-500 text-white px-6 py-2 rounded">
+                <button onClick={nextStep} className="bg-[#0B4D81] text-white px-6 py-2 rounded">
                     Payment : $6,823
                 </button>
             </div>
