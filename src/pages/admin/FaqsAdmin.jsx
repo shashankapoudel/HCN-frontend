@@ -15,6 +15,11 @@ const FaqsAdmin = () => {
         setIsModalOpen(true)
     }
 
+    const handleOpen = () => {
+        setIsModalOpen(true)
+        setSelectedFaq("")
+    }
+
     return (
         <div className='text-[#323232] p-6 flex flex-col gap-10 '>
 
@@ -27,7 +32,7 @@ const FaqsAdmin = () => {
 
                 <div>
                     <button
-                        onClick={() => setIsModalOpen(true)}
+                        onClick={handleOpen}
                         className='bg-[#03746E] text-[#FFFFFF] py-1 px-4'>
                         + Add new FAQ
                     </button>
@@ -43,6 +48,7 @@ const FaqsAdmin = () => {
                     onEdit={handleEdit}
                     refresh={refresh}
                     setRefresh={setRefresh}
+                // setSelectedFaq={setSelectedFaq}
                 />
             </div>
 

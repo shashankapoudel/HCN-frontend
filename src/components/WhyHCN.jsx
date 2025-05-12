@@ -250,7 +250,7 @@ const WhyHCN = () => {
     };
 
     return (
-        <div className="p-6">
+        <div className="p-3 lg:p-5">
             <h1 className="text-[#0B4D81] text-2xl font-semibold text-center mb-6">Why should you choose Us (HCN)?</h1>
 
             <div className={`flex flex-col p-5 rounded-md lg:flex-row justify-evenly gap-4 mt-4 transform-style preserve-3d bg-white shadow-lg ${isFlipping ? 'flip-rotate' : ''}`}>

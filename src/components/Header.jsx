@@ -346,13 +346,14 @@ const Header = () => {
     }, [location]);
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full fixed top-0 z-50">
+
             <div className='flex items-center justify-center p-3 bg-[#0B4D81] text-[#FFFFFF] text-sm font-medium'>
                 <p className='text-center'>Free holiday offer until April 23, 2025 | Free holiday offer until April 23, 2025</p>
             </div>
 
-            <div className="hidden lg:flex py-3 px-10 justify-between bg-[#EBEBEB] text-[#111111]">
-                <div className="flex gap-12 items-center text-sm">
+            <div className="hidden lg:flex  py-3 px-10 justify-between bg-[#EBEBEB] text-[#111111] w-full">
+                <div className="flex gap-12 items-center  text-sm">
                     {navItems.map((item) => (
                         <div key={item.name} className="relative group">
                             <div className="flex items-center gap-1 cursor-pointer">

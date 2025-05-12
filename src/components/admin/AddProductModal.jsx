@@ -95,7 +95,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
         }
 
         try {
-            const res = await fetch(`${BASE_URL}/admin/addproduct`, {
+            const res = await fetch(`${BASE_URL}/product/admin/addproduct`, {
                 method: 'POST',
                 body: formData
             });
