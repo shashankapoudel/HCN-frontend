@@ -206,25 +206,25 @@ const WhyHCN = () => {
         {
             title: 'Authenticity',
             description:
-                'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.',
+                "We take pride in offering 100% authentic singing bowls and traditional handicrafts handcrafted by skilled artisans in Nepal. Each piece reflects our rich cultural heritage and centuries-old techniques. We source directly from local craftsmen, ensuring genuine craftsmanship and fair trade. When you shop with us, you are not just buying a product — you are bringing home a piece of Nepal's spiritual and artistic legacy",
             image: '/Images/homeImage.png',
         },
         {
             title: 'Quality',
             description:
-                'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.',
+                "We are committed to delivering only the finest quality products that stand the test of time. Each singing bowl and handicraft item is carefully inspected to ensure superior sound, finish, and durability. Our artisans use premium materials and traditional techniques passed down through generations. The result is a product that’s not only beautiful but also meaningful and made to last",
             image: '/Images/image.png',
         },
         {
             title: 'Customer Support',
             description:
-                'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.',
+                "We believe in building lasting relationships with our customers through responsive and caring support. Whether you have questions before purchasing or need help after your order, our team is here to assist you every step of the way. We’re just a message away — friendly, helpful, and committed to making your experience smooth and satisfying.",
             image: '/Images/homeImage.png',
         },
         {
             title: 'Community',
             description:
-                'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.</',
+                "We’re more than just a store — we’re part of a vibrant community that celebrates Nepalese art, culture, and mindfulness. By supporting us, you're uplifting local artisans and preserving traditional craftsmanship. We actively collaborate with local makers and give back to the communities that inspire our work. Together, we create a meaningful impact, one handcrafted piece at a time.",
             image: '/Images/homeImage.png',
         },
     ];

@@ -1,8 +1,6 @@
 
-
 import React, { useState } from 'react';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-
 
 const OurFactories = () => {
 
@@ -10,8 +8,8 @@ const OurFactories = () => {
         {
             title: 'Singing Bowl Factory',
             description:
-                'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.',
-            image: '/Images/homeImage.png',
+                'We take pride in collaborating with talented artisans who possess diverse skills and craftsmanship. Working with these artists allows us to offer you highquality products while supporting the artisans financially. By promoting these traditional arts and crafts, we contribute to preserving them for future generations to enjoy.',
+            image: '/Images/factory.jpg',
         },
         {
             title: 'Thangka Factory',
@@ -88,6 +86,9 @@ const OurFactories = () => {
                     onClick={handleNext}
                 >
                     <GrFormNext />
+
+
+
                 </button>
             </div>
         </div>

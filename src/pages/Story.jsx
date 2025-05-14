@@ -3,8 +3,6 @@ import WhyHCN from '../components/WhyHCN'
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import OurFactories from '../components/OurFactories';
 
-
-
 const Story = () => {
 
     const Images = [
@@ -28,7 +26,7 @@ const Story = () => {
     return (
         <div className=' min-h-screen'>
 
-            <div className='flex flex-col gap-8 '>
+            <div className='flex flex-col gap-5 '>
 
                 <div>
                     <div className=''>
@@ -38,6 +36,7 @@ const Story = () => {
                             alt="Home"
                         />
                     </div>
+
                     <div className="flex items-center justify-center ">
                         <button
                             className="text-[#666666] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
@@ -52,13 +51,13 @@ const Story = () => {
                             <GrFormNext />
                         </button>
                     </div>
+
                 </div>
 
                 <div className='flex flex-col-reverse lg:flex-row gap-8 sm:p-4 lg:p-8'>
-
                     <div className='w-full lg:w-1/2  p-4'>
                         <h1 className='text-[#0B4D81] text-xl font-semibold'>Himalayas Craft Nepal(HCN)</h1>
-                        <p className='text-[#666666] mt-2 font-medium font-poppins  lg:tracking-wide tracking-normal text-justify max-w-4xl '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.</p>
+                        <p className='text-[#666666] mt-2 font-medium font-poppins  lg:tracking-wide tracking-normal text-justify max-w-4xl '>Himalayas Craft Nepal is the ultimate online destination for authentic Nepalese & Tibetan handicrafts. As manufacturers and wholesalers, we specialize in a wide range of traditional crafts including Thangka Paintings, Singing Bowls, Malas & Beads, Incense Burners, Tingsha, and Himalayan Shirts. Our mission is to deliver exquisite handmade products worldwide at affordable prices, while also providing recognition and special benefits to our local artisans. These craftsmen have inherited their skills through generations, preserving the ancient arts of their culture. Our primary goal is to showcase the most authentic Nepalese craftsmanship across various craftmaking fields.We take great pride in our unwavering dedication to excellence, reflected in the intricate craftsmanship of our metal, wood, and fiber handicrafts, which proudly uphold Nepal's rich cultural heritage through traditional methods.</p>
                     </div>
 
                     <div className='w-full lg:w-1/2 '>
@@ -72,11 +71,11 @@ const Story = () => {
 
 
                 {/* //Why choose HCN */}
-                <div className=' p-0 lg:p-12 '>
+                <div className=' p-0 lg:p-8 font-poppins '>
                     <WhyHCN />
                 </div>
 
-                <div className=' p-0 lg:p-12 '>
+                <div className=' p-0 lg:p-8 font-poppins '>
                     <OurFactories />
                 </div>
 

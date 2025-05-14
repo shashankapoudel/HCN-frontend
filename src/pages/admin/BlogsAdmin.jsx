@@ -21,6 +21,7 @@ const BlogsAdmin = () => {
     useEffect(() => {
         getBlogs()
     }, [])
+    
     const blogno = blogs.length;
     console.log(blogno)
 

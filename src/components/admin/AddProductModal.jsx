@@ -168,8 +168,8 @@ const AddProductModal = ({ isOpen, onClose }) => {
                             <div>
                                 <label className="block mb-2">Category</label>
                                 <select
-                                    value={subcategory}
-                                    onChange={(e) => setSubCategory(e.target.value)}
+                                    value={subcategorycategory}
+                                    onChange={(e) => setSubcategorycategory(e.target.value)}
                                     className="w-full p-2 border rounded mb-4">
                                     {
                                         filteredSubcategorycategory.map((category, index) => (

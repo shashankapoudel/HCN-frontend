@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { useDropzone } from "react-dropzone";
 import { FiUpload, FiTrash2 } from "react-icons/fi";
 import BASE_URL from '../../config/api';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
 
 const BlogModal = ({ isOpen, onClose, existingData }) => {
     const [title, setTitle] = useState("");
@@ -67,7 +70,7 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
     if (!isOpen) return null;
 
     return (
-        <div className='p-6 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 text-sm z-50'>
+        <div className='p-6 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 text-sm'>
             <div className='bg-white p-6 rounded-lg w-1/2 shadow-lg flex flex-col text-[#323232] gap-2'>
 
                 <h1 className='font-semibold text-lg'>Write new Blog</h1>
@@ -104,16 +107,23 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
                     </div>
 
                     <label>Content</label>
-                    <textarea
+                    {/* <textarea
                         rows={12}
                         className="w-full p-2 border rounded mb-4"
                         placeholder="Enter the content here"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
+                    /> */}
+                    <ReactQuill
+                        theme="snow"
+                        value={content}
+                        onChange={setContent}
+                        className="mb-4"
+                        style={{ height: "180px" }}
                     />
                 </div>
 
-                <div className="flex justify-start gap-2 mt-4">
+                <div className="flex justify-start gap-2 mt-8">
                     <button
                         type="button"
                         onClick={onClose}
