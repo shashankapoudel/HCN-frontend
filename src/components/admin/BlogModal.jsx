@@ -7,7 +7,9 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
+
 const BlogModal = ({ isOpen, onClose, existingData }) => {
+    const [isLoading, setIsLoading] = useState(false);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [images, setImages] = useState([]); // Contains File or URL strings
@@ -39,6 +41,7 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setIsLoading(true);
         const formData = new FormData();
         formData.append("title", title);
         formData.append("content", content);
@@ -64,6 +67,8 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
             onClose();
         } catch (error) {
             console.error("Error uploading blog:", error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -134,7 +139,12 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
                         type="submit"
                         onClick={handleSubmit}
                         className="px-4 py-2 bg-[#02847D] text-white rounded w-28">
-                        Save
+                        {isLoading ? (
+                            <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                            </svg>
+                        ) : "Save"}
                     </button>
                 </div>
             </div>

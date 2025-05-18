@@ -8,9 +8,9 @@ const Socialmedia = () => {
             <p className='text-2xl'>Join our social media platforms to learn more about out latest products and services</p>
             <div className='flex'>
                 <div className='flex gap-7'>
-                    <a href='https://www.youtube.com/channel/UCgxP4Bc3CJ_qxzbN4DD4zgQ ' target="_blank" rel="noopener noreferrer"><FaYoutube className='text-4xl text-[#008B89]' /></a>
-                    <a href='https://www.facebook.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer"><FaFacebook className='text-4xl text-[#008B89]' /></a>
-                    <a href='https://www.instagram.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer"><FaInstagram className='text-4xl text-[#008B89]' /></a>
+                    <a href='https://www.youtube.com/channel/UCgxP4Bc3CJ_qxzbN4DD4zgQ ' target="_blank" rel="noopener noreferrer"><FaYoutube className='text-4xl text-[#0B4D81]' /></a>
+                    <a href='https://www.facebook.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer"><FaFacebook className='text-4xl text-[#0B4D81]' /></a>
+                    <a href='https://www.instagram.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer"><FaInstagram className='text-4xl text-[#0B4D81]' /></a>
 
                 </div>
             </div>
@@ -18,4 +18,4 @@ const Socialmedia = () => {
     )
 }
 
-export default Socialmedia
+export default Socialmedia;
