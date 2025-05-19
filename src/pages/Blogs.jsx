@@ -185,7 +185,6 @@ const BlogPage = () => {
 
                             return (
                                 <div
-
                                     key={blog._id}
                                     className="flex flex-col lg:flex-row rounded-lg p-3 items-start cursor-pointer"
                                 >
@@ -209,6 +208,8 @@ const BlogPage = () => {
                             );
                         })}
                     </div>
+
+
                 </div>
             )}
         </div>

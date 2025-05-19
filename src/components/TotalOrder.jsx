@@ -2,7 +2,7 @@ import React from 'react'
 
 const TotalOrder = ({ step, nextStep, prevStep }) => {
     return (
-        <div className='w-1/4 bg-[#F9F9F9] flex flex-col p-4 text-[#606060] text-sm '>
+        <div className=' w-full lg:w-1/4 bg-[#F9F9F9] flex flex-col p-4 text-[#606060] text-sm '>
 
             <div className='flex justify-between p-4 border-b'>
                 <h1>Subtotal</h1>
