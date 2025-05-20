@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getCode, getNames } from 'country-list';
 
-const PersonalInfo = ({ nextStep }) => {
+const PersonalInfo = ({ nextStep, formData, setFormData }) => {
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
     const [email, setEmail] = useState("")
@@ -16,13 +16,28 @@ const PersonalInfo = ({ nextStep }) => {
         setCountries(countryNames)
     }, [])
 
+    // const handleNext = () => {
+    //     if (!firstname || !lastname || !email || !phone) {
+    //         setShowToast(true)
+    //         setTimeout(() => setShowToast(false), 3000)
+    //     } else {
+    //         setFormData({
+    //             ...formData,
+    //             personalInfo: {
+    //                 firstname,
+    //                 lastname,
+    //                 email,
+    //                 // code,
+    //                 phone,
+    //                 country,
+    //             },
+    //         });
+    //         nextStep()
+    //     }
+    // }
+
     const handleNext = () => {
-        if (!firstname || !lastname || !email || !code || !phone) {
-            setShowToast(true)
-            setTimeout(() => setShowToast(false), 3000)
-        } else {
-            nextStep()
-        }
+        nextStep()
     }
 
     return (
@@ -91,11 +106,12 @@ const PersonalInfo = ({ nextStep }) => {
                         <select
                             value={country}
                             onChange={(e) => setCountry(e.target.value)}
-                            className='border p-2 rounded-md text-sm '
+                            className="border p-2 w-full rounded text-sm"
                         >
-                            {countries.map((country) => (
-                                <option className='text-black' key={country.code} value={country.name}>
-                                    {country.name}
+                            <option value="">Select Country</option>
+                            {countries.map((name) => (
+                                <option key={name} value={name}>
+                                    {name}
                                 </option>
                             ))}
                         </select>
