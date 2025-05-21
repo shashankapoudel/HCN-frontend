@@ -5,6 +5,7 @@ import PaymentReview from '../components/PaymentReview'
 import OrderConfirmation from '../components/OrderConfirmation'
 import StepSideBar from '../components/StepSideBar'
 import TotalOrder from '../components/totalOrder'
+import BASE_URL from '../config/api'
 
 const Order = () => {
     const [formData, setFormData] = useState({
@@ -16,6 +17,28 @@ const Order = () => {
     const [step, setStep] = useState(1)
     const nextStep = () => setStep((prev) => Math.min(prev + 1, 4));
     const prevStep = () => setStep((prev) => Math.min(prev - 1, 1));
+
+
+    const handleSubmit = async () => {
+        try {
+            const res = await fetch(`${BASE_URL}/order/createorder`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ formData }),
+            })
+            if (res.ok) {
+                alert("Order placed successfully!");
+
+            }
+        } catch (error) {
+
+            console.error("Error placing order:", error);
+
+        }
+
+    }
 
     const renderStep = () => {
         switch (step) {
