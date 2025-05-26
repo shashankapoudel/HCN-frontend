@@ -8,10 +8,11 @@ import TotalOrder from '../components/totalOrder'
 import BASE_URL from '../config/api'
 
 const Order = () => {
+
     const [formData, setFormData] = useState({
         personalInfo: {},
         shippingAddress: {},
-        items: [], // will be auto-filled in review step
+        items: [],
     });
 
     const [step, setStep] = useState(1)
@@ -35,9 +36,7 @@ const Order = () => {
         } catch (error) {
 
             console.error("Error placing order:", error);
-
         }
-
     }
 
     const renderStep = () => {
@@ -84,4 +83,9 @@ const Order = () => {
 }
 
 export default Order
+
+
+
+
+
 

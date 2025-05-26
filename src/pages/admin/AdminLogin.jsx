@@ -9,21 +9,21 @@ const AdminLogin = ({ setAdmin }) => {
 
     const handleLogin = async () => {
 
-        const res = await fetch(`${BASE_URL}/users/adminlogin`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username, password }),
-            
-        })
-        const result = await res.json();
-        if (res.ok) {
-            setAdmin(true);
-        } else {
-            setError(result.message || 'Invalid credentials');
+        // const res = await fetch(`${BASE_URL}/users/adminlogin`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({ username, password }),
 
-        }
+        // })
+        // const result = await res.json();
+        // if (res.ok) {
+        //     setAdmin(true);
+        // } else {
+        //     setError(result.message || 'Invalid credentials');
+
+        // }
         setAdmin(true)
     }
 

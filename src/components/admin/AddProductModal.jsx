@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductUpload from "./AddImageAudio";
 import BASE_URL from "../../config/api";
+import AccessorisUpload from "./AccessorisUpload";
 
 
 const AddProductModal = ({ isOpen, onClose }) => {
@@ -28,7 +29,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
     const categoryofSubcategory = ['select category', 'antique', 'handmade', 'machinemade', 'accessories', "prayer-wheel", "prayer-flags", "mala&bala", "wooden-products", 'incenses&burners', 'felt-products', "thankas&paintings", "canvas&arts", "bags&accessories", "wellness&decor", "sound-healing-courses", "gongs", "bell&tingsha", "shamic-drump"]
 
 
-    const productMaterials = ['metal', 'crystal', 'wood'];
+    const productMaterials = ['select material', 'metal', 'crystal', 'wood'];
 
 
     const categorySubcategories = {
@@ -102,6 +103,22 @@ const AddProductModal = ({ isOpen, onClose }) => {
 
             const responseData = await res.json();
             console.log(responseData);
+            setName("");
+            setWeight("");
+            setCategory("");
+            setSubCategory("");
+            setSubcategorycategory("");
+            setStock("");
+            setPrice("");
+            setSize("");
+            setMaterial("");
+            setOverview("");
+            setDescription("");
+            setImages([]);
+            setAudio(null);
+            setFilteredSubcategories([]);
+            setFilteredSubcategorycategory([]);
+            onClose()
         } catch (error) {
             console.error("Error uploading product:", error);
         }
@@ -269,6 +286,11 @@ const AddProductModal = ({ isOpen, onClose }) => {
                                 required
                             />
                         </div>
+
+                        <div className="mt-8">
+                            <AccessorisUpload />
+                        </div>
+
                     </div>
 
                     {/* Right Side: Fixed */}
@@ -282,6 +304,8 @@ const AddProductModal = ({ isOpen, onClose }) => {
                             />
                         </div>
                     </div>
+
+
                 </form>
 
 

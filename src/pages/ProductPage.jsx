@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SubCategoryFilter from '../components/SubCategoryFilter';
 import SubSubCategoryFilter from '../components/SubSubCategoryFilter';
@@ -6,38 +6,31 @@ import SubSubSubCategoryFilter from '../components/SubSubSubCategoryFilter';
 import PriceFilter from '../components/SizeFilter';
 import AddToCart from '../components/AddToCart';
 import PriceSlider from '../components/priceSlider';
-
+import { ProductContext } from "../context/ProductProvider";
 
 const ProductPage = () => {
     const navigate = useNavigate()
     const { category, subcategory, subsubcategory } = useParams();
     const [selectedPriceRange, setSelectedPriceRange] = useState([0, 100000]);
-
-
-
     const [selectedSubcategory, setSelectedSubcategory] = useState(subcategory || '');
     const [selectedSubSubcategory, setSelectedSubSubcategory] = useState(subsubcategory || '');
     const [selectedSubSubSubcategory, setSelectedSubSubSubcategory] = useState('');
     const [selectedSize, setSelectedSize] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
 
-    const productsData = [
-        { id: 1, name: "First product name", category: "singing-bowls", subcategory: "antique", subsubcategory: 'jambati', price: 25000, stock: 25, size: 'Small', material: 'metal', weight: 20, description: 'It is a nice singing bowl', images: '', audio: '' },
-        { id: 2, name: "Second product name", category: "singing-bowls", subcategory: "handmade", subsubcategory: 'naga', price: 25000, stock: 45, size: 'Small', material: 'metal', weight: 20, description: 'It is a nice singing bowl', images: '', audio: '' },
-        { id: 3, name: "Third product name", category: "ritual-items", subcategory: "machinemade", subsubcategory: 'ultabati', price: 26000, stock: 45, size: 'Medium', material: 'metal', weight: 20, description: 'It is a nice singing bowl', images: '', audio: '' },
-        { id: 4, name: "Fourth product name", category: "singing-bowls", subcategory: "antique", subsubcategory: 'ultabati', price: 26000, stock: 45, size: 'Medium', material: 'metal', weight: 20, description: 'It is a nice singing bowl', images: '', audio: '' },
-    ];
+    const { products } = useContext(ProductContext);
+    console.log(products);
 
-    // useEffect to filter products based on selected filters
+    if (!Array.isArray(products)) {
+        return <div>Loading products...</div>;
+    }
     useEffect(() => {
-        const filtered = productsData.filter(
-            (product) =>
-                product.category === category &&
-                (selectedSubcategory === "" || product.subcategory === selectedSubcategory) &&
-                (selectedSubSubcategory === "" || product.subsubcategory === selectedSubSubcategory) &&
-                (selectedSize.length === 0 || selectedSize.includes(product.size))
-                &&
-                product.price >= selectedPriceRange[0] && product.price <= selectedPriceRange[1]
+        const filtered = products.filter((product) =>
+            product.category?.toLowerCase() === category?.toLowerCase() &&
+            (selectedSubcategory === "" || product.subcategory?.toLowerCase() === selectedSubcategory?.toLowerCase()) &&
+            (selectedSubSubcategory === "" || product.subsubcategory?.toLowerCase() === selectedSubSubcategory?.toLowerCase()) &&
+            (selectedSize.length === 0 || selectedSize.includes(product.size)) &&
+            product.price >= selectedPriceRange[0] && product.price <= selectedPriceRange[1]
         );
         setFilteredProducts(filtered);
     }, [
@@ -45,11 +38,12 @@ const ProductPage = () => {
         selectedSubcategory,
         selectedSubSubcategory,
         selectedSize,
-        selectedPriceRange
+        selectedPriceRange,
+        products
     ]);
 
-    // Fetch available subcategories for the selected category
-    const availableSubcategories = [...new Set(productsData
+
+    const availableSubcategories = [...new Set(products
         .filter((p) =>
             p.category === category
         )
@@ -57,8 +51,8 @@ const ProductPage = () => {
         .filter(Boolean)
     )];
 
-    // Fetch available subsubcategories for the selected subcategory
-    const availableSubSubcategories = [...new Set(productsData
+
+    const availableSubSubcategories = [...new Set(products
         .filter((p) =>
             p.category === category &&
             (selectedSubcategory === "" || p.subcategory === selectedSubcategory)
@@ -79,7 +73,7 @@ const ProductPage = () => {
     return (
         <div className='p-6 min-h-screen text-sm md:text-lg lg:text-sm'>
             <h1 className='text-[#252C32]'>{category} Products</h1>
-            <div className='w-full mt-4 flex flex-col md:flex-row gap-4'>
+            <div className='w-full mt-4 flex flex-col md:flex-row gap-8'>
 
                 <div className='w-full md:w-1/2 lg:w-1/5 flex flex-col gap-4'>
 
@@ -111,22 +105,49 @@ const ProductPage = () => {
                     />
                 </div>
 
-                <div className='w-full md:w-1/2 lg:w-4/5 p-4'>
+                <div className='w-full md:w-1/2 lg:w-4/5 '>
                     {filteredProducts.length > 0 ? (
                         <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-4'>
                             {filteredProducts.map((product) => (
                                 <div
-                                    onClick={() => handleProductPage(product.id)}
-                                    key={product.id}
-                                    className="border p-4 my-2"
-                                >
-                                    <h2 className="font-bold">{product.name}</h2>
-                                    <p>Subcategory: {product.subcategory}</p>
-                                    <p>Size: {product.size}</p>
-                                    <p>Price: {product.price}</p>
-                                    <p>Rating: ⭐{product.rating}</p>
-                                    <AddToCart product={product} />
+                                    key={product._id}
+                                    onClick={() => handleProductPage(product._id)}
+                                    className="border border-red-200 rounded p-3 relative group w-full max-w-xs">
+                                    {/* Action Icons */}
+                                    <div className="absolute top-5 flex flex-col right-2 space-y-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button className="bg-white p-2 rounded-full shadow hover:bg-gray-100">
+                                            ❤️
+                                        </button>
+                                        <button className="bg-white p-2 rounded-full shadow hover:bg-gray-100">
+                                            🔁
+                                        </button>
+                                        <button
+                                            onClick={() => navigate(``)}
+                                            className="bg-white p-2 rounded-full shadow  hover:bg-gray-100">
+                                            👁️
+                                        </button>
+                                    </div>
+
+                                    {/* Product Image */}
+                                    <img
+                                        src={product.images?.[0]}
+                                        alt={product.name}
+                                        className="w-full h-48 object-cover rounded"
+                                    />
+
+                                    {/* Product Details */}
+                                    <div className="mt-3">
+                                        <h2 className="text-sm font-semibold">{product.name}</h2>
+                                        <div className="text-yellow-400 text-sm">★★★★★</div>
+                                        <div className="text-red-500 font-bold mt-1">${product.price}</div>
+                                    </div>
+
+                                    {/* Add to Cart Button */}
+                                    <div className="absolute bottom-2 right-2 p-2  rounded-full hover:bg-gray-200">
+                                        <AddToCart product={product} />
+                                    </div>
                                 </div>
+
                             ))}
                         </div>
                     ) : (
