@@ -7,6 +7,7 @@ import PriceFilter from '../components/SizeFilter';
 import AddToCart from '../components/AddToCart';
 import PriceSlider from '../components/priceSlider';
 import { ProductContext } from "../context/ProductProvider";
+import QuickViewModal from '../components/QuickViewModal';
 
 const ProductPage = () => {
     const navigate = useNavigate()
@@ -17,9 +18,12 @@ const ProductPage = () => {
     const [selectedSubSubSubcategory, setSelectedSubSubSubcategory] = useState('');
     const [selectedSize, setSelectedSize] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const [quickviewproduct, setQuickviewproduct] = useState(null)
+
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const { products } = useContext(ProductContext);
-    console.log(products);
+    // console.log(products);
 
     if (!Array.isArray(products)) {
         return <div>Loading products...</div>;
@@ -42,7 +46,6 @@ const ProductPage = () => {
         products
     ]);
 
-
     const availableSubcategories = [...new Set(products
         .filter((p) =>
             p.category === category
@@ -50,7 +53,6 @@ const ProductPage = () => {
         .map((p) => p.subcategory)
         .filter(Boolean)
     )];
-
 
     const availableSubSubcategories = [...new Set(products
         .filter((p) =>
@@ -61,13 +63,22 @@ const ProductPage = () => {
         .filter(Boolean)
     )];
 
-    console.log(filteredProducts);
-    console.log(availableSubcategories)
-    console.log(availableSubSubcategories);
-
+    // console.log(filteredProducts);
+    // console.log(availableSubcategories)
+    // console.log(availableSubSubcategories);
 
     const handleProductPage = (id) => {
         navigate(`/product/${id}`)
+    }
+
+    const handlequickviewClick = (product) => {
+        setIsModalOpen(true)
+        setQuickviewproduct(product)
+
+    }
+
+    const handleClose = () => {
+        setIsModalOpen(false)
     }
 
     return (
@@ -111,10 +122,11 @@ const ProductPage = () => {
                             {filteredProducts.map((product) => (
                                 <div
                                     key={product._id}
-                                    onClick={() => handleProductPage(product._id)}
                                     className="border border-red-200 rounded p-3 relative group w-full max-w-xs">
                                     {/* Action Icons */}
+
                                     <div className="absolute top-5 flex flex-col right-2 space-y-4 opacity-0 group-hover:opacity-100 transition-opacity">
+
                                         <button className="bg-white p-2 rounded-full shadow hover:bg-gray-100">
                                             ❤️
                                         </button>
@@ -122,7 +134,8 @@ const ProductPage = () => {
                                             🔁
                                         </button>
                                         <button
-                                            onClick={() => navigate(``)}
+
+                                            onClick={() => handlequickviewClick(product)}
                                             className="bg-white p-2 rounded-full shadow  hover:bg-gray-100">
                                             👁️
                                         </button>
@@ -130,9 +143,10 @@ const ProductPage = () => {
 
                                     {/* Product Image */}
                                     <img
+                                        onClick={() => handleProductPage(product._id)}
                                         src={product.images?.[0]}
                                         alt={product.name}
-                                        className="w-full h-48 object-cover rounded"
+                                        className="w-full object-cover rounded cursor-pointer"
                                     />
 
                                     {/* Product Details */}
@@ -143,7 +157,7 @@ const ProductPage = () => {
                                     </div>
 
                                     {/* Add to Cart Button */}
-                                    <div className="absolute bottom-2 right-2 p-2  rounded-full hover:bg-gray-200">
+                                    <div className="absolute bottom-2 right-2 p-2  rounded-full ">
                                         <AddToCart product={product} />
                                     </div>
                                 </div>
@@ -155,6 +169,16 @@ const ProductPage = () => {
                     )}
                 </div>
             </div>
+            {isModalOpen && (
+                <div>
+                    <QuickViewModal
+                        isModalOpen={isModalOpen}
+                        onClose={handleClose}
+                        quickviewproduct={quickviewproduct}
+                        setQuickviewproduct={setQuickviewproduct}
+                    />
+                </div>
+            )}
         </div>
     );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BASE_URL from '../config/api';
 import AddAccessories from '../components/AddAccessories';
+import AddToCart from '../components/AddToCart';
 
 const SingleProductPage = () => {
     const { id } = useParams();
@@ -13,7 +14,7 @@ const SingleProductPage = () => {
             try {
                 const res = await fetch(`${BASE_URL}/product/${id}`);
                 const data = await res.json();
-                console.log(data);
+                // console.log(data);
                 setProduct(data.data);
                 setLoading(false);
             } catch (error) {
@@ -32,9 +33,9 @@ const SingleProductPage = () => {
     return (
         <div className='min-h-screen p-8'>
 
-            <div className='flex gap-4 border'>
+            <div className='flex gap-4'>
 
-                <div className='w-2/5 p-4 border'>
+                <div className='w-2/5 p-4'>
                     <img
                         src={product.images?.[0]}
                         alt={product.name}
@@ -46,7 +47,11 @@ const SingleProductPage = () => {
                     <h1 className='text-3xl font-bold capitalize'>{product.name}</h1>
 
                     <div className='p-2'>
-                        <h1>${product.price}</h1>
+                        <h1 className='font-bold text-lg'>${product.price}</h1>
+                    </div>
+
+                    <div>
+                        <p className='text-[#606060] tracking-wide leading-relaxed'>The Professional Tiger Antique Chakra Healing Singing Bowl Set is a finely crafted and comprehensive collection of singing bowls, designed to support deep chakra healing and sound therapy practices. T</p>
                     </div>
 
                     <hr />
@@ -73,9 +78,10 @@ const SingleProductPage = () => {
                             <p className='text-sm'>Black</p>
                         </div>
 
+                    </div>
 
-
-
+                    <div className='mt-4'>
+                        <AddToCart />
                     </div>
 
                 </div>

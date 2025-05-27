@@ -3,15 +3,14 @@ import BASE_URL from '../config/api'
 
 const AddToCart = ({ product }) => {
 
-    console.log(product)
+
     const [cartItems, setCartItems] = useState([])
 
 
 
     const sendCartItemsToBackend = async (cartItems) => {
         const sessionId = localStorage.getItem('sessionID')
-        console.log(sessionId);
-        console.log(cartItems)
+
 
         try {
             const res = await fetch(`${BASE_URL}/cart/add`, {
@@ -44,7 +43,7 @@ const AddToCart = ({ product }) => {
         <div>
             <button
                 onClick={() => handleAddToCart(product)}
-                className='bg-[#F2F2F2] text-[#606060] text-sm p-2'>Add to Cart</button>
+                className='bg-gradient-to-r from-red-600 to-blue-800  text-[#FFFFFF] text-sm p-2 px-4'>Add to Cart</button>
         </div>
     )
 }

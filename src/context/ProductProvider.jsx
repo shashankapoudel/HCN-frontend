@@ -11,7 +11,6 @@ export const ProductProvider = ({ children }) => {
         try {
             const res = await fetch(`${BASE_URL}/product/getallproducts`);
             const data = await res.json();
-            console.log(data)
             setProducts(data.data);
         } catch (err) {
             console.error("Failed to fetch products", err);

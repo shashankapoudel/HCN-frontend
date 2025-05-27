@@ -203,25 +203,25 @@ const WhyHCN = () => {
         {
             title: 'Authenticity',
             description:
-                "We take pride in offering 100% authentic singing bowls and traditional handicrafts handcrafted by skilled artisans in Nepal. Each piece reflects our rich cultural heritage and centuries-old techniques. We source directly from local craftsmen, ensuring genuine craftsmanship and fair trade. When you shop with us, you are not just buying a product — you are bringing home a piece of Nepal's spiritual and artistic legacy",
+                "We are deeply connected to the creation process, working hand-in-hand with skilled artisans in Nepal to bring you truly authentic singing bowls and traditional handicrafts. Each piece embodies our rich cultural heritage and centuries-old techniques. Our singing bowls and traditional crafts are sourced directly from local creators, ensuring that what you receive is a true representation of Nepalese spirituality and heritage. When you buy from us, you're not just purchasing a product; you're connecting with a tradition that spans generations.",
             image: '/Images/homeImage.png',
         },
         {
             title: 'Quality',
             description:
-                "We are committed to delivering only the finest quality products that stand the test of time. Each singing bowl and handicraft item is carefully inspected to ensure superior sound, finish, and durability. Our artisans use premium materials and traditional techniques passed down through generations. The result is a product that’s not only beautiful but also meaningful and made to last",
+                "Our commitment is to provide you with only the finest quality products, crafted to stand the test of time. Every item, whether it's a singing bowl, sculpture, or textile; it is carefully crafted and inspected for durability, design, and excellence. Our artisans utilize premium materials and time-honored techniques passed down through generations, resulting in pieces that are not only beautiful but also deeply meaningful and built to last",
             image: '/Images/image.png',
         },
         {
             title: 'Customer Support',
             description:
-                "We believe in building lasting relationships with our customers through responsive and caring support. Whether you have questions before purchasing or need help after your order, our team is here to assist you every step of the way. We’re just a message away — friendly, helpful, and committed to making your experience smooth and satisfying.",
+                "Your satisfaction matters to us. We believe in fostering lasting relationships with our customers through responsive and thoughtful support. Whether you're choosing your first singing bowl or need guidance on care, our team is here to guide you every step of the way. We're just a message away; friendly, knowledgeable, and dedicated to ensuring your experience is seamless and fulfilling. We're not just sellers; we're your partners in discovering Himalayan artistry",
             image: '/Images/homeImage.png',
         },
         {
             title: 'Community',
             description:
-                "We’re more than just a store — we’re part of a vibrant community that celebrates Nepalese art, culture, and mindfulness. By supporting us, you're uplifting local artisans and preserving traditional craftsmanship. We actively collaborate with local makers and give back to the communities that inspire our work. Together, we create a meaningful impact, one handcrafted piece at a time.",
+                "We're more than a brand; we're a community bound by art, culture, and mindfulness. By choosing to support us, you directly contribute to the empowerment of local artisans and the preservation of traditional craftsmanship. We collaborate closely with local craftsmen, reinvest in their communities, and ensure these arts endure for future generations. Together, we're keeping Nepal's cultural heartbeat alive; one handcrafted piece at a time",
             image: '/Images/homeImage.png',
         },
     ];
@@ -262,7 +262,7 @@ const WhyHCN = () => {
 
                 <div className="w-full lg:w-1/2 p-2">
                     <h1 className="text-[#0B4D81] text-xl font-semibold">{Services[currentIndex].title}</h1>
-                    <p className="text-[#666666] mt-2 font-medium font-poppins text-justify tracking-wide">
+                    <p className="text-[#666666] mt-2 font-medium text-sm lg:text-base font-poppins text-justify tracking-wide">
                         {Services[currentIndex].description}
                     </p>
                 </div>
