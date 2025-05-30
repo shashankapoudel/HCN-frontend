@@ -34,8 +34,16 @@ const QuickViewModal = ({ isModalOpen, onClose, quickviewproduct, setQuickviewpr
                             <p className='text-sm mt-3 tracking-wide leading-relaxed'>The Professional Tiger Antique Chakra Healing Singing Bowl Set is a finely crafted and comprehensive collection of singing bowls, designed to support deep chakra healing and sound therapy practices...</p>
                         </div>
 
-                        <div className='mt-4'>
-                            <AddToCart />
+                        <div className='flex gap-4'>
+
+                            <div className='mt-4'>
+                                <AddToCart />
+                            </div>
+
+                            <div className='mt-4'>
+                                <button className='bg-gradient-to-r from-red-600 to-blue-800 p-2 px-4 text-[#FFFFFF]'>Buy now</button>
+                            </div>
+
                         </div>
                     </div>
 

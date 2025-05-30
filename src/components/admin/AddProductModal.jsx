@@ -125,8 +125,6 @@ const AddProductModal = ({ isOpen, onClose }) => {
     };
 
 
-
-
     if (!isOpen) return null;
 
     return (

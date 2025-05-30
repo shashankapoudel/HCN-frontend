@@ -30,7 +30,7 @@ export default function FAQ() {
     const filteredFaqs = faqData.filter((data) => data.category === category)
 
     return (
-        <div className="px-8 text-gray-600 w-full min-h-screen">
+        <div className="px-8 text-gray-600 w-full min-h-screen tracking-wide leading-relaxed">
 
             <div className="w-full flex gap-8  px-4">
 

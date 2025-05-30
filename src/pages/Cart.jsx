@@ -82,6 +82,10 @@ const Cart = () => {
         navigate('/order')
     }
 
+    const total = cartItems.reduce((acc, item) => {
+        return acc + item.price * (item.quantity || 1);
+    }, 0)
+
     return (
         <div className=' w-full  min-h-screen'>
 
@@ -92,7 +96,7 @@ const Cart = () => {
 
                     <h1 className='text-[#101828] font-semibold text-2xl border-b'>Your Cart</h1>
                     <div className="rounded-lg flex flex-col   w-full ">
-                        {cartItems.map((item) => (
+                        {cartItems.map((item, index) => (
                             <div
                                 key={item._id}
                                 className="flex items-center justify-between text-sm py-4 border-b"
@@ -100,7 +104,7 @@ const Cart = () => {
 
                                 <div className='flex gap-4'>
                                     <img
-                                        src={item.image}
+                                        src={item.images[0]}
                                         className='object-cover w-12 h-12'
                                     />
                                     <div className='flex flex-col'>
@@ -135,7 +139,7 @@ const Cart = () => {
 
                     <div className='flex justify-between p-3 border-b'>
                         <h1>Subtotal</h1>
-                        <p>$1250.00</p>
+                        <p>${total}</p>
                     </div>
                     <div className='flex justify-between p-3 border-b'>
                         <h1>Tax</h1>
