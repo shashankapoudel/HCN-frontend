@@ -3,6 +3,7 @@ import OurProducts from '../components/OurProducts';
 import CategoryWiseProducts from '../components/CategoryWiseProducts';
 import Gallery from '../components/Gallery';
 import GalleryCard from '../components/Gallery';
+import ProductBadge from '../components/ProductBadges';
 
 const Home = () => {
     return (
@@ -25,15 +26,19 @@ const Home = () => {
 
             </div>
 
-            <div className='p-4'>
+            <div className='p-2 md:p-4 '>
                 <OurProducts />
+            </div>
+
+            <div className='p-2 md:p-4 '>
+                <ProductBadge />
             </div>
 
             <div className='p-4'>
                 <CategoryWiseProducts />
             </div>
 
-            <div className='p-4'>
+            <div className='p-2 md:p-4 '>
                 <GalleryCard />
             </div>
 
