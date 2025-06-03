@@ -9,18 +9,24 @@ import 'react-quill/dist/quill.snow.css';
 
 
 const BlogModal = ({ isOpen, onClose, existingData }) => {
+
+    const categories = ['Select a category', 'History', 'Product Guide', 'Product Benefits', 'Choosing Products', 'Behind the process', 'Ideas', 'Spiritual Guides']
+
     const [isLoading, setIsLoading] = useState(false);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [images, setImages] = useState([]); // Contains File or URL strings
+    const [category, setCategory] = useState("")
+    const [images, setImages] = useState([]);
     console.log(existingData._id)
 
     useEffect(() => {
         if (existingData) {
+            setCategory(existingData.category || "")
             setTitle(existingData.title || "");
             setContent(existingData.content || "");
             setImages(existingData.images || []);
         } else {
+            setCategory("")
             setTitle("");
             setContent("");
             setImages([]);
@@ -43,6 +49,7 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
         event.preventDefault();
         setIsLoading(true);
         const formData = new FormData();
+        formData.append("category", category);
         formData.append("title", title);
         formData.append("content", content);
 
@@ -61,6 +68,7 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
             });
             const responseData = await res.json();
             console.log(responseData);
+            setCategory("")
             setTitle("");
             setContent("");
             setImages([]);
@@ -81,6 +89,26 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
                 <h1 className='font-semibold text-lg'>Write new Blog</h1>
 
                 <div className='mt-4'>
+                    <label>Blog Categories</label>
+                    <select
+                        type="text"
+                        className="w-full p-2 border rounded mb-4"
+                        placeholder="Enter the title"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                    >
+                        {categories.map((cat, index) => (
+
+                            <option
+                                value={cat}
+                                key={index}>
+                                {cat}
+                            </option>
+                        ))
+                        }
+                    </select>
+
+
                     <label>Blog Title</label>
                     <input
                         type="text"
@@ -112,13 +140,6 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
                     </div>
 
                     <label>Content</label>
-                    {/* <textarea
-                        rows={12}
-                        className="w-full p-2 border rounded mb-4"
-                        placeholder="Enter the content here"
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                    /> */}
                     <ReactQuill
                         theme="snow"
                         value={content}
@@ -153,3 +174,4 @@ const BlogModal = ({ isOpen, onClose, existingData }) => {
 };
 
 export default BlogModal;
+

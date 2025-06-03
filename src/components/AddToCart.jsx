@@ -3,12 +3,16 @@ import React, { useEffect, useState } from 'react'
 import BASE_URL from '../config/api'
 
 const AddToCart = ({ product }) => {
+
+    console.log(product)
+
     const [cartItems, setCartItems] = useState([])
     const [showToast, setShowToast] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
 
     const sessionId = localStorage.getItem('sessionID')
+    console.log(sessionId)
 
     useEffect(() => {
 
@@ -16,6 +20,7 @@ const AddToCart = ({ product }) => {
             try {
                 const res = await fetch(`${BASE_URL}/cart/get/${sessionId}`);
                 const data = await res.json();
+                console.log(data)
                 if (data.success && data.data?.cartItems) {
                     setCartItems(data.data.cartItems);
                 }
@@ -26,6 +31,8 @@ const AddToCart = ({ product }) => {
 
         if (sessionId) fetchCart();
     }, [sessionId]);
+
+    console.log(cartItems)
 
     const sendCartItemToBackend = async (newItem) => {
         setIsLoading(true);

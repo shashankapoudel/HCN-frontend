@@ -81,7 +81,7 @@ const SingleProductPage = () => {
                     </div>
 
                     <div className='mt-4'>
-                        <AddToCart />
+                        <AddToCart product={product} />
                     </div>
 
                 </div>

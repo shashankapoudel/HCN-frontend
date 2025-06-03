@@ -25,6 +25,7 @@ import AdminLogin from './pages/admin/AdminLogin'
 import Blogs from './pages/Blogs'
 import SingleProductPage from './pages/SingleProductPage'
 import Story from './pages/Story'
+import OurTeam from './pages/OurTeam'
 
 
 
@@ -53,6 +54,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/about/story' element={<Story />} />
+          <Route path='/about/team' element={<OurTeam />} />
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/faqs' element={<FAQs />} />

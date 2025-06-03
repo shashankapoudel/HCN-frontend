@@ -234,21 +234,23 @@ const Header = () => {
                     ))}
                 </div>
 
-                <div className='flex gap-6 text-[#0B4D81]'>
-                    <a href='https://www.facebook.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer">
-                        <SlSocialFacebook />
-                    </a>
-                    <a href='https://www.instagram.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer">
-                        <SlSocialInstagram />
-                    </a>
-                    <a href='https://www.tiktok.com/@himalayascraftnepal/' target="_blank" rel="noopener noreferrer">
-                        <PiTiktokLogoLight />
-                    </a>
-                </div>
+                <div className='flex gap-6'>
+                    <div className='flex gap-2 text-[#0B4D81]'>
+                        <a href='https://www.facebook.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer">
+                            <SlSocialFacebook />
+                        </a>
+                        <a href='https://www.instagram.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer">
+                            <SlSocialInstagram />
+                        </a>
+                        <a href='https://www.tiktok.com/@himalayascraftnepal/' target="_blank" rel="noopener noreferrer">
+                            <PiTiktokLogoLight />
+                        </a>
+                    </div>
 
-                <div className='flex gap-4 text-sm'>
-                    <p>Thamel, Kathmandu,</p>
-                    <a href="tel:+9779851013923" className='hover:underline'>+977-9851013923</a>
+                    <div className='flex gap-3 text-sm'>
+                        <p>Thamel, Kathmandu</p>
+                        <a href="tel:+9779851013923" className='hover:underline'>+977-9851013923</a>
+                    </div>
                 </div>
             </div>
 
