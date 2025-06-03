@@ -41,16 +41,16 @@ const ProductBadges = () => {
                     <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
-                        className={`pb-2 relative font-semibold capitalize text-sm md:text-base transition ${activeTab === tab
-                            ? 'text-black'
+                        className={`pb-2 relative font-edensor font-semibold capitalize text-sm md:text-base transition ${activeTab === tab
+                            ? 'text-[#bb2821]'
                             : 'text-[#999]'
                             }`}
                     >
                         {tabContent[tab].title}
                         {activeTab === tab && (
-                            <div className='absolute bottom-0 left-0 w-full h-[2px] bg-black rounded-full' />
+                            <div className='absolute bottom-0 left-0 w-full h-[2px] bg-[#bb2821] rounded-full' />
                         )}
-                        
+
                     </button>
                 ))}
             </div>

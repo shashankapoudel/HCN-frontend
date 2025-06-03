@@ -36,13 +36,11 @@ const Footer = () => {
 
             <div className='w-full'>
                 <img
-                    src='/Images/image.png'
-                    className='object-cover w-12 h-12'
+                    src='/Images/logo_FOOTER.png'
+                    className='object-cover w-44'
                     alt="Logo"
                 />
-                <p className='hidden md:flex text-[#0B4D81] font-bold text-sm'>
-                    Himalayas Craft Nepal
-                </p>
+
             </div>
 
             <div className='flex  justify-between w-full'>

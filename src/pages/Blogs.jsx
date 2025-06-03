@@ -152,13 +152,13 @@ const BlogPage = () => {
                         <button
                             onClick={() => setActive(cat)}
                             className={`pb-2 relative font-semibold capitalize text-sm md:text-base transition ${active === cat
-                                ? 'text-black'
+                                ? 'text-[#bb2821]'
                                 : 'text-[#999]'
                                 }`}
                         >
                             {cat}
                             {active === cat && (
-                                <div className='absolute bottom-0 left-0 w-full h-[2px] bg-black rounded-full' />
+                                <div className='absolute bottom-0 left-0 w-full h-[3px] bg-[#bb2821] rounded-full' />
                             )}
                         </button>
                     ))
@@ -169,7 +169,7 @@ const BlogPage = () => {
                 <div className="w-full lg:w-2/3 mx-auto rounded-lg p-3 lg:p-6 ">
                     <button
                         onClick={() => setSelectedBlog(null)}
-                        className="text-blue-500 mb-4 hover:underline"
+                        className="text-[#bb2821] mb-4 hover:underline"
                     >
                         &larr; Back to blogs
                     </button>
@@ -193,7 +193,7 @@ const BlogPage = () => {
                             <img
                                 src={activeBlogs[0].images[0]}
                                 alt={activeBlogs[0].title}
-                                className="w-full rounded-md mb-4"
+                                className="w-full h-80 rounded-md mb-4"
                             />
                             <h2
                                 className="text-xl font-bold text-gray-900 mb-2 cursor-pointer"
@@ -207,7 +207,7 @@ const BlogPage = () => {
                             </p>
                             <a
                                 onClick={() => setSelectedBlog(activeBlogs[0])}
-                                className="underline text-[#0B4D81]">Read more</a>
+                                className="underline text-[#bb2821]">Read more</a>
                         </div>
                     )}
 
@@ -227,7 +227,7 @@ const BlogPage = () => {
                                     <img
                                         src={blog.images[0]}
                                         alt={blog.title}
-                                        className="w-full lg:w-1/3 rounded-md mr-4 object-cover"
+                                        className="w-full lg:w-36 rounded-md mr-4 object-cover"
                                     />
                                     <div>
                                         <h3
@@ -235,10 +235,10 @@ const BlogPage = () => {
                                         >
                                             {blog.title}
                                         </h3>
-                                        <p className="text-gray-600">{snippet}</p>
+                                        <p className="text-gray-600 text-sm">{snippet}</p>
                                         <a
                                             onClick={() => setSelectedBlog(blog)}
-                                            className="underline text-[#0B4D81]">Read more</a>
+                                            className="underline text-[#bb2821]">Read more</a>
                                     </div>
                                 </div>
                             );

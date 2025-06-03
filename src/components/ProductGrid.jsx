@@ -34,7 +34,7 @@ const ProductGrid = ({ title, description, products }) => {
                             </p>
 
                             <div className='flex justify-between items-center mt-2'>
-                                <p className='text-[#111111] font-bold'>${product.price}</p>
+                                <p className='text-[#bb2821] font-bold'>${product.price}</p>
                                 <AddToCart product={product} />
                             </div>
                         </div>

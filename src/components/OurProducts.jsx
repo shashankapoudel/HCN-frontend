@@ -28,7 +28,7 @@ const OurProducts = () => {
                             <p className=' text-[#111111] font-light text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
 
                             <div className='flex justify-between items-center'>
-                                <p className='text-[#111111] font-bold '>${product.price}</p>
+                                <p className='text-[#bb2821] font-bold '>${product.price}</p>
                                 <AddToCart product={product} />
                             </div>
                         </div>

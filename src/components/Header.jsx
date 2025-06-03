@@ -143,11 +143,11 @@ const Header = () => {
     return (
         <div className="flex flex-col w-full fixed top-0 z-50">
 
-            <div className='flex items-center justify-center p-3 bg-[#0B4D81] text-[#FFFFFF] text-sm font-medium'>
+            <div className='flex items-center justify-center p-2 bg-[#bb2821] text-[#FFFFFF] text-sm font-medium'>
                 <p className='text-center'>Free holiday offer until April 23, 2025 | Free holiday offer until April 23, 2025</p>
             </div>
 
-            <div className="hidden lg:flex  py-3 px-10 justify-between bg-[#EBEBEB] text-[#111111] w-full">
+            <div className="hidden lg:flex  py-4 px-10 justify-between bg-[#EBEBEB] text-[#111111] w-full">
                 <div className="flex gap-12 items-center  text-sm">
                     {navItems.map((item) => (
                         <div key={item.name} className="relative group">
@@ -235,7 +235,7 @@ const Header = () => {
                 </div>
 
                 <div className='flex gap-6'>
-                    <div className='flex gap-2 text-[#0B4D81]'>
+                    <div className='flex gap-2 text-[#bb2821]'>
                         <a href='https://www.facebook.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer">
                             <SlSocialFacebook />
                         </a>
@@ -254,10 +254,13 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="flex py-3 items-center justify-between text-base px-4 md:px-10 bg-[#FFFFFF]">
+            <div className="flex py-2 items-center justify-between text-base px-4 md:px-10 bg-[#FFFFFF]">
                 <div className='flex items-center gap-2 cursor-pointer' onClick={() => navigate('/')}>
-                    <img src='/Images/image.png' className='object-cover w-12 h-12' alt="Logo" />
-                    <p className='hidden md:flex text-[#0B4D81] font-bold text-sm'>Himalayas Craft Nepal</p>
+                    <img
+                        src='/Images/Logo.png'
+                        className='object-cover w-64'
+                        alt="Logo" />
+                    {/* <p className='hidden md:flex text-[#0B4D81] font-bold text-sm'>Himalayas Craft Nepal</p> */}
                 </div>
 
                 <div className='w-2/3 md:w-1/3'>
