@@ -51,7 +51,7 @@ const OurTeam = () => {
 
     return (
         <div className='p-8 w-full flex flex-col items-center justify-center gap-4'>
-            <h1 className='text-3xl font-bold text-[#666666] font-edensor'>Our Team</h1>
+            <h1 className='text-3xl font-bold text-[#0B4D81]  font-edensor'>Our Team</h1>
 
 
             <motion.div
@@ -102,7 +102,7 @@ const OurTeam = () => {
                                 alt={team.name}
                             />
                             <p className='text-center text-lg font-edensor leading-relaxed'>{team.role}</p>
-                            <p className='text-center text-lg leading-relaxed font-poppins font-semibold'>{team.name}</p>
+                            <p className='text-center text-lg leading-relaxed font-poppins font-semibold text-[#0B4D81] '>{team.name}</p>
                         </motion.div>
                     ))
                 }
@@ -121,6 +121,7 @@ const OurTeam = () => {
                         <motion.div
                             variants={cardVariants}
                             key={index}
+                            className='flex flex-col items-center justify-center'
                         >
                             <img
                                 src={team.image}
@@ -128,7 +129,7 @@ const OurTeam = () => {
                                 alt={team.name}
                             />
                             <p className='text-center text-lg font-edensor leading-relaxed'>{team.role}</p>
-                            <p className='text-center text-lg leading-relaxed font-poppins font-semibold'>{team.name}</p>
+                            <button className='text-center text-lg leading-relaxed font-poppins font-semibold text-[#0B4D81] '>{team.name}</button>
                         </motion.div>
                     ))
                 }
