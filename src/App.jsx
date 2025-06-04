@@ -62,6 +62,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<Order />} />
           <Route path='/trackorder' element={<TrackOrder />} />
+          <Route path='/products' element={<Products />} />
           <Route path='/products/:category/:subcategory?/:subsubcategory?' element={<ProductPage />} />
           <Route path='/product/:id' element={<SingleProductPage />} />
 

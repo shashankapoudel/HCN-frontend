@@ -86,20 +86,19 @@ const ContactForm = () => {
                         rows={8}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        className='border p-2 border-[#D0D5DD] rounded-md text-sm '
+                        className='border p-2 border-[#D0D5DD] rounded-md text-sm'
                     />
                 </div>
 
-                <div className='w-full bg-[#344054] text-[#FFFFFF] flex justify-center items-center'>
+                <div
+                    onClick={handleContactForm}
+                    className='w-full bg-[#0B4D81] text-[#FFFFFF] flex justify-center items-center hover:bg-[#093a63] cursor-pointer'>
                     <button
-                        onClick={handleContactForm}
-                        className='flex items-center justify-center p-2 text-center cursor-pointer'>
+                        className='flex items-center justify-center p-2 text-center  '>
                         Submit
                     </button>
                 </div>
             </div>
-
-
 
             <div className='w-full lg:w-2/3 h-full flex justify-end'>
                 <div className='w-full'>

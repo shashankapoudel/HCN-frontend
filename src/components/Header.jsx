@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
@@ -17,7 +16,7 @@ const Header = () => {
             ]
         },
         {
-            name: 'Products', path: '/products',
+            name: 'Products', path: '/',
             subItems: [
                 {
                     name: 'Singing Bowls', path: '/products/singing-bowls', subsubItems: [
@@ -154,11 +153,11 @@ const Header = () => {
                             <div className="flex items-center gap-1 cursor-pointer">
                                 <NavLink
                                     to={item.path}
-                                    className={active === item.path ? 'text-[#0B4D81] font-semibold' : 'text-gray-800 hover:text-[#0B4D81]'}
+                                    className={active === item.path ? 'text-[#0B4D81] font-semibold' : 'text-[#111111] hover:text-[#0B4D81]'}
                                 >
                                     {item.name}
                                 </NavLink>
-                                {item.subItems && <FiChevronDown className="text-gray-600 mt-1" />}
+                                {item.subItems && <FiChevronDown className="text-[#111111] mt-1" />}
                             </div>
 
                             {item.subItems && (
@@ -173,10 +172,10 @@ const Header = () => {
                                             <NavLink
                                                 to={subItem.path}
                                                 state={{ category: subItem.name }}
-                                                className="flex px-4 py-2 text-gray-800 hover:bg-gray-200 items-center justify-between w-full"
+                                                className="flex px-4 py-2 text-[#111111] hover:bg-gray-200 items-center justify-between w-full"
                                             >
                                                 {subItem.name}
-                                                {subItem.subsubItems && <FiChevronDown className="text-gray-600 mt-1 -rotate-90" />}
+                                                {subItem.subsubItems && <FiChevronDown className="text-[#111111] mt-1 -rotate-90" />}
                                             </NavLink>
 
                                             {subItem.subsubItems && hoveredSubItem === subItem.name && (
@@ -192,10 +191,10 @@ const Header = () => {
                                                                 key={subsubItem.name}
                                                                 to={subsubItem.path}
                                                                 state={{ category: subsubItem.name }}
-                                                                className="flex items-center justify-between px-4 py-2 text-gray-800 hover:bg-gray-200"
+                                                                className="flex items-center justify-between px-4 py-2 text-[#111111] hover:bg-gray-200"
                                                             >
                                                                 {subsubItem.name}
-                                                                {subsubItem.subsubsubItems && <FiChevronDown className="text-gray-600 mt-1 -rotate-90" />}
+                                                                {subsubItem.subsubsubItems && <FiChevronDown className="text-[#111111] mt-1 -rotate-90" />}
                                                             </NavLink>
                                                             {
                                                                 subsubItem.subsubsubItems && hoveredSubSubItem === subsubItem.name && (
@@ -212,7 +211,7 @@ const Header = () => {
                                                                                 key={subsubsubItem.name}
                                                                                 to={subsubsubItem.path}
                                                                                 state={{ category: subsubsubItem.name }}
-                                                                                className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                                                                                className="block px-4 py-2 text-[#111111] hover:bg-gray-200"
                                                                             >
                                                                                 {subsubsubItem.name}
                                                                             </NavLink>
@@ -235,7 +234,7 @@ const Header = () => {
                 </div>
 
                 <div className='flex gap-6'>
-                    <div className='flex gap-2 text-[#bb2821]'>
+                    <div className='flex gap-2 text-[#111111]'>
                         <a href='https://www.facebook.com/himalayascraftnepal/' target="_blank" rel="noopener noreferrer">
                             <SlSocialFacebook />
                         </a>
@@ -260,7 +259,6 @@ const Header = () => {
                         src='/Images/Logo.png'
                         className='object-cover w-64'
                         alt="Logo" />
-                    {/* <p className='hidden md:flex text-[#0B4D81] font-bold text-sm'>Himalayas Craft Nepal</p> */}
                 </div>
 
                 <div className='w-2/3 md:w-1/3'>
@@ -268,12 +266,13 @@ const Header = () => {
                 </div>
 
                 <div className='flex gap-5 items-center'>
-                    <button onClick={() => navigate('trackorder')} className='hidden lg:flex bg-[#0B4D81] text-[#FFFFFF] px-4 py-2'>
+                    <button onClick={() => navigate('trackorder')} className='hidden lg:flex bg-[#0B4D81] text-[#FFFFFF] px-4 py-2 hover:bg-[#093a63] transition-colors duration-200
+'>
                         Track my Order
                     </button>
                     <button
                         onClick={() => navigate('/cart')}
-                        className='hidden lg:flex items-center border border-[#0B4D81] gap-1 py-2 px-3 bg-[#FFFFFF] text-[#0B4D81]'
+                        className='hidden lg:flex items-center border border-[#0B4D81] gap-1 py-2 px-3 bg-[#FFFFFF] hover:bg-[#E6F1F8] transition-colors duration-200 text-[#0B4D81]'
                     >
                         <CiShoppingCart className='font-bold' />
                         My Cart

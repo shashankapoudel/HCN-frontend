@@ -100,7 +100,8 @@ const Footer = () => {
                         />
                         <button
                             onClick={handleSubmit}
-                            className='bg-[#0B4D81] text-white px-4 py-2'>
+                            className='bg-[#0B4D81] text-white px-4 py-2 hover:bg-[#093a63] transition-colors duration-200
+'>
                             Subscribe now
                         </button>
                     </div>

@@ -129,7 +129,7 @@ const PersonalInfo = ({ nextStep, formData, setFormData }) => {
                 {/* Submit */}
                 <button
                     onClick={handleNext}
-                    className='bg-[#0B4D81] text-white p-2 rounded-md'
+                    className='bg-[#0B4D81] text-white p-2 rounded-md hover:bg-[#093a63] '
                 >
                     Next: Shipping Address
                 </button>

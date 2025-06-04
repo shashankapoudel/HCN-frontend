@@ -138,7 +138,7 @@ const ShippingAddress = ({ nextStep, prevStep, formData, setFormData }) => {
 
             <div className="flex justify-between mt-6">
                 <button onClick={prevStep} className="bg-[#FFFFFF] text-[#D0D5DD] px-6 py-2 rounded border">Previous</button>
-                <button onClick={handleNext} className="bg-[#0B4D81] text-white px-6 py-2 rounded">
+                <button onClick={handleNext} className="bg-[#0B4D81] text-white px-6 py-2 rounded hover:bg-[#093a63] ">
                     Payment : $6,823
                 </button>
             </div>

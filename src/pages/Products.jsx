@@ -1,7 +1,10 @@
-import React from 'react'
-import ProductTable from '../components/admin/ProductTable'
+import React, { useContext } from 'react'
+import { ProductContext } from '../context/ProductProvider'
 
-const ProductList = () => {
+
+const Products = () => {
+
+    const { products } = useContext(ProductContext)
     return (
         <div>
 
@@ -9,4 +12,4 @@ const ProductList = () => {
     )
 }
 
-export default ProductList
+export default Products
