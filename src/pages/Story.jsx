@@ -6,17 +6,15 @@ import OurFactories from '../components/OurFactories';
 const Story = () => {
 
     const Images = [
-        '/Images/homeImage.png',
-        '/Images/faq.png',
-        '/Images/faq1.png',
-        '/Images/homeImage.png',
-        '/Images/homeImage.png',
-        '/Images/faq1.png',
+        '/Images/OurStory3.jpg',
+        '/Images/OurStory1.jpg',
+        '/Images/OurStory2.jpg',
+
     ]
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const handleNext = () => {
-        setCurrentIndex((prev) => (prev === Images.length - 1 ? '0' : prev + 1))
+        setCurrentIndex((prev) => (prev === Images.length - 1 ? 0 : prev + 1))
     }
 
     const handlePrevious = () => {
@@ -66,10 +64,10 @@ const Story = () => {
                         </p>
                     </div>
 
-                    <div className='w-full lg:w-1/2 '>
+                    <div className='w-full lg:w-1/2 mt-8 '>
                         <img
-                            src='/Images/homeImage.png'
-                            className="object-cover p-4 h-full rounded-md"
+                            src=''
+                            className="object-cover p-4 w-full rounded-md"
                             alt="Home"
                         />
                     </div>

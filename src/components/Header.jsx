@@ -247,8 +247,9 @@ const Header = () => {
                     </div>
 
                     <div className='flex gap-3 text-sm'>
-                        <p>Thamel, Kathmandu</p>
-                        <a href="tel:+9779851013923" className='hover:underline'>+977-9851013923</a>
+                        <p>Thamel,Kathmandu, Nepal</p>
+                        <a href="tel:+9779849779322" className='hover:underline'>+977-9849779322</a>
+                        <a href="tel:+9779849779890" className='hover:underline'>+977-9849779890</a>
                     </div>
                 </div>
             </div>

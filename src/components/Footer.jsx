@@ -66,8 +66,11 @@ const Footer = () => {
 
                 <div className='flex items-center gap-2 text-[#090914]'>
                     <IoMail />
-                    <a>himalayascraft@gmail.com</a>
+                    <a href='mailto:himalayascraft@gmail.com' className='hover:underline'>
+                        himalayascraft@gmail.com
+                    </a>
                 </div>
+
 
                 <div className='flex items-center gap-2 '>
 
@@ -112,7 +115,7 @@ const Footer = () => {
                         <div className="relative group overflow-hidden border p-4">
                             <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
                             <a
-                                href="https://www.instagram.com/himalayascraftnepal/"
+                                href="https://www.tiktok.com/@heal_sakti?_t=ZS-8wvF8dgKIsC&_r=1"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
