@@ -26,6 +26,8 @@ import Blogs from './pages/Blogs'
 import SingleProductPage from './pages/SingleProductPage'
 import Story from './pages/Story'
 import OurTeam from './pages/OurTeam'
+import ScrollToTop from './components/ScrollToTop'
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton'
 
 
 
@@ -87,6 +89,8 @@ function AppWrapper() {
   return (
     <BrowserRouter>
       <App />
+      <ScrollToTop />
+      <WhatsAppFloatingButton />
     </BrowserRouter>
   );
 }

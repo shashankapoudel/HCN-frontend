@@ -14,25 +14,49 @@ const AddToCart = ({ product }) => {
     const sessionId = localStorage.getItem('sessionID')
     console.log(sessionId)
 
-    useEffect(() => {
-
-        const fetchCart = async () => {
-            try {
-                const res = await fetch(`${BASE_URL}/cart/get/${sessionId}`);
-                const data = await res.json();
-                console.log(data)
-                if (data.success && data.data?.cartItems) {
-                    setCartItems(data.data.cartItems);
-                }
-            } catch (err) {
-                console.error("Error fetching cart:", err);
+    const fetchCart = async () => {
+        try {
+            const res = await fetch(`${BASE_URL}/cart/get/${sessionId}`);
+            const data = await res.json();
+            console.log(data)
+            if (data.success && data.data?.cartItems) {
+                setCartItems(data.data);
             }
+        } catch (err) {
+            console.error("Error fetching cart:", err);
         }
+    };
 
+    useEffect(() => {
         if (sessionId) fetchCart();
     }, [sessionId]);
 
     console.log(cartItems)
+
+    // const sendCartItemToBackend = async (newItem) => {
+    //     setIsLoading(true);
+    //     try {
+    //         const res = await fetch(`${BASE_URL}/cart/add`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({ sessionId, cartItems: [newItem] })
+
+    //         });
+
+    //         const data = await res.json();
+    //         if (data.success) {
+    //             setShowToast(true);
+    //             setTimeout(() => setShowToast(false), 3000);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error sending item to backend:', error);
+    //     } finally {
+    //         setIsLoading(false);
+    //     }
+    // }
+
 
     const sendCartItemToBackend = async (newItem) => {
         setIsLoading(true);
@@ -43,27 +67,37 @@ const AddToCart = ({ product }) => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ sessionId, cartItems: [newItem] })
-
             });
 
             const data = await res.json();
+
             if (data.success) {
                 setShowToast(true);
                 setTimeout(() => setShowToast(false), 3000);
+            } else {
+                setToastMessage(data.message || "Something went wrong");
+                setTimeout(() => setToastMessage(''), 3000);
             }
+
         } catch (error) {
             console.error('Error sending item to backend:', error);
         } finally {
             setIsLoading(false);
         }
-    }
+    };
 
+
+
+    console.log(cartItems)
     const handleAddToCart = (item) => {
-        const itemExists = cartItems.some(cartItem => cartItem.id === item._id || cartItem._id === item._id);
+        console.log(item)
+
+        const itemExists = cartItems.some(cartItem => cartItem._id === item._id);
+
 
         if (!itemExists) {
             const newItem = {
-                _id: item._id,
+                id: item._id,
                 images: item.images?.[0],
                 name: item.name,
                 price: item.price,
