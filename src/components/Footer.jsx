@@ -37,10 +37,10 @@ const Footer = () => {
     }
 
     return (
-        <div className='flex flex-col  justify-between items-center  lg:flex-row lg:justify-between p-4 md:p-8 bg-[#FFFFFF]  bottom-0 gap-4 font-poppins'>
+        <div className='flex flex-col justify-between items-center  lg:flex-row lg:justify-between p-4 md:p-8 bg-[#FFFFFF]  bottom-0 gap-4 font-sans font-normal'>
 
 
-            <div className='w-full p-2 flex flex-col gap-2 tracking-wide font-edensor'>
+            <div className='w-full p-2 flex flex-col gap-2 tracking-wide'>
                 <img
                     src='/Images/logo_FOOTER.png'
                     className='object-cover w-44'
@@ -70,63 +70,55 @@ const Footer = () => {
                         himalayascraft@gmail.com
                     </a>
                 </div>
+                <div className='flex w-full items-start justify-start mt-4'>
 
-
-                <div className='flex items-center gap-2 '>
-
-                    <div className="flex items-center text-2xl ">
-
-
-                        <div className="relative group overflow-hidden border p-4">
-                            <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
-                            <a
-                                href="https://www.facebook.com/himalayascraftnepal/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
-                            >
-                                <FaFacebook />
-                            </a>
-                        </div>
-
-                        <div className="relative group overflow-hidden border p-4">
-                            <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
-                            <a
-                                href="https://www.instagram.com/himalayascraftnepal/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
-                            >
-                                <FaInstagram />
-                            </a>
-                        </div>
-
-                        <div className="relative group overflow-hidden border p-4">
-                            <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
-                            <a
-                                href="https://www.youtube.com/channel/UCgxP4Bc3CJ_qxzbN4DD4zgQ"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
-                            >
-                                <FaYoutube />
-                            </a>
-                        </div>
-                        <div className="relative group overflow-hidden border p-4">
-                            <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
-                            <a
-                                href="https://www.tiktok.com/@heal_sakti?_t=ZS-8wvF8dgKIsC&_r=1"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
-                            >
-                                <FaTiktok />
-
-                            </a>
-                        </div>
-
+                    <div className="relative group overflow-hidden border p-4">
+                        <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+                        <a
+                            href="https://www.facebook.com/himalayascraftnepal/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
+                        >
+                            <FaFacebook />
+                        </a>
                     </div>
 
+                    <div className="relative  group overflow-hidden border p-4">
+                        <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+                        <a
+                            href="https://www.instagram.com/himalayascraftnepal/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
+                        >
+                            <FaInstagram />
+                        </a>
+                    </div>
+
+                    <div className="relative group overflow-hidden border p-4">
+                        <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+                        <a
+                            href="https://www.youtube.com/channel/UCgxP4Bc3CJ_qxzbN4DD4zgQ"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
+                        >
+                            <FaYoutube />
+                        </a>
+                    </div>
+
+                    <div className="relative group overflow-hidden border p-4">
+                        <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+                        <a
+                            href="https://www.tiktok.com/@heal_sakti?_t=ZS-8wvF8dgKIsC&_r=1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative z-10 text-[#0B4D81] group-hover:text-white transition-colors"
+                        >
+                            <FaTiktok />
+                        </a>
+                    </div>
 
                 </div>
 
@@ -207,8 +199,8 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-
         </div>
+
     )
 }
 

@@ -6,7 +6,7 @@ import Header from './components/Header'
 import Products from './pages/Products'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 import AdminLayout from './layouts/AdminLayout'
 import Dashboard from './pages/admin/Dashboard'
 import Orders from './pages/admin/Orders'
@@ -28,6 +28,7 @@ import Story from './pages/Story'
 import OurTeam from './pages/OurTeam'
 import ScrollToTop from './components/ScrollToTop'
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton'
+import TestimonialsPage from './pages/Testimonials'
 
 
 
@@ -61,6 +62,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/faqs' element={<FAQs />} />
           <Route path='/blogs' element={<Blogs />} />
+          <Route path='/testimonials' element={<TestimonialsPage />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<Order />} />
           <Route path='/trackorder' element={<TrackOrder />} />

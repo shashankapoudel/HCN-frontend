@@ -6,8 +6,8 @@ export default function FAQ() {
     const categories = ["General", "Products", 'Product Maintenance', 'Customer Support', "Payment", "Shipping and Orders", 'Refund Policy']
 
     const [openIndex, setOpenIndex] = useState(null);
-    const [category, setCategory] = useState(null)
-    const [active, setActive] = useState(null)
+    const [category, setCategory] = useState('Customer Support')
+    const [active, setActive] = useState('Customer Support')
     const [faqData, setFaqData] = useState([])
 
     useEffect(() => {

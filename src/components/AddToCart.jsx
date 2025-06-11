@@ -118,7 +118,7 @@ const AddToCart = ({ product }) => {
         <div>
             <button
                 onClick={() => handleAddToCart(product)}
-                className='bg-gradient-to-r from-red-600 to-blue-800 text-[#FFFFFF] text-sm p-2 px-4'>
+                className='bg-gradient-to-r from-[#bb2821] to-[#0B4D81] text-[#FFFFFF] text-sm p-2 px-4'>
                 {isLoading ? (
                     <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
