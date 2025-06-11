@@ -41,21 +41,7 @@ export default function FAQ() {
                     </div>
 
                     <div className="w-full flex flex-col gap-8 ">
-                        {/* 
-                        <div className="grid grid-cols-3 gap-4">
-                            {
-                                categories.map((category, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => handleCategory(category)}
-                                        className={`flex items-center justify-between px-2 border py-2 text-sm text-[#606060] rounded-md ${active === category ? 'bg-[#00B0A7] text-[#FFFFFF]' : 'bg-[#F1F1F1]'}`}
-                                    >
-                                        {category}
-                                        <FaChevronDown />
-                                    </button>
-                                ))
-                            }
-                        </div> */}
+
                         <div className="flex gap-8">
 
                             <div className="flex flex-col gap-2 w-1/3">

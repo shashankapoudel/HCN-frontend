@@ -16,7 +16,7 @@ const Header = () => {
             ]
         },
         {
-            name: 'Products', path: '/',
+            name: 'Products', path: '',
             subItems: [
                 {
                     name: 'Singing Bowls', path: '/products/singing-bowls', subsubItems: [
@@ -142,7 +142,7 @@ const Header = () => {
     return (
         <div className="flex flex-col w-full fixed top-0 z-50">
 
-            <div className='flex items-center justify-center p-2 bg-[#bb2821] text-[#FFFFFF] text-sm font-medium'>
+            <div className='flex items-center justify-center p-2 bg-gradient-to-b from-[#0B4D81] to-[#bb2821]  text-[#FFFFFF] text-sm font-medium'>
                 <p className='text-center'>Free holiday offer until April 23, 2025 | Free holiday offer until April 23, 2025</p>
             </div>
 

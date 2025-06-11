@@ -270,13 +270,13 @@ const WhyHCN = () => {
 
             <div className="flex items-center justify-center mt-4">
                 <button
-                    className="text-[#666666] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
+                    className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
                     onClick={handlePrevious}
                 >
                     <GrFormPrevious />
                 </button>
                 <button
-                    className="text-[#666666] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
+                    className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
                     onClick={handleNext}
                 >
                     <GrFormNext />

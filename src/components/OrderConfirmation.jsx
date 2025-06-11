@@ -36,7 +36,7 @@ const OrderConfirmation = () => {
                 ))}
             </div>
 
-            {/* Action Buttons */}
+       
             <div className="mt-6 flex justify-center space-x-4">
                 <button className="bg-teal-500 text-white px-6 py-2 rounded">Continue Shopping</button>
                 <button className="border border-gray-400 text-gray-600 px-6 py-2 rounded">Report Issue</button>

@@ -7,16 +7,15 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef(null);
 
-    // Handle Image Upload
+
     const { getRootProps, getInputProps } = useDropzone({
         accept: "image/*",
         multiple: true,
         onDrop: (acceptedFiles) => {
-            setImages([...images, ...acceptedFiles]); // Store only files, not URLs
+            setImages([...images, ...acceptedFiles]);
         },
     });
 
-    // Handle Audio Upload
     const handleAudioUpload = (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -25,7 +24,7 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
         }
     };
 
-    // Play/Pause Audio
+
     const togglePlay = () => {
         if (audioRef.current) {
             if (isPlaying) {
@@ -37,12 +36,11 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
         }
     };
 
-    // Delete Image
+
     const removeImage = (index) => {
         setImages(images.filter((_, i) => i !== index));
     };
 
-    // Delete Audio
     const removeAudio = () => {
         setAudio(null);
         setIsPlaying(false);
@@ -54,7 +52,7 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
 
     return (
         <div className="w-full p-4">
-            {/* Audio Upload Section */}
+
             <div className="mb-4">
                 <label className="block font-semibold mb-2">Sound</label>
                 <div className="flex items-center gap-2 border rounded p-2">
@@ -72,7 +70,7 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
                 </div>
             </div>
 
-            {/* Image Upload Section */}
+
             <label className="block font-semibold mb-2">Product Images <span className="text-red-500">*</span> (Recommendation 1:1)</label>
             <div {...getRootProps()} className="border-dashed border-2 border-gray-300 p-6 rounded-lg text-center cursor-pointer bg-gray-50 hover:bg-gray-100">
                 <input {...getInputProps()} />
@@ -80,7 +78,7 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
                 <p className="text-gray-600">Drag or click to upload files</p>
             </div>
 
-            {/* Preview Section */}
+
             <div className="mt-4 grid grid-cols-3 gap-2">
                 {images.map((image, index) => (
                     <div key={index} className="relative">

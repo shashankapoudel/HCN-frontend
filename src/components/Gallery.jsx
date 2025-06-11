@@ -10,22 +10,11 @@ const GalleryCard = () => {
     const [selectedImage, setSelectedImage] = useState('');
 
     const images = [
-        '/Images/Gallery/Image1.jpg',
-        '/Images/Gallery/Image2.jpg',
-        '/Images/Gallery/Image3.jpg',
-        '/Images/Gallery/Image4.jpg',
-        '/Images/Gallery/Image5.jpg',
-        '/Images/Gallery/Meditation_Mindfulness/1.JPG',
-        '/Images/Gallery/Meditation_Mindfulness/2.JPG',
-        '/Images/Gallery/Meditation_Mindfulness/3.JPG',
-        '/Images/Gallery/Sound_Healing/4.JPG',
-        '/Images/Gallery/Sound_Healing/5.JPG',
-        '/Images/Gallery/Sound_Healing/6.JPG',
-        '/Images/Gallery/Sound_Healing/7.JPG',
-        '/Images/Gallery/Spiritual_Events/4.JPG',
-        '/Images/Gallery/Spiritual_Events/5.JPG',
-        '/Images/Gallery/Spiritual_Events/6.JPG',
-
+        '/Images/OurStory1.jpg',
+        '/Images/OurStory2.jpg',
+        '/Images/OurStory3.jpg',
+        '/Images/OurStory4.jpg',
+        '/Images/team1.jpg',
     ];
 
     const imagesPerPage = 3;
@@ -87,7 +76,7 @@ const GalleryCard = () => {
             <div className='flex flex-col lg:flex-row items-center justify-center mt-4 bg-[#FFFFFF] p-2 lg:p-4 border rounded-xl'>
 
                 <button
-                    className='text-white bg-black bg-opacity-50 p-0 lg:p-1 rounded-full hover:bg-opacity-70 transition'
+                    className='text-white bg-[#bb2821] bg-opacity-50 p-0 lg:p-1 rounded-full hover:bg-opacity-70 transition'
                     onClick={prevSlide}
                 >
                     <GrFormPrevious />
@@ -121,7 +110,7 @@ const GalleryCard = () => {
                 </div>
 
                 <button
-                    className='text-white bg-black bg-opacity-50 p-0 lg:p-1 rounded-full hover:bg-opacity-70 transition'
+                    className='text-white bg-[#bb2821] bg-opacity-50 p-0 lg:p-1 rounded-full hover:bg-opacity-70 transition'
                     onClick={nextSlide}
                 >
                     <GrFormNext />
@@ -129,7 +118,7 @@ const GalleryCard = () => {
             </div>
             <div className='flex items-end justify-end'>
                 <button
-                    className='underline'
+                    className='underline text-[#bb2821]'
 
                 >
                     See more
@@ -139,7 +128,7 @@ const GalleryCard = () => {
             {isModalOpen && (
                 <div
                     className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75'
-                    onClick={closeModal} // Close modal when clicking outside
+                    onClick={closeModal}
                 >
                     <div className='relative max-w-4xl w-full p-4'>
                         <img

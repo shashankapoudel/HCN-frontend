@@ -43,7 +43,6 @@ const Blogtable = ({ onEdit, blogs }) => {
                 <thead >
                     <tr className="bg-[#F5F6FA] border-b px-2">
                         <th className="p-3 text-left">Blog title</th>
-                        {/* <th className="p-3 text-left">Content</th> */}
                         <th className="p-3 text-left">Update</th>
                         <th className="p-3 text-left">Action</th>
                     </tr>
@@ -54,7 +53,6 @@ const Blogtable = ({ onEdit, blogs }) => {
                         < tr key={index}
                             className="border-b px-2">
                             <td className="p-3">{blog.title}</td>
-                            {/* <td className="p-3">{blog.content}</td> */}
                             <td className="p-3">{date}</td>
                             <td className="p-3 flex gap-2">
                                 <button

@@ -14,7 +14,7 @@ const SingleProductPage = () => {
             try {
                 const res = await fetch(`${BASE_URL}/product/${id}`);
                 const data = await res.json();
-                // console.log(data);
+        
                 setProduct(data.data);
                 setLoading(false);
             } catch (error) {

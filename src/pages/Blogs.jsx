@@ -187,8 +187,6 @@
 
 
 
-
-
 import React, { useEffect, useState } from "react";
 import BASE_URL from "../config/api";
 
@@ -232,8 +230,9 @@ const BlogPage = () => {
 
     return (
         <div className="p-4 lg:p-8 min-h-screen">
+            <h1 className="text-center text-3xl font-bold text-[#111111] ">Our Blogs</h1>
 
-            <div className="grid grid-cols-2 lg:flex space-x-4 space-y-2 md:space-y-0 lg:space-x-6 w-full justify-between p-2">
+            <div className="grid grid-cols-2 lg:flex space-x-4 space-y-2 md:space-y-0 lg:space-x-6 w-full justify-between p-2 mt-3">
                 {
                     categories.map((cat) => (
                         <button
@@ -313,3 +312,9 @@ const BlogPage = () => {
 };
 
 export default BlogPage;
+
+
+
+
+
+

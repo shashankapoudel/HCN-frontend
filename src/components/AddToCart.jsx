@@ -33,30 +33,6 @@ const AddToCart = ({ product }) => {
 
     console.log(cartItems)
 
-    // const sendCartItemToBackend = async (newItem) => {
-    //     setIsLoading(true);
-    //     try {
-    //         const res = await fetch(`${BASE_URL}/cart/add`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({ sessionId, cartItems: [newItem] })
-
-    //         });
-
-    //         const data = await res.json();
-    //         if (data.success) {
-    //             setShowToast(true);
-    //             setTimeout(() => setShowToast(false), 3000);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error sending item to backend:', error);
-    //     } finally {
-    //         setIsLoading(false);
-    //     }
-    // }
-
 
     const sendCartItemToBackend = async (newItem) => {
         setIsLoading(true);

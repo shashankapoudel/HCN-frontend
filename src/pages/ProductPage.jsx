@@ -23,7 +23,7 @@ const ProductPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const { products } = useContext(ProductContext);
-    // console.log(products);
+
 
     if (!Array.isArray(products)) {
         return <div>Loading products...</div>;
@@ -62,10 +62,6 @@ const ProductPage = () => {
         .map((p) => p.subsubcategory)
         .filter(Boolean)
     )];
-
-    // console.log(filteredProducts);
-    // console.log(availableSubcategories)
-    // console.log(availableSubSubcategories);
 
     const handleProductPage = (id) => {
         navigate(`/product/${id}`)
@@ -123,7 +119,6 @@ const ProductPage = () => {
                                 <div
                                     key={product._id}
                                     className="border border-red-200 rounded p-3 relative group w-full max-w-xs">
-                                    {/* Action Icons */}
 
                                     <div className="absolute top-5 flex flex-col right-2 space-y-4 opacity-0 group-hover:opacity-100 transition-opacity">
 
@@ -141,7 +136,6 @@ const ProductPage = () => {
                                         </button>
                                     </div>
 
-                                    {/* Product Image */}
                                     <img
                                         onClick={() => handleProductPage(product._id)}
                                         src={product.images?.[0]}
@@ -149,14 +143,13 @@ const ProductPage = () => {
                                         className="w-full object-cover rounded cursor-pointer"
                                     />
 
-                                    {/* Product Details */}
                                     <div className="mt-3">
                                         <h2 className="text-sm font-semibold">{product.name}</h2>
                                         <div className="text-yellow-400 text-sm">★★★★★</div>
                                         <div className="text-red-500 font-bold mt-1">${product.price}</div>
                                     </div>
 
-                                    {/* Add to Cart Button */}
+
                                     <div className="absolute bottom-2 right-2 p-2  rounded-full ">
                                         <AddToCart product={product} />
                                     </div>
