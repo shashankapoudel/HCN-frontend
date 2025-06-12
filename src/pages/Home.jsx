@@ -4,6 +4,7 @@ import CategoryWiseProducts from '../components/CategoryWiseProducts';
 import Gallery from '../components/Gallery';
 import GalleryCard from '../components/Gallery';
 import ProductBadge from '../components/ProductBadges';
+import Socialmedia from '../components/Socialmedia';
 
 const Home = () => {
     return (
@@ -34,12 +35,16 @@ const Home = () => {
                 <ProductBadge />
             </div>
 
-            <div className='p-2 md:p-4'>
+            {/* <div className='p-2 md:p-4'>
                 <CategoryWiseProducts />
-            </div>
+            </div> */}
 
             <div className='p-2 md:p-4 '>
                 <GalleryCard />
+            </div>
+
+            <div className='p-2 md:p-4 '>
+                <Socialmedia />
             </div>
 
         </div>

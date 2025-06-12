@@ -29,6 +29,7 @@ import OurTeam from './pages/OurTeam'
 import ScrollToTop from './components/ScrollToTop'
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton'
 import TestimonialsPage from './pages/Testimonials'
+import OfferPopUp from './components/OfferPopUp'
 
 
 
@@ -91,6 +92,7 @@ function AppWrapper() {
   return (
     <BrowserRouter>
       <App />
+      <OfferPopUp />
       <ScrollToTop />
       <WhatsAppFloatingButton />
     </BrowserRouter>

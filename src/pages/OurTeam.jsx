@@ -9,21 +9,24 @@ const OurTeam = () => {
         {
             name: 'Akash Banjara',
             image: '/Images/akashbanjara.jpg',
-            role: 'Managing Director'
+            role: 'Managing Director',
+            description: 'A Sound Healing expert with years of experience, Akash Banjara blends ancient Nepalese traditions and vibrational therapy to guide others on their journey of inner peace, balance, and spiritual well-being.'
         },
         {
             name: 'Kapil Bagale',
-            image: '/Images/kapilbagale.jpg',
-            role: 'Operational Manager'
+            image: '/Images/kapil.jpg',
+            role: 'Operational Manager',
+            description: 'A Sound Healing expert with years of experience, Akash Banjara blends ancient Nepalese traditions and vibrational therapy to guide others on their journey of inner peace, balance, and spiritual well-being.'
         },
         {
             name: 'Alish Banjara',
-            image: '/Images/alishbanjara.jpg',
-            role: 'Operational Manager'
+            image: '/Images/alish.jpg',
+            role: 'Operational Manager',
+            description: 'A Sound Healing expert with years of experience, Akash Banjara blends ancient Nepalese traditions and vibrational therapy to guide others on their journey of inner peace, balance, and spiritual well-being.'
         },
         {
             name: 'Ishwor Bagale',
-            image: '/Images/homeImage.png',
+            image: '/Images/ishwor.jpg',
             role: 'Inventory Assistant'
         },
         {
@@ -51,7 +54,7 @@ const OurTeam = () => {
 
     return (
         <div className='p-8 w-full flex flex-col items-center justify-center gap-4'>
-            <h1 className='text-3xl font-bold text-[#0B4D81]  font-edensor'>Our Team</h1>
+            <h1 className='text-3xl font-bold text-[#0B4D81] font-edensor'>Our Team</h1>
 
 
             <motion.div
@@ -67,16 +70,17 @@ const OurTeam = () => {
                     variants={cardVariants}
                     className='w-full lg:w-1/2  p-4'>
                     <p className='text-[#666666] mt-2 font-medium font-poppins  lg:tracking-normal tracking-normal text-justify max-w-6xl text-sm lg:text-lg'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur odio libero, at vitae alias, odit dolorum molestiae aliquid numquam quia ducimus, laboriosam vero rerum fuga expedita atque incidunt dolorem accusantium.lo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates asperiores iure hic tempore suscipit eos cum ab obcaecati, quia molestias ipsum saepe quas sed, quaerat velit. Sit, ex atque. Pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consectetur tenetur illum eaque velit id sapiente voluptas odio quos? Similique molestiae quam necessitatibus aut aliquam est vitae dolorum suscipit esse?Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime accusantium error ad adipisci, ullam et quasi quam dolore voluptates eum, qui aut voluptatibus ea! Impedit explicabo fuga odit omnis sequi.
+                        At Himalayas Crafts Nepal, our team is built on the deep roots of Nepalese culture and spiritual tradition. Each member comes from a background rich in healing practices, traditional music, and the sacred art of sound therapy. We are proud to have experienced healers and experts in singing bowls, with deep knowledge of sound frequencies, chakra alignment, and meditation tools. Working closely with skilled local artisans, we ensure that every product is handcrafted using ancient Nepalese and Tibetan techniques. From ethical sourcing to energetic cleansing, we take great care to honor the spiritual value of each item we offer.<br />
+                        Our well-organized store in Thamel, Kathmandu is run by a friendly and professional team dedicated to smooth operations, timely delivery, and excellent customer support. We guide each customer with care—helping them find the perfect singing bowl or spiritual tool for their journey. Beyond sales, we believe in building long-term relationships, listening to feedback, and offering ongoing support.
                     </p>
                 </motion.div>
 
                 <motion.div
                     variants={cardVariants}
-                    className=' w-full lg:w-1/2 p-4'>
+                    className=' w-full h-full lg:w-1/2 p-4 mt-4 '>
                     <img
                         src='/Images/team1.jpg'
-                        className='object-cover h-full rounded-md w-full'
+                        className='object-cover w-full h-full rounded-md'
                     />
                 </motion.div>
 
@@ -95,14 +99,22 @@ const OurTeam = () => {
                         <motion.div
                             variants={cardVariants}
                             key={index}
+                            className=''
                         >
-                            <img
-                                src={team.image}
-                                className='object-cover w-80 h-80 border'
-                                alt={team.name}
-                            />
-                            <p className='text-center text-lg font-edensor leading-relaxed'>{team.role}</p>
-                            <p className='text-center text-lg leading-relaxed font-poppins font-semibold text-[#0B4D81] '>{team.name}</p>
+                            <div className='border-8 border-gray-400'>
+                                <img
+                                    src={team.image}
+                                    className='object-cover w-80 h-80 '
+                                    alt={team.name}
+                                />
+                            </div>
+
+                            <div className=''>
+                                <p className='text-center text-lg font-edensor'>{team.role}</p>
+                                <p className='text-center text-lg  font-poppins font-semibold text-[#0B4D81]'>{team.name}</p>
+                                <p className='text-center text-lg  font-edensor max-w-xl'>{team.description}</p>
+                            </div>
+
                         </motion.div>
                     ))
                 }
@@ -123,13 +135,16 @@ const OurTeam = () => {
                             key={index}
                             className='flex flex-col items-center justify-center'
                         >
-                            <img
-                                src={team.image}
-                                className='object-cover w-80 h-80'
-                                alt={team.name}
-                            />
-                            <p className='text-center text-lg font-edensor leading-relaxed'>{team.role}</p>
-                            <button className='text-center text-lg leading-relaxed font-poppins font-semibold text-[#0B4D81] '>{team.name}</button>
+                            <div className='border-8 border-gray-400'>
+                                <img
+                                    src={team.image}
+                                    className='object-cover w-80 h-80'
+                                    alt={team.name}
+                                />
+                            </div>
+
+                            <p className='text-center text-lg font-edensor'>{team.role}</p>
+                            <button className='text-center text-lg  font-poppins font-semibold text-[#0B4D81] '>{team.name}</button>
                         </motion.div>
                     ))
                 }

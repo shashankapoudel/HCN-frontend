@@ -151,7 +151,6 @@
 
 
 
-
 import React, { useEffect, useState } from 'react';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
@@ -195,7 +194,7 @@ const OurFactories = () => {
         setCurrentImageIndex(0);
     }, [currentIndex]);
 
-    // Auto change image every 2.5 seconds  
+
     useEffect(() => {
         const imageTimer = setInterval(() => {
             setCurrentImageIndex((prev) =>

@@ -229,7 +229,7 @@ const BlogPage = () => {
     }, [active, blogs])
 
     return (
-        <div className="p-4 lg:p-8 min-h-screen">
+        <div className="p-4 lg:p-8 min-h-screen bg-gray-100">
             <h1 className="text-center text-3xl font-bold text-[#111111] ">Our Blogs</h1>
 
             <div className="grid grid-cols-2 lg:flex space-x-4 space-y-2 md:space-y-0 lg:space-x-6 w-full justify-between p-2 mt-3">
@@ -272,7 +272,7 @@ const BlogPage = () => {
                 </div>
             ) : (
 
-                <div className="grid grid-cols-3 gap-4 p-4">
+                <div className="grid grid-cols-4 gap-8 p-4">
                     {activeBlogs.map((blog) => {
                         const textContent = blog.content.replace(/<[^>]+>/g, "");
                         const snippet =
@@ -284,23 +284,23 @@ const BlogPage = () => {
                             <div
                                 key={blog._id}
                                 onClick={() => setSelectedBlog(blog)}
-                                className="flex flex-col rounded-lg p-4 items-start cursor-pointer"
+                                className="flex flex-col rounded-lg p-4 items-start cursor-pointer bg-[#ffffff] shadow-lg hover:text-[#bb2821] relative"
                             >
                                 <img
                                     src={blog.images[0]}
                                     alt={blog.title}
-                                    className="w-full  rounded-md mr-4 object-cover"
+                                    className="w-full rounded-md mr-4 object-cover transition-transform duration-300 transform hover:scale-105"
                                 />
-                                <div>
+                                <div className="mt-3 p-2">
                                     <h3
-                                        className="text-lg font-bold text-gray-900 mb-2 cursor-pointer"
+                                        className="text-lg font-bold text-gray-900 mb-2 cursor-pointer hover:text-[#bb2821]"
                                     >
                                         {blog.title}
                                     </h3>
                                     <p className="text-gray-600 text-sm">{snippet}</p>
                                     <a
                                         // onClick={() => setSelectedBlog(blog)}
-                                        className="underline text-[#bb2821]">Read more</a>
+                                        className="underline text-[#bb2821] absolute bottom-2 right-2">Read more</a>
                                 </div>
                             </div>
                         );
