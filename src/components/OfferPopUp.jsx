@@ -43,9 +43,6 @@ const OfferPopUp = () => {
                             />
                         </div>
 
-
-
-
                     </div>
                 </div>
             )}

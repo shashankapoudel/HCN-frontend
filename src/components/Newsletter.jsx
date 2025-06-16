@@ -9,7 +9,6 @@ const Newsletter = ({ text, title }) => {
         setEmail(e.target.value)
     }
 
-
     const handleSubmit = async () => {
 
         const res = await fetch(`${BASE_URL}/newsletter/getsubscription`, {
