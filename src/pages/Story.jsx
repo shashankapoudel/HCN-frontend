@@ -66,7 +66,7 @@ const Story = () => {
 
                     <div className='w-full lg:w-1/2 mt-8 '>
                         <img
-                            src=''
+                            src='/Images/OurStory5.jpg'
                             className="object-cover p-4 w-full rounded-md"
                             alt="Home"
                         />

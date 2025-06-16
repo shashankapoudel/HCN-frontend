@@ -9,6 +9,7 @@ import 'react-quill/dist/quill.snow.css';
 
 
 const BlogModal = ({ isOpen, onClose, existingData }) => {
+    console.log(existingData)
 
     const categories = ['Select a category', 'History', 'Product Guide', 'Product Benefits', 'Choosing Products', 'Behind the process', 'Ideas', 'Spiritual Guides']
 

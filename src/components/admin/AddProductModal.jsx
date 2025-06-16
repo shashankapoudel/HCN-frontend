@@ -4,7 +4,7 @@ import BASE_URL from "../../config/api";
 import AccessorisUpload from "./AccessorisUpload";
 
 
-const AddProductModal = ({ isOpen, onClose }) => {
+const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
 
     const [name, setName] = useState("")
     const [weight, setWeight] = useState("")
@@ -19,6 +19,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
     const [images, setImages] = useState([]);
     const [audio, setAudio] = useState(null);
     const [subcategorycategory, setSubcategorycategory] = useState("")
+    const [isLoading, setIsLoading] = useState(false);
 
 
     const [filteredSubcategories, setFilteredSubcategories] = useState([]);
@@ -70,9 +71,42 @@ const AddProductModal = ({ isOpen, onClose }) => {
         }
     }, [subcategory])
 
+    console.log(existingData)
+    useEffect(() => {
+        if (existingData) {
+            setName(existingData.name || "")
+            setWeight(existingData.weight || "")
+            setCategory(existingData.category || "")
+            setSubCategory(existingData.subcategory || "")
+            setStock(existingData.stock || "")
+            setPrice(existingData.price || "")
+            setSize(existingData.size || "")
+            setMaterial(existingData.material || "")
+            setOverview(existingData.overview || "")
+            setDescription(existingData.description || "")
+            setImages(existingData.images || []);
+            setAudio(existingData.audio || null)
+            setSubcategorycategory(existingData.subcategorycategory || "")
+
+        } else {
+            setName("")
+            setWeight("")
+            setCategory("")
+            setSubCategory("")
+            setStock("")
+            setPrice("")
+            setSize("")
+            setMaterial("")
+            setOverview("")
+            setDescription("")
+            setImages([])
+            setAudio(null)
+        }
+    }, [existingData]);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+        setIsLoading(true);
         const formData = new FormData();
         formData.append("name", name);
         formData.append("category", category);
@@ -87,8 +121,11 @@ const AddProductModal = ({ isOpen, onClose }) => {
         formData.append("description", description);
 
         images.forEach((image) => {
-
-            formData.append("images", image);
+            if (image instanceof File) {
+                formData.append("images", image);
+            } else if (typeof image === "string") {
+                formData.append("existingImages", image);
+            }
         });
 
         if (audio) {
@@ -96,13 +133,12 @@ const AddProductModal = ({ isOpen, onClose }) => {
         }
 
         try {
-            const res = await fetch(`${BASE_URL}/product/admin/addproduct`, {
+            const res = await fetch(!existingData ? `${BASE_URL}/product/admin/addproduct` : `${BASE_URL}/product/updateproduct/${existingData._id}`, {
                 method: 'POST',
                 body: formData
             });
 
             const responseData = await res.json();
-            console.log(responseData);
             setName("");
             setWeight("");
             setCategory("");
@@ -119,8 +155,11 @@ const AddProductModal = ({ isOpen, onClose }) => {
             setFilteredSubcategories([]);
             setFilteredSubcategorycategory([]);
             onClose()
+            setRefresh(!refresh)
         } catch (error) {
             console.error("Error uploading product:", error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -315,7 +354,12 @@ const AddProductModal = ({ isOpen, onClose }) => {
                         type="submit"
                         onClick={handleSubmit}
                         className="px-4 py-2 bg-blue-600 text-white rounded">
-                        Save and Submit
+                        {isLoading ? (
+                            <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                            </svg>
+                        ) : "Save and Submit"}
                     </button>
                 </div>
 
