@@ -226,7 +226,7 @@ const BlogPage = () => {
     useEffect(() => {
         const filtered = active === 'All' ? blogs : blogs.filter((blog) => blog.category === active);
         setActiveBlogs(filtered);
-        setCurrentPage(1); // reset page on category change
+        setCurrentPage(1);
     }, [active, blogs]);
 
     const indexOfLastBlog = currentPage * blogsPerPage;
@@ -254,7 +254,7 @@ const BlogPage = () => {
                 ))}
             </div>
 
-            {/* Blog Details View */}
+
             {selectedBlog ? (
                 <div className="w-full lg:w-2/3 mx-auto rounded-lg p-3 lg:p-6 ">
                     <button
@@ -276,7 +276,7 @@ const BlogPage = () => {
                 </div>
             ) : (
                 <>
-                    {/* Blog Grid */}
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                         {currentBlogs.map((blog) => {
                             const textContent = blog.content.replace(/<[^>]+>/g, "");
@@ -307,7 +307,7 @@ const BlogPage = () => {
                         })}
                     </div>
 
-                    {/* Pagination */}
+
                     <div className="flex justify-center mt-6 space-x-2 flex-wrap">
                         <button
                             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
