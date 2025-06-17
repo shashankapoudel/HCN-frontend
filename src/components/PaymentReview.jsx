@@ -57,7 +57,12 @@ const PaymentReview = ({ nextStep, prevStep }) => {
                             className="flex items-center justify-between text-sm py-4"
                         >
                             <div className="flex gap-3">
-                                <img src={item.image} alt={item.name} className="w-auto h-12 object-cover" />
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="w-auto h-12 object-cover"
+                                    loading="lazy"
+                                />
                                 <div className="flex flex-col">
                                     <p className="font-semibold text-gray-800">{item.name}</p>
                                     <p className="text-gray-500 text-sm">{item.category}</p>

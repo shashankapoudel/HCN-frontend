@@ -254,12 +254,14 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="flex py-2 items-center justify-between text-base px-4 md:px-10 bg-[#FFFFFF]">
+            <div className="flex py-2 items-center justify-between text-base px-4 md:px-10 bg-[#FFFFFF] shadow-md">
                 <div className='flex items-center gap-2 cursor-pointer' onClick={() => navigate('/')}>
                     <img
                         src='/Images/Logo.png'
                         className='object-cover w-64'
-                        alt="Logo" />
+                        alt="Logo"
+                        loading='lazy'
+                    />
                 </div>
 
                 <div className='w-2/3 md:w-1/3'>

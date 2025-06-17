@@ -16,6 +16,7 @@ const Home = () => {
                     src="/Images/homeImage.png"
                     className="object-cover w-full max-h-screen relative z-[-1]"
                     alt="Home"
+                    loading='lazy'
                 />
 
                 <div className="absolute inset-0 flex  mt-12 lg:mt-56 lg:justify-start px-4 md:px-8 z-[-1]">

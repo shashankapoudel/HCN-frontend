@@ -106,6 +106,7 @@ const Cart = () => {
                                     <img
                                         src={item.images[0]}
                                         className='object-cover w-12 h-12'
+                                        loading='lazy'
                                     />
                                     <div className='flex flex-col'>
                                         <p className="font-semibold text-[#101828]">{item.name}</p>

@@ -23,6 +23,7 @@ const Footer = () => {
                     src='/Images/logo_FOOTER.png'
                     className='object-cover w-44'
                     alt="Logo"
+                    loading='lazy'
                 />
 
                 <div className='flex items-center gap-2 text-[#090914]'>

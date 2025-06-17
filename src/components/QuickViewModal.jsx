@@ -17,6 +17,7 @@ const QuickViewModal = ({ isModalOpen, onClose, quickviewproduct, setQuickviewpr
                             src={quickviewproduct.images?.[0]}
                             alt={quickviewproduct.name}
                             className="w-3/4 object-cover mb-2 rounded"
+                            loading='lazy'
                         />
                     </div>
 
@@ -46,11 +47,7 @@ const QuickViewModal = ({ isModalOpen, onClose, quickviewproduct, setQuickviewpr
 
                         </div>
                     </div>
-
-
                 </div>
-
-
 
                 <button
                     type="button"

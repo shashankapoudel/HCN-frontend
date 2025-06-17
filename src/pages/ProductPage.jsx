@@ -141,6 +141,7 @@ const ProductPage = () => {
                                         src={product.images?.[0]}
                                         alt={product.name}
                                         className="w-full object-cover rounded cursor-pointer"
+                                        loading='lazy'
                                     />
 
                                     <div className="mt-3">

@@ -69,6 +69,7 @@ const Story = () => {
                             src='/Images/OurStory5.jpg'
                             className="object-cover p-4 w-full rounded-md"
                             alt="Home"
+                            loading='lazy'
                         />
                     </div>
 

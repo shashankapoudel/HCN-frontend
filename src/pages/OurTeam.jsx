@@ -268,6 +268,7 @@ const OurTeam = () => {
                     <img
                         src='/Images/team1.jpg'
                         className='object-cover w-full h-full rounded-md'
+                        loading='lazy'
                     />
                 </motion.div>
 
@@ -301,6 +302,7 @@ const OurTeam = () => {
                                         src={team.image}
                                         className='object-cover w-72 h-72'
                                         alt={team.name}
+                                        loading='lazy'
                                     />
                                 </div>
 
@@ -342,6 +344,7 @@ const OurTeam = () => {
                                     src={team.image}
                                     className='object-cover w-80 h-80'
                                     alt={team.name}
+                                    loading='lazy'
                                 />
                             </div>
 

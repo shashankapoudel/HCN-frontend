@@ -14,7 +14,7 @@ const SingleProductPage = () => {
             try {
                 const res = await fetch(`${BASE_URL}/product/${id}`);
                 const data = await res.json();
-        
+
                 setProduct(data.data);
                 setLoading(false);
             } catch (error) {
@@ -40,6 +40,7 @@ const SingleProductPage = () => {
                         src={product.images?.[0]}
                         alt={product.name}
                         className="w-3/4 object-cover mb-2 rounded"
+                        loading='lazy'
                     />
                 </div>
 

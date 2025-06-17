@@ -257,6 +257,7 @@ const WhyHCN = () => {
                         src={Services[currentIndex].image}
                         className="object-cover rounded-md w-full"
                         alt="Home"
+                        loading='lazy'
                     />
                 </div>
 

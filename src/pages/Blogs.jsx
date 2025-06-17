@@ -268,6 +268,7 @@ const BlogPage = () => {
                         src={selectedBlog.images[0]}
                         alt={selectedBlog.title}
                         className="w-full rounded-md mb-4 object-contain"
+                        loading="lazy"
                     />
                     <div
                         className="text-gray-700 prose max-w-none"
@@ -294,6 +295,7 @@ const BlogPage = () => {
                                         src={blog.images[0]}
                                         alt={blog.title}
                                         className="w-full rounded-md object-cover transition-transform duration-300 transform hover:scale-105"
+                                        loading="lazy"
                                     />
                                     <div className="mt-3 p-2">
                                         <h3 className="text-lg font-bold text-gray-900 mb-2 hover:text-[#bb2821]">

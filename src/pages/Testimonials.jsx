@@ -48,7 +48,12 @@ export default function TestimonialsPage() {
                     {testimonials.map((t, index) => (
                         <div key={index} className="bg-white shadow-xl rounded-2xl p-4">
                             <div className="flex items-start gap-4">
-                                <img src={t.avatar} alt={t.name} className="w-16 h-16 rounded-full" />
+                                <img
+                                    src={t.avatar}
+                                    alt={t.name}
+                                    className="w-16 h-16 rounded-full"
+                                    loading="lazy"
+                                />
                                 <div>
                                     <p className="font-semibold">{t.name} <span className="text-gray-500">{t.handle}</span></p>
                                     <p className="text-sm text-gray-700 mt-1">{t.text}</p>

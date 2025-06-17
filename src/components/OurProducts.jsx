@@ -23,6 +23,7 @@ const OurProducts = () => {
                             <img
                                 src={product.images[0]}
                                 className='object-cover'
+                                loading='lazy'
                             />
                             <h1 className='text-left text-[#111111] font-bold text-base capitalize'>{product.name}</h1>
                             <p className=' text-[#111111] font-light text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>

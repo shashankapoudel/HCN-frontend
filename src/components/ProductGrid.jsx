@@ -22,6 +22,7 @@ const ProductGrid = ({ title, description, products }) => {
                                 src={product.images[0]}
                                 alt={product.name}
                                 className='object-cover h-full'
+                                loading='lazy'
                             />
                         </div>
 

@@ -28,6 +28,7 @@ const AddAccessories = () => {
                             <img
                                 src={p.images[0]}
                                 className='w-full object-cover'
+                                loading='lazy'
                             />
 
                         </div>

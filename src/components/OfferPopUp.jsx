@@ -51,6 +51,7 @@ const OfferPopUp = () => {
                             <img
                                 src='/Images/OurStory5.jpg'
                                 className='w-full h-full object-cover'
+                                loading='lazy'
                             />
                         </div>
 
