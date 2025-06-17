@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaChevronUp } from "react-icons/fa";
 
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +14,7 @@ const ScrollToTop = () => {
     // };
 
     const toggleVisibility = () => {
-        const threshold = 100; // px before bottom where visibility triggers
+        const threshold = 100;
         if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - threshold) {
             setIsVisible(true);
         } else {
@@ -37,13 +38,14 @@ const ScrollToTop = () => {
     }, []);
 
     return (
-        <div className="fixed bottom-6 right-24">
+        <div className="fixed bottom-7 right-24">
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className="p-4 bg-transparent font-extrabold text-5xl bg-blue-500 text-[#a7594d] rounded-full shadow-lg  transition-all duration-300"
+                    className="p-4  font-extrabold text-xl bg-[#bb2821]  text-white rounded-full shadow-lg  transition-all duration-300"
                 >
-                    ↑
+                    <FaChevronUp />
+
                 </button>
             )}
         </div>
