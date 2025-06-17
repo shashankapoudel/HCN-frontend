@@ -15,7 +15,7 @@ const ProductGrid = ({ title, description, products }) => {
                 {products.map((product) => (
                     <div
                         key={product._id}
-                        className='w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-6'
+                        className='w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-6 relative'
                     >
                         <div className='bg-[#EBEBEB] flex items-center justify-center'>
                             <img
@@ -26,15 +26,18 @@ const ProductGrid = ({ title, description, products }) => {
                             />
                         </div>
 
-                        <div className='mt-3'>
-                            <h1 className='text-[#111111] font-semibold text-base capitalize'>
-                                {product.name}
-                            </h1>
-                            <p className='text-[#606060] text-sm mt-1'>
-                                {product.description?.slice(0, 60) || 'Category description goes here...'}
-                            </p>
 
-                            <div className='flex justify-between items-center mt-2'>
+                        <div className='flex flex-col gap-2'>
+                            <div className='mt-3'>
+                                <h1 className='text-[#111111] font-semibold text-base capitalize'>
+                                    {product.name}
+                                </h1>
+                                <p className='text-[#606060] text-sm mt-1'>
+                                    {product.description?.slice(0, 60) || 'Category description goes here...'}
+                                </p>
+                            </div>
+
+                            <div className='flex justify-between items-center mt-2  bottom-2'>
                                 <p className='text-[#bb2821] font-bold'>${product.price}</p>
                                 <AddToCart product={product} />
                             </div>

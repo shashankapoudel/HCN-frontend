@@ -19,18 +19,26 @@ const OurProducts = () => {
 
                 {
                     products.slice(0, 4).map((product) => (
-                        <div key={product._id} className='w-full p-6 bg-white shadow-lg'>
-                            <img
-                                src={product.images[0]}
-                                className='object-cover'
-                                loading='lazy'
-                            />
-                            <h1 className='text-left text-[#111111] font-bold text-base capitalize'>{product.name}</h1>
-                            <p className=' text-[#111111] font-light text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+                        <div key={product._id} className='w-full flex flex-col p-6 bg-white shadow-lg justify-between'>
+                            <div>
+                                <img
+                                    src={product.images[0]}
+                                    className='object-cover'
+                                    loading='lazy'
+                                />
+                            </div>
 
-                            <div className='flex justify-between items-center'>
-                                <p className='text-[#bb2821] font-bold '>${product.price}</p>
-                                <AddToCart product={product} />
+
+                            <div className='flex flex-col gap-2'>
+                                <div>
+                                    <h1 className='text-left text-[#111111] font-bold text-base capitalize'>{product.name}</h1>
+                                    <p className=' text-[#111111] font-light text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+                                </div>
+
+                                <div className='flex justify-between items-center bottom-2'>
+                                    <p className='text-[#bb2821] font-bold '>${product.price}</p>
+                                    <AddToCart product={product} />
+                                </div>
                             </div>
                         </div>
                     ))
