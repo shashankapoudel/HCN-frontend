@@ -40,7 +40,7 @@ const Socialmedia = () => {
                 Your browser does not support the video tag.
             </video>
 
-            {/* Overlay Content */}
+
             <div className='relative z-10 flex flex-col items-center justify-center p-4 lg:p-16 lg:gap-7 gap-4 text-white'>
                 <h1 className='text-2xl lg:text-5xl font-bold'>Join Our Community</h1>
                 <p className='text-base lg:text-2xl text-center'>

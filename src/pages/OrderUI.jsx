@@ -4,7 +4,7 @@ import ShippingAddress from '../components/ShippingAddress'
 import PaymentReview from '../components/PaymentReview'
 import OrderConfirmation from '../components/OrderConfirmation'
 import StepSideBar from '../components/StepSideBar'
-import TotalOrder from '../components/totalOrder'
+import TotalOrder from '../components/TotalOrder'
 import BASE_URL from '../config/api'
 
 const Order = () => {

@@ -235,7 +235,7 @@ const WhyHCN = () => {
         setTimeout(() => {
             setCurrentIndex((prev) => (prev + 1) % Services.length);
             setIsFlipping(false);
-        }, 500); // half duration of animation
+        }, 500);
     };
 
     const handlePrevious = () => {

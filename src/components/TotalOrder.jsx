@@ -45,4 +45,4 @@ const TotalOrder = ({ step, nextStep, prevStep }) => {
     )
 }
 
-export default TotalOrder
+export default TotalOrder;

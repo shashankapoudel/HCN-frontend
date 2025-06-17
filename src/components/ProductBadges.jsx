@@ -35,7 +35,7 @@ const ProductBadges = () => {
 
     return (
         <div className='w-full p-3'>
-            {/* Tabs */}
+        
             <div className='flex justify-center items-center space-x-6 '>
                 {['favorite', 'latest', 'sale'].map((tab) => (
                     <button

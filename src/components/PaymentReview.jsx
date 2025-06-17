@@ -8,7 +8,7 @@ const PaymentReview = ({ nextStep, prevStep }) => {
             category: "Singing Bowl",
             quantity: 3,
             price: 250.0,
-            image: "/Images/homeImage.png", // Replace with actual image URL
+            image: "/Images/homeImage.png",
         },
         {
             id: 2,
