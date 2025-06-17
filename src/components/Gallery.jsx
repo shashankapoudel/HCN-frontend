@@ -19,15 +19,15 @@ const GalleryCard = () => {
 
     const imagesPerPage = 3;
 
-    useEffect(() => {
-        let interval;
-        if (!isHovered) {
-            interval = setInterval(() => {
-                setCurrentIndex((prev) => (prev >= images.length - imagesPerPage ? 0 : prev + 1));
-            }, 5000);
-        }
-        return () => clearInterval(interval);
-    }, [isHovered, imagesPerPage, images.length]);
+    // useEffect(() => {
+    //     let interval;
+    //     if (!isHovered) {
+    //         interval = setInterval(() => {
+    //             setCurrentIndex((prev) => (prev >= images.length - imagesPerPage ? 0 : prev + 1));
+    //         }, 5000);
+    //     }
+    //     return () => clearInterval(interval);
+    // }, [isHovered, imagesPerPage, images.length]);
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) =>
