@@ -28,16 +28,16 @@ const ProductGrid = ({ title, description, products }) => {
 
 
                         <div className='flex flex-col gap-2'>
-                            <div className='mt-3'>
-                                <h1 className='text-[#111111] font-semibold text-base capitalize'>
+                            <div className=''>
+                                <h1 className='text-[#111111] font-bold text-base capitalize'>
                                     {product.name}
                                 </h1>
-                                <p className='text-[#606060] text-sm mt-1'>
+                                <p className='text-[#606060] text-base font-edensor'>
                                     {product.description?.slice(0, 60) || 'Category description goes here...'}
                                 </p>
                             </div>
 
-                            <div className='flex justify-between items-center mt-2  bottom-2'>
+                            <div className='flex justify-between items-center'>
                                 <p className='text-[#bb2821] font-bold'>${product.price}</p>
                                 <AddToCart product={product} />
                             </div>

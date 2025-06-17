@@ -32,10 +32,10 @@ const OurProducts = () => {
                             <div className='flex flex-col gap-2'>
                                 <div>
                                     <h1 className='text-left text-[#111111] font-bold text-base capitalize'>{product.name}</h1>
-                                    <p className=' text-[#111111] font-light text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+                                    <p className=' text-[#606060]  font-edensor text-base'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
                                 </div>
 
-                                <div className='flex justify-between items-center bottom-2'>
+                                <div className='flex justify-between items-center'>
                                     <p className='text-[#bb2821] font-bold '>${product.price}</p>
                                     <AddToCart product={product} />
                                 </div>
