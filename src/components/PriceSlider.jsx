@@ -12,6 +12,7 @@ const PriceSlider = ({ minPrice, maxPrice, selectedRange = [minPrice, maxPrice],
             <h2 className="font-semibold text-gray-800 mb-2">Filter by Price (Rs.)</h2>
 
             <div className="px-2">
+
                 <Slider
                     range
                     min={minPrice}
