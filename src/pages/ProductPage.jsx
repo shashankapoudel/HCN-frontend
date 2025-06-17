@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SubCategoryFilter from '../components/SubCategoryFilter';
 import SubSubCategoryFilter from '../components/SubSubCategoryFilter';
-import SubSubSubCategoryFilter from '../components/SubSubSubCategoryFilter';
-import PriceFilter from '../components/SizeFilter';
+// import SubSubSubCategoryFilter from '../components/SubSubSubCategoryFilter';
+// import PriceFilter from '../components/SizeFilter';
 import AddToCart from '../components/AddToCart';
-import PriceSlider from '../components/priceSlider';
+import PriceSlider from '../components/PriceSlider';
 import { ProductContext } from "../context/ProductProvider";
 import QuickViewModal from '../components/QuickViewModal';
 
