@@ -20,6 +20,7 @@ const OurProducts = () => {
                 {
                     products.slice(0, 4).map((product) => (
                         <div key={product._id} className='w-full flex flex-col p-6 bg-white shadow-lg justify-between'>
+
                             <div>
                                 <img
                                     src={product.images[0]}

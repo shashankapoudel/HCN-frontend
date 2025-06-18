@@ -238,7 +238,7 @@ const OurTeam = () => {
     };
 
     return (
-        <div className='p-8 w-full flex flex-col items-center justify-center gap-4'>
+        <div className='p-4 lg:p-8 w-full flex flex-col items-center justify-center gap-4'>
             <h1 className='text-3xl font-bold text-[#0B4D81] font-edensor'>Our Team</h1>
 
             <motion.div
@@ -248,11 +248,11 @@ const OurTeam = () => {
                 exit="hidden"
                 viewport={{ amount: 0.2 }}
 
-                className='flex'>
+                className='flex flex-col-reverse lg:flex-row'>
 
                 <motion.div
                     variants={cardVariants}
-                    className='w-full lg:w-1/2  p-4'
+                    className='w-full lg:w-1/2 p-2 lg:p-4'
                 >
 
                     <p className='text-[#666666] mt-2 font-poppins  lg:tracking-normal tracking-normal text-justify max-w-6xl text-sm lg:text-lg'>
@@ -264,7 +264,7 @@ const OurTeam = () => {
 
                 <motion.div
                     variants={cardVariants}
-                    className=' w-full h-full lg:w-1/2  mt-4 border-4 border-gray-400 '>
+                    className=' w-full h-full lg:w-1/2 mt-4 border-4 border-gray-400 '>
                     <img
                         src='/Images/team1.jpg'
                         className='object-cover w-full h-full rounded-md'
@@ -274,13 +274,15 @@ const OurTeam = () => {
 
             </motion.div>
 
+            <h1 className='text-2xl font-bold mt-4 text-[#666666] '>OUR TEAM</h1>
+
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 exit="hidden"
                 viewport={{ amount: 0.2 }}
-                className='flex flex-col lg:flex-row w-full lg:w-4/5 gap-12 justify-between items-center p-8 text-[#666666] mt-8'
+                className='flex flex-col lg:flex-row w-full lg:w-4/5 gap-12 justify-between items-center p-6 text-[#666666] lg:mt-6 mt-4'
             >
                 {
                     Team.slice(0, 3).map((team, index) => {
@@ -295,9 +297,9 @@ const OurTeam = () => {
                             <motion.div
                                 variants={cardVariants}
                                 key={index}
-                                className='w-[300px] flex flex-col items-center gap-2'
+                                className=' flex flex-col items-center gap-2'
                             >
-                                <div className='border-8 border-gray-400'>
+                                <div className='border-4 lg:border-8 border-gray-400'>
                                     <img
                                         src={team.image}
                                         className='object-cover w-72 h-72'
@@ -330,19 +332,19 @@ const OurTeam = () => {
                 whileInView="visible"
                 exit="hidden"
                 viewport={{ amount: 0.2 }}
-                className='grid grid-cols-1 md:grid-cols-2 w-2/3 gap-16 p-5 text-[#666666]'
+                className='grid grid-cols-1 md:grid-cols-2 lg:w-2/3 w-full gap-12 text-[#666666] items-center justify-center'
             >
                 {
                     Team.slice(3, 5).map((team, index) => (
                         <motion.div
                             variants={cardVariants}
                             key={index}
-                            className='flex flex-col items-center justify-center'
+                            className='flex flex-col items-center'
                         >
-                            <div className='border-8 border-gray-400'>
+                            <div className=' border-4 lg:border-8 border-gray-400'>
                                 <img
                                     src={team.image}
-                                    className='object-cover w-80 h-80'
+                                    className='object-cover w-72 h-72'
                                     alt={team.name}
                                     loading='lazy'
                                 />

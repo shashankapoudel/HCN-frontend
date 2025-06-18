@@ -15,7 +15,7 @@ const Footer = () => {
     const title = 'NewsLetter'
 
     return (
-        <div className='flex flex-col justify-between items-center  lg:flex-row lg:justify-between p-4 md:p-8 bg-[#FFFFFF]  bottom-0 gap-4 font-sans font-normal'>
+        <div className='flex flex-col justify-between items-center lg:flex-row lg:justify-between p-4 md:p-8 bg-[#FFFFFF]  bottom-0 gap-4 font-sans font-normal'>
 
 
             <div className='w-full p-2 flex flex-col items-center justify-center lg:items-start lg:justify-start gap-2 tracking-wide'>
@@ -165,7 +165,7 @@ const Footer = () => {
 
             </div>
 
-            <div className='flex flex-col w-full p-4 justify-center items-center md:justify-end md:items-end'>
+            <div className='flex flex-col w-full p-3 justify-center items-center md:justify-end md:items-end'>
                 <Newsletter
                     text={text}
                     title={title}
