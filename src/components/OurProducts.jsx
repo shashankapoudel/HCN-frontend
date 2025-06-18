@@ -28,7 +28,6 @@ const OurProducts = () => {
                                 />
                             </div>
 
-
                             <div className='flex flex-col gap-2'>
                                 <div>
                                     <h1 className='text-left text-[#111111] font-bold text-base capitalize'>{product.name}</h1>
