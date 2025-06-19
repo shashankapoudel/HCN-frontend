@@ -30,21 +30,21 @@ export default function FAQ() {
     const filteredFaqs = faqData.filter((data) => data.category === category)
 
     return (
-        <div className="px-8 text-gray-600 w-full min-h-screen tracking-wide leading-relaxed">
+        <div className="px-4 lg:px-8 text-gray-600 w-full min-h-screen tracking-wide leading-relaxed">
 
-            <div className="w-full flex gap-8  px-4">
+            <div className="w-full flex flex-col-reverse lg:flex-row gap-3 lg:gap-8 px-2 lg:px-4">
 
-                <div className="flex flex-col  w-1/2 p-4 gap-2 mt-16 ">
-                    <div className="flex flex-col items-start gap-2 text-sm tracking-wide">
-                        <h2 className="text-xl font-bold mb-2 text-[#0B4D81]">Frequently Asked Questions(FAQs)</h2>
+                <div className="flex flex-col w-full  lg:w-1/2 p-0 lg:p-4 gap-2 mt-4 lg:mt-16  ">
+                    <div className="flex flex-col items-start gap-2 text-sm tracking-wide w-full">
+                        <h2 className="text-base font-bold mb-2 text-[#0B4D81] w-full">Frequently Asked Questions(FAQs)</h2>
                         <p className=" mb-4 text-sm text-[#606060] leading-loose tracking-wide">Have questions?Here you'll find answers most valued by our partners Lorem  ipsum dolor sit amet consectetur adipisicing elit. Unde exercitationem laudantium suscipit ipsa? Eius cupiditate ut praesentium fugiat voluptatibus impedit sint minus consequatur</p>
                     </div>
 
                     <div className="w-full flex flex-col gap-8 ">
 
-                        <div className="flex gap-8">
+                        <div className="flex flex-col lg:flex-row  gap-8">
 
-                            <div className="flex flex-col gap-2 w-1/3">
+                            <div className="flex flex-col gap-2 w-full lg:w-1/3">
                                 {["General", "Products", "Product Maintenance"].map((cat, index) => (
                                     <button
                                         key={index}
@@ -57,7 +57,7 @@ export default function FAQ() {
                                 ))}
                             </div>
 
-                            <div className="flex flex-col gap-2 w-1/3
+                            <div className="flex flex-col gap-2 w-full lg:w-1/3
                              items-center justify-center">
                                 <button
                                     onClick={() => handleCategory("Customer Support")}
@@ -68,7 +68,7 @@ export default function FAQ() {
                                 </button>
                             </div>
 
-                            <div className="flex flex-col gap-2 w-1/3">
+                            <div className="flex flex-col gap-2 w-full lg:w-1/3">
                                 {["Payments", "Shipping and Orders", "Refund Policy"].map((cat, index) => (
                                     <button
                                         key={index}
@@ -82,8 +82,6 @@ export default function FAQ() {
                             </div>
                         </div>
 
-
-
                         <div className="w-full">
                             {
                                 category && (
@@ -94,7 +92,7 @@ export default function FAQ() {
                                                     className="bg-[#F9F9F9] p-4 text-sm"
                                                 >
                                                     <button
-                                                        className="flex justify-between text-base w-full font-light"
+                                                        className="flex justify-between text-sm lg:text-base w-full font-light"
                                                         onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                                     >
                                                         {faq.question}
@@ -113,11 +111,11 @@ export default function FAQ() {
                 </div>
 
 
-                <div className="w-1/2 mb-8 ">
+                <div className=" w-full lg:w-1/2 mb-0 lg:mb-8 ">
                     <div className="flex items-start">
                         <img
                             src="/Images/faq3.png"
-                            className="object-cover w-full p-2"
+                            className="object-cover w-full h-full p-2"
                             loading="lazy"
                         />
                     </div>

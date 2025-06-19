@@ -9,6 +9,8 @@ const GalleryCard = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
 
+    const navigate = useNavigate();
+
     const images = [
         '/Images/OurStory1.jpg',
         '/Images/OurStory2.jpg',
@@ -67,8 +69,6 @@ const GalleryCard = () => {
         }
     };
 
-    const navigate = useNavigate()
-
     return (
         <div className='p-4 relative'>
             <h1 className='text-center text-3xl font-semibold text-[#111111]'>Gallery</h1>
@@ -118,6 +118,7 @@ const GalleryCard = () => {
             </div>
             <div className='flex items-end justify-end'>
                 <button
+                    onClick={() => navigate('/gallery')}
                     className='underline text-[#bb2821]'
 
                 >

@@ -30,6 +30,7 @@ import ScrollToTop from './components/ScrollToTop'
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton'
 import TestimonialsPage from './pages/Testimonials'
 import OfferPopUp from './components/OfferPopUp'
+import Gallery from './pages/GalleryPage'
 
 
 
@@ -57,6 +58,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/gallery' element={<Gallery />} />
           <Route path='/about/story' element={<Story />} />
           <Route path='/about/team' element={<OurTeam />} />
           <Route path='/services' element={<Services />} />
