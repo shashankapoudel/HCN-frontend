@@ -193,32 +193,35 @@ const OurTeam = () => {
             name: 'Akash Banjara',
             image: '/Images/akashbanjara.jpg',
             role: 'Managing Director',
-            description: 'A Sound Healing expert with years of experience, Akash Banjara blends ancient Nepalese traditions and vibrational therapy to guide others on their journey of inner peace, balance, and spiritual well-being.'
+            description: 'With years of experience in sound therapy and meditation, Akash is deeply rooted in Nepal’s ancient healing traditions. He combines this sacred knowledge with modern vibrational therapy techniques to help individuals find balance, peace, and spiritual awakening. Whether guiding sound bath sessions or selecting the finest singing bowls, Akash ensures that every product carries the purest healing energy.'
         },
         {
             name: 'Kapil Bagale',
             image: '/Images/kapil.jpg',
             role: 'Operational Manager',
-            description: 'A Sound Healing expert with years of experience, Akash Banjara blends ancient Nepalese traditions and vibrational therapy to guide others on their journey of inner peace, balance, and spiritual well-being.'
+            description: 'Kapil is the backbone of our artisan collaborations and daily operations. He works closely with local craftsmen, ensuring that each singing bowl is made with traditional methods and ethical practices. His meticulous attention to detail guarantees that only the highest-quality pieces reach our store, preserving the authenticity of Nepalese and Tibetan craftsmanship.'
         },
+
         {
             name: 'Alish Banjara',
             image: '/Images/alish.jpg',
             role: 'Operational Manager',
-            description: 'A Sound Healing expert with years of experience, Akash Banjara blends ancient Nepalese traditions and vibrational therapy to guide others on their journey of inner peace, balance, and spiritual well-being.'
+            description: 'Alish’s warm and intuitive approach makes every customer feel at home. Whether you’re visiting our Thamel store or shopping online, he takes the time to understand your spiritual and healing needs. From recommending the perfect singing bowl to assisting with custom orders, Alish ensures your experience is meaningful and uplifting.'
         },
+
         {
             name: 'Ishwor Bagale',
             image: '/Images/ishwor.jpg',
             role: 'Inventory Assistant',
-            description: 'A Sound Healing expert with years of experience, Akash Banjara blends ancient Nepalese traditions and vibrational therapy to guide others on their journey of inner peace, balance, and spiritual well-being.'
+            description: 'Ishwor oversees the careful handling of every product, from stock management to secure packaging. He ensures that your sacred items; whether a delicate Tibetan singing bowl or a handcrafted ritual tool—are delivered safely and promptly. His dedication means you receive your order in perfect condition, no matter where you are in the world.'
         },
+
         {
             name: 'Shashanka Poudel',
             image: '/Images/shashanka.jpg',
             role: 'IT officer and Web Developer',
-            description: 'A Sound Healing expert with years of experience, Akash Banjara blends ancient Nepalese traditions and vibrational therapy to guide others on their journey of inner peace, balance, and spiritual well-being.'
-        },
+            description: 'In today’s connected world, Shasanka keeps our online presence alive and responsive. He has developed and manages our website, taking care of all website-related content, design, and technical maintenance. He also handles our social media platforms, ensuring our digital presence stays active, informative, and engaging. From maintaining performance to sharing valuable content on sound healing and our offerings, Shasanka ensures a smooth and consistent experience for our online visitors.'
+        }
     ];
 
     const containerVariants = {

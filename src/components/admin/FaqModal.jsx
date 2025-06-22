@@ -7,7 +7,7 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
     const [answer, setAnswer] = useState(null)
     const [error, setError] = useState()
 
-    const faqcategory = ["Select category", "General", "Products", "Payment", "Shipping and Orders", 'Product Maintenance', 'Refund Policy', 'Customer Support']
+    const faqcategory = ["Select category", "General", "Products", "Payments", "Shipping and Orders", 'Product Maintenance', 'Refund Policy', 'Customer Support']
 
     useEffect(() => {
 

@@ -202,6 +202,7 @@ const BlogPage = () => {
         'History',
         'Product Guide',
         'Product Benefits',
+        'Payment',
         'Choosing Products',
         'Behind the process',
         'Ideas',
@@ -235,7 +236,7 @@ const BlogPage = () => {
     const totalPages = Math.max(1, Math.ceil(activeBlogs.length / blogsPerPage));
 
     return (
-        <div className="p-4 lg:p-8 min-h-screen bg-gray-100">
+        <div className="p-2 lg:p-8 min-h-screen bg-gray-100">
             <h1 className="text-center text-3xl font-bold text-[#111111]">Our Blogs</h1>
 
             {/* Category Tabs */}
