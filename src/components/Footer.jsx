@@ -119,7 +119,7 @@ const Footer = () => {
                             HCN Team
                         </NavLink>
 
-                        <NavLink to='/about' className=''>
+                        <NavLink to='/policies/terms-condition' className=''>
                             Terms and Conditions
                         </NavLink>
 
@@ -132,9 +132,10 @@ const Footer = () => {
                             Wholesale
                         </NavLink>
 
-                        <NavLink to='/about' className=''>
+                        <NavLink to='/policies/private-policy' className=''>
                             Privacy Policy
                         </NavLink>
+
 
                         <NavLink to='/about' className=''>
                             Shipping Policy

@@ -31,6 +31,9 @@ import WhatsAppFloatingButton from './components/WhatsAppFloatingButton'
 import TestimonialsPage from './pages/Testimonials'
 import OfferPopUp from './components/OfferPopUp'
 import Gallery from './pages/GalleryPage'
+import RefundPolicy from './pages/RefundPolicy'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsCondition from './pages/TermsCondition'
 
 
 
@@ -64,6 +67,9 @@ function App() {
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/faqs' element={<FAQs />} />
+          <Route path='/policies/refund-policy' element={<RefundPolicy />} />
+          <Route path='/policies/private-policy' element={<PrivacyPolicy />} />
+          <Route path='/policies/terms-condition' element={<TermsCondition />} />
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/testimonials' element={<TestimonialsPage />} />
           <Route path='/cart' element={<Cart />} />
