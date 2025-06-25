@@ -5,6 +5,7 @@ import Gallery from '../components/Gallery';
 import GalleryCard from '../components/Gallery';
 import ProductBadge from '../components/ProductBadges';
 import Socialmedia from '../components/Socialmedia';
+import CategorySingingBowl from '../components/CategorySingingBowl';
 
 const Home = () => {
     return (
@@ -36,9 +37,9 @@ const Home = () => {
                 <ProductBadge />
             </div>
 
-            {/* <div className='p-2 md:p-4'>
-                <CategoryWiseProducts />
-            </div> */}
+            <div className='p-2 md:p-4'>
+                <CategorySingingBowl />
+            </div>
 
             <div className='p-2 md:p-4 '>
                 <GalleryCard />
