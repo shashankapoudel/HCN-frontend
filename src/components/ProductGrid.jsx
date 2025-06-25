@@ -17,12 +17,27 @@ const ProductGrid = ({ title, description, products }) => {
                         key={product._id}
                         className='w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-6 relative'
                     >
-                        <div className='bg-[#EBEBEB] flex items-center justify-center'>
+                        {/* <div className='bg-[#EBEBEB] flex items-center justify-center'>
                             <img
                                 src={product.images[0]}
                                 alt={product.name}
                                 className='object-cover'
                                 loading='lazy'
+                            />
+                        </div> */}
+
+                        <div className="relative bg-[#EBEBEB]  w-full aspect-square overflow-hidden group">
+                            <img
+                                src={product.images[0]}
+                                alt={product.name}
+                                loading='lazy'
+                                className='object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer'
+                            />
+                            <img
+                                src={product.images[1]}
+                                alt={product.name}
+                                loading='lazy'
+                                className='object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer'
                             />
                         </div>
 
