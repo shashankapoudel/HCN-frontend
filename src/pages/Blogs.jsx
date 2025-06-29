@@ -295,7 +295,7 @@ const BlogPage = () => {
                                     <img
                                         src={blog.images[0]}
                                         alt={blog.title}
-                                        className="w-full rounded-md object-cover transition-transform duration-300 transform hover:scale-105"
+                                        className="w-full h-full rounded-md object-cover transition-transform duration-300 transform hover:scale-105"
                                         loading="lazy"
                                     />
                                     <div className="mt-3 p-2">
