@@ -9,7 +9,6 @@ export default function FAQ() {
     const [category, setCategory] = useState('Customer Support')
     const [active, setActive] = useState('Customer Support')
     const [faqData, setFaqData] = useState([])
-  
 
 
     useEffect(() => {

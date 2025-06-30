@@ -44,6 +44,7 @@ const Gallery = () => {
         <div className="p-8 min-h-screen">
 
             <div className='columns-3 md:columns-3 lg:columns-4 gap-1'>
+
                 {currentImages.map((img, index) => (
                     <img
                         key={index}
@@ -145,4 +146,4 @@ const Gallery = () => {
     )
 }
 
-export default Gallery
+export default Gallery;
