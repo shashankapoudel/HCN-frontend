@@ -301,7 +301,6 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
                             </div>
                         </div>
 
-                        {/* Fixed Product Overview & Description */}
                         <div>
                             <label className="block text-gray-700 font-bold mb-2">Product Overview</label>
                             <textarea

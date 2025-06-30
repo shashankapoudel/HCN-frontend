@@ -239,7 +239,7 @@ const BlogPage = () => {
         <div className="p-2 lg:p-8 min-h-screen bg-gray-100">
             <h1 className="text-center text-3xl font-bold text-[#111111]">Our Blogs</h1>
 
-            {/* Category Tabs */}
+
             <div className="grid grid-cols-2 lg:flex space-x-4 space-y-2 md:space-y-0 lg:space-x-6 w-full justify-between p-2 mt-3">
                 {categories.map((cat) => (
                     <button
