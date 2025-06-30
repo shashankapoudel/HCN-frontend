@@ -9,6 +9,8 @@ export default function FAQ() {
     const [category, setCategory] = useState('Customer Support')
     const [active, setActive] = useState('Customer Support')
     const [faqData, setFaqData] = useState([])
+  
+
 
     useEffect(() => {
         const getFaq = async () => {
@@ -28,6 +30,7 @@ export default function FAQ() {
     }
 
     const filteredFaqs = faqData.filter((data) => data.category === category)
+
 
     return (
         <div className="px-4 lg:px-8 text-gray-600 w-full min-h-screen tracking-wide leading-relaxed">

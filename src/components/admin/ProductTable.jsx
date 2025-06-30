@@ -7,7 +7,18 @@ import BASE_URL from '../../config/api';
 const ProductTable = ({ products, onEdit, setProducts, setRefresh }) => {
 
     const [modalOpen, setModalOpen] = useState(false)
+    const [activeProducts, setActiveProducts] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const ProductsPerPage = 9;
 
+    const indexOfLastProduct = currentPage * ProductsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - ProductsPerPage;
+    const currentProducts = activeProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+    const totalPages = Math.max(1, Math.ceil(activeProducts.length / ProductsPerPage))
+
+    useEffect(() => {
+        setActiveProducts(products)
+    }, [products])
 
 
     const handleDelete = async (product) => {
@@ -43,7 +54,7 @@ const ProductTable = ({ products, onEdit, setProducts, setRefresh }) => {
                     </thead>
                     <tbody>
                         {
-                            products.map((product, index) => (
+                            activeProducts.map((product, index) => (
                                 <tr key={index} className="border-b">
                                     <td className="p-3">{product.name}</td>
                                     <td className="p-3">{product.category}</td>
@@ -70,6 +81,47 @@ const ProductTable = ({ products, onEdit, setProducts, setRefresh }) => {
                 onClose={() => setModalOpen(false)}
 
             />
+
+
+
+            <div className="flex justify-center mt-6 space-x-2 flex-wrap">
+                <button
+                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                    disabled={currentPage === 1}
+                    className={`px-4 py-2 border rounded ${currentPage === 1
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        : 'bg-white text-[#333] hover:bg-[#bb2821] hover:text-white'}`}
+                >
+                    Prev
+                </button>
+
+                {[...Array(totalPages).keys()].map((num) => {
+                    const page = num + 1
+                    return (
+                        <button
+                            key={page}
+                            onClick={() => setCurrentPage(page)}
+                            className={`px-4 py-2 border rounded ${page === currentPage
+                                ? 'bg-[#bb2821] text-white'
+                                : 'bg-white text-[#333] hover:bg-[#bb2821] hover:text-white'}`}
+                        >
+                            {page}
+                        </button>
+                    )
+                })}
+
+                <button
+                    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                    disabled={currentPage === totalPages}
+                    className={`px-4 py-2 border rounded ${currentPage === totalPages
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        : 'bg-white text-[#333] hover:bg-[#bb2821] hover:text-white'}`}
+                >
+                    Next
+                </button>
+            </div>
+
+
         </div >
     )
 }

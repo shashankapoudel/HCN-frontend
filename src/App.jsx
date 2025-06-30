@@ -97,12 +97,17 @@ function App() {
 }
 
 function AppWrapper() {
+  const isAdminRoute = location.pathname.startsWith('/admin');
   return (
     <BrowserRouter>
       <App />
-      <OfferPopUp />
-      <ScrollToTop />
-      <WhatsAppFloatingButton />
+      {!isAdminRoute &&
+        <div>
+          <OfferPopUp />
+          <ScrollToTop />
+          <WhatsAppFloatingButton />
+        </div>
+      }
     </BrowserRouter>
   );
 }

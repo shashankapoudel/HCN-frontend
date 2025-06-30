@@ -11,6 +11,8 @@ const AdminLayout = ({ setAdmin }) => {
     const [active, setActive] = useState(location.pathname);
     const [dropdownOpen, setDropdownOpen] = useState(null);
 
+    const navigate = useNavigate()
+
 
     const navItems = [
         { name: 'Dashboard', route: '/admin' },
@@ -32,6 +34,7 @@ const AdminLayout = ({ setAdmin }) => {
 
     const handleLogout = () => {
         setAdmin(false)
+        navigate('/admin')
     }
 
     return (
