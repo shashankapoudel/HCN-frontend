@@ -6,6 +6,7 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
     const [question, setQuestion] = useState(null)
     const [answer, setAnswer] = useState(null)
     const [error, setError] = useState()
+    const [isLoading, setIsLoading] = useState(false);
 
     const faqcategory = ["Select category", "General", "Products", "Payments", "Shipping and Orders", 'Product Maintenance', 'Refund Policy', 'Customer Support']
 
@@ -24,7 +25,7 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
     }, [existingData])
 
     const handleSubmit = async () => {
-
+        setIsLoading(true);
         const res = await fetch(existingData
             ? `${BASE_URL}/faq/updatefaq/${existingData._id}`
             : `${BASE_URL}/faq/storefaq`, {
@@ -40,6 +41,7 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
             setAnswer("")
             setCategory("")
             setQuestion("")
+            setIsLoading(false);
         } else {
             setError(result.message || 'Could not save Faq');
 
@@ -104,12 +106,25 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
                         className="px-4 py-2 bg-[#FFFFFF] text-[#D9D9D9] rounded w-28 border border-[#D9D9D9]">
                         Cancel
                     </button>
-                    <button
+                    {/* <button
                         type="submit"
                         onClick={handleSubmit}
                         className="px-4 py-2 bg-[#02847D] text-[#FFFFFF] rounded w-28">
                         Save
+                    </button> */}
+
+                    <button
+                        type="submit"
+                        onClick={handleSubmit}
+                        className="px-4 py-2 bg-[#02847D] text-white rounded w-28">
+                        {isLoading ? (
+                            <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                            </svg>
+                        ) : "Save"}
                     </button>
+
                 </div>
 
             </div>

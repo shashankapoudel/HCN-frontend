@@ -39,7 +39,11 @@ export default function FAQ() {
                 <div className="flex flex-col w-full  lg:w-1/2 p-0 lg:p-4 gap-2 mt-4 lg:mt-16  ">
                     <div className="flex flex-col items-start gap-2 text-sm tracking-wide w-full">
                         <h2 className="text-base font-bold mb-2 text-[#0B4D81] w-full">Frequently Asked Questions(FAQs)</h2>
-                        <p className=" mb-4 text-sm text-[#606060] leading-loose tracking-wide">Have questions?Here you'll find answers most valued by our partners Lorem  ipsum dolor sit amet consectetur adipisicing elit. Unde exercitationem laudantium suscipit ipsa? Eius cupiditate ut praesentium fugiat voluptatibus impedit sint minus consequatur</p>
+                        <p className=" mb-4 text-sm text-[#606060] leading-loose tracking-wide">
+                            Have Questions?
+                            Here you'll find answers to the most commonly asked and valued questions by our partners.
+                            We’ve put together helpful information to guide you through our services, processes, and policies—so you can find what you need quickly and easily.
+                        </p>
                     </div>
 
                     <div className="w-full flex flex-col gap-8 ">
