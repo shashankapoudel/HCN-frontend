@@ -7,6 +7,7 @@ const BlogsAdmin = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedBlog, setSelectedBlog] = useState("")
     const [blogs, setBlogs] = useState([])
+    const [refresh, setRefresh] = useState(false)
 
 
     const getBlogs = async () => {
@@ -20,7 +21,7 @@ const BlogsAdmin = () => {
 
     useEffect(() => {
         getBlogs()
-    }, [])
+    }, [refresh])
 
     const blogno = blogs.length;
     console.log(blogno)
@@ -63,8 +64,10 @@ const BlogsAdmin = () => {
 
             <div>
                 <Blogtable
+                    setRefresh={setRefresh}
                     onEdit={handleEdit}
                     blogs={blogs}
+                    refresh={refresh}
 
                 />
             </div>

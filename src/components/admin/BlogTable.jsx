@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import BASE_URL from '../../config/api'
 
-const Blogtable = ({ onEdit, blogs }) => {
+const Blogtable = ({ onEdit, blogs, setRefresh, refresh }) => {
 
     const [blogData, setBlogData] = useState([])
     const [activeBlogs, setActiveBlogs] = useState([]);
@@ -14,18 +14,9 @@ const Blogtable = ({ onEdit, blogs }) => {
     const totalPages = Math.max(1, Math.ceil(activeBlogs.length / blogsPerPage));
 
     useEffect(() => {
-        const getBlog = async () => {
-
-            const res = await fetch(`${BASE_URL}/blog/getblog`, {
-                method: 'GET'
-            })
-            const data = await res.json()
-            console.log(data)
-            setBlogData(data.data)
-            setActiveBlogs(data.data)
-        }
-        getBlog()
-    }, [])
+        setBlogData(blogs)
+        setActiveBlogs(blogs)
+    }, [blogs])
 
     const date = Date.now()
     console.log(date)

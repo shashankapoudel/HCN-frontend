@@ -7,10 +7,11 @@ const ContactForm = () => {
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
     const [error, setError] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
 
 
     const handleContactForm = async () => {
-
+        setIsLoading(true)
         const res = await fetch(`${BASE_URL}/contact`, {
             method: 'POST',
             headers: {
@@ -25,6 +26,7 @@ const ContactForm = () => {
             setLastName("")
             setEmail("")
             setMessage("")
+            setIsLoading(false)
         } else {
             setError(result.message || 'Failed to send');
 
@@ -94,8 +96,14 @@ const ContactForm = () => {
                     onClick={handleContactForm}
                     className='w-full bg-[#0B4D81] text-[#FFFFFF] flex justify-center items-center hover:bg-[#093a63] cursor-pointer'>
                     <button
-                        className='flex items-center justify-center p-2 text-center  '>
-                        Submit
+                        type="submit"
+                        className="px-4 py-2 text-white rounded w-28">
+                        {isLoading ? (
+                            <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                            </svg>
+                        ) : "Submit"}
                     </button>
                 </div>
             </div>

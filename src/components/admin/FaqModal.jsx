@@ -106,12 +106,6 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
                         className="px-4 py-2 bg-[#FFFFFF] text-[#D9D9D9] rounded w-28 border border-[#D9D9D9]">
                         Cancel
                     </button>
-                    {/* <button
-                        type="submit"
-                        onClick={handleSubmit}
-                        className="px-4 py-2 bg-[#02847D] text-[#FFFFFF] rounded w-28">
-                        Save
-                    </button> */}
 
                     <button
                         type="submit"
