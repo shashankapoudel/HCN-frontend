@@ -16,7 +16,6 @@ const Gallery = () => {
     const location = useLocation();
 
     useEffect(() => {
-        // Close the modal AND clear selected image on route change
         setImageOpen(false);
         setSelectedImage("");
     }, [location.pathname]);
@@ -24,7 +23,6 @@ const Gallery = () => {
 
     useEffect(() => {
         setActiveImages(imageList)
-
     }, [imageList])
 
     const indexOfLastImg = currentPage * ImagesPerPage;
@@ -136,7 +134,7 @@ const Gallery = () => {
                                         setImageOpen(false);
                                         setTimeout(() => {
                                             setSelectedImage("");
-                                        }, 200); // Give time for modal to fully close
+                                        }, 200);
                                     }}
 
                                 >

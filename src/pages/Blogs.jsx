@@ -239,23 +239,6 @@ const BlogPage = () => {
         <div className="p-2 lg:p-8 min-h-screen bg-gray-100">
             <h1 className="text-center text-3xl font-bold text-[#111111]">Our Blogs</h1>
 
-
-            <div className="grid grid-cols-2 lg:flex space-x-4 space-y-2 md:space-y-0 lg:space-x-6 w-full justify-between p-2 mt-3">
-                {categories.map((cat) => (
-                    <button
-                        key={cat}
-                        onClick={() => setActive(cat)}
-                        className={`pb-1 relative font-semibold capitalize text-sm md:text-base transition ${active === cat ? 'text-[#bb2821]' : 'text-[#999]'}`}
-                    >
-                        {cat}
-                        {active === cat && (
-                            <div className='absolute bottom-0 left-0 w-full h-[3px] bg-[#bb2821] rounded-full' />
-                        )}
-                    </button>
-                ))}
-            </div>
-
-
             {selectedBlog ? (
                 <div className="w-full lg:w-2/3 mx-auto rounded-lg p-3 lg:p-6 ">
                     <button
@@ -279,6 +262,20 @@ const BlogPage = () => {
             ) : (
                 <>
 
+                    <div className="grid grid-cols-2 lg:flex space-x-4 space-y-2 md:space-y-0 lg:space-x-6 w-full justify-between p-2 mt-3">
+                        {categories.map((cat) => (
+                            <button
+                                key={cat}
+                                onClick={() => setActive(cat)}
+                                className={`pb-1 relative font-semibold capitalize text-sm md:text-base transition ${active === cat ? 'text-[#bb2821]' : 'text-[#999]'}`}
+                            >
+                                {cat}
+                                {active === cat && (
+                                    <div className='absolute bottom-0 left-0 w-full h-[3px] bg-[#bb2821] rounded-full' />
+                                )}
+                            </button>
+                        ))}
+                    </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                         {currentBlogs.map((blog) => {
                             const textContent = blog.content.replace(/<[^>]+>/g, "");
