@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr';
+import { useLocation } from 'react-router-dom';
 
 const Gallery = () => {
 
-    const imageList = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg']
+    const imageList = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg']
 
     const [activeImages, setActiveImages] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const ImagesPerPage = 14;
     const [isImageOpen, setImageOpen] = useState(false)
     const [selectedImage, setSelectedImage] = useState("")
+
+
+    const location = useLocation();
+
+    useEffect(() => {
+        // Close the modal AND clear selected image on route change
+        setImageOpen(false);
+        setSelectedImage("");
+    }, [location.pathname]);
+
 
     useEffect(() => {
         setActiveImages(imageList)
@@ -97,7 +108,7 @@ const Gallery = () => {
 
             {
                 isImageOpen && (
-                    <div className='flex fixed inset-0 items-center justify-between p-6 bg-black bg-opacity-65'>
+                    <div className='flex fixed inset-0 items-center justify-between p-2 bg-black bg-opacity-65 pt-0  lg:pt-36'>
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -121,7 +132,13 @@ const Gallery = () => {
 
                                 <button
                                     className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-xl hover:bg-opacity-70 transition text-4xl w-16"
-                                    onClick={() => setSelectedImage({ image: null, index: -1, eventId: null })}
+                                    onClick={() => {
+                                        setImageOpen(false);
+                                        setTimeout(() => {
+                                            setSelectedImage("");
+                                        }, 200); // Give time for modal to fully close
+                                    }}
+
                                 >
                                     &times;
                                 </button>
