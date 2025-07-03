@@ -186,6 +186,8 @@
 // export default BlogPage;
 
 
+
+
 import React, { useEffect, useState } from "react";
 import BASE_URL from "../config/api";
 
@@ -240,7 +242,7 @@ const BlogPage = () => {
             <h1 className="text-center text-3xl font-bold text-[#111111]">Our Blogs</h1>
 
             {selectedBlog ? (
-                <div className="w-full lg:w-2/3 mx-auto rounded-lg p-3 lg:p-6 ">
+                <div className="w-full lg:w-1/2 mx-auto rounded-lg p-3 lg:p-6 ">
                     <button
                         onClick={() => setSelectedBlog(null)}
                         className="text-[#bb2821] mb-4 hover:underline"
@@ -343,6 +345,7 @@ const BlogPage = () => {
                         >
                             Next
                         </button>
+
                     </div>
                 </>
             )}
@@ -351,3 +354,6 @@ const BlogPage = () => {
 };
 
 export default BlogPage;
+
+
+

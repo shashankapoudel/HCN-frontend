@@ -13,12 +13,12 @@ const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState("")
 
 
-    const location = useLocation();
+    // const location = useLocation();
 
-    useEffect(() => {
-        setImageOpen(false);
-        setSelectedImage("");
-    }, [location.pathname]);
+    // useEffect(() => {
+    //     setImageOpen(false);
+    //     setSelectedImage("");
+    // }, [location.pathname]);
 
 
     useEffect(() => {
