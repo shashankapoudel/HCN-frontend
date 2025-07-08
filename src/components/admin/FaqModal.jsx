@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import BASE_URL from '../../config/api'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const FaqModal = ({ isOpen, onClose, existingData }) => {
     const [category, setCategory] = useState(null)
@@ -88,14 +90,21 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
 
                     <div>
                         <label>Answer</label>
-                        <textarea
+                        <ReactQuill
+                            theme="snow"
+                            value={answer}
+                            onChange={setAnswer}
+                            className="mb-4"
+                            style={{ height: "180px" }}
+                        />
+                        {/* <textarea
                             rows={8}
                             type="text"
                             className="w-full p-2 border rounded mb-4"
                             placeholder="Enter the answer here"
                             value={answer}
                             onChange={(e) => setAnswer(e.target.value)}
-                        />
+                        /> */}
                     </div>
 
                 </div>
