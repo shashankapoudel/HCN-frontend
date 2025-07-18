@@ -60,6 +60,7 @@ const Cart = () => {
 
 
     const getCartItems = async () => {
+        console.log(sessionId)
         try {
             const res = await fetch(`${BASE_URL}/cart/get/${sessionId}`, {
                 method: 'GET',
