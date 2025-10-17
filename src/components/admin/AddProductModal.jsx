@@ -20,6 +20,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
     const [audio, setAudio] = useState(null);
     const [subcategorycategory, setSubcategorycategory] = useState("")
     const [isLoading, setIsLoading] = useState(false);
+    const [label, setLabel] = useState("")
 
 
     const [filteredSubcategories, setFilteredSubcategories] = useState([]);
@@ -82,6 +83,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
             setPrice(existingData.price || "")
             setSize(existingData.size || "")
             setMaterial(existingData.material || "")
+            setLabel(existingData.Label || "")
             setOverview(existingData.overview || "")
             setDescription(existingData.description || "")
             setImages(existingData.images || []);
@@ -97,6 +99,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
             setPrice("")
             setSize("")
             setMaterial("")
+            setLabel("")
             setOverview("")
             setDescription("")
             setImages([])
@@ -117,6 +120,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
         formData.append("price", price);
         formData.append("size", size);
         formData.append("material", material);
+        formData.append("label", label);
         formData.append("overview", overview);
         formData.append("description", description);
 
@@ -150,6 +154,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
             setMaterial("");
             setOverview("");
             setDescription("");
+            setLabel("")
             setImages([]);
             setAudio(null);
             setFilteredSubcategories([]);
@@ -162,6 +167,8 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
             setIsLoading(false);
         }
     };
+
+    const Label = ["Select", " People's favourite", "Latest Products", "On Sale"]
 
 
     if (!isOpen) return null;
@@ -271,6 +278,19 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
                                     className="w-full p-2 border rounded mb-4"
                                     placeholder="Enter price"
                                 />
+                            </div>
+
+                            <div>
+                                <label className="block mb-2">Label</label>
+                                <select
+                                    value={label}
+                                    onChange={(e) => setLabel(e.target.value)}
+                                    className="w-full p-2 border rounded mb-4">
+                                    {
+                                        Label.map((l, index) => (
+                                            <option key={index}>{l}</option>
+                                        ))}
+                                </select>
                             </div>
 
                             <div>

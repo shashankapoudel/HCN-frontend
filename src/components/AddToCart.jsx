@@ -4,21 +4,18 @@ import BASE_URL from '../config/api'
 
 const AddToCart = ({ product }) => {
 
-    console.log(product)
-
     const [cartItems, setCartItems] = useState([])
     const [showToast, setShowToast] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
 
     const sessionId = localStorage.getItem('sessionID')
-    console.log(sessionId)
+
 
     const fetchCart = async () => {
         try {
             const res = await fetch(`${BASE_URL}/cart/get/${sessionId}`);
             const data = await res.json();
-            console.log(data)
             if (data.success && data.data?.cartItems) {
                 setCartItems(data.data);
             }
@@ -31,7 +28,7 @@ const AddToCart = ({ product }) => {
         if (sessionId) fetchCart();
     }, [sessionId]);
 
-    console.log(cartItems)
+
 
 
     const sendCartItemToBackend = async (newItem) => {
@@ -64,12 +61,9 @@ const AddToCart = ({ product }) => {
 
 
 
-    console.log(cartItems)
     const handleAddToCart = (item) => {
-        console.log(item)
 
         const itemExists = cartItems.some(cartItem => cartItem._id === item._id);
-
 
         if (!itemExists) {
             const newItem = {
