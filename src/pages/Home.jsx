@@ -14,7 +14,7 @@ const Home = () => {
             <div className='relative  w-full max-h-screen'>
 
                 <img
-                    src="/Images/homeImage.png"
+                    src="/Images/HomePage.jpg"
                     className="object-cover w-full max-h-screen relative z-[-1]"
                     alt="Home"
                     loading='lazy'
