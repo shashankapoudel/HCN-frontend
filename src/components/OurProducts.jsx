@@ -1,8 +1,11 @@
 import React, { useContext } from 'react'
 import { ProductContext } from "../context/ProductProvider";
 import AddToCart from './AddToCart';
+import { useNavigate } from 'react-router-dom';
 
 const OurProducts = () => {
+
+    const navigate = useNavigate()
 
     const { products } = useContext(ProductContext)
     console.log(products)
@@ -20,7 +23,10 @@ const OurProducts = () => {
                 {
                     products.slice(0, 4).map((product) => (
                         <div key={product._id} className='w-full flex flex-col p-6 bg-white shadow-lg justify-between'>
-                            <div className="relative w-full aspect-square overflow-hidden group">
+                            <div
+                                onClick={() => navigate(`/product/${product._id}`)}
+
+                                className="relative w-full aspect-square overflow-hidden group">
                                 <img
                                     src={product.images[0]}
                                     alt={product.name}
@@ -53,7 +59,7 @@ const OurProducts = () => {
 
             </div>
 
-        </div>
+        </div >
     )
 }
 

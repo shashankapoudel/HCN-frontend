@@ -195,7 +195,7 @@ const Header = () => {
                 </div>
 
 
-                <div className="hidden lg:flex gap-12 items-start text-sm border-b border-l border-r border-gray-300 rounded-b-lg p-4 bg-[#F7F7F7]">
+                <div className="hidden lg:flex gap-12 items-start text-sm border-b border-l border-r border-gray-100 rounded-b-lg p-4 bg-[#F7F7F7]">
                     {mainNavItems.map((item) => (
                         <div key={item.name} className="relative group">
                             <div className="flex items-start gap-1 cursor-pointer">
