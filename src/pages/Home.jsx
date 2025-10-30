@@ -6,12 +6,16 @@ import GalleryCard from '../components/Gallery';
 import ProductBadge from '../components/ProductBadges';
 import Socialmedia from '../components/Socialmedia';
 import CategorySingingBowl from '../components/CategorySingingBowl';
+import ImageSlider from '../components/ImageSlider';
 
 const Home = () => {
     return (
         <div className="flex flex-col min-h-screen w-full gap-4">
 
-            <div className='relative  w-full max-h-screen'>
+
+            <ImageSlider />
+
+            {/* <div className='relative  w-full max-h-screen'>
 
                 <img
                     src="/Images/HomePage.jpg"
@@ -27,7 +31,7 @@ const Home = () => {
                     </p>
                 </div>
 
-            </div>
+            </div> */}
 
             <div className='p-2 md:p-4 '>
                 <OurProducts />
