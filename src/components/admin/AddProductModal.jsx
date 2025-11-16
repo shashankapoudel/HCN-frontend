@@ -31,7 +31,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
     const categoryofSubcategory = ['select category', 'antique', 'handmade', 'machinemade', 'accessories', "prayer-wheel", "prayer-flags", "mala&bala", "wooden-products", 'incenses&burners', 'felt-products', "thankas&paintings", "canvas&arts", "bags&accessories", "wellness&decor", "sound-healing-courses", "gongs", "bell&tingsha", "shamic-drump"]
 
 
-    const productMaterials = ['select material', 'metal', 'crystal', 'wood'];
+    const productMaterials = ['select material', 'metal', 'crystal', 'wood', 'leather'];
 
 
     const categorySubcategories = {
@@ -55,7 +55,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
         "living-collections": ['gorkhali-khukuri'],
     }
 
-    const sizes = ['select one', 'small', 'medium', 'large']
+
 
 
     useEffect(() => {
@@ -296,7 +296,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
                             <div>
                                 <label
                                     className="block mb-2">
-                                    Size (in inches)
+                                    Size (in cms)
                                 </label>
 
                                 <input

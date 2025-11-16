@@ -46,9 +46,7 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
             setIsLoading(false);
         } else {
             setError(result.message || 'Could not save Faq');
-
         }
-
     }
 
     if (!isOpen) return null;
