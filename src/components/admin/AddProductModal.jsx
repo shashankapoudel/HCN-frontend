@@ -47,12 +47,12 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
 
     const subcategoriescategories = {
         "antique": ['select', 'jambati', 'manipuri', 'naga', 'ultabati', 'thadobati', 'lingman', 'kopre', 'mani', 'old'],
-        "handmade": ['plain', 'fullmoon', 'healing', 'note-color', 'chakra-zodiac', 'engraved', 'large', 'lingam', 'hand', 'himalayas'],
-        "machinemade": ['note-healing', 'chakra', 'himalayas-gift', 'hand-hammered'],
-        "accessories": ['sticks&mallets', 'pillows', 'himalayas'],
-        "wooden-products": ['windows', 'mask'],
-        "incenses&burners": ['incenses', 'burners'],
-        "living-collections": ['gorkhali-khukuri'],
+        "handmade": ['select', 'plain', 'fullmoon', 'healing', 'note-color', 'chakra-zodiac', 'engraved', 'large', 'lingam', 'hand', 'himalayas'],
+        "machinemade": ['select', 'note-healing', 'chakra', 'himalayas-gift', 'hand-hammered'],
+        "accessories": ['select', 'sticks&mallets', 'pillows', 'himalayas'],
+        "wooden-products": ['select', 'windows', 'mask'],
+        "incenses&burners": ['select', 'incenses', 'burners'],
+        "living-collections": ['select', 'gorkhali-khukuri'],
     }
 
 
@@ -269,7 +269,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
 
                             <div>
                                 <label className="block mb-2">
-                                    Selling Price
+                                    Selling Price (in dollars)
                                 </label>
                                 <input
                                     value={price}
