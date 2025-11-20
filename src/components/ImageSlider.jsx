@@ -3,25 +3,25 @@ import React, { useState, useEffect } from "react";
 const ImageSlider = () => {
     const images = [
         "/Images/HomePage.jpg",
-        "/Images/homeImage1.jpg",
+        // "/Images/homeImage1.jpg",
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    // const [currentIndex, setCurrentIndex] = useState(0);
 
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) =>
-                prevIndex === images.length - 1 ? 0 : prevIndex + 1
-            );
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [images.length]);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setCurrentIndex((prevIndex) =>
+    //             prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    //         );
+    //     }, 5000);
+    //     return () => clearInterval(interval);
+    // }, [images.length]);
 
 
-    const goToSlide = (index) => {
-        setCurrentIndex(index);
-    };
+    // const goToSlide = (index) => {
+    //     setCurrentIndex(index);
+    // };
 
     return (
         <div>
@@ -29,8 +29,8 @@ const ImageSlider = () => {
             <div className='relative  w-full max-h-screen'>
 
                 <img
-                    src={images[currentIndex]}
-                    alt={`Slide ${currentIndex + 1}`}
+                    src="/Images/HomePage.jpg"
+                    // alt={`Slide ${currentIndex + 1}`}
                     className="object-cover w-full max-h-screen relative z-[-1]"
                     loading='lazy'
                 />
@@ -45,7 +45,7 @@ const ImageSlider = () => {
             </div>
 
 
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
+            {/* <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
                 {images.map((_, index) => (
                     <button
                         key={index}
@@ -54,7 +54,8 @@ const ImageSlider = () => {
                             } transition-all duration-300`}
                     />
                 ))}
-            </div>
+            </div> */}
+
         </div>
     );
 };

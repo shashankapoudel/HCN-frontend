@@ -32,62 +32,68 @@ const SingleProductPage = () => {
 
 
     return (
-        <div className='min-h-screen p-8'>
+        <div className='min-h-screen p-8 flex flex-col items-center justify-center'>
 
-            <div className='flex gap-4'>
+            <div className=''>
 
-                <div className='w-2/5 p-4'>
+                <div className='flex gap-8 items-center justify-center'>
 
-                    <img
-                        src={product.images?.[0]}
-                        alt={product.name}
-                        className="w-3/4 object-cover mb-2 rounded"
-                        loading='lazy'
-                    />
+                    <div className='w-2/5 p-4 grid grid-cols-2 gap-2'>
 
-                </div>
+                        {product.images.map((img) => (
 
-                <div className='w-2/5 flex flex-col p-4'>
-                    <h1 className='text-3xl font-bold capitalize'>{product.name}</h1>
-
-                    <div className='p-2'>
-                        <h1 className='font-bold text-lg'>${product.price}</h1>
-                    </div>
-
-                    <div>
-                        <p className='text-[#606060] tracking-wide leading-relaxed'>{product.description}</p>
-                    </div>
-
-                    <hr />
-
-                    <div className='flex flex-col w-full gap-3 p-2 text-[#606060]'>
-
-                        <div className='flex w-1/2 justify-between'>
-                            <h1 className='text-[#323232] font-bold text-sm'>Color</h1>
-                            <p className='text-sm'>Black</p>
-                        </div>
-
-                        <div className='flex w-1/2 justify-between'>
-                            <h1 className='text-[#323232] font-bold text-sm'>Size</h1>
-                            <p className='text-sm'>{product.size}cm</p>
-                        </div>
-
-                        <div className='flex w-1/2 justify-between'>
-                            <h1 className='text-[#323232] font-bold text-sm'>Stock</h1>
-                            <p className='text-sm'>{product.stock}units</p>
-                        </div>
-
-                        <div className='flex w-1/2 justify-between'>
-                            <h1 className='text-[#323232] font-bold text-sm'>Material</h1>
-                            <p className='text-sm'>{product.material}</p>
-                        </div>
+                            <img
+                                src={img}
+                                alt={product.name}
+                                className="w-full object-cover  rounded"
+                                loading='lazy'
+                            />
+                        ))
+                        }
 
                     </div>
 
-                    <div className='mt-4'>
-                        <AddToCart product={product} />
-                    </div>
+                    <div className='w-2/5 flex flex-col p-4'>
+                        <h1 className='text-3xl font-bold capitalize'>{product.name}</h1>
 
+                        <div className='p-2'>
+                            <h1 className='font-bold text-lg'>${product.price}</h1>
+                        </div>
+
+                        <div>
+                            <p className='text-[#606060] tracking-wide leading-relaxed'>{product.description}</p>
+                        </div>
+
+                        <hr />
+
+                        <div className='flex flex-col w-full gap-3 p-2 text-[#606060]'>
+
+                            <div className='flex w-1/2 justify-between'>
+                                <h1 className='text-[#323232] font-bold text-sm'>Color</h1>
+                                <p className='text-sm'>Black</p>
+                            </div>
+
+                            <div className='flex w-1/2 justify-between'>
+                                <h1 className='text-[#323232] font-bold text-sm'>Size</h1>
+                                <p className='text-sm'>{product.size}cm</p>
+                            </div>
+
+                            <div className='flex w-1/2 justify-between'>
+                                <h1 className='text-[#323232] font-bold text-sm'>Stock</h1>
+                                <p className='text-sm'>{product.stock}units</p>
+                            </div>
+
+                            <div className='flex w-1/2 justify-between'>
+                                <h1 className='text-[#323232] font-bold text-sm'>Material</h1>
+                                <p className='text-sm'>{product.material}</p>
+                            </div>
+                        </div>
+
+
+                        <div className='mt-4'>
+                            <AddToCart product={product} />
+                        </div>
+                    </div>
                 </div>
 
             </div>
