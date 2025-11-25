@@ -349,7 +349,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
 
                     </div>
 
-                    {/* Right Side: Fixed */}
+
                     <div className="w-1/3 pl-4">
                         <div className="mb-4">
                             <ProductUpload
@@ -360,7 +360,6 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
                             />
                         </div>
                     </div>
-
 
                 </form>
 
