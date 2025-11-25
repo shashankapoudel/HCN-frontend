@@ -1,7 +1,10 @@
 import React from 'react';
 import AddToCart from './AddToCart';
+import { useNavigate } from 'react-router-dom';
 
 const ProductGrid = ({ title, description, products }) => {
+
+    const navigate = useNavigate()
 
     console.log(products)
     return (
@@ -14,6 +17,7 @@ const ProductGrid = ({ title, description, products }) => {
             <div className='w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8'>
                 {products.map((product) => (
                     <div
+                        onClick={() => navigate(`/product/${product._id}`)}
                         key={product._id}
                         className='w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-6 relative'
                     >
