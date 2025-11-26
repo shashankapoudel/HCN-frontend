@@ -8,6 +8,8 @@ const SingleProductPage = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [selectedImage, setSelectedImage] = useState()
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -30,6 +32,16 @@ const SingleProductPage = () => {
 
     if (!product) return <div className="p-8">Product not found.</div>;
 
+    const handleImageClick = (id) => {
+        setIsModalOpen(true)
+        setSelectedImage(product.images[id])
+
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+        setSelectedImage('')
+    }
 
     return (
         <div className='min-h-screen p-8 flex flex-col items-center justify-center'>
@@ -40,12 +52,14 @@ const SingleProductPage = () => {
 
                     <div className='w-2/5 p-4 grid grid-cols-2 gap-2'>
 
-                        {product.images.map((img) => (
+                        {product.images.map((img, index) => (
 
                             <img
+                                key={index}
                                 src={img}
                                 alt={product.name}
-                                className="w-full object-cover  rounded"
+                                onClick={() => handleImageClick(index)}
+                                className="w-full object-cover  rounded cursor-pointer"
                                 loading='lazy'
                             />
                         ))
@@ -101,6 +115,29 @@ const SingleProductPage = () => {
             <div className='mt-4'>
                 <AddAccessories />
             </div>
+
+
+            {isModalOpen && (
+                <div
+                    className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75'
+                    onClick={closeModal}
+                >
+                    <div className='relative max-w-4xl w-full p-4'>
+                        <img
+                            className='w-full h-auto max-h-[80vh] object-cover rounded-lg'
+                            src={selectedImage}
+                            alt='Enlarged gallery image'
+                            loading='lazy'
+                        />
+                        <button
+                            className='absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70 transition'
+                            onClick={closeModal}
+                        >
+                            &times;
+                        </button>
+                    </div>
+                </div>
+            )}
 
         </div>
     );
