@@ -58,7 +58,7 @@ const SubcategoryPage = () => {
                                 <div>
                                     <h1 className='text-left text-[#111111] font-bold text-base capitalize'>{product.name}</h1>
                                     <p className=' text-[#606060]  font-edensor text-base'>
-                                        {truncateText(product.description, 20)}
+                                        {truncateText(product.description, 15)}
                                     </p>
                                 </div>
 

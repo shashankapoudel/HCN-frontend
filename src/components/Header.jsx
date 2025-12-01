@@ -185,7 +185,9 @@ const Header = () => {
 
             <div className="flex py-2 items-center justify-between text-base px-4 bg-[#FFFFFF] shadow-md">
 
-                <div className='flex items-center gap-2 cursor-pointer' onClick={() => navigate('/')}>
+                <div
+                    className='flex items-center gap-2 cursor-pointer'
+                    onClick={() => navigate('/')}>
                     <img
                         src='/Images/Logo.png'
                         className='object-cover w-64'

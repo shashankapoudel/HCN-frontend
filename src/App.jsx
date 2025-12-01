@@ -59,7 +59,6 @@ function App() {
       {!isAdminRoute && <Header />}
       <div className={`flex-grow ${!isAdminRoute ? 'pt-36 lg:pt-40' : 'pt-0'}`}>
 
-
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
