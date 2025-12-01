@@ -34,6 +34,8 @@ import Gallery from './pages/GalleryPage'
 import RefundPolicy from './pages/RefundPolicy'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsCondition from './pages/TermsCondition'
+import SingingBowl from './pages/SingingBowl'
+import SubcategoryPage from './pages/SubcategoryPage'
 
 
 
@@ -75,8 +77,10 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<Order />} />
           <Route path='/trackorder' element={<TrackOrder />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/products/:category/:subcategory?/:subsubcategory?' element={<ProductPage />} />
+          {/* <Route path='/products' element={<Products />} /> */}
+          <Route path='/singing-bowls' element={<SingingBowl />} />
+          <Route path="/:category/:subcategory" element={<SubcategoryPage />} />
+
           <Route path='/product/:id' element={<SingleProductPage />} />
 
           <Route path="/admin" element={admin ? <AdminLayout setAdmin={setAdmin} /> : <AdminLogin setAdmin={setAdmin} />}>

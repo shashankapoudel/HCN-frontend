@@ -12,52 +12,51 @@ const ProductHeader = () => {
 
     const navItems = [
 
-
         {
-            name: 'Singing Bowls', path: '/products/singing-bowls', subItems: [
+            name: 'Singing Bowls', path: '/singing-bowls', subItems: [
 
                 {
-                    name: 'Old/Antique Singing Bowls', path: '/products/singing-bowls/antique', subsubItems: [
-                        { name: 'Jambati Singing Bowls', path: '/products/singing-bowls/antique/jambati' },
-                        { name: 'Manipuri Singing Bowls', path: '/products/singing-bowls/antique/jambati' },
-                        { name: 'Naga Singing Bowls', path: '/products/singing-bowls/antique/naga' },
-                        { name: 'Ultabati Singing Bowls', path: '/products/singing-bowls/antique/ultabati' },
-                        { name: 'Thadobati Singing Bowls', path: '/products/singing-bowls/antique/thadobati' },
-                        { name: 'Lingman Singing Bowls', path: '/products/singing-bowls/antique/lingman' },
-                        { name: 'Mani Singing Bowls', path: '/products/singing-bowls/antique/mani' },
-                        { name: 'Old Singing Bowls', path: '/products/singing-bowls/antique/old' },
+                    name: 'Old/Antique Singing Bowls', path: '/singing-bowls/antique', subsubItems: [
+                        { name: 'Jambati Singing Bowls', path: '/singing-bowls/antique/jambati' },
+                        { name: 'Manipuri Singing Bowls', path: '/singing-bowls/antique/jambati' },
+                        { name: 'Naga Singing Bowls', path: '/singing-bowls/antique/naga' },
+                        { name: 'Ultabati Singing Bowls', path: '/singing-bowls/antique/ultabati' },
+                        { name: 'Thadobati Singing Bowls', path: '/singing-bowls/antique/thadobati' },
+                        { name: 'Lingman Singing Bowls', path: '/singing-bowls/antique/lingman' },
+                        { name: 'Mani Singing Bowls', path: '/singing-bowls/antique/mani' },
+                        { name: 'Old Singing Bowls', path: '/singing-bowls/antique/old' },
                     ]
                 },
 
                 {
-                    name: 'Handmade Singing Bowls', path: '/products/singing-bowls/handmade', subsubItems: [
-                        { name: 'Plain Singing Bowls', path: '/products/singing-bowls/handmade/plain' },
-                        { name: 'Fullmoon Singing Bowls', path: '/products/singing-bowls/handmade/fullmoon' },
-                        { name: 'Healing/Therapy Bowls', path: '/products/singing-bowls/handmade/healing' },
-                        { name: 'Note & color Singing Bowls', path: '/products/singing-bowls/handmade/note-color' },
-                        { name: 'Chakra & Zodiac Singing Bowl', path: '/products/singing-bowls/handmade/chakra-zodiac' },
-                        { name: 'Engraved Singing Bowls', path: '/products/singing-bowls/handmade/engraved' },
-                        { name: 'Large Healing Bowls', path: '/products/singing-bowls/handmade/large' },
-                        { name: 'Lingam Singing Bowls', path: '/products/singing-bowls/handmade/lingam' },
-                        { name: 'Hand Singing Bowls', path: '/products/singing-bowls/handmade/hand' },
-                        { name: 'Himalayas Bowls', path: '/products/singing-bowls/handmade/himalayas' },
+                    name: 'Handmade Singing Bowls', path: '/singing-bowls/handmade', subsubItems: [
+                        { name: 'Plain Singing Bowls', path: '/singing-bowls/handmade/plain' },
+                        { name: 'Fullmoon Singing Bowls', path: '/singing-bowls/handmade/fullmoon' },
+                        { name: 'Healing/Therapy Bowls', path: '/singing-bowls/handmade/healing' },
+                        { name: 'Note & color Singing Bowls', path: '/singing-bowls/handmade/note-color' },
+                        { name: 'Chakra & Zodiac Singing Bowl', path: '/singing-bowls/handmade/chakra-zodiac' },
+                        { name: 'Engraved Singing Bowls', path: '/singing-bowls/handmade/engraved' },
+                        { name: 'Large Healing Bowls', path: '/singing-bowls/handmade/large' },
+                        { name: 'Lingam Singing Bowls', path: '/singing-bowls/handmade/lingam' },
+                        { name: 'Hand Singing Bowls', path: '/singing-bowls/handmade/hand' },
+                        { name: 'Himalayas Bowls', path: '/singing-bowls/handmade/himalayas' },
                     ]
                 },
 
                 {
-                    name: 'Machine made Singing Bowls', path: '/products/singing-bowls/machinemade', subsubItems: [
-                        { name: 'Note Healing Bowls', path: '/products/singing-bowls/machinemade/note-healing' },
-                        { name: 'Chakra Set Bowls', path: '/products/singing-bowls/machinemade/chakra' },
-                        { name: 'Himalayas Gift Bowls', path: '/products/singing-bowls/machinemade/himalayas-gift' },
-                        { name: 'Hand Hammered Bowls', path: '/products/singing-bowls/machinemade/hand-hammered' },
+                    name: 'Machine made Singing Bowls', path: '/singing-bowls/machinemade', subsubItems: [
+                        { name: 'Note Healing Bowls', path: '/singing-bowls/machinemade/note-healing' },
+                        { name: 'Chakra Set Bowls', path: '/singing-bowls/machinemade/chakra' },
+                        { name: 'Himalayas Gift Bowls', path: '/singing-bowls/machinemade/himalayas-gift' },
+                        { name: 'Hand Hammered Bowls', path: '/singing-bowls/machinemade/hand-hammered' },
                     ]
                 },
 
                 {
-                    name: 'Singing Bowl Accessories', path: '/products/singing-bowls/accessories', subsubItems: [
-                        { name: 'Sticks and Mallets', path: '/products/singing-bowls/accessories/sticks&mallets' },
-                        { name: 'Bowls Pillows', path: '/products/singing-bowls/accessories/pillows' },
-                        { name: 'Himalayas Accessories', path: '/products/singing-bowls/accessories/himalayas' },
+                    name: 'Singing Bowl Accessories', path: '/singing-bowls/accessories', subsubItems: [
+                        { name: 'Sticks and Mallets', path: '/singing-bowls/accessories/sticks&mallets' },
+                        { name: 'Bowls Pillows', path: '/singing-bowls/accessories/pillows' },
+                        { name: 'Himalayas Accessories', path: '/singing-bowls/accessories/himalayas' },
                     ]
                 },
 
@@ -65,57 +64,57 @@ const ProductHeader = () => {
         },
 
         {
-            name: ' Himalayas Ritual Items', path: '/products/ritual-items', subItems: [
-                { name: 'Tibetan Prayer Wheel', path: '/products/ritual-items/prayer-wheel' },
-                { name: 'Tibetan Prayer Flags', path: '/products/ritual-items/prayer-flags' },
-                { name: 'Malas and Balas', path: '/products/ritual-items/mala&bala' },
+            name: ' Himalayas Ritual Items', path: '/ritual-items', subItems: [
+                { name: 'Tibetan Prayer Wheel', path: '/ritual-items/prayer-wheel' },
+                { name: 'Tibetan Prayer Flags', path: '/ritual-items/prayer-flags' },
+                { name: 'Malas and Balas', path: '/ritual-items/mala&bala' },
                 {
-                    name: 'Himalayas Wooden Product', path: '/products/ritual-items/wooden-products', subsubItems: [
-                        { name: 'Wooden windows', path: '/products/ritual-items/woodenproducts/windows' },
-                        { name: 'Wooden mask', path: '/products/ritual-items/woodenproducts/mask' },
+                    name: 'Himalayas Wooden Product', path: '/ritual-items/wooden-products', subsubItems: [
+                        { name: 'Wooden windows', path: '/ritual-items/woodenproducts/windows' },
+                        { name: 'Wooden mask', path: '/ritual-items/woodenproducts/mask' },
                     ]
                 },
                 {
-                    name: 'Incenses and Burners', path: '/products/ritual-items/incenses&burners', subsubItems: [
-                        { name: 'Himalayas Incenses', path: '/products/ritual-items/incenses&burners/inceses' },
-                        { name: 'Incenses burners', path: '/products/ritual-items/incenses&burners/burners' },
+                    name: 'Incenses and Burners', path: '/ritual-items/incenses&burners', subsubItems: [
+                        { name: 'Himalayas Incenses', path: '/ritual-items/incenses&burners/inceses' },
+                        { name: 'Incenses burners', path: '/ritual-items/incenses&burners/burners' },
                     ]
                 },
-                { name: 'Himalayas Felt Products', path: '/products/ritual-items/felt-products' },
+                { name: 'Himalayas Felt Products', path: '/ritual-items/felt-products' },
                 {
-                    name: 'Himalayas Living Collections', path: '/products/ritual-items/living-collections', subsubItems: [
-                        { name: "Gorkhali Khukhuri", path: "/products/ritual-items/living-collections/gorkhali-khukuri" }
+                    name: 'Himalayas Living Collections', path: '/ritual-items/living-collections', subsubItems: [
+                        { name: "Gorkhali Khukhuri", path: "/ritual-items/living-collections/gorkhali-khukuri" }
                     ]
                 },
 
             ]
         },
 
-        { name: 'Statues', path: '/products/statues' },
+        { name: 'Statues', path: '/statues' },
 
         {
-            name: 'Himalayas Art and Paintings', path: '/products/himalayas-art&paintings', subItems: [
-                { name: 'Thangkas and Paintings', path: '/products/himalayas-art&paintings/thankas&paintings' },
-                { name: 'Canvas and Art', path: '/products/himalayas-art&paintings/canvas&arts' },
+            name: 'Himalayas Art and Paintings', path: '/himalayas-art&paintings', subItems: [
+                { name: 'Thangkas and Paintings', path: '/himalayas-art&paintings/thankas&paintings' },
+                { name: 'Canvas and Art', path: '/himalayas-art&paintings/canvas&arts' },
             ]
         },
 
         {
-            name: 'Himalayas Hemp', path: '/products/himalayas-hemp', subItems: [
-                { name: 'Hemp Bags and Accessories', path: '/products/himalayas-hemp/bags&accessories' },
-                { name: 'Himalayas Hemp Wear', path: '/products/himalayas-hemp/hemp-wear' },
-                { name: 'Hemp Wellness & Decor', path: '/products/himalayas-hemp/wellness&decor' },
+            name: 'Himalayas Hemp', path: '/himalayas-hemp', subItems: [
+                { name: 'Hemp Bags and Accessories', path: '/himalayas-hemp/bags&accessories' },
+                { name: 'Himalayas Hemp Wear', path: '/himalayas-hemp/hemp-wear' },
+                { name: 'Hemp Wellness & Decor', path: '/himalayas-hemp/wellness&decor' },
             ]
         },
 
-        { name: 'Himalayas Crystals', path: '/products/himalayas-crystals' },
+        { name: 'Himalayas Crystals', path: '/himalayas-crystals' },
 
         {
-            name: 'Healing Collections', path: '/products/himalayas-healingcollections', subItems: [
-                { name: 'Sound Healing Courses', path: '/products/healing-collections/sound-healing-courses' },
-                { name: 'Gongs', path: '/products/healing collections/gongs' },
-                { name: 'Bell and Tingsha', path: '/products/healing-collections/bell&tingsha' },
-                { name: 'Shamic Drump', path: '/products/healing-collections/shamic-drump' },
+            name: 'Healing Collections', path: '/himalayas-healingcollections', subItems: [
+                { name: 'Sound Healing Courses', path: '/healing-collections/sound-healing-courses' },
+                { name: 'Gongs', path: '/healing collections/gongs' },
+                { name: 'Bell and Tingsha', path: '/healing-collections/bell&tingsha' },
+                { name: 'Shamic Drump', path: '/healing-collections/shamic-drump' },
             ]
         },
     ]
