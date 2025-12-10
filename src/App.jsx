@@ -36,6 +36,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsCondition from './pages/TermsCondition'
 import SingingBowl from './pages/SingingBowl'
 import SubcategoryPage from './pages/SubcategoryPage'
+import Wholesale from './pages/Wholesale'
 
 
 
@@ -66,6 +67,7 @@ function App() {
           <Route path='/about/story' element={<Story />} />
           <Route path='/about/team' element={<OurTeam />} />
           <Route path='/services' element={<Services />} />
+          <Route path='/wholesale' element={<Wholesale />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/faqs' element={<FAQs />} />
           <Route path='/policies/refund-policy' element={<RefundPolicy />} />

@@ -115,6 +115,10 @@ const Footer = () => {
                             About  HCN
                         </NavLink>
 
+                        <NavLink to='/gallery' className=''>
+                            Gallery
+                        </NavLink>
+
                         <NavLink to='/about/team' className=''>
                             HCN Team
                         </NavLink>
@@ -128,7 +132,7 @@ const Footer = () => {
                             Refund Policy
                         </NavLink>
 
-                        <NavLink to='/about' className=''>
+                        <NavLink to='/wholesale' className=''>
                             Wholesale
                         </NavLink>
 

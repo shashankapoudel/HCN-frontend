@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react'
 import BASE_URL from '../config/api'
 
@@ -11,24 +10,24 @@ const AddToCart = ({ product }) => {
 
     const sessionId = localStorage.getItem('sessionID')
 
-
     const fetchCart = async () => {
+
         try {
             const res = await fetch(`${BASE_URL}/cart/get/${sessionId}`);
             const data = await res.json();
             if (data.success && data.data?.cartItems) {
                 setCartItems(data.data);
             }
-        } catch (err) {
+        }
+        catch (err) {
             console.error("Error fetching cart:", err);
         }
+
     };
 
     useEffect(() => {
         if (sessionId) fetchCart();
     }, [sessionId]);
-
-
 
 
     const sendCartItemToBackend = async (newItem) => {
@@ -57,15 +56,15 @@ const AddToCart = ({ product }) => {
         } finally {
             setIsLoading(false);
         }
+
     };
-
-
 
     const handleAddToCart = (item) => {
 
         const itemExists = cartItems.some(cartItem => cartItem._id === item._id);
 
         if (!itemExists) {
+
             const newItem = {
                 id: item._id,
                 images: item.images?.[0],
@@ -78,7 +77,10 @@ const AddToCart = ({ product }) => {
             const updatedCart = [...cartItems, newItem];
             setCartItems(updatedCart);
             sendCartItemToBackend(newItem);
-        } else {
+
+        }
+
+        else {
             setToastMessage("Product already in the cart");
             setTimeout(() => setToastMessage(''), 3000);
         }
@@ -86,6 +88,7 @@ const AddToCart = ({ product }) => {
 
     return (
         <div>
+
             <button
                 onClick={() => handleAddToCart(product)}
                 className='bg-gradient-to-r from-[#bb2821] to-[#0B4D81] text-[#FFFFFF] text-sm p-2 px-4'>
@@ -108,6 +111,7 @@ const AddToCart = ({ product }) => {
                     {toastMessage}
                 </div>
             )}
+
         </div>
     )
 }
