@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import BASE_URL from '../config/api';
 import AddAccessories from '../components/AddAccessories';
 import AddToCart from '../components/AddToCart';
@@ -10,6 +10,8 @@ const SingleProductPage = () => {
     const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedImage, setSelectedImage] = useState()
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -43,10 +45,23 @@ const SingleProductPage = () => {
         setSelectedImage('')
     }
 
+    const handleBack = () => {
+        navigate(`/${product.category}/${product.subcategory}`)
+    }
+
     return (
         <div className='min-h-screen p-8 flex flex-col items-center justify-center'>
 
             <div className=''>
+
+                <div>
+                    <button
+                        className='underline text-[#bb2821] hover:text-'
+                        onClick={handleBack}
+                    >
+                        ← Back to {product.subcategory}
+                    </button>
+                </div>
 
                 <div className='flex gap-8 items-center justify-center'>
 

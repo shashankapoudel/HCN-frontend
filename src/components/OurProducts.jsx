@@ -10,6 +10,7 @@ const OurProducts = () => {
     const { products } = useContext(ProductContext)
     console.log(products)
 
+    
 
     const truncateText = (text, wordLimit) => {
         const words = text.split(" ");

@@ -37,6 +37,7 @@ import TermsCondition from './pages/TermsCondition'
 import SingingBowl from './pages/SingingBowl'
 import SubcategoryPage from './pages/SubcategoryPage'
 import Wholesale from './pages/Wholesale'
+import ShippingPolicy from './pages/ShippingPolicy'
 
 
 
@@ -73,6 +74,7 @@ function App() {
           <Route path='/policies/refund-policy' element={<RefundPolicy />} />
           <Route path='/policies/private-policy' element={<PrivacyPolicy />} />
           <Route path='/policies/terms-condition' element={<TermsCondition />} />
+          <Route path='/shipping-policy' element={<ShippingPolicy />} />
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/testimonials' element={<TestimonialsPage />} />
           <Route path='/cart' element={<Cart />} />

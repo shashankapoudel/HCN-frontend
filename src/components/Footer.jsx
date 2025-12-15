@@ -141,7 +141,7 @@ const Footer = () => {
                         </NavLink>
 
 
-                        <NavLink to='/about' className=''>
+                        <NavLink to='/shipping-policy' className=''>
                             Shipping Policy
                         </NavLink>
 
