@@ -10,7 +10,7 @@ const OurProducts = () => {
     const { products } = useContext(ProductContext)
     console.log(products)
 
-    
+
 
     const truncateText = (text, wordLimit) => {
         const words = text.split(" ");
@@ -22,7 +22,7 @@ const OurProducts = () => {
         <div className='flex flex-col items-center justify-center w-full p-4 gap-2'>
 
             <div className=''>
-                <h1 className='text-[#111111] text-center font-edensor text-lg'>Our Products</h1>
+                <h1 className='text-[#111111] text-center font-edensor text-lg'>Our Himalayas Collections</h1>
                 <p className='text-[#606060] text-sm md:text-base text-center'>We offer variety of Tibetan and Nepali handicraft Products</p>
             </div>
 
