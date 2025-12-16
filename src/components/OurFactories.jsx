@@ -160,28 +160,54 @@ const OurFactories = () => {
         {
             title: 'Singing Bowl Factory',
             description:
-                'We take pride in collaborating with talented artisans who possess diverse skills and craftsmanship. Working with these artists allows us to offer you highquality products while supporting the artisans financially. By promoting these traditional arts and crafts, we contribute to preserving them for future generations to enjoy.',
-            images: ['/Images/factory.jpg', '/Images/team1.jpg']
+                "In our Singing Bowl Factory, you'll find a team of over 10 dedicated craftsmen meticulously shaping and tuning each bowl.This isn't just work; it's a labor of love passed down through generations.These artisans use time- honored techniques; hammering and refining the metal by hand; to create the deep, resonant tones that make our singing bowls truly exceptional.Witnessing their precision and dedication firsthand is an experience in itself, showcasing the heart and soul poured into every single bowl.",
+            images: [
+                '/Images/Singing_Bowl_Factory/Singingbowl_FACTORY1.jpg',
+                '/Images/Singing_Bowl_Factory/Singingbowl_FACTORY2.jpg',
+                '/Images/Singing_Bowl_Factory/Singingbowl_FACTORY3.jpg',
+                '/Images/Singing_Bowl_Factory/Singingbowl_FACTORY4.jpg',
+                '/Images/Singing_Bowl_Factory/Singingbowl_FACTORY5.jpg',
+
+            ]
         },
 
         {
-            title: 'Thangka Factory',
+            title: 'Incense Factory',
             description:
-                'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.',
-            images: ['/Images/factory.jpg', '/Images/team1.jpg']
+                "The fragrant heart of our operation, the Incense Factory, is another place where over 20 Nepalese women apply their expertise. Here, they meticulously blend natural ingredients, roll, and prepare our authentic Himalayan incense. This factory is a testament to our commitment to providing meaningful employment opportunities for women, allowing them to hone their traditional skills in creating aromatic blends that have been used for centuries in spiritual practices. Like our Accessories Factory, this is a wholly-owned facility, ensuring rigorous quality control and ethical production from start to finish.",
+            images: [
+                '/Images/Incense_Factory/IINCENSE_FACTORY1.jpg',
+                '/Images/Incense_Factory/INCENSE_FACTORY2.jpg',
+                '/Images/Incense_Factory/INCENSE_FACTORY3.jpg',
+                '/Images/Incense_Factory/INCENSE_FACTORY4.jpg',
+                '/Images/Incense_Factory/INCENSE_FACTORY5.jpg',
+
+            ]
         },
 
         {
             title: 'Stick factory',
             description:
                 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.',
-            images: ['/Images/StickFactory_001.jpg', '/Images/StickFactory_002.jpg', '/Images/StickFactory_003.jpg', '/Images/StickFactory_004.jpg', '/Images/StickFactory_005.jpg',]
+            images: [
+                '/Images/StickFactory_001.jpg',
+                '/Images/StickFactory_002.jpg',
+                '/Images/StickFactory_003.jpg',
+                '/Images/StickFactory_004.jpg',
+                '/Images/StickFactory_005.jpg',]
         },
         {
             title: 'Cushion factory',
             description:
                 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.',
-            images: ['/Images/cushion1.jpg', '/Images/cushion2.jpg', '/Images/cushion3.jpg', '/Images/cushion4.jpg', '/Images/cushion5.jpg']
+            images: [
+                '/Images/Cushion_Factory/1.jpg',
+                '/Images/Cushion_Factory/2.jpg',
+                '/Images/Cushion_Factory/3.jpg',
+                '/Images/Cushion_Factory/4.jpg',
+                '/Images/Cushion_Factory/5.jpg',
+
+            ]
         },
     ];
 
@@ -200,23 +226,23 @@ const OurFactories = () => {
             setCurrentImageIndex((prev) =>
                 prev === Services[currentIndex].images.length - 1 ? 0 : prev + 1
             );
-        }, 4000);
+        }, 2000);
 
         return () => clearInterval(imageTimer);
     }, [currentIndex]);
 
     // Auto change service every 6 seconds
-    // useEffect(() => {
-    //     const serviceTimer = setInterval(() => {
-    //         setIsFlipping(true);
-    //         setTimeout(() => {
-    //             setCurrentIndex((prev) => (prev + 1) % Services.length);
-    //             setIsFlipping(false);
-    //         }, 500);
-    //     }, 6000);
+    useEffect(() => {
+        const serviceTimer = setInterval(() => {
+            setIsFlipping(true);
+            setTimeout(() => {
+                setCurrentIndex((prev) => (prev + 1) % Services.length);
+                setIsFlipping(false);
+            }, 500);
+        }, 8000);
 
-    //     return () => clearInterval(serviceTimer);
-    // }, []);
+        return () => clearInterval(serviceTimer);
+    }, []);
 
     const handleNext = () => {
         setIsFlipping(true);
