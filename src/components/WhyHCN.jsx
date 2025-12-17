@@ -201,29 +201,35 @@ const WhyHCN = () => {
 
     const Services = [
         {
-            title: 'Authenticity',
+            title: 'Our own Factories and Artisans',
             description:
-                "We are deeply connected to the creation process, working hand-in-hand with skilled artisans in Nepal to bring you truly authentic singing bowls and traditional handicrafts. Each piece embodies our rich cultural heritage and centuries-old techniques. Our singing bowls and traditional crafts are sourced directly from local creators, ensuring that what you receive is a true representation of Nepalese spirituality and heritage. When you buy from us, you're not just purchasing a product; you're connecting with a tradition that spans generations.",
+                "We're not just a shop; we're the makers. We proudly craft our own products right here in Nepal, in our very own workshops. This means we work directly with our incredibly talented Nepali artisans, ensuring every single piece is created under ethical conditions and with fair wages. Because we oversee the entire process, from the first step to the last, you receive exceptionally high-quality crafts made with genuine, time-honored traditional methods. It's quality and authenticity, guaranteed.",
             image: '/Images/homeImage.png',
         },
         {
-            title: 'Quality',
+            title: 'Unwavering Authenticity',
             description:
-                "Our commitment is to provide you with only the finest quality products, crafted to stand the test of time. Every item, whether it's a singing bowl, sculpture, or textile; it is carefully crafted and inspected for durability, design, and excellence. Our artisans utilize premium materials and time-honored techniques passed down through generations, resulting in pieces that are not only beautiful but also deeply meaningful and built to last",
+                "In a market full of fakes, we stand firm on guaranteed authenticity. Every single item, from our detailed Thangka paintings to our hand-beaten singing bowls, is a genuine product of Nepal. They're made using traditional techniques and local materials. We share clear information about where our products come from and how they're made, so you can be completely sure you're getting a true piece of Himalayan heritage.",
             image: '/Images/image.png',
         },
         {
-            title: 'Customer Support',
+            title: 'Dedicated to Spiritual Integrity & Global Reach',
             description:
-                "Your satisfaction matters to us. We believe in fostering lasting relationships with our customers through responsive and thoughtful support. Whether you're choosing your first singing bowl or need guidance on care, our team is here to guide you every step of the way. We're just a message away; friendly, knowledgeable, and dedicated to ensuring your experience is seamless and fulfilling. We're not just sellers; we're your partners in discovering Himalayan artistry",
+                "Our promise goes beyond simply selling products. We deeply respect the spiritual essence of every item, making sure each one is crafted with care and often blessed before it leaves Nepal. With our reliable worldwide shipping, we bring the sacred energy and true craftsmanship of the Himalayas right to your door, wherever you are, with deep care and respect.",
             image: '/Images/homeImage.png',
         },
         {
-            title: 'Community',
+            title: 'Curated by Sound Healing Experts',
             description:
-                "We're more than a brand; we're a community bound by art, culture, and mindfulness. By choosing to support us, you directly contribute to the empowerment of local artisans and the preservation of traditional craftsmanship. We collaborate closely with local craftsmen, reinvest in their communities, and ensure these arts endure for future generations. Together, we're keeping Nepal's cultural heartbeat alive; one handcrafted piece at a time",
+                "Our Himalayan singing bowls are far from just a random collection. Each one is carefully chosen by certified sound healing experts. This special process means every bowl isn't just beautiful to look at, but more importantly, it delivers superior sound vibrations and real healing potential. When you pick a singing bowl from us, you're getting a powerful tool that's been professionally checked and approved to create truly deep, healing sounds.",
             image: '/Images/homeImage.png',
         },
+        {
+            title: 'Direct from the Source & Fair Pricing',
+            description:
+                "Our promise goes beyond simply selling products. We deeply respect the spiritual essence of every item, making sure each one is crafted with care and often blessed before it leaves Nepal. With our reliable worldwide shipping, we bring the sacred energy and true craftsmanship of the Himalayas right to your door, wherever you are, with deep care and respect.",
+            image: '/Images/homeImage.png',
+        }
     ];
 
 
