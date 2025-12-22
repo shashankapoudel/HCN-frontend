@@ -139,6 +139,7 @@ const OurFactories = () => {
                             >
                                 <GrFormPrevious />
                             </button>
+
                             <img
                                 src={Services[currentIndex].images[currentImageIndex]}
                                 className="object-cover rounded-md w-96 h-64"
@@ -146,6 +147,7 @@ const OurFactories = () => {
                                 loading='lazy'
                             />
                             <button
+
                                 className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
                                 onClick={handleNextImage}
                             >
