@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
@@ -146,13 +145,14 @@ const OurFactories = () => {
                                 alt="Factory"
                                 loading='lazy'
                             />
-                            <button
 
+                            <button
                                 className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
                                 onClick={handleNextImage}
                             >
                                 <GrFormNext />
                             </button>
+
                         </div>
                     )}
                 </div>
@@ -163,21 +163,25 @@ const OurFactories = () => {
                         {Services[currentIndex].description}
                     </p>
                 </div>
+
             </div>
 
             <div className="flex items-center justify-center mt-4">
+
                 <button
                     className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
                     onClick={handlePrevious}
                 >
                     <GrFormPrevious />
                 </button>
+
                 <button
                     className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
                     onClick={handleNext}
                 >
                     <GrFormNext />
                 </button>
+
             </div>
         </div>
     );

@@ -38,6 +38,7 @@ import SingingBowl from './pages/SingingBowl'
 import SubcategoryPage from './pages/SubcategoryPage'
 import Wholesale from './pages/Wholesale'
 import ShippingPolicy from './pages/ShippingPolicy'
+import SubSubCategory from './pages/SubSubCategory'
 
 
 
@@ -83,6 +84,7 @@ function App() {
           {/* <Route path='/products' element={<Products />} /> */}
           <Route path='/singing-bowls' element={<SingingBowl />} />
           <Route path="/:category/:subcategory" element={<SubcategoryPage />} />
+          <Route path="/:category/:subcategory/:subsubcategory" element={<SubSubCategory />} />
 
           <Route path='/product/:id' element={<SingleProductPage />} />
 
