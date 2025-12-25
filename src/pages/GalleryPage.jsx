@@ -35,7 +35,6 @@ const Gallery = () => {
     const handleImageClick = (image, index) => {
         setSelectedImage({ image: `/Images/Gallery/${image}`, index });
         setImageOpen(true)
-
     }
 
     const previous = () => {

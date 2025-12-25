@@ -72,4 +72,4 @@ const SubSubCategory = () => {
     )
 }
 
-export default SubSubCategory
+export default SubSubCategory;
