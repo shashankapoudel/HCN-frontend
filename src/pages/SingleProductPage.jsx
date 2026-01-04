@@ -64,7 +64,7 @@ const SingleProductPage = () => {
                 </div>
 
                 <div className='flex gap-8 items-center justify-center'>
-
+{/* 
                     <div className='w-2/5 p-4 grid grid-cols-2 gap-2'>
 
                         {product.images.map((img, index) => (
@@ -80,7 +80,25 @@ const SingleProductPage = () => {
                         ))
                         }
 
-                    </div>
+                    </div> */}
+
+
+                    <div className="w-2/5 grid grid-cols-2 grid-rows-3 gap-2">
+  {product.images.map((img, index) => (
+    <img
+      key={index}
+      src={img}
+      alt={product.name}
+      onClick={() => handleImageClick(index)}
+      className={`
+        w-full object-cover rounded cursor-pointer
+        ${index === 0 ? 'col-span-3 row-span-2 h-80' : 'h-32'}
+      `}
+      loading="lazy"
+    />
+  ))}
+</div>
+
 
                     <div className='w-2/5 flex flex-col p-4'>
                         <h1 className='text-3xl font-bold capitalize'>{product.name}</h1>

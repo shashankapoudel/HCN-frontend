@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductProvider";
 import AddToCart from "../components/AddToCart";
+import QuickViewProd from "../components/QuickViewProd";
 
 const SubcategoryPage = () => {
     const { category, subcategory } = useParams();
@@ -36,6 +37,8 @@ const SubcategoryPage = () => {
                             <div
                                 onClick={() => navigate(`/product/${product._id}`)}
                                 className="relative w-full aspect-square overflow-hidden group">
+
+                                    <QuickViewProd product={product}/>
 
                                 <img
                                     src={product.images[0]}

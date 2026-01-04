@@ -88,6 +88,7 @@ const BlogPage = () => {
                             </button>
                         ))}
                     </div>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                         {currentBlogs.map((blog) => {
                             const textContent = blog.content.replace(/<[^>]+>/g, "");
@@ -118,7 +119,6 @@ const BlogPage = () => {
                             );
                         })}
                     </div>
-
 
                     <div className="flex justify-center mt-6 space-x-2 flex-wrap">
                         <button
@@ -155,7 +155,6 @@ const BlogPage = () => {
                         >
                             Next
                         </button>
-
                     </div>
                 </>
             )}
