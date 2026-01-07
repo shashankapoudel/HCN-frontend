@@ -73,13 +73,13 @@ const QuickViewModal = ({ isModalOpen, onClose, quickviewproduct }) => {
 
   return (
     <>
-     
+
       <div
         className="fixed inset-0 bg-black bg-opacity-50 z-40"
         onClick={onClose}
       />
 
-    
+
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div
           onClick={(e) => e.stopPropagation()}
@@ -122,11 +122,11 @@ const QuickViewModal = ({ isModalOpen, onClose, quickviewproduct }) => {
                 </button>
 
               </div>
-              
+
             </div>
           </div>
 
-         
+
           <button
             type="button"
             onClick={onClose}
