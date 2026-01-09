@@ -6,7 +6,6 @@ const ProductBadges = () => {
     const { products } = useContext(ProductContext);
     const [activeTab, setActiveTab] = useState('favorite');
 
-    // Sorting and selecting products
     const latestProducts = [...products]
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
         .slice(0, 4);
@@ -14,7 +13,7 @@ const ProductBadges = () => {
     const customerFavorite = shuffled.slice(0, 4);
     const onSale = shuffled.slice(4, 8);
 
-    // Tab data map
+  
     const tabContent = {
         favorite: {
             title: "People's Favorite",
@@ -55,7 +54,7 @@ const ProductBadges = () => {
                 ))}
             </div>
 
-            {/* Active Tab Content */}
+       
             <ProductGrid
                 title={tabContent[activeTab].title}
                 description={tabContent[activeTab].description}

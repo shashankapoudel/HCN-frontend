@@ -3,16 +3,6 @@ import { FaChevronUp } from "react-icons/fa";
 
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
-
-
-    // const toggleVisibility = () => {
-    //     if (window.pageYOffset > 1600) {
-    //         setIsVisible(true);
-    //     } else {
-    //         setIsVisible(false);
-    //     }
-    // };
-
     const toggleVisibility = () => {
         const threshold = 100;
         if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - threshold) {

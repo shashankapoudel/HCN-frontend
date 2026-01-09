@@ -35,7 +35,7 @@ const SubcategoryPage = () => {
               key={product._id}
               className="w-full flex flex-col p-6 bg-white shadow-lg justify-between"
             >
-              {/* Image Wrapper */}
+           
               <div
                 onClick={() => navigate(`/product/${product._id}`)}
                 className="relative w-full aspect-square overflow-hidden group cursor-pointer"
@@ -60,7 +60,7 @@ const SubcategoryPage = () => {
                 />
               </div>
 
-              {/* Content */}
+          
               <div className="flex flex-col gap-2 mt-4">
                 <div>
                   <h1 className="text-[#111111] font-bold text-base capitalize">

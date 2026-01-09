@@ -6,7 +6,7 @@ const QuickViewProd = ({ product }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleQuickViewClick = (e) => {
-    e.stopPropagation(); // 🔥 prevent parent navigation
+    e.stopPropagation(); 
     setQuickviewproduct(product);
     setIsModalOpen(true);
   };
@@ -18,7 +18,6 @@ const QuickViewProd = ({ product }) => {
 
   return (
     <>
-      {/* Eye Button */}
       <div className="absolute top-5 right-2 flex flex-col space-y-4 
                       opacity-0 group-hover:opacity-100 transition-opacity z-20">
         <button
@@ -29,7 +28,6 @@ const QuickViewProd = ({ product }) => {
         </button>
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <QuickViewModal
           isModalOpen={isModalOpen}

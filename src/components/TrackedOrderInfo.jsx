@@ -12,9 +12,9 @@ const TrackedOrderInfo = () => {
                     <a href="#" className="text-blue-500 underline">Contact us</a> for further inquiry.
                 </p>
 
-                {/* Progress Bar with Line */}
+              
                 <div className="relative flex items-center justify-between mt-6 w-full">
-                    {/* Progress Line */}
+                 
                     <div className="absolute top-2/3 left-0 w-full h-1 bg-gray-300 z-0"></div>
                     <div className="absolute top-2/3 left-0 w-1/3 h-1 bg-green-500 z-10"></div>
 

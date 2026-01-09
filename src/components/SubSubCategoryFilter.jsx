@@ -2,18 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 const SubSubCategoryFilter = ({ selectedSubSubcategory, setSelectedSubSubcategory, availableSubSubcategories }) => {
     const [subSubcategoryOptions, setSubSubcategoryOptions] = useState([]);
-
-
-    // const categorySubcategories = {
-    // "singing-bowls": ['antique', 'handmade', 'machinemade', 'accessories'],
-    // "ritual-items": ["prayer-wheel", "prayer-flags", "mala&bala", "wooden-products", 'incenses&burners', 'felt-products'],
-    // "statues": [],
-    // "himalayas-art&paintings": ["thankas&paintings", "canvas&arts"],
-    // "himalayas-hemp": ["bags&accessories", "wellness&decor"],
-    // "himalayas-crystals": [],
-    // "himalayas-healingcollections": ["sound-healing-courses", "gongs", "bell&tingsha", "shamic-drump"],
-    // };
-
     useEffect(() => {
         setSubSubcategoryOptions(availableSubSubcategories);
     }, [availableSubSubcategories]);

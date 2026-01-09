@@ -14,7 +14,7 @@ const CategorySingingBowl = () => {
     return (
         <div className='flex flex-col items-center justify-center w-full p-4 gap-2'>
             
-            {/* Heading */}
+        
             <div>
                 <h1 className='text-[#111111] text-center font-edensor text-lg'>
                     Singing Bowls
@@ -24,7 +24,6 @@ const CategorySingingBowl = () => {
                 </p>
             </div>
 
-            {/* Products */}
             <div className='w-full grid grid-cols-1 lg:grid-cols-4 gap-5'>
                 {filteredProducts.slice(0, 4).map((product) => (
                     <div
@@ -32,7 +31,7 @@ const CategorySingingBowl = () => {
                         className='w-full flex flex-col p-6 bg-white shadow-lg justify-between'
                     >
 
-                        {/* Image + Quick View */}
+                  
                         <div className='relative w-full aspect-square overflow-hidden group'>
                             <QuickViewProd product={product} />
 
@@ -51,7 +50,6 @@ const CategorySingingBowl = () => {
                             />
                         </div>
 
-                        {/* Content */}
                         <div className='flex flex-col gap-2 mt-4'>
                             <div>
                                 <h1 className='text-left text-[#111111] font-bold text-base capitalize'>

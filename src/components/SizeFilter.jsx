@@ -7,8 +7,8 @@ const SizeFilter = ({ selectedSize, setSelectedSize }) => {
     const handleSizeChange = (size) => {
         setSelectedSize((prevSelected) =>
             prevSelected.includes(size)
-                ? prevSelected.filter((s) => s !== size) // Remove if already selected
-                : [...prevSelected, size] // Add if not selected
+                ? prevSelected.filter((s) => s !== size) 
+                : [...prevSelected, size] 
         );
     }
 
