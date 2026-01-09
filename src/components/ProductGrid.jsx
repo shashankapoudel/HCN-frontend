@@ -1,6 +1,7 @@
 import React from 'react';
 import AddToCart from './AddToCart';
 import { useNavigate } from 'react-router-dom';
+import QuickViewProd from './QuickViewProd';
 
 const ProductGrid = ({ title, description, products }) => {
 
@@ -29,6 +30,7 @@ const ProductGrid = ({ title, description, products }) => {
                                 loading='lazy'
                             />
                         </div> */}
+<QuickViewProd/>
 
                         <div className="relative bg-[#EBEBEB]  w-full aspect-square overflow-hidden group">
                             <img

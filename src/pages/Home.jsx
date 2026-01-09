@@ -7,6 +7,7 @@ import ProductBadge from '../components/ProductBadges';
 import Socialmedia from '../components/Socialmedia';
 import CategorySingingBowl from '../components/CategorySingingBowl';
 import ImageSlider from '../components/ImageSlider';
+import ProductBadges from '../components/ProductBadges';
 
 const Home = () => {
     return (
@@ -38,7 +39,7 @@ const Home = () => {
             </div>
 
             <div className='p-2 md:p-4 '>
-                <ProductBadge />
+                <ProductBadges />
             </div>
 
             <div className='p-2 md:p-4'>

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { ProductContext } from "../context/ProductProvider";
 import AddToCart from './AddToCart';
 import { useNavigate } from 'react-router-dom';
+import QuickViewProd from './QuickViewProd';
 
 const OurProducts = () => {
 
@@ -36,6 +37,7 @@ const OurProducts = () => {
                             className='w-full flex flex-col p-6 bg-white shadow-lg justify-between cursor-pointer'>
                             <div
                                 className="relative w-full aspect-square overflow-hidden group">
+                                 <QuickViewProd product={product}/>
 
                                 <img
                                     src={product.images[0]}
