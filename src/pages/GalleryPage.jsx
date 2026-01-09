@@ -12,15 +12,6 @@ const Gallery = () => {
     const [isImageOpen, setImageOpen] = useState(false)
     const [selectedImage, setSelectedImage] = useState("")
 
-
-    // const location = useLocation();
-
-    // useEffect(() => {
-    //     setImageOpen(false);
-    //     setSelectedImage("");
-    // }, [location.pathname]);
-
-
     useEffect(() => {
         setActiveImages(imageList)
     }, [imageList])

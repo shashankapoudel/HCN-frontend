@@ -95,14 +95,6 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
                             className="mb-4"
                             style={{ height: "180px" }}
                         />
-                        {/* <textarea
-                            rows={8}
-                            type="text"
-                            className="w-full p-2 border rounded mb-4"
-                            placeholder="Enter the answer here"
-                            value={answer}
-                            onChange={(e) => setAnswer(e.target.value)}
-                        /> */}
                     </div>
 
                 </div>

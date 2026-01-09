@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 

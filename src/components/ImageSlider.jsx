@@ -44,18 +44,6 @@ const ImageSlider = () => {
 
             </div>
 
-
-            {/* <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-                {images.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => goToSlide(index)}
-                        className={`w-3 h-3 rounded-full ${index === currentIndex ? "bg-white" : "bg-gray-400"
-                            } transition-all duration-300`}
-                    />
-                ))}
-            </div> */}
-
         </div>
     );
 };

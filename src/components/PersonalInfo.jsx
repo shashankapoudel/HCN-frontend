@@ -48,7 +48,7 @@ const PersonalInfo = ({ nextStep, formData, setFormData }) => {
             </div>
 
             <div className='flex flex-col gap-6 w-full'>
-                {/* First & Last Name */}
+               
                 <div className='flex flex-col md:flex-row gap-6 w-full'>
 
                     <div className='flex flex-col w-full'>
@@ -74,7 +74,7 @@ const PersonalInfo = ({ nextStep, formData, setFormData }) => {
                     </div>
                 </div>
 
-                {/* Email */}
+              
                 <div className='flex flex-col w-full'>
                     <label className='text-sm'>Email *</label>
                     <input
@@ -86,7 +86,7 @@ const PersonalInfo = ({ nextStep, formData, setFormData }) => {
                     />
                 </div>
 
-                {/* Code */}
+              
                 <div className='flex flex-col w-full'>
                     <label className='text-sm'>Email Verification *</label>
                     <input
@@ -98,7 +98,7 @@ const PersonalInfo = ({ nextStep, formData, setFormData }) => {
                     />
                 </div>
 
-                {/* Phone */}
+               
                 <div className='flex flex-col w-full'>
                     <label className='text-sm'>Phone Number *</label>
 
@@ -126,7 +126,7 @@ const PersonalInfo = ({ nextStep, formData, setFormData }) => {
                     </div>
                 </div>
 
-                {/* Submit */}
+              
                 <button
                     onClick={handleNext}
                     className='bg-[#0B4D81] text-white p-2 rounded-md hover:bg-[#093a63] '

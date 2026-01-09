@@ -68,7 +68,7 @@ const Faqtable = ({ faqno, setFaqno, onEdit, refresh, setRefresh }) => {
                 <tbody>
                     {currentFaqs.map((faq, index) => (
                         <tr key={index} className="border-b px-2">
-                            {/* <td className="p-3">{index + 1}</td> */}
+                        
                             <td className="p-3">{indexOfFirstFaq + index + 1}</td>
 
                             <td className="p-3">{faq.category}</td>

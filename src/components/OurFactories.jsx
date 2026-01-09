@@ -78,7 +78,7 @@ const OurFactories = () => {
         return () => clearInterval(imageTimer);
     }, [currentIndex]);
 
-    // Auto change service every 6 seconds
+  
     useEffect(() => {
         const serviceTimer = setInterval(() => {
             setIsFlipping(true);

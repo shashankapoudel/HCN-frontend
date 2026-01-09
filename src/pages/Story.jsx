@@ -26,7 +26,7 @@ const Story = () => {
     return (
         <div className='min-h-screen'>
             <div className='flex flex-col gap-5'>
-                {/* Image Carousel Section */}
+            
                 <div>
                     <div>
                         <img
@@ -51,7 +51,7 @@ const Story = () => {
                     </div>
                 </div>
 
-                {/* Text and Image Section */}
+           
                 <div className='flex flex-col-reverse lg:flex-row gap-4 lg:gap-8 sm:p-2 lg:p-6'>
                     <div className='w-full lg:w-1/2 p-4'>
                         <h1 className='text-[#0B4D81] text-xl font-semibold'>Himalayas Craft Nepal(HCN)</h1>
@@ -63,7 +63,7 @@ const Story = () => {
 
                         </p>
 
-                        {/* Read More Button */}
+                    
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className='mt-4 px-4 py-2 bg-[#bb2821] text-white rounded hover:bg-[#a0201a] transition'
@@ -91,7 +91,7 @@ const Story = () => {
                 </div>
             </div>
 
-            {/* Modal */}
+           
             <StoryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
     );

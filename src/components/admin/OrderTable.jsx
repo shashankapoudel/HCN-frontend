@@ -50,7 +50,7 @@ const OrderTable = ({ searchQuery, filterStatus, sortOrder }) => {
                                 <td className="p-3">{order.address}</td>
                                 <td className="p-3">{order.amount}</td>
                                 <td className="p-3">{order.date}</td>
-                                {/* <td className="p-3"><StatusBadge status={order.status} /></td> */}
+                                
                                 <td className="p-3">
                                     <select className="border px-2 py-1 rounded">
                                         <option>{order.status}</option>

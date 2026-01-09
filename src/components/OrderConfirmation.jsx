@@ -16,18 +16,18 @@ const OrderConfirmation = () => {
                 <a href="#" className="text-blue-500 font-medium">Contact us</a> for further inquiry.
             </p>
 
-            {/* Progress Bar */}
+       
             <div className="flex flex-col lg:flex-row items-center justify-between mt-8 w-full relative gap-4">
                 {steps.map((step, index) => (
                     <div key={index} className="relative flex flex-col items-center text-sm w-full lg:w-auto gap-2">
 
-                        {/* Step Icon */}
+                     
                         <div className={`w-12 h-12 flex items-center justify-center rounded-full text-2xl border-2 
                             ${step.active ? "border-green-500 text-green-500" : "border-gray-300 text-gray-400"}`}>
                             {step.icon}
                         </div>
 
-                        {/* Step Label */}
+                    
                         <p className={`mt-2 ${step.active ? "text-green-500 font-medium" : "text-gray-400"}`}>
                             {step.label}
                         </p>
