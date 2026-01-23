@@ -4,7 +4,7 @@ import BASE_URL from "../../config/api";
 import AccessorisUpload from "./AccessorisUpload";
 
 
-const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
+const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) => {
 
     const [name, setName] = useState("")
     const [weight, setWeight] = useState("")
@@ -141,8 +141,10 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh }) => {
                 method: 'POST',
                 body: formData
             });
+   
 
             const responseData = await res.json();
+            console.log(responseData);
             setName("");
             setWeight("");
             setCategory("");

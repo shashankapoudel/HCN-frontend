@@ -13,7 +13,6 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
     const faqcategory = ["Select category", "General", "Products", "Payments", "Shipping and Orders", 'Product Maintenance', 'Refund Policy', 'Customer Support']
 
     useEffect(() => {
-
         if (existingData) {
             setCategory(existingData.category)
             setQuestion(existingData.question)
@@ -23,8 +22,8 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
             setQuestion('')
             setAnswer('')
         }
-
     }, [existingData])
+    
 
     const handleSubmit = async () => {
         setIsLoading(true);
@@ -91,7 +90,7 @@ const FaqModal = ({ isOpen, onClose, existingData }) => {
                         <ReactQuill
                             theme="snow"
                             value={answer}
-                            onChange={setAnswer}
+                            onChange={setAnswer}           
                             className="mb-4"
                             style={{ height: "180px" }}
                         />

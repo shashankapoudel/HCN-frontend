@@ -55,6 +55,7 @@ const ProductList = () => {
                     setProducts={setProducts}
                     onEdit={handleEdit}
                     setRefresh={setRefresh}
+                    refresh={refresh}
                 />
             </div>
 
@@ -67,6 +68,7 @@ const ProductList = () => {
                             onClose={handleModalClose}
                             existingData={selectedBlog}
                             setRefresh={setRefresh}
+                            refresh={refresh}
 
                         />
                     </div>

@@ -11,17 +11,17 @@ const ProductGrid = ({ title, description, products }) => {
     return (
         <div className='flex flex-col items-center justify-center w-full p-4 gap-2'>
        
-
             <div className='w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8'>
                 {products.map((product) => (
+                    
                     <div
                         onClick={() => navigate(`/product/${product._id}`)}
                         key={product._id}
                         className='w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-6 relative'
                     >
-<QuickViewProd/>
 
                         <div className="relative bg-[#EBEBEB]  w-full aspect-square overflow-hidden group">
+                            <QuickViewProd product={product}/>
                             <img
                                 src={product.images[0]}
                                 alt={product.name}
@@ -38,6 +38,7 @@ const ProductGrid = ({ title, description, products }) => {
 
 
                         <div className='flex flex-col gap-2'>
+
                             <div className=''>
                                 <h1 className='text-[#111111] font-bold text-base capitalize'>
                                     {product.name}
@@ -51,6 +52,7 @@ const ProductGrid = ({ title, description, products }) => {
                                 <p className='text-[#bb2821] font-bold'>${product.price}</p>
                                 <AddToCart product={product} />
                             </div>
+
                         </div>
                     </div>
                 ))}
