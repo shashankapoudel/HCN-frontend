@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProductUpload from "./AddImageAudio";
 import BASE_URL from "../../config/api";
 import AccessorisUpload from "./AccessorisUpload";
+import ReactQuill from "react-quill";
 
 
 const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) => {
@@ -336,13 +337,21 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
 
                         <div>
                             <label className="block text-gray-700 font-bold mb-2">Product Description</label>
-                            <textarea
+                            {/* <textarea
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 className="w-full h-32 border p-2 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 placeholder="Type your message..."
                                 required
-                            />
+                            /> */}
+
+                                    <ReactQuill
+                                                    theme="snow"
+                                                    value={description}
+                                                    onChange={setDescription}
+                                                    className="mb-4"
+                                                    style={{ height: "180px" }}
+                                                />
                         </div>
 
                         <div className="mt-8">
