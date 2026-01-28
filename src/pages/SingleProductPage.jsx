@@ -291,7 +291,7 @@ const SingleProductPage = () => {
         <div className="flex gap-8  justify-evenly mt-4">
 
           {/* Images */}
-          <div className="w-1/2 grid grid-cols-2 grid-rows-3 gap-2">
+          <div className="w-1/2 grid grid-cols-4 grid-rows-3 gap-2">
             {product.images.map((img, index) => (
               <img
                 key={index}
@@ -321,10 +321,10 @@ const SingleProductPage = () => {
               </h1>
             </div>
 
-        <div className='gap-2'>
+        <div className='flex flex-col gap-2  shadow-md'>
 
-            <div className="w-full">
-              <div className="flex items-center justify-between border p-4 shadow-md">
+            <div className="w-full rounded-md">
+              <div className="flex items-center justify-between border p-4">
                 <h1>Product Description</h1>
                 <button onClick={handleShowDescription}>
                 { 
@@ -346,11 +346,16 @@ const SingleProductPage = () => {
               )}
             </div>
 
-            <div className="w-full">
-              <div className="flex items-center justify-between border p-4 shadow-md">
+            <div className="w-full rounded-md shadow-md">
+              <div className="flex items-center justify-between border p-4 ">
                 <h1>Product Overview</h1>
                 <button onClick={handleShowOverview}>
-                  <FaChevronDown />
+
+           { 
+                !showOverview?
+                 <FaChevronDown />: <FaChevronUp/>
+                }
+
                 </button>
               </div>
 
@@ -365,7 +370,8 @@ const SingleProductPage = () => {
                 </div>
               )}
             </div>
-              </div>
+
+         </div>
 
             <hr className="my-4" />
 

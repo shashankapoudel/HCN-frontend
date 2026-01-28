@@ -325,18 +325,28 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
                         </div>
 
                         <div>
-                            <label className="block text-gray-700 font-bold mb-2">Product Overview</label>
-                            <textarea
+                            <label className=" text-gray-700 font-bold mb-2">Product Overview</label>
+                            {/* <textarea
                                 value={overview}
                                 onChange={(e) => setOverview(e.target.value)}
                                 className="w-full h-24 border p-2 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 placeholder="Type your message..."
                                 required
-                            />
+                            /> */}
+
+                                            <ReactQuill
+                                                    theme="snow"
+                                                    value={overview}
+                                                    onChange={setOverview}
+                                                    className="mb-4"
+                                                    // style={{ height: "180px" }}
+                                                />
+
+
                         </div>
 
                         <div>
-                            <label className="block text-gray-700 font-bold mb-2">Product Description</label>
+                            <label className=" text-gray-700 font-bold mb-2">Product Description</label>
                             {/* <textarea
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
