@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ProductContext } from '../context/ProductProvider';
 import AddToCart from '../components/AddToCart';
 import { useNavigate } from 'react-router-dom';
+import QuickViewProd from '../components/QuickViewProd';
 
 
 const SingingBowl = () => {
@@ -66,7 +67,7 @@ const SingingBowl = () => {
                                                 <div
                                                     onClick={() => navigate(`/product/${product._id}`)}
                                                     className="relative w-full aspect-square overflow-hidden group">
-
+                                                   <QuickViewProd product={product}/>
                                                     <img
                                                         src={product.images[0]}
                                                         alt={product.name}

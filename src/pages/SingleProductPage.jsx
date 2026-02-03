@@ -324,9 +324,12 @@ const SingleProductPage = () => {
         <div className='flex flex-col gap-2  shadow-md'>
 
             <div className="w-full rounded-md">
-              <div className="flex items-center justify-between border p-4">
+              <div
+              onClick={handleShowDescription}
+               className="flex items-center justify-between border p-4 cursor-pointer">
                 <h1>Product Description</h1>
-                <button onClick={handleShowDescription}>
+                <button 
+                >
                 { 
                 !showDescription?
                  <FaChevronDown />: <FaChevronUp/>
@@ -347,9 +350,13 @@ const SingleProductPage = () => {
             </div>
 
             <div className="w-full rounded-md shadow-md">
-              <div className="flex items-center justify-between border p-4 ">
+              <div
+              onClick={handleShowOverview}
+               className="flex items-center justify-between border p-4 cursor-pointer">
                 <h1>Product Overview</h1>
-                <button onClick={handleShowOverview}>
+                <button
+                 
+                 >
 
            { 
                 !showOverview?
