@@ -212,6 +212,7 @@
 
 
 
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
@@ -288,7 +289,7 @@ const SingleProductPage = () => {
 
       <div>
 
-        <div className="flex gap-8  justify-evenly mt-4">
+        <div className="flex gap-8 justify-evenly mt-4 items-start">
 
           {/* Images */}
           <div className="w-1/2 grid grid-cols-4 grid-rows-3 gap-2">
@@ -301,8 +302,8 @@ const SingleProductPage = () => {
                 onClick={() => handleImageClick(index)}
                 className={`w-full object-cover rounded cursor-pointer ${
                   index === 0
-                    ? 'col-span-3 row-span-2 h-80'
-                    : 'h-32'
+                     ? 'col-span-3 row-span-2 aspect-[4/3]'
+      : 'aspect-square'
                 }`}
               />
             ))}
@@ -453,3 +454,4 @@ const SingleProductPage = () => {
 };
 
 export default SingleProductPage;
+

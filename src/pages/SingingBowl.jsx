@@ -48,8 +48,12 @@ const SingingBowl = () => {
 
     return (
         <div className='min-h-screen p-9'>
-            <h1 className='text-2xl font-bold mb-4 text-center'>Singing Bowls</h1>
-
+            <div className='px-6'>
+            <h1 className='text-2xl font-bold mb-4 text-center'>Himalayas Singing Bowls</h1>
+<p className='text-center text-[#606060]  font-edensor text-lg tracking-wide'>The singing bowl comes from the Himalayan regions of Nepal and Tibet and has been used for many years.It is usually round in shape and made from metal using traditional hand-hammering methods.Singing bowls come in different sizes, from small ones that fit in your hand to large ones placed on the floor.In the past, they were used in meditation, prayer, and healing practices.
+Today, they are used for yoga, sound therapy, relaxation, and stress relief in modern wellness practices.We produce singing bowls in our own factory, where skilled artisans work with great care and hard work until a perfect piece is achieved.
+</p>
+            </div>
             <div className='p-8'>
 
                 <div className=''>
