@@ -233,7 +233,9 @@ Today, they are used for yoga, sound therapy, relaxation, and stress relief in m
 
                                 </div>
                                 <div className='flex w-full items-end justify-end'>
-                                    <button className='underline hover:text-red-300'>See more</button>
+                                    <button 
+                                     onClick={() => navigate('/singing-bowls/machinemade')}
+                                    className='underline hover:text-red-300'>See more</button>
                                 </div>
                             </div>
 
