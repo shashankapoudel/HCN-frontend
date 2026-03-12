@@ -22,9 +22,10 @@ const ProductHeader = () => {
                         { name: 'Naga Singing Bowls', path: '/singing-bowls/antique/naga' },
                         { name: 'Ultabati Singing Bowls', path: '/singing-bowls/antique/ultabati' },
                         { name: 'Thadobati Singing Bowls', path: '/singing-bowls/antique/thadobati' },
-                        { name: 'Lingman Singing Bowls', path: '/singing-bowls/antique/lingman' },
+                        { name: 'Lingam Singing Bowls', path: '/singing-bowls/antique/lingam' },
                         { name: 'Mani Singing Bowls', path: '/singing-bowls/antique/mani' },
                         { name: 'Old Singing Bowls', path: '/singing-bowls/antique/old' },
+                        { name: 'Trapezoid Singing Bowls', path: '/singing-bowls/antique/trapezoid' },
                     ]
                 },
 
