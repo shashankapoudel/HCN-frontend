@@ -21,7 +21,7 @@ const Header = () => {
                 {
                     name: 'Old/Antique Singing Bowls', path: '/singing-bowls/antique', subsubItems: [
                         { name: 'Jambati Singing Bowls', path: '/singing-bowls/antique/jambati' },
-                        { name: 'Manipuri Singing Bowls', path: '/singing-bowls/antique/jambati' },
+                        { name: 'Manipuri Singing Bowls', path: '/singing-bowls/antique/manipuri' },
                         { name: 'Naga Singing Bowls', path: '/singing-bowls/antique/naga' },
                         { name: 'Ultabati Singing Bowls', path: '/singing-bowls/antique/ultabati' },
                         { name: 'Thadobati Singing Bowls', path: '/singing-bowls/antique/thadobati' },
