@@ -51,12 +51,54 @@ const subsubcategoryDescription=[
   description:"Trapezoid singing bowls are a rare type of bowl from the Himalayan region, known for their unique trapezoid shape and flat bottom. They are made from traditional metal alloys and sometimes have simple designs or patterns. Their shape creates rich, complex sounds with many overtones and vibrations that feel different from regular round bowls. These bowls are used for meditation, sound healing, and exploring new sound experiences. They are valued for both their unusual appearance and the special quality of their tones. Trapezoid bowls offer a unique way to relax, focus, and enjoy the benefits of sound therapy."
 },
 
+{
+  name: "trapezoid",
+  description:"Trapezoid singing bowls are a rare type of bowl from the Himalayan region, known for their unique trapezoid shape and flat bottom. They are made from traditional metal alloys and sometimes have simple designs or patterns. Their shape creates rich, complex sounds with many overtones and vibrations that feel different from regular round bowls. These bowls are used for meditation, sound healing, and exploring new sound experiences. They are valued for both their unusual appearance and the special quality of their tones. Trapezoid bowls offer a unique way to relax, focus, and enjoy the benefits of sound therapy."
+},
+
+{
+  name: "fullmoon",
+  description:"Full Moon singing bowls originate from the Himalayan region and have a long history of use in spiritual and healing traditions. These bowls are usually round in shape and come in different sizes, from small handheld bowls to larger ones used in group sessions. They produce soft, calming sounds with gentle vibrations that help relax the mind and body. Traditionally, they were used during full moon rituals, meditation, and religious ceremonies in temples and monasteries. In modern times, they are widely used in sound therapy, yoga, and personal meditation practices. Their soothing sound helps reduce stress, improve focus, and create emotional balance. Today, Full Moon singing bowls are popular tools for both spiritual growth and overall well-being."
+},
+
+{
+  name: "fullmoon",
+  description:"Full Moon singing bowls originate from the Himalayan region and have a long history of use in spiritual and healing traditions. These bowls are usually round in shape and come in different sizes, from small handheld bowls to larger ones used in group sessions. They produce soft, calming sounds with gentle vibrations that help relax the mind and body. Traditionally, they were used during full moon rituals, meditation, and religious ceremonies in temples and monasteries. In modern times, they are widely used in sound therapy, yoga, and personal meditation practices. Their soothing sound helps reduce stress, improve focus, and create emotional balance. Today, Full Moon singing bowls are popular tools for both spiritual growth and overall well-being."
+},
+
+{
+  name: "fullmoon",
+  description:"Full Moon singing bowls originate from the Himalayan region and have a long history of use in spiritual and healing traditions. These bowls are usually round in shape and come in different sizes, from small handheld bowls to larger ones used in group sessions. They produce soft, calming sounds with gentle vibrations that help relax the mind and body. Traditionally, they were used during full moon rituals, meditation, and religious ceremonies in temples and monasteries. In modern times, they are widely used in sound therapy, yoga, and personal meditation practices. Their soothing sound helps reduce stress, improve focus, and create emotional balance. Today, Full Moon singing bowls are popular tools for both spiritual growth and overall well-being."
+},
 
 
+
+{
+  name: "engraved",
+  description:"Full Moon singing bowls originate from the Himalayan region and have a long history of use in spiritual and healing traditions. These bowls are usually round in shape and come in different sizes, from small handheld bowls to larger ones used in group sessions. They produce soft, calming sounds with gentle vibrations that help relax the mind and body. Traditionally, they were used during full moon rituals, meditation, and religious ceremonies in temples and monasteries. In modern times, they are widely used in sound therapy, yoga, and personal meditation practices. Their soothing sound helps reduce stress, improve focus, and create emotional balance. Today, Full Moon singing bowls are popular tools for both spiritual growth and overall well-being."
+},
+
+{
+  name: "note",
+  description:"Full Moon singing bowls originate from the Himalayan region and have a long history of use in spiritual and healing traditions. These bowls are usually round in shape and come in different sizes, from small handheld bowls to larger ones used in group sessions. They produce soft, calming sounds with gentle vibrations that help relax the mind and body. Traditionally, they were used during full moon rituals, meditation, and religious ceremonies in temples and monasteries. In modern times, they are widely used in sound therapy, yoga, and personal meditation practices. Their soothing sound helps reduce stress, improve focus, and create emotional balance. Today, Full Moon singing bowls are popular tools for both spiritual growth and overall well-being."
+},
+
+{
+  name: "chakra",
+  description:"The Chakra Healing Singing Bowl Set comes from the Himalayan region and has been used for hundreds of years in meditation, healing, and spiritual practices. These bowls are hand-hammered from a special blend of metals, which gives them strong vibrations and spiritual energy. Each bowl in the set is tuned to a specific note that matches one of the seven chakras in the body. The Root Chakra (C) helps with grounding and stability, while the Sacral Chakra (D) supports creativity and emotional balance. The Solar Plexus Chakra (E) increases confidence and personal power, and the Heart Chakra (F) opens love and compassion. The Throat Chakra (G) improves communication and self-expression, the Third Eye Chakra (A) enhances intuition and mental clarity, and the Crown Chakra (B) connects to spiritual awareness and higher consciousness. The bowls have a full, rounded shape and come in different sizes, with larger bowls for lower chakras and smaller bowls for upper chakras. Traditionally, they were used in rituals and energy healing, and today they are used for meditation, yoga, sound therapy, and chakra balancing. Their soothing vibrations help relax the mind and body, clear energy blockages, and bring harmony to the whole being."
+},
+
+{
+  name: "hand-hammered",
+  description:"Hand Hammered Singing Bowls come from the Himalayan region and have been used since ancient times for meditation, healing, and spiritual practices. These bowls are made by skilled artisans using traditional hand-hammering techniques passed down through generations. They usually have a round shape with slightly uneven surfaces due to the handmade process. Hand hammered bowls come in different sizes, from small to large, depending on their use. In the past, they were used in rituals, prayer, and traditional ceremonies. Today, they are widely used for meditation, yoga, sound therapy, and relaxation. The sound produced by these bowls is deep, rich, and long-lasting. Their strong vibrations help calm the mind and reduce stress. These bowls are valued for their natural sound quality and traditional craftsmanship. They are useful for both personal meditation and professional healing practices."
+},
+
+{
+  name: "hand-hammered",
+  description:"Hand Hammered Singing Bowls come from the Himalayan region and have been used since ancient times for meditation, healing, and spiritual practices. These bowls are made by skilled artisans using traditional hand-hammering techniques passed down through generations. They usually have a round shape with slightly uneven surfaces due to the handmade process. Hand hammered bowls come in different sizes, from small to large, depending on their use. In the past, they were used in rituals, prayer, and traditional ceremonies. Today, they are widely used for meditation, yoga, sound therapy, and relaxation. The sound produced by these bowls is deep, rich, and long-lasting. Their strong vibrations help calm the mind and reduce stress. These bowls are valued for their natural sound quality and traditional craftsmanship. They are useful for both personal meditation and professional healing practices."
+},
 
 ]
-
-
 
   const { category, subcategory,subsubcategory } = useParams();
   console.log(category)
@@ -66,8 +108,9 @@ const subsubcategoryDescription=[
   const navigate = useNavigate();
 
   const filteredProducts = products.filter(
-    (p) => p.category === category && p.subcategory === subcategory
+    (p) => p.category === category && p.subcategory === subcategory && p.subcategorycategory === subsubcategory
   );
+  console.log(filteredProducts)
 
   // Remove HTML tags and truncate text
  const truncateText = (html, wordLimit) => {
@@ -92,6 +135,7 @@ const filteredDescription = subsubcategoryDescription.find((s)=> s.name === subs
 
   return (
     <div className="min-h-screen p-8">
+
       <h1 className="text-3xl font-bold mb-6 capitalize text-center">
         {subsubcategory.replace("-", " ")}
       </h1>
