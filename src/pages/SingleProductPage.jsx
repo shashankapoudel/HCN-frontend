@@ -278,6 +278,15 @@ const SingleProductPage = () => {
     navigate(`/${product.category}/${product.subcategory}`);
   };
 
+
+   const category1=["Matte Black","Tiger","Silver","Gold"];
+    
+    
+    const category2=["Select Notes","Note 1","Note 2"]
+
+    const category3=["Select Accessories","Accessories1","Accessories 2"]
+
+
   return (
     <div className="min-h-screen p-8 flex flex-col">
         <button
@@ -312,12 +321,12 @@ const SingleProductPage = () => {
           {/* Product details */}
           <div className="w-1/2 flex flex-col p-4">
 
-            <h1 className="text-3xl font-bold capitalize">
+            <h1 className="text-3xl font-bold capitalize text-[#bb2821]">
               {product.name}
             </h1>
 
             <div className="p-2">
-              <h1 className="font-bold text-lg">
+              <h1 className="font-bold text-lg text-[#0B4D81]">
                 ${product.price}
               </h1>
             </div>
@@ -328,8 +337,8 @@ const SingleProductPage = () => {
               <div
               onClick={handleShowDescription}
                className="flex items-center justify-between border p-4 cursor-pointer">
-                <h1>Product Description</h1>
-                <button 
+                <h1 className='text-[#0B4D81]'>Product Description</h1>
+                <button className=''
                 >
                 { 
                 !showDescription?
@@ -354,7 +363,7 @@ const SingleProductPage = () => {
               <div
               onClick={handleShowOverview}
                className="flex items-center justify-between border p-4 cursor-pointer">
-                <h1>Product Overview</h1>
+                <h1 className='text-[#0B4D81]'>Product Overview</h1>
                 <button
                  
                  >
@@ -384,23 +393,23 @@ const SingleProductPage = () => {
             <hr className="my-4" />
 
             {/* Attributes */}
-            <div className="flex flex-col w-full gap-3 p-2 text-[#606060]">
+            <div className="flex flex-col w-full gap-3 p-2 text-[#bb2821]">
               <div className="flex w-1/2 justify-between">
-                <h1 className="text-[#323232] font-bold text-sm">
+                <h1 className="text-[#0B4D81] font-bold text-sm">
                   Color
                 </h1>
                 <p className="text-sm">Black</p>
               </div>
 
               <div className="flex w-1/2 justify-between">
-                <h1 className="text-[#323232] font-bold text-sm">
+                <h1 className="text-[#0B4D81] font-bold text-sm">
                   Size
                 </h1>
                 <p className="text-sm">{product.size}cm</p>
               </div>
 
               <div className="flex w-1/2 justify-between">
-                <h1 className="text-[#323232] font-bold text-sm">
+                <h1 className="text-[#0B4D81] font-bold text-sm">
                   Stock
                 </h1>
                 <p className="text-sm">
@@ -409,7 +418,7 @@ const SingleProductPage = () => {
               </div>
 
               <div className="flex w-1/2 justify-between">
-                <h1 className="text-[#323232] font-bold text-sm">
+                <h1 className="text-[#0B4D81] font-bold text-sm">
                   Material
                 </h1>
                 <p className="text-sm">{product.material}</p>
@@ -419,6 +428,22 @@ const SingleProductPage = () => {
             <div className="mt-4">
               <AddToCart product={product} />
             </div>
+
+
+            <div className='mt-4 p-2' >
+              <h1 className='font-semibold text-[#bb2821]'>Select Color:</h1>
+              <div className='flex gap-4 py-3'>
+              {
+                category1.map((cat,index)=>(
+                  <div className=''>
+                     <button className='border border-[#bb2821] text-[#0B4D81] p-4'>{cat}</button>
+                    </div>
+
+                ))
+                }
+</div>
+            </div>
+
           </div>
         </div>
       </div>

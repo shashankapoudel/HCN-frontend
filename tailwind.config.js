@@ -33,6 +33,7 @@ export default {
       fontFamily: {
         edensor: ["Edensor", "serif"],
         'poppins': ['Poppins'],
+        roboto: ['"Roboto"', 'sans-serif'],
       },
     },
   },

@@ -22,6 +22,9 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
     const [subcategorycategory, setSubcategorycategory] = useState("")
     const [isLoading, setIsLoading] = useState(false);
     const [label, setLabel] = useState("")
+    const[colorCategory,setColorCategory]=useState("");
+    const[noteCategory,setNoteCategory]=useState("");
+    const[accessoriesCategory,setAccessoriesCategory]=useState("");
 
 
     const [filteredSubcategories, setFilteredSubcategories] = useState([]);
@@ -33,6 +36,13 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
 
 
     const productMaterials = ['select material', 'metal', 'crystal', 'wood', 'leather'];
+
+    const category1=["Select Color","Matte Black","Tiger","Silver","Gold"];
+    
+    
+    const category2=["Select Notes","Note 1","Note 2"]
+
+    const category3=["Select Accessories","Accessories1","Accessories 2"]
 
 
     const categorySubcategories = {
@@ -62,14 +72,13 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
     useEffect(() => {
         if (category) {
             setFilteredSubcategories(categorySubcategories[category] || []);
-            setSubCategory("");
         }
     }, [category]);
 
     useEffect(() => {
         if (subcategory) {
             setFilteredSubcategorycategory(subcategoriescategories[subcategory] || [])
-            setSubcategorycategory("")
+            
         }
     }, [subcategory])
 
@@ -89,6 +98,9 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
             setDescription(existingData.description || "")
             setImages(existingData.images || []);
             setAudio(existingData.audio || null)
+            setColorCategory(existingData.color || null)
+            setNoteCategory(existingData.note || null)
+            setAccessoriesCategory(existingData.accessoriesBundle || null)
             setSubcategorycategory(existingData.subcategorycategory || "")
 
         } else {
@@ -120,6 +132,9 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
         formData.append("stock", stock);
         formData.append("price", price);
         formData.append("size", size);
+     formData.append("color", colorCategory !== "Select Color" ? colorCategory : "");
+formData.append("note", noteCategory !== "Select Notes" ? noteCategory : "");
+formData.append("accessoriesBundle", accessoriesCategory !== "Select Accessories" ? accessoriesCategory : "");
         formData.append("material", material);
         formData.append("label", label);
         formData.append("overview", overview);
@@ -181,7 +196,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
             <div className="bg-white p-6 rounded-lg w-[85%] h-[80vh] shadow-lg flex flex-col">
                 <h2 className="text-xl font-bold mb-4">Add New Product</h2>
 
-                <form onSubmit={handleSubmit}
+                <form 
                     className="flex flex-grow w-full overflow-hidden">
                     {/* Left Side: Scrollable Form */}
                     <div className="flex flex-col w-2/3 pr-4 overflow-y-auto h-full">
@@ -211,7 +226,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
                                 >
 
                                     {productCategory.map((category, index) => (
-                                        <option key={index}>{category}</option>
+                                        <option key={index} value={category}>{category}</option>
                                     ))}
                                 </select>
                             </div>
@@ -224,7 +239,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
                                     className="w-full p-2 border rounded mb-4">
                                     {
                                         filteredSubcategories.map((category, index) => (
-                                            <option key={index}>{category}</option>
+                                            <option key={index} value={category}>{category}</option>
                                         ))}
                                 </select>
                             </div>
@@ -237,7 +252,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
                                     className="w-full p-2 border rounded mb-4">
                                     {
                                         filteredSubcategorycategory.map((category, index) => (
-                                            <option key={index}>{category}</option>
+                                            <option key={index} value={category}>{category}</option>
                                         ))}
                                 </select>
                             </div>
@@ -291,7 +306,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
                                     className="w-full p-2 border rounded mb-4">
                                     {
                                         Label.map((l, index) => (
-                                            <option key={index}>{l}</option>
+                                            <option key={index} value={l}>{l}</option>
                                         ))}
                                 </select>
                             </div>
@@ -318,10 +333,49 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
                                     onChange={(e) => setMaterial(e.target.value)}
                                     className="w-full p-2 border rounded mb-4">
                                     {productMaterials.map((material, index) => (
-                                        <option key={index}>{material}</option>
+                                        <option key={index} value={material}>{material}</option>
                                     ))}
                                 </select>
                             </div>
+
+                            <div>
+                                <label className="block mb-2">Colors</label>
+                                <select
+                                    value={colorCategory}
+                                    onChange={(e) => setColorCategory(e.target.value)}
+                                    className="w-full p-2 border rounded mb-4">
+                                    {category1.map((cat, index) => (
+                                        <option key={index} value={cat}>{cat}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block mb-2">Notes</label>
+                                <select
+                                    value={noteCategory}
+                                    onChange={(e) => setNoteCategory(e.target.value)}
+                                    className="w-full p-2 border rounded mb-4">
+                                    {category2.map((cat, index) => (
+                                        <option key={index}>{cat}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block mb-2">Accessories Bundle</label>
+                                <select
+                                    value={accessoriesCategory}
+                                    onChange={(e) => setAccessoriesCategory(e.target.value)}
+                                    className="w-full p-2 border rounded mb-4">
+                                    {category3.map((cat, index) => (
+                                        <option key={index}>{cat}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+
+
                         </div>
 
                         <div>
