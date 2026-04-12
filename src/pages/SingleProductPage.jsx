@@ -282,9 +282,10 @@ const SingleProductPage = () => {
    const category1=["Matte Black","Tiger","Silver","Gold"];
     
     
-    const category2=["Select Notes","Note 1","Note 2"]
+    const category2=["Note 1","Note 2"]
+    
 
-    const category3=["Select Accessories","Accessories1","Accessories 2"]
+    const category3=["Accessories1","Accessories 2"]
 
 
   return (
@@ -441,7 +442,21 @@ const SingleProductPage = () => {
 
                 ))
                 }
-</div>
+             </div>
+            </div>
+
+            <div className='mt-4 p-2' >
+              <h1 className='font-semibold text-[#bb2821]'>Select Accessories Bundle:</h1>
+              <div className='flex gap-4 py-3'>
+              {
+                category3.map((cat,index)=>(
+                  <div className=''>
+                     <button className='border border-[#bb2821] text-[#0B4D81] p-4'>{cat}</button>
+                    </div>
+
+                ))
+                }
+             </div>
             </div>
 
           </div>

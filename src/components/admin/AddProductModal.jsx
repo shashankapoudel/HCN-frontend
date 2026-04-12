@@ -25,6 +25,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
     const[colorCategory,setColorCategory]=useState("");
     const[noteCategory,setNoteCategory]=useState("");
     const[accessoriesCategory,setAccessoriesCategory]=useState("");
+    const [groupId,setGroupId]=useState("")
 
 
     const [filteredSubcategories, setFilteredSubcategories] = useState([]);
@@ -102,6 +103,7 @@ const AddProductModal = ({ isOpen, onClose, existingData, setRefresh,refresh }) 
             setNoteCategory(existingData.note || null)
             setAccessoriesCategory(existingData.accessoriesBundle || null)
             setSubcategorycategory(existingData.subcategorycategory || "")
+            setGroupId(existingData.groupId || "")
 
         } else {
             setName("")
@@ -137,6 +139,7 @@ formData.append("note", noteCategory !== "Select Notes" ? noteCategory : "");
 formData.append("accessoriesBundle", accessoriesCategory !== "Select Accessories" ? accessoriesCategory : "");
         formData.append("material", material);
         formData.append("label", label);
+        formData.append("groupId",groupId)
         formData.append("overview", overview);
         formData.append("description", description);
 
@@ -175,6 +178,7 @@ formData.append("accessoriesBundle", accessoriesCategory !== "Select Accessories
             setLabel("")
             setImages([]);
             setAudio(null);
+            setGroupId("");
             setFilteredSubcategories([]);
             setFilteredSubcategorycategory([]);
             onClose()
@@ -374,19 +378,27 @@ formData.append("accessoriesBundle", accessoriesCategory !== "Select Accessories
                                 </select>
                             </div>
 
+                                   <div>
+                                <label
+                                    className="block mb-2">
+                                    GroupId
+                                </label>
+
+                                <input
+                                    value={groupId}
+                                    onChange={(e) => setGroupId(e.target.value)}
+                                    type="text"
+                                    className="w-full p-2 border rounded mb-4"
+                                    placeholder="Enter size"
+                                />
+                            </div>
+
 
 
                         </div>
 
                         <div>
                             <label className=" text-gray-700 font-bold mb-2">Product Overview</label>
-                            {/* <textarea
-                                value={overview}
-                                onChange={(e) => setOverview(e.target.value)}
-                                className="w-full h-24 border p-2 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                placeholder="Type your message..."
-                                required
-                            /> */}
 
                                             <ReactQuill
                                                     theme="snow"
@@ -401,14 +413,6 @@ formData.append("accessoriesBundle", accessoriesCategory !== "Select Accessories
 
                         <div>
                             <label className=" text-gray-700 font-bold mb-2">Product Description</label>
-                            {/* <textarea
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                className="w-full h-32 border p-2 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                placeholder="Type your message..."
-                                required
-                            /> */}
-
                                     <ReactQuill
                                                     theme="snow"
                                                     value={description}
