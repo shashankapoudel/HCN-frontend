@@ -14,10 +14,11 @@ const SingleProductPage = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('');
+  // const [selectedImage, setSelectedImage] = useState('');
   const [showDescription, setShowDescription] = useState(false);
   const[showOverview,setShowOverview]=useState(false)
   const [relatedProducts,setRelatedProducts]=useState([])
+  const[displayImages,setDisplayImages]=useState([])
   
   const category1=["Matte Black","Tiger","Silver","Gold"];    
   const category2=["Note 1","Note 2"]
@@ -37,6 +38,7 @@ const SingleProductPage = () => {
         const res = await fetch(`${BASE_URL}/product/${id}`);
         const data = await res.json();
         setProduct(data.data);
+        setDisplayImages(data.data.images)
       } catch (error) {
         console.error('Failed to fetch product', error);
       } finally {
@@ -48,10 +50,12 @@ const SingleProductPage = () => {
 
   useEffect(()=>{
      const fetchProductByGroupId=async()=>{
-     if(product.groupId){
+     if(product?.groupId){
       try{
-      const res=fetch(`${BASE_URL}/product/{product.groupId}`)
+      const res=await fetch(`${BASE_URL}/product/group/${product.groupId}`)
+
       const data=await res.json();
+      console.log(data)
       setRelatedProducts(data.data);
       }  
       catch(error){
@@ -60,8 +64,9 @@ const SingleProductPage = () => {
     }
     }
      fetchProductByGroupId();
-  },[product.groupId])
+  },[product])
 
+  console.log(relatedProducts)
   if (loading) {
     return <div className="p-8">Loading...</div>;
   }
@@ -72,7 +77,7 @@ const SingleProductPage = () => {
 
   const handleImageClick = (index) => {
     setIsModalOpen(true);
-    setSelectedImage(product.images[index]);
+    setSelectedImage(displayImages[index]);
   };
 
   const closeModal = () => {
@@ -85,12 +90,14 @@ const SingleProductPage = () => {
   };
 
   const handleColorClick=(color)=>{
-
-  const matched=relatedProducts.find((p)=>p.color === color);
-  if(matched){
-    setSelectedImage(matched.image[0]);
+      console.log(color)
+       const matched=relatedProducts.find((p)=>p.color === color);
+       console.log(matched)
+        if(matched){
+          setDisplayImages(matched.images)
+          setProduct(matched)
+       }
   }
-}
 
   return (
     <div className="min-h-screen p-8 flex flex-col">
@@ -107,7 +114,7 @@ const SingleProductPage = () => {
 
           {/* Images */}
           <div className="w-1/2 grid grid-cols-4 grid-rows-3 gap-2">
-            {product.images.map((img, index) => (
+            {displayImages.map((img, index) => (
               <img
                 key={index}
                 src={img}
@@ -243,7 +250,7 @@ const SingleProductPage = () => {
                   <div className=''>
                      <button 
                      onClick={()=>handleColorClick(cat)}
-                     className='border border-[#bb2821] text-[#0B4D81] p-4'>{cat}</button>
+                     className='border border-[#bb2821] text-[#0B4D81] p-4 hover:bg-[#0B4D81] hover:text-white'>{cat}</button>
                     </div>
 
                 ))
