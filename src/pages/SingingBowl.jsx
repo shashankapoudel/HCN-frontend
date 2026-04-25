@@ -92,9 +92,13 @@ Today, they are used for yoga, sound therapy, relaxation, and stress relief in m
 
                                                     <div>
                                                         <h1 className='text-left text-[#111111] font-bold text-base capitalize'>{product.name}</h1>
-                                                        <p className=' text-[#606060]  font-edensor text-base'>
-                                                            {truncateText(product.description, 20)}
-                                                        </p>
+                                                        <p
+                                                                              dangerouslySetInnerHTML={{
+                        __html: truncateText(product.description,15),
+                    }} 
+                                                         className=' text-[#606060]  font-edensor text-base'/>
+                                                            
+                                                        
                                                     </div>
 
                                                     <div className='flex justify-between items-center'>

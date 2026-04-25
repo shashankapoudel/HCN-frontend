@@ -193,9 +193,13 @@ const filteredDescription = subsubcategoryDescription.find((s)=> s.name === subs
                   <h1 className="text-[#111111] font-bold text-base capitalize font-roboto">
                     {product.name}
                   </h1>
-<p className="text-[#606060] text-sm">
-  {truncateText(product.description, 15)}
-</p>
+<p 
+                      dangerouslySetInnerHTML={{
+                        __html: truncateText(product.description,15),
+                    }} 
+className="text-[#606060] text-sm"/>
+ 
+
                 </div>
 
                 <div className="flex justify-between items-center">

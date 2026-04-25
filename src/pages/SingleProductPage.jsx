@@ -113,7 +113,7 @@ const SingleProductPage = () => {
         <div className="flex gap-8 justify-evenly mt-4 items-start">
 
           {/* Images */}
-          <div className="w-1/2 grid grid-cols-4 grid-rows-3 gap-2">
+          {/* <div className="w-1/2 grid grid-cols-4 grid-rows-3 gap-2">
             {displayImages.map((img, index) => (
               <img
                 key={index}
@@ -128,7 +128,34 @@ const SingleProductPage = () => {
                 }`}
               />
             ))}
-          </div>
+          </div> */}
+
+          <div className="w-1/2 grid grid-cols-3 gap-2">
+
+  {/* BIG IMAGE */}
+  <div className="col-span-2 row-span-2">
+    <img
+      src={displayImages[0]}
+      alt={product.name}
+      onClick={() => handleImageClick(0)}
+      className="w-full h-full object-cover rounded cursor-pointer"
+    />
+  </div>
+
+  {/* SMALL IMAGES */}
+  <div className="flex flex-col gap-2">
+    {displayImages.slice(1, displayImages.length).map((img, index) => (
+      <img
+        key={index}
+        src={img}
+        alt={product.name}
+        onClick={() => handleImageClick(index + 1)}
+        className="w-full h-[80px] object-cover rounded cursor-pointer"
+      />
+    ))}
+  </div>
+
+</div>
 
           {/* Product details */}
           <div className="w-1/2 flex flex-col p-4">
