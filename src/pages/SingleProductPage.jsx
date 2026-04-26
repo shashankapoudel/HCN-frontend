@@ -217,15 +217,15 @@ const SingleProductPage = () => {
               {product.name}
             </h1>
 
-            <p className="text-sm mt-2 capitalize text-[#606060] tracking-wide leading-relaxed">
-              {filteredDescription.description}
-            </p>
-
             <div className="p-2">
               <h1 className="font-bold text-lg text-[#0B4D81]">
                 ${product.price}
               </h1>
             </div>
+
+            <p className="text-sm mt-2 capitalize text-[#606060] tracking-wide leading-relaxed">
+              {filteredDescription.description}
+            </p>
 
             <div className="flex flex-col gap-2  shadow-md">
               <div className="w-full rounded-md">
