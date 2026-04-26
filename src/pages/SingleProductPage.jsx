@@ -6,23 +6,42 @@ import BASE_URL from "../config/api";
 import AddAccessories from "../components/AddAccessories";
 import AddToCart from "../components/AddToCart";
 
+import { useRef } from "react";
+
 const SingleProductPage = () => {
+  const thumbsRef = useRef(null);
   const { id } = useParams();
   const navigate = useNavigate();
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [selectedImage, setSelectedImage] = useState('');
+  const [selectedImage, setSelectedImage] = useState("");
   const [showDescription, setShowDescription] = useState(false);
   const [showOverview, setShowOverview] = useState(false);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [displayImages, setDisplayImages] = useState([]);
-  const[mainIndex,setmainIndex]=useState(0);
+  const [mainIndex, setmainIndex] = useState(0);
 
   const category1 = ["Matte Black", "Tiger", "Silver", "Gold"];
   const category2 = ["Note 1", "Note 2"];
   const category3 = ["Accessories1", "Accessories 2"];
+
+  const smallDescription = [
+    {
+      groupId: "c4123",
+      description:
+        "The travel mini master singing bowl set is designed for powerful healing and deep sound therapy . It produces perfect resonance that supports meditation, relaxation and energy balancing. Each bowl is carefully crafted under detailed supervision to ensure precise tuning and quality. Its pure vibrations help calm the mind and enhance inner peace during healing sessions.",
+    },
+  ];
+
+  const scrollLeft = () => {
+    thumbsRef.current.scrollBy({ left: -100, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    thumbsRef.current.scrollBy({ left: 100, behavior: "smooth" });
+  };
 
   const handleShowDescription = () => {
     setShowDescription((prev) => !prev);
@@ -67,6 +86,8 @@ const SingleProductPage = () => {
     fetchProductByGroupId();
   }, [product]);
 
+  console.log(product);
+
   console.log(relatedProducts);
   if (loading) {
     return <div className="p-8">Loading...</div>;
@@ -75,6 +96,9 @@ const SingleProductPage = () => {
   if (!product) {
     return <div className="p-8">Product not found.</div>;
   }
+  const filteredDescription = smallDescription.find(
+    (s) => s.groupId === product.groupId,
+  );
 
   const handleImageClick = (index) => {
     setmainIndex(index);
@@ -129,47 +153,61 @@ const SingleProductPage = () => {
           className=" text-[#bb2821] text-left"
           onClick={handleBackToCategory}
         >
-           {product.category} /
+          {product.category} /
         </button>
 
         <button className=" text-[#bb2821]  text-left" onClick={handleBack}>
-           {product.subcategory} /
+          {product.subcategory} /
         </button>
 
         <button
           className="text-[#bb2821]  text-left"
           onClick={handleBackToSubcategorycategory}
         >
-         {product.subcategorycategory} /
+          {product.subcategorycategory} /
         </button>
       </div>
 
       <div>
         <div className="flex gap-8 justify-evenly mt-4 items-start">
-          <div className="w-1/2 flex flex-col gap-2">
+          <div className="w-1/2 flex flex-col gap-3">
             {/* BIG IMAGE */}
-            <div className="col-span-2 row-span-2">
-              <img
-                src={displayImages[mainIndex]}
-                alt={product.name}
-                onClick={() => handleImageClick(0)}
-                className="w-full h-full object-cover rounded cursor-pointer"
-              />
-            </div>
+            <img
+              src={displayImages[mainIndex]}
+              alt={product.name}
+              className="w-full h-auto object-cover rounded"
+            />
 
-            {/* SMALL IMAGES */}
-            <div className="flex gap-2">
-              {displayImages
-                .slice(1, displayImages.length)
-                .map((img, index) => (
+            {/* THUMBNAIL CAROUSEL */}
+            <div className="relative flex items-center">
+              <button onClick={scrollLeft} className="absolute left-0 z-10 p-2">
+                ◀
+              </button>
+
+              {/* SCROLLABLE THUMBNAILS */}
+              <div
+                ref={thumbsRef}
+                className="flex gap-2 overflow-x-auto scroll-smooth px-8"
+              >
+                {displayImages.map((img, index) => (
                   <img
                     key={index}
                     src={img}
-                    alt={product.name}
-                    onClick={() => handleImageClick(index + 1)}
-                    className="w-full h-[80px] object-cover rounded cursor-pointer"
+                    onClick={() => handleImageClick(index)}
+                    className={`w-24 h-24 object-cover rounded cursor-pointer border flex-shrink-0
+            ${mainIndex === index ? "border-[#bb2821]" : "border-transparent"}
+          `}
                   />
                 ))}
+              </div>
+
+              {/* RIGHT BUTTON */}
+              <button
+                onClick={scrollRight}
+                className="absolute right-0 z-10 bg-white shadow p-2 rounded-full"
+              >
+                ▶
+              </button>
             </div>
           </div>
 
@@ -178,6 +216,10 @@ const SingleProductPage = () => {
             <h1 className="text-2xl  font-bold capitalize text-[#bb2821]">
               {product.name}
             </h1>
+
+            <p className="text-sm mt-2 capitalize text-[#606060] tracking-wide leading-relaxed">
+              {filteredDescription.description}
+            </p>
 
             <div className="p-2">
               <h1 className="font-bold text-lg text-[#0B4D81]">
