@@ -1,11 +1,10 @@
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-
-import BASE_URL from '../config/api';
-import AddAccessories from '../components/AddAccessories';
-import AddToCart from '../components/AddToCart';
+import BASE_URL from "../config/api";
+import AddAccessories from "../components/AddAccessories";
+import AddToCart from "../components/AddToCart";
 
 const SingleProductPage = () => {
   const { id } = useParams();
@@ -16,13 +15,14 @@ const SingleProductPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // const [selectedImage, setSelectedImage] = useState('');
   const [showDescription, setShowDescription] = useState(false);
-  const[showOverview,setShowOverview]=useState(false)
-  const [relatedProducts,setRelatedProducts]=useState([])
-  const[displayImages,setDisplayImages]=useState([])
-  
-  const category1=["Matte Black","Tiger","Silver","Gold"];    
-  const category2=["Note 1","Note 2"]
-  const category3=["Accessories1","Accessories 2"]
+  const [showOverview, setShowOverview] = useState(false);
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  const [displayImages, setDisplayImages] = useState([]);
+  const[mainIndex,setmainIndex]=useState(0);
+
+  const category1 = ["Matte Black", "Tiger", "Silver", "Gold"];
+  const category2 = ["Note 1", "Note 2"];
+  const category3 = ["Accessories1", "Accessories 2"];
 
   const handleShowDescription = () => {
     setShowDescription((prev) => !prev);
@@ -38,9 +38,9 @@ const SingleProductPage = () => {
         const res = await fetch(`${BASE_URL}/product/${id}`);
         const data = await res.json();
         setProduct(data.data);
-        setDisplayImages(data.data.images)
+        setDisplayImages(data.data.images);
       } catch (error) {
-        console.error('Failed to fetch product', error);
+        console.error("Failed to fetch product", error);
       } finally {
         setLoading(false);
       }
@@ -48,25 +48,26 @@ const SingleProductPage = () => {
     fetchProduct();
   }, [id]);
 
-  useEffect(()=>{
-     const fetchProductByGroupId=async()=>{
-     if(product?.groupId){
-      try{
-      const res=await fetch(`${BASE_URL}/product/group/${product.groupId}`)
+  useEffect(() => {
+    const fetchProductByGroupId = async () => {
+      if (product?.groupId) {
+        try {
+          const res = await fetch(
+            `${BASE_URL}/product/group/${product.groupId}`,
+          );
 
-      const data=await res.json();
-      console.log(data)
-      setRelatedProducts(data.data);
-      }  
-      catch(error){
-      console.log("Failed to fetch Related Products");
-    }
-    }
-    }
-     fetchProductByGroupId();
-  },[product])
+          const data = await res.json();
+          console.log(data);
+          setRelatedProducts(data.data);
+        } catch (error) {
+          console.log("Failed to fetch Related Products");
+        }
+      }
+    };
+    fetchProductByGroupId();
+  }, [product]);
 
-  console.log(relatedProducts)
+  console.log(relatedProducts);
   if (loading) {
     return <div className="p-8">Loading...</div>;
   }
@@ -76,91 +77,105 @@ const SingleProductPage = () => {
   }
 
   const handleImageClick = (index) => {
-    setIsModalOpen(true);
-    setSelectedImage(displayImages[index]);
+    setmainIndex(index);
+    // setIsModalOpen(true);
+    // setSelectedImage(displayImages[index]);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setSelectedImage('');
+    setSelectedImage("");
   };
 
   const handleBack = () => {
     navigate(`/${product.category}/${product.subcategory}`);
   };
 
-  const handleColorClick=(color)=>{
-      console.log(color)
-       const matched=relatedProducts.find((p)=>p.color === color);
-       console.log(matched)
-        if(matched){
-          setDisplayImages(matched.images)
-          setProduct(matched)
-       }
-  }
+  const handleBackToSubcategorycategory = () => {
+    navigate(
+      `/${product.category}/${product.subcategory}/${product.subcategorycategory}`,
+    );
+  };
+
+  const handleBackToCategory = () => {
+    navigate(`/${product.category}`);
+  };
+
+  const handleBackToHome = () => {
+    navigate("");
+  };
+
+  const handleColorClick = (color) => {
+    console.log(color);
+    const matched = relatedProducts.find((p) => p.color === color);
+    console.log(matched);
+    if (matched) {
+      setDisplayImages(matched.images);
+      setProduct(matched);
+    }
+  };
 
   return (
     <div className="min-h-screen p-8 flex flex-col">
+      <div className="flex gap-1 font-poppins italic -skew-x-12 text-sm font-thin ">
         <button
-          className="underline text-[#bb2821] text-left"
-          onClick={handleBack}
+          className=" text-[#bb2821]  text-left"
+          onClick={handleBackToHome}
         >
-          ← Back to {product.subcategory}
+          Home /
         </button>
 
+        <button
+          className=" text-[#bb2821] text-left"
+          onClick={handleBackToCategory}
+        >
+           {product.category} /
+        </button>
+
+        <button className=" text-[#bb2821]  text-left" onClick={handleBack}>
+           {product.subcategory} /
+        </button>
+
+        <button
+          className="text-[#bb2821]  text-left"
+          onClick={handleBackToSubcategorycategory}
+        >
+         {product.subcategorycategory} /
+        </button>
+      </div>
+
       <div>
-
         <div className="flex gap-8 justify-evenly mt-4 items-start">
-
-          {/* Images */}
-          {/* <div className="w-1/2 grid grid-cols-4 grid-rows-3 gap-2">
-            {displayImages.map((img, index) => (
+          <div className="w-1/2 flex flex-col gap-2">
+            {/* BIG IMAGE */}
+            <div className="col-span-2 row-span-2">
               <img
-                key={index}
-                src={img}
+                src={displayImages[mainIndex]}
                 alt={product.name}
-                loading="lazy"
-                onClick={() => handleImageClick(index)}
-                className={`w-full object-cover rounded cursor-pointer ${
-                  index === 0
-                     ? 'col-span-3 row-span-2 aspect-[4/3]'
-      : 'aspect-square'
-                }`}
+                onClick={() => handleImageClick(0)}
+                className="w-full h-full object-cover rounded cursor-pointer"
               />
-            ))}
-          </div> */}
+            </div>
 
-          <div className="w-1/2 grid grid-cols-3 gap-2">
-
-  {/* BIG IMAGE */}
-  <div className="col-span-2 row-span-2">
-    <img
-      src={displayImages[0]}
-      alt={product.name}
-      onClick={() => handleImageClick(0)}
-      className="w-full h-full object-cover rounded cursor-pointer"
-    />
-  </div>
-
-  {/* SMALL IMAGES */}
-  <div className="flex flex-col gap-2">
-    {displayImages.slice(1, displayImages.length).map((img, index) => (
-      <img
-        key={index}
-        src={img}
-        alt={product.name}
-        onClick={() => handleImageClick(index + 1)}
-        className="w-full h-[80px] object-cover rounded cursor-pointer"
-      />
-    ))}
-  </div>
-
-</div>
+            {/* SMALL IMAGES */}
+            <div className="flex gap-2">
+              {displayImages
+                .slice(1, displayImages.length)
+                .map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={product.name}
+                    onClick={() => handleImageClick(index + 1)}
+                    className="w-full h-[80px] object-cover rounded cursor-pointer"
+                  />
+                ))}
+            </div>
+          </div>
 
           {/* Product details */}
           <div className="w-1/2 flex flex-col p-4">
-
-            <h1 className="text-3xl font-bold capitalize text-[#bb2821]">
+            <h1 className="text-2xl  font-bold capitalize text-[#bb2821]">
               {product.name}
             </h1>
 
@@ -170,96 +185,75 @@ const SingleProductPage = () => {
               </h1>
             </div>
 
-        <div className='flex flex-col gap-2  shadow-md'>
-
-            <div className="w-full rounded-md">
-              <div
-              onClick={handleShowDescription}
-               className="flex items-center justify-between border p-4 cursor-pointer">
-                <h1 className='text-[#0B4D81]'>Product Description</h1>
-                <button className=''
+            <div className="flex flex-col gap-2  shadow-md">
+              <div className="w-full rounded-md">
+                <div
+                  onClick={handleShowDescription}
+                  className="flex items-center justify-between border p-4 cursor-pointer"
                 >
-                { 
-                !showDescription?
-                 <FaChevronDown />: <FaChevronUp/>
-                } 
-                </button>
-              </div>
-
-              {showDescription && (
-                <div className="p-2">
-                  <p
-                    className="text-[#606060] tracking-wide leading-relaxed"
-                    dangerouslySetInnerHTML={{
-                        __html: product.description,
-                    }}
-                    />
+                  <h1 className="text-[#0B4D81]">Product Description</h1>
+                  <button className="">
+                    {!showDescription ? <FaChevronDown /> : <FaChevronUp />}
+                  </button>
                 </div>
-              )}
-            </div>
 
-            <div className="w-full rounded-md shadow-md">
-              <div
-              onClick={handleShowOverview}
-               className="flex items-center justify-between border p-4 cursor-pointer">
-                <h1 className='text-[#0B4D81]'>Product Overview</h1>
-                <button
-                 
-                 >
-
-           { 
-                !showOverview?
-                 <FaChevronDown />: <FaChevronUp/>
-                }
-
-                </button>
-              </div>
-
-              {showOverview && (
+                {showDescription && (
                   <div className="p-2">
-                  <p
-                    className="text-[#606060] tracking-wide leading-relaxed"
-                    dangerouslySetInnerHTML={{
-                        __html: product.overview,
-                    }}
+                    <p
+                      className="text-[#606060] tracking-wide leading-relaxed"
+                      dangerouslySetInnerHTML={{
+                        __html: product.description,
+                      }}
                     />
-                </div>
-              )}
-            </div>
+                  </div>
+                )}
+              </div>
 
-         </div>
+              <div className="w-full rounded-md shadow-md">
+                <div
+                  onClick={handleShowOverview}
+                  className="flex items-center justify-between border p-4 cursor-pointer"
+                >
+                  <h1 className="text-[#0B4D81]">Product Overview</h1>
+                  <button>
+                    {!showOverview ? <FaChevronDown /> : <FaChevronUp />}
+                  </button>
+                </div>
+
+                {showOverview && (
+                  <div className="p-2">
+                    <p
+                      className="text-[#606060] tracking-wide leading-relaxed"
+                      dangerouslySetInnerHTML={{
+                        __html: product.overview,
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
 
             <hr className="my-4" />
 
             {/* Attributes */}
             <div className="flex flex-col w-full gap-3 p-2 text-[#bb2821]">
               <div className="flex w-1/2 justify-between">
-                <h1 className="text-[#0B4D81] font-bold text-sm">
-                  Color
-                </h1>
+                <h1 className="text-[#0B4D81] font-bold text-sm">Color</h1>
                 <p className="text-sm">Black</p>
               </div>
 
               <div className="flex w-1/2 justify-between">
-                <h1 className="text-[#0B4D81] font-bold text-sm">
-                  Size
-                </h1>
+                <h1 className="text-[#0B4D81] font-bold text-sm">Size</h1>
                 <p className="text-sm">{product.size}cm</p>
               </div>
 
               <div className="flex w-1/2 justify-between">
-                <h1 className="text-[#0B4D81] font-bold text-sm">
-                  Stock
-                </h1>
-                <p className="text-sm">
-                  {product.stock} units
-                </p>
+                <h1 className="text-[#0B4D81] font-bold text-sm">Stock</h1>
+                <p className="text-sm">{product.stock} units</p>
               </div>
 
               <div className="flex w-1/2 justify-between">
-                <h1 className="text-[#0B4D81] font-bold text-sm">
-                  Material
-                </h1>
+                <h1 className="text-[#0B4D81] font-bold text-sm">Material</h1>
                 <p className="text-sm">{product.material}</p>
               </div>
             </div>
@@ -268,37 +262,36 @@ const SingleProductPage = () => {
               <AddToCart product={product} />
             </div>
 
-
-            <div className='mt-4 p-2' >
-              <h1 className='font-semibold text-[#bb2821]'>Select Color:</h1>
-              <div className='flex gap-4 py-3'>
-              {
-                category1.map((cat,index)=>(
-                  <div className=''>
-                     <button 
-                     onClick={()=>handleColorClick(cat)}
-                     className='border border-[#bb2821] text-[#0B4D81] p-4 hover:bg-[#0B4D81] hover:text-white'>{cat}</button>
-                    </div>
-
-                ))
-                }
-             </div>
+            <div className="mt-4 p-2">
+              <h1 className="font-semibold text-[#bb2821]">Select Color:</h1>
+              <div className="flex gap-4 py-3">
+                {category1.map((cat, index) => (
+                  <div className="">
+                    <button
+                      onClick={() => handleColorClick(cat)}
+                      className="border border-[#bb2821] text-[#0B4D81] p-4 hover:bg-[#0B4D81] hover:text-white"
+                    >
+                      {cat}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className='mt-4 p-2' >
-              <h1 className='font-semibold text-[#bb2821]'>Select Accessories Bundle:</h1>
-              <div className='flex gap-4 py-3'>
-              {
-                category3.map((cat,index)=>(
-                  <div className=''>
-                     <button className='border border-[#bb2821] text-[#0B4D81] p-4'>{cat}</button>
-                    </div>
-
-                ))
-                }
-             </div>
+            <div className="mt-4 p-2">
+              <h1 className="font-semibold text-[#bb2821]">
+                Select Accessories Bundle:
+              </h1>
+              <div className="flex gap-4 py-3">
+                {category3.map((cat, index) => (
+                  <div className="">
+                    <button className="border border-[#bb2821] text-[#0B4D81] p-4">
+                      {cat}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -334,4 +327,3 @@ const SingleProductPage = () => {
 };
 
 export default SingleProductPage;
-
