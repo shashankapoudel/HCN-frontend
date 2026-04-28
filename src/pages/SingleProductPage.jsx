@@ -31,7 +31,7 @@ const SingleProductPage = () => {
     {
       groupId: "c4123",
       description:
-        "The travel mini master singing bowl set is designed for powerful healing and deep sound therapy . It produces perfect resonance that supports meditation, relaxation and energy balancing. Each bowl is carefully crafted under detailed supervision to ensure precise tuning and quality. Its pure vibrations help calm the mind and enhance inner peace during healing sessions.",
+        "This travel mini master singing bowl set is designed for powerful healing and deep sound therapy . It produces perfect resonance that supports meditation, relaxation and energy balancing. Each bowl is carefully crafted under detailed supervision to ensure precise tuning and quality. Its pure vibrations help calm the mind and enhance inner peace during healing sessions.",
     },
   ];
 
@@ -140,7 +140,7 @@ const SingleProductPage = () => {
   };
 
   return (
-    <div className="min-h-screen p-8 flex flex-col">
+    <div className="min-h-screen p-3 lg:p-8 flex flex-col">
       <div className="flex gap-1 font-poppins italic -skew-x-12 text-sm font-thin ">
         <button
           className=" text-[#bb2821]  text-left"
@@ -169,13 +169,13 @@ const SingleProductPage = () => {
       </div>
 
       <div>
-        <div className="flex gap-8 justify-evenly mt-4 items-start">
-          <div className="w-1/2 flex flex-col gap-3">
+        <div className="flex flex-col lg:flex-row gap-8 justify-evenly mt-4 items-start">
+          <div className="w-full lg:w-1/2 flex flex-col gap-3">
             {/* BIG IMAGE */}
             <img
               src={displayImages[mainIndex]}
               alt={product.name}
-              className="w-full h-auto object-cover rounded"
+              className="w-full h-auto object-cover rounded transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
             />
 
             {/* THUMBNAIL CAROUSEL */}
@@ -212,19 +212,19 @@ const SingleProductPage = () => {
           </div>
 
           {/* Product details */}
-          <div className="w-1/2 flex flex-col p-4">
-            <h1 className="text-2xl  font-bold capitalize text-[#bb2821]">
+          <div className="w-full lg:w-1/2 flex flex-col p-2 lg:p-3">
+            <h1 className="text-xl lg:text-2xl  font-bold capitalize text-[#bb2821] text-center lg:text-start">
               {product.name}
             </h1>
 
-            <div className="p-2">
+            <div className="p-0 lg:p-2">
               <h1 className="font-bold text-lg text-[#0B4D81]">
                 ${product.price}
               </h1>
             </div>
 
-            <p className="text-sm mt-2 capitalize text-[#606060] tracking-wide leading-relaxed">
-              {filteredDescription.description}
+            <p className="text-sm p-2  text-[#606060] tracking-wide leading-relaxed text-justify max-w-4xl">
+              {filteredDescription?.description}
             </p>
 
             <div className="flex flex-col gap-2  shadow-md">
@@ -242,7 +242,7 @@ const SingleProductPage = () => {
                 {showDescription && (
                   <div className="p-2">
                     <p
-                      className="text-[#606060] tracking-wide leading-relaxed"
+                      className="text-[#606060] tracking-wide leading-relaxed text-justify max-w-4xl text-sm"
                       dangerouslySetInnerHTML={{
                         __html: product.description,
                       }}
@@ -265,7 +265,7 @@ const SingleProductPage = () => {
                 {showOverview && (
                   <div className="p-2">
                     <p
-                      className="text-[#606060] tracking-wide leading-relaxed"
+                      className="text-[#606060] tracking-wide leading-relaxed text-sm"
                       dangerouslySetInnerHTML={{
                         __html: product.overview,
                       }}
@@ -279,22 +279,22 @@ const SingleProductPage = () => {
 
             {/* Attributes */}
             <div className="flex flex-col w-full gap-3 p-2 text-[#bb2821]">
-              <div className="flex w-1/2 justify-between">
+              <div className="flex w-full lg:w-1/2 justify-between">
                 <h1 className="text-[#0B4D81] font-bold text-sm">Color</h1>
                 <p className="text-sm">Black</p>
               </div>
 
-              <div className="flex w-1/2 justify-between">
+              <div className="flex w-full lg:w-1/2 justify-between">
                 <h1 className="text-[#0B4D81] font-bold text-sm">Size</h1>
                 <p className="text-sm">{product.size}cm</p>
               </div>
 
-              <div className="flex w-1/2 justify-between">
+              <div className="flex w-full lg:w-1/2 justify-between">
                 <h1 className="text-[#0B4D81] font-bold text-sm">Stock</h1>
                 <p className="text-sm">{product.stock} units</p>
               </div>
 
-              <div className="flex w-1/2 justify-between">
+              <div className="flex w-full lg:w-1/2 justify-between">
                 <h1 className="text-[#0B4D81] font-bold text-sm">Material</h1>
                 <p className="text-sm">{product.material}</p>
               </div>
@@ -306,12 +306,12 @@ const SingleProductPage = () => {
 
             <div className="mt-4 p-2">
               <h1 className="font-semibold text-[#bb2821]">Select Color:</h1>
-              <div className="flex gap-4 py-3">
+              <div className="grid grid-cols-2 lg:grid-cols-4  gap-4 py-3">
                 {category1.map((cat, index) => (
                   <div className="">
                     <button
                       onClick={() => handleColorClick(cat)}
-                      className="border border-[#bb2821] text-[#0B4D81] p-4 hover:bg-[#0B4D81] hover:text-white"
+                      className="border border-[#bb2821] text-[#0B4D81] w-full p-4 hover:bg-[#0B4D81] hover:text-white"
                     >
                       {cat}
                     </button>
