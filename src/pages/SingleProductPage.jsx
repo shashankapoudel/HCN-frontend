@@ -167,7 +167,7 @@ const SingleProductPage = () => {
           className="text-[#f0b3b0] hover:text-[#bb2821] text-left"
           onClick={handleBackToSubcategorycategory}
         >
-          {product.subcategorycategory} /
+          {product.subcategorycategory}
         </button>
       </div>
 
