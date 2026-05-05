@@ -143,25 +143,28 @@ const SingleProductPage = () => {
     <div className="min-h-screen p-3 lg:p-8 flex flex-col">
       <div className="flex gap-1 font-poppins italic -skew-x-12 text-sm font-thin ">
         <button
-          className=" text-[#bb2821]  text-left"
+          className="text-[#f0b3b0] hover:text-[#bb2821] text-left"
           onClick={handleBackToHome}
         >
           Home /
         </button>
 
         <button
-          className=" text-[#bb2821] text-left"
+          className=" text-[#f0b3b0] hover:text-[#bb2821] text-left"
           onClick={handleBackToCategory}
         >
           {product.category} /
         </button>
 
-        <button className=" text-[#bb2821]  text-left" onClick={handleBack}>
+        <button
+          className="text-[#f0b3b0] hover:text-[#bb2821]  text-left"
+          onClick={handleBack}
+        >
           {product.subcategory} /
         </button>
 
         <button
-          className="text-[#bb2821]  text-left"
+          className="text-[#f0b3b0] hover:text-[#bb2821] text-left"
           onClick={handleBackToSubcategorycategory}
         >
           {product.subcategorycategory} /
@@ -233,7 +236,7 @@ const SingleProductPage = () => {
                   onClick={handleShowDescription}
                   className="flex items-center justify-between border p-4 cursor-pointer"
                 >
-                  <h1 className="text-[#0B4D81]">Product Description</h1>
+                  <h1 className="text-[#0B4D81]">Product Overview</h1>
                   <button className="">
                     {!showDescription ? <FaChevronDown /> : <FaChevronUp />}
                   </button>
@@ -256,7 +259,7 @@ const SingleProductPage = () => {
                   onClick={handleShowOverview}
                   className="flex items-center justify-between border p-4 cursor-pointer"
                 >
-                  <h1 className="text-[#0B4D81]">Product Overview</h1>
+                  <h1 className="text-[#0B4D81]">Product Guide</h1>
                   <button>
                     {!showOverview ? <FaChevronDown /> : <FaChevronUp />}
                   </button>
