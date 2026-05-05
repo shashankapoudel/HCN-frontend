@@ -22,6 +22,7 @@ const SingleProductPage = () => {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [displayImages, setDisplayImages] = useState([]);
   const [mainIndex, setmainIndex] = useState(0);
+  const [hasAccessory, setHasAccessory] = useState(false);
 
   const category1 = ["Matte Black", "Tiger", "Silver", "Gold"];
   const category2 = ["Note 1", "Note 2"];
@@ -139,6 +140,9 @@ const SingleProductPage = () => {
     }
   };
 
+  const accessoryPrice = hasAccessory ? 30 : 0;
+  const finalPrice = Number(product.price) + accessoryPrice;
+
   return (
     <div className="min-h-screen p-3 lg:p-8 flex flex-col">
       <div className="flex gap-1 font-poppins italic -skew-x-12 text-sm font-thin ">
@@ -214,7 +218,6 @@ const SingleProductPage = () => {
             </div>
           </div>
 
-          {/* Product details */}
           <div className="w-full lg:w-1/2 flex flex-col p-2 lg:p-3">
             <h1 className="text-xl lg:text-2xl  font-bold capitalize text-[#bb2821] text-center lg:text-start">
               {product.name}
@@ -304,7 +307,11 @@ const SingleProductPage = () => {
             </div>
 
             <div className="mt-4">
-              <AddToCart product={product} />
+              <AddToCart
+                product={product}
+                hasAccessory={hasAccessory}
+                finalPrice={finalPrice}
+              />
             </div>
 
             <div className="mt-4 p-2">
@@ -322,7 +329,7 @@ const SingleProductPage = () => {
                 ))}
               </div>
             </div>
-
+            {/* 
             <div className="mt-4 p-2">
               <h1 className="font-semibold text-[#bb2821]">
                 Select Accessories Bundle:
@@ -335,6 +342,24 @@ const SingleProductPage = () => {
                     </button>
                   </div>
                 ))}
+              </div>
+            </div> */}
+
+            <div className="mt-4 p-2">
+              <div className="flex gap-4 py-3">
+                <div className="">
+                  <button
+                    onClick={() => setHasAccessory((prev) => !prev)}
+                    className={`border p-4 ${
+                      hasAccessory
+                        ? "bg-[#0B4D81] text-white"
+                        : "text-[#0B4D81]"
+                    }`}
+                  >
+                    {hasAccessory ? "Accessory Added ✓" : "Add Accessories"}
+                  </button>
+                  <h1 className="text-center">+$30</h1>
+                </div>
               </div>
             </div>
           </div>
