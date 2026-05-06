@@ -182,6 +182,7 @@ const SingleProductPage = () => {
             <img
               src={displayImages[mainIndex]}
               alt={product.name}
+              loading="lazy"
               className="w-full h-auto object-cover rounded transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
             />
 
@@ -200,6 +201,7 @@ const SingleProductPage = () => {
                   <img
                     key={index}
                     src={img}
+                    loading="lazy"
                     onClick={() => handleImageClick(index)}
                     className={`w-24 h-24 object-cover rounded cursor-pointer border flex-shrink-0
             ${mainIndex === index ? "border-[#bb2821]" : "border-transparent"}
@@ -350,7 +352,7 @@ const SingleProductPage = () => {
                 <div className="">
                   <button
                     onClick={() => setHasAccessory((prev) => !prev)}
-                    className={`border p-4 ${
+                    className={`border p-4 hover:bg-[#ADD8E6] hover:text-[#FFFFFF] ${
                       hasAccessory
                         ? "bg-[#0B4D81] text-white"
                         : "text-[#0B4D81]"
