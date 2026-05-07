@@ -3,6 +3,7 @@ import { ProductContext } from "../context/ProductProvider";
 import AddToCart from "../components/AddToCart";
 import { useNavigate } from "react-router-dom";
 import QuickViewProd from "../components/QuickViewProd";
+import Price from "../components/Price";
 
 const SingingBowl = () => {
   const { products } = useContext(ProductContext);
@@ -109,9 +110,10 @@ const SingingBowl = () => {
                       </div>
 
                       <div className="flex justify-between items-center">
-                        <p className="text-[#bb2821] font-bold ">
+                        <Price amount={product.price} />
+                        {/* <p className="text-[#bb2821] font-bold ">
                           ${product.price}
-                        </p>
+                        </p> */}
                         <AddToCart product={product} />
                       </div>
                     </div>
@@ -177,9 +179,10 @@ const SingingBowl = () => {
                       </div>
 
                       <div className="flex justify-between items-center">
-                        <p className="text-[#bb2821] font-bold ">
+                        <Price amount={product.price} />
+                        {/* <p className="text-[#bb2821] font-bold ">
                           ${product.price}
-                        </p>
+                        </p> */}
                         <AddToCart product={product} />
                       </div>
                     </div>
@@ -245,9 +248,10 @@ const SingingBowl = () => {
                       </div>
 
                       <div className="flex justify-between items-center">
-                        <p className="text-[#bb2821] font-bold ">
+                        <Price amount={product.price} />
+                        {/* <p className="text-[#bb2821] font-bold ">
                           ${product.price}
-                        </p>
+                        </p> */}
                         <AddToCart product={product} />
                       </div>
                     </div>
@@ -310,9 +314,10 @@ const SingingBowl = () => {
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <p className="text-[#bb2821] font-bold ">
+                    <Price amount={product.price} />
+                    {/* <p className="text-[#bb2821] font-bold ">
                       ${product.price}
-                    </p>
+                    </p> */}
                     <AddToCart product={product} />
                   </div>
                 </div>

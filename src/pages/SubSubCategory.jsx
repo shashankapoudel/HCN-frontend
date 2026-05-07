@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductProvider";
 import AddToCart from "../components/AddToCart";
 import QuickViewProd from "../components/QuickViewProd";
+import Price from "../components/Price";
 
 const SubSubCategory = () => {
   const subsubcategoryDescription = [
@@ -212,7 +213,8 @@ const SubSubCategory = () => {
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <p className="text-[#bb2821] font-bold">${product.price}</p>
+                  <Price amount={product.price} />
+                  {/* <p className="text-[#bb2821] font-bold">${product.price}</p> */}
                   <AddToCart product={product} />
                 </div>
               </div>

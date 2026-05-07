@@ -7,6 +7,7 @@ import AddAccessories from "../components/AddAccessories";
 import AddToCart from "../components/AddToCart";
 
 import { useRef } from "react";
+import Price from "../components/Price";
 
 const SingleProductPage = () => {
   const thumbsRef = useRef(null);
@@ -227,7 +228,8 @@ const SingleProductPage = () => {
 
             <div className="p-0 lg:p-2">
               <h1 className="font-bold text-lg text-[#0B4D81]">
-                ${product.price}
+                {/* ${product.price} */}
+                <Price amount={product.price} />
               </h1>
             </div>
 
