@@ -12,7 +12,7 @@ const GalleryCard = () => {
 
   const images = [
     "/Images/OurStory1.jpg",
-    "/Images/Gallery/2.jpg",
+    // "/Images/Gallery/2.jpg",
     "/Images/OurStory4.jpg",
     "/Images/Gallery/3.jpg",
     "/Images/OurStory3.jpg",
