@@ -32,19 +32,19 @@ import { useState } from "react";
 import { useCurrency } from "../context/CurrencyContext";
 
 const currencies = [
-  "USD",
-  "EUR",
-  "GBP",
-  "INR",
-  "JPY",
-  "CNY",
-  "AUD",
-  "CAD",
-  "CHF",
-  "HKD",
-  "SGD",
-  "AED",
-  "NPR",
+  "USD - $",
+  "EUR - €",
+  "GBP - £",
+  "INR - ₹",
+  "JPY - ¥",
+  "CNY - ¥",
+  "AUD - A$",
+  "CAD - C$",
+  "CHF - Fr",
+  "HKD - HK$",
+  "SGD - S$",
+  "AED - د.إ<",
+  "NPR - रू",
 ];
 
 const CurrencySelector = () => {
