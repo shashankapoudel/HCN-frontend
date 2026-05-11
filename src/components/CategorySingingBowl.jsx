@@ -10,6 +10,12 @@ const CategorySingingBowl = () => {
     (p) => p.category === "singing-bowls",
   );
 
+  const truncateText = (text, wordLimit) => {
+    const words = text.split(" ");
+    if (words.length <= wordLimit) return text;
+    return words.slice(0, wordLimit).join(" ") + "...";
+  };
+
   return (
     <div className="flex flex-col items-center justify-center w-full p-4 gap-2">
       <div>
@@ -51,9 +57,12 @@ const CategorySingingBowl = () => {
                 <h1 className="text-left text-[#111111] font-bold text-base capitalize">
                   {product.name}
                 </h1>
-                <p className="text-[#606060] font-edensor text-base">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                </p>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: truncateText(product.description, 15),
+                  }}
+                  className="text-[#606060] font-edensor text-base"
+                ></p>
               </div>
 
               <div className="flex justify-between items-center">
