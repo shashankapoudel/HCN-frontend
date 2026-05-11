@@ -5,6 +5,11 @@ import QuickViewProd from "./QuickViewProd";
 import Price from "./Price";
 
 const ProductGrid = ({ title, description, products }) => {
+  const truncateText = (text, wordLimit) => {
+    const words = text.split(" ");
+    if (words.length <= wordLimit) return text;
+    return words.slice(0, wordLimit).join(" ") + "...";
+  };
   const navigate = useNavigate();
 
   console.log(products);
@@ -39,8 +44,7 @@ const ProductGrid = ({ title, description, products }) => {
                   {product.name}
                 </h1>
                 <p className="text-[#606060] text-base font-edensor">
-                  {product.description?.slice(0, 60) ||
-                    "Category description goes here..."}
+                  {truncateText(product.description, 20)}
                 </p>
               </div>
 

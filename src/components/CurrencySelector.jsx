@@ -7,7 +7,7 @@ const CurrencySelector = () => {
     <select
       value={currency}
       onChange={(e) => setCurrency(e.target.value)}
-      className="border p-2 rounded bg-white text-sm"
+      className="border p-2 rounded bg-white text-sm h-10 max-h-10 overflow-y-auto"
     >
       <option value="USD">USD - $</option>
       <option value="EUR">EUR - €</option>
