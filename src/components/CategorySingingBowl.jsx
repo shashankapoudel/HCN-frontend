@@ -17,7 +17,7 @@ const CategorySingingBowl = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full p-4 gap-2">
+    <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
       <div>
         <h1 className="text-[#111111] text-center font-edensor text-lg">
           Himalayas Healer Collection
@@ -32,7 +32,7 @@ const CategorySingingBowl = () => {
         {filteredProducts.slice(0, 4).map((product) => (
           <div
             key={product._id}
-            className="w-full flex flex-col p-6 bg-white shadow-lg justify-between"
+            className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between"
           >
             <div className="relative w-full aspect-square overflow-hidden group">
               <QuickViewProd product={product} />

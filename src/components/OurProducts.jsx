@@ -19,7 +19,7 @@ const OurProducts = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full p-4 gap-2">
+    <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
       <div className="">
         <h1 className="text-[#111111] text-center font-edensor text-lg">
           Himalayas Collections
@@ -34,7 +34,7 @@ const OurProducts = () => {
         {products.slice(0, 4).map((product) => (
           <div
             key={product._id}
-            className="w-full flex flex-col p-6 bg-white shadow-lg justify-between cursor-pointer"
+            className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
           >
             <div
               onClick={() => navigate(`/product/${product._id}`)}

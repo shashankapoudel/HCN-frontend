@@ -14,13 +14,13 @@ const ProductGrid = ({ title, description, products }) => {
 
   console.log(products);
   return (
-    <div className="flex flex-col items-center justify-center w-full p-4 gap-2">
+    <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
       <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.map((product) => (
           <div
             onClick={() => navigate(`/product/${product._id}`)}
             key={product._id}
-            className="w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-6 relative"
+            className="w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-3 lg:p-6 relative"
           >
             <div className="relative bg-[#EBEBEB]  w-full aspect-square overflow-hidden group">
               <QuickViewProd product={product} />
