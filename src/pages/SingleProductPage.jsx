@@ -243,7 +243,7 @@ const SingleProductPage = () => {
                   onClick={handleShowDescription}
                   className="flex items-center justify-between border p-4 cursor-pointer"
                 >
-                  <h1 className="text-[#0B4D81]">Product Overview</h1>
+                  <h1 className="text-[#0B4D81] font-bold">Product Overview</h1>
                   <button className="">
                     {!showDescription ? <FaChevronDown /> : <FaChevronUp />}
                   </button>
@@ -266,7 +266,7 @@ const SingleProductPage = () => {
                   onClick={handleShowOverview}
                   className="flex items-center justify-between border p-4 cursor-pointer"
                 >
-                  <h1 className="text-[#0B4D81]">Product Guide</h1>
+                  <h1 className="text-[#0B4D81] font-bold">Product Guide</h1>
                   <button>
                     {!showOverview ? <FaChevronDown /> : <FaChevronUp />}
                   </button>
@@ -310,12 +310,25 @@ const SingleProductPage = () => {
               </div>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-4 gap-4 flex">
               <AddToCart
                 product={product}
                 hasAccessory={hasAccessory}
                 finalPrice={finalPrice}
               />
+              <button
+                onClick={() =>
+                  navigate("/order", {
+                    state: {
+                      name: product.name,
+                      price: product.price,
+                    },
+                  })
+                }
+                className="bg-gradient-to-r from-[#bb2821] to-[#0B4D81] text-[#FFFFFF] text-sm p-2 px-4"
+              >
+                Buy Now
+              </button>
             </div>
 
             <div className="mt-4 p-2">
@@ -369,10 +382,10 @@ const SingleProductPage = () => {
           </div>
         </div>
       </div>
-
+      {/* 
       <div className="mt-4">
         <AddAccessories />
-      </div>
+      </div> */}
 
       {/* Image modal */}
       {isModalOpen && (

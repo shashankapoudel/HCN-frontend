@@ -90,6 +90,10 @@ const Header = () => {
               path: "/singing-bowls/handmade/hand",
             },
             {
+              name: "Chakra Set Singing Bowls",
+              path: "/singing-bowls/handmade/chakra",
+            },
+            {
               name: "Himalayas Bowls",
               path: "/singing-bowls/handmade/himalayas",
             },
