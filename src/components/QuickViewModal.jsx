@@ -1,4 +1,3 @@
-
 import React from "react";
 import AddToCart from "./AddToCart";
 
@@ -7,12 +6,10 @@ const QuickViewModal = ({ isModalOpen, onClose, quickviewproduct }) => {
 
   return (
     <>
-
       <div
         className="fixed inset-0 bg-black bg-opacity-50 z-40"
         onClick={onClose}
       />
-
 
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div
@@ -20,7 +17,6 @@ const QuickViewModal = ({ isModalOpen, onClose, quickviewproduct }) => {
           className="bg-white relative p-6 rounded-lg w-full max-w-4xl shadow-lg flex flex-col text-[#323232] gap-4"
         >
           <div className="flex flex-col md:flex-row gap-6">
-
             <div className="md:w-2/5 border p-4 flex justify-center">
               <img
                 src={quickviewproduct.images?.[0]}
@@ -54,12 +50,9 @@ const QuickViewModal = ({ isModalOpen, onClose, quickviewproduct }) => {
                 <button className="bg-gradient-to-r from-red-600 to-blue-800 px-4 py-2 text-white rounded">
                   Buy now
                 </button>
-
               </div>
-
             </div>
           </div>
-
 
           <button
             type="button"

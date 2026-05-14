@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const RefundPolicy = () => {
-    return (
-        <div>
+  return <div></div>;
+};
 
-        </div>
-    )
-}
-
-export default RefundPolicy
+export default RefundPolicy;
