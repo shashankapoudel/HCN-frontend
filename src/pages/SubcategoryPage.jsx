@@ -43,12 +43,12 @@ const SubcategoryPage = () => {
   const filteredText = text.find((t) => t.category === subcategory);
 
   return (
-    <div className="min-h-screen p-3 lg:p-8">
-      <h1 className="text-3xl font-bold mb-6 capitalize text-center">
-        {subcategory.replace("-", " ")}
+    <div className="min-h-screen p-5 lg:p-8">
+      <h1 className="text-2xl lg:text-3xl font-bold mb-4 capitalize text-center">
+        {subcategory.replace("-", " ")} Singing Bowls
       </h1>
 
-      <p className="text-center text-[#606060]  font-edensor text-lg tracking-wide">
+      <p className="text-justify text-[#606060] font-edensor text-lg tracking-wide">
         {filteredText?.text}
       </p>
 
@@ -57,11 +57,11 @@ const SubcategoryPage = () => {
       {filteredProducts.length === 0 ? (
         <p className="text-center text-xl">No Products Found</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-2">
           {filteredProducts.map((product) => (
             <div
               key={product._id}
-              className="w-full flex flex-col p-6 bg-white shadow-lg justify-between cursor-pointer"
+              className="w-full flex flex-col p-4 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
             >
               <div
                 onClick={() => navigate(`/product/${product._id}`)}

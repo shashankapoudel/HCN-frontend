@@ -162,7 +162,7 @@ const SubSubCategory = () => {
         {filteredDescription?.title || subsubcategory.replace("-", " ")}
       </h1>
 
-      <p className="text-center text-[#606060]  font-edensor text-lg tracking-wide">
+      <p className="text-[#606060] text-justify  font-edensor text-lg tracking-wide">
         {filteredDescription?.description}
       </p>
 

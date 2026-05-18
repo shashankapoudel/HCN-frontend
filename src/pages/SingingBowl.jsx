@@ -46,7 +46,7 @@ const SingingBowl = () => {
 
   return (
     <div className="min-h-screen p-3 lg:p-8">
-      <div className="px-2 lg:px-6">
+      <div className="px-3 lg:px-6">
         <h1 className="text-2xl font-bold mb-4 text-center">
           Himalayas Singing Bowls
         </h1>
@@ -62,6 +62,7 @@ const SingingBowl = () => {
           with great care and hard work until a perfect piece is achieved.
         </p>
       </div>
+
       <div className="p-2 md:p-4 lg:p-8 mt-3">
         <div className="">
           <h2 className="text-2xl font-bold mb-0 lg:mb-2">
@@ -74,7 +75,7 @@ const SingingBowl = () => {
                 {subcategoryProducts.handmade.slice(0, 4).map((product) => (
                   <div
                     key={product._id}
-                    className="w-full flex flex-col p-6 bg-white shadow-lg justify-between cursor-pointer"
+                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
                   >
                     <div
                       onClick={() => navigate(`/product/${product._id}`)}
@@ -147,7 +148,7 @@ const SingingBowl = () => {
                 {subcategoryProducts.handmade.slice(0, 4).map((product) => (
                   <div
                     key={product._id}
-                    className="w-full flex flex-col p-6 bg-white shadow-lg justify-between cursor-pointer"
+                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
                   >
                     <div
                       onClick={() => navigate(`/product/${product._id}`)}
@@ -216,7 +217,7 @@ const SingingBowl = () => {
                 {subcategoryProducts.machinemade.slice(0, 4).map((product) => (
                   <div
                     key={product._id}
-                    className="w-full flex flex-col p-6 bg-white shadow-lg justify-between cursor-pointer"
+                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
                   >
                     <div
                       onClick={() => navigate(`/product/${product._id}`)}
@@ -285,7 +286,7 @@ const SingingBowl = () => {
             {subcategoryProducts.accessories.slice(0, 4).map((product) => (
               <div
                 key={product._id}
-                className="w-full flex flex-col p-6 bg-white shadow-lg justify-between cursor-pointer"
+                className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
               >
                 <div
                   onClick={() => navigate(`/product/${product._id}`)}
