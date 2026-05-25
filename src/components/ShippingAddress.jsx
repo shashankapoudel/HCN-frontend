@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { getCode, getNames } from "country-list";
 
-const ShippingAddress = ({ nextStep, prevStep, formData, setFormData }) => {
+const ShippingAddress = ({
+  nextStep,
+  prevStep,
+  formData,
+  setFormData,
+  total,
+}) => {
   const [country, setCountry] = useState("");
   const [zip, setZip] = useState("");
   const [countries, setCountries] = useState([]);
@@ -144,7 +150,7 @@ const ShippingAddress = ({ nextStep, prevStep, formData, setFormData }) => {
           onClick={handleNext}
           className="bg-[#0B4D81] text-white px-6 py-2 rounded hover:bg-[#093a63] "
         >
-          Payment : $6,823
+          Payment : ${total}
         </button>
       </div>
 

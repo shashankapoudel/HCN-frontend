@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 
 const Order = () => {
   const location = useLocation();
+  const { cartItems, subTotal } = location.state || {};
   const { name, price } = location.state || {};
 
   const [formData, setFormData] = useState({
@@ -58,6 +59,7 @@ const Order = () => {
             prevStep={prevStep}
             formData={formData}
             setFormData={setFormData}
+            total={subTotal}
           />
         );
       case 3:
@@ -81,7 +83,12 @@ const Order = () => {
       <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 w-full  min-h-screen">
         <StepSideBar step={step} />
         {renderStep()}
-        <TotalOrder step={step} nextStep={nextStep} prevStep={prevStep} />
+        <TotalOrder
+          total={subTotal}
+          step={step}
+          nextStep={nextStep}
+          prevStep={prevStep}
+        />
       </div>
     </div>
   );

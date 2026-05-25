@@ -67,13 +67,17 @@ const Cart = () => {
     getCartItems();
   }, [sessionId]);
 
-  const handleCheckout = () => {
-    navigate("/order");
-  };
-
   const total = cartItems.reduce((acc, item) => {
     return acc + item.price * (item.quantity || 1);
   }, 0);
+
+  const subTotal = total + 1250 + 1250;
+
+  const handleCheckout = () => {
+    navigate("/order", {
+      state: { cartItems, subTotal },
+    });
+  };
 
   return (
     <div className=" w-full  min-h-screen">
@@ -139,7 +143,7 @@ const Cart = () => {
 
           <div className="flex justify-between p-3 font-bold">
             <h1>Total</h1>
-            <p>$1250.00</p>
+            <p>${subTotal}</p>
           </div>
 
           <div className="flex flex-col gap-3">
