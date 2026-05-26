@@ -66,6 +66,10 @@ const Header = () => {
               path: "/singing-bowls/handmade/healing",
             },
             {
+              name: "Chakra Set Singing Bowls",
+              path: "/singing-bowls/handmade/chakra",
+            },
+            {
               name: "Note & color Singing Bowls",
               path: "/singing-bowls/handmade/note-color",
             },

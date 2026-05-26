@@ -75,6 +75,8 @@ const ShippingAddress = ({
             <label className="text-[#344054] text-sm">ZIP/Postal Code *</label>
             <input
               type="text"
+              value={zip}
+              onChange={() => setZip(e.target.value)}
               className="border p-2 border-[#D0D5DD] rounded-md text-sm"
               placeholder="Enter your Zip/postal code"
             />
@@ -85,6 +87,8 @@ const ShippingAddress = ({
           <label className="text-[#344054] text-sm">State/Province *</label>
           <input
             type="text"
+            value={state}
+            onChange={() => setState(e.target.value)}
             className="border p-2 border-[#D0D5DD] rounded-md text-sm"
             placeholder="Select or enter state/province"
           />
@@ -94,6 +98,8 @@ const ShippingAddress = ({
           <label className="text-[#344054] text-sm">City *</label>
           <input
             type="text"
+            value={city}
+            onChange={() => setCity(e.target.value)}
             className="border p-2 border-[#D0D5DD] rounded-md text-sm"
             placeholder="Enter your city name"
           />
@@ -103,6 +109,8 @@ const ShippingAddress = ({
           <label className="text-[#344054] text-sm">Street Address *</label>
           <input
             type="text"
+            value={street}
+            onChange={() => setStreet(e.target.value)}
             className="border p-2 border-[#D0D5DD] rounded-md text-sm"
             placeholder="Enter your Street address"
           />
@@ -114,6 +122,8 @@ const ShippingAddress = ({
           </label>
           <input
             type="text"
+            value={apartment}
+            onChange={() => setApartment(e.target.value)}
             className="border p-2 border-[#D0D5DD] rounded-md text-sm"
             placeholder="Apartment, suite, unit, etc"
           />
