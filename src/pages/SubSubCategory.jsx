@@ -157,12 +157,12 @@ const SubSubCategory = () => {
   );
 
   return (
-    <div className="min-h-screen p-3 lg:p-8">
-      <h1 className="text-3xl font-bold mb-6 capitalize text-center">
+    <div className="min-h-screen p-3 lg:p-9">
+      <h1 className="text-3xl font-bold mb-6 capitalize text-center font-roboto">
         {filteredDescription?.title || subsubcategory.replace("-", " ")}
       </h1>
 
-      <p className="text-[#606060] text-justify  font-edensor text-lg tracking-wide">
+      <p className="text-none lg:text-center text-[#606060] text-justify font-serif text-lg  tracking-wide">
         {filteredDescription?.description}
       </p>
 
