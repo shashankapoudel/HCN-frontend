@@ -252,7 +252,7 @@ const SingleProductPage = () => {
                 {showDescription && (
                   <div className="p-2">
                     <p
-                      className="text-[#606060] tracking-wide leading-relaxed text-justify max-w-4xl text-sm"
+                      className="text-[#606060] tracking-wide leading-relaxed text-justify max-w-4xl text-sm whitespace-pre-line"
                       dangerouslySetInnerHTML={{
                         __html: product.description,
                       }}
@@ -260,7 +260,6 @@ const SingleProductPage = () => {
                   </div>
                 )}
               </div>
-
               <div className="w-full rounded-md shadow-md">
                 <div
                   onClick={handleShowOverview}
@@ -291,7 +290,7 @@ const SingleProductPage = () => {
             <div className="flex flex-col w-full gap-3 p-2 text-[#bb2821]">
               <div className="flex w-full lg:w-1/2 justify-between">
                 <h1 className="text-[#0B4D81] font-bold text-sm">Color</h1>
-                <p className="text-sm">Black</p>
+                <p className="text-sm">{product.color}</p>
               </div>
 
               <div className="flex w-full lg:w-1/2 justify-between">

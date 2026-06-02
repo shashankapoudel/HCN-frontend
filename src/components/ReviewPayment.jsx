@@ -1,5 +1,3 @@
-// ReviewPayment.jsx
-
 import { FaTrashAlt, FaLock } from "react-icons/fa";
 
 const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
@@ -46,9 +44,6 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
     });
   };
 
-  /**
-   * PAYMENT FUNCTION
-   */
   const handlePlaceOrder = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/payment/create", {
@@ -85,7 +80,6 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
       console.log(data);
 
       if (data.success) {
-        // Redirect customer to payment page
         window.location.href = data.paymentURL;
       } else {
         alert(data.message || "Payment Failed");

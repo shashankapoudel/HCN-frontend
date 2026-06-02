@@ -158,7 +158,6 @@ const Order = () => {
   return (
     <div className="min-h-screen bg-[#F8FAFC] py-10 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-10 text-center">
           <h1 className="text-4xl font-bold text-[#101828]">Secure Checkout</h1>
 

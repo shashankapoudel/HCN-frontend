@@ -14,6 +14,9 @@ const Header = () => {
   const [hoveredSubItem, setHoveredSubItem] = useState(null);
   const [hoveredSubSubItem, setHoveredSubSubItem] = useState(null);
 
+  const [openMain, setOpenMain] = useState(null);
+  const [openSub, setOpenSub] = useState(null);
+
   const productNavItems = [
     {
       name: "Singing Bowls",
@@ -316,7 +319,7 @@ const Header = () => {
 
               {item.subItems && (
                 <div className="absolute left-0 mt-2 w-64 bg-white border rounded-lg shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
-                  {item.subItems.map((subItem, index) => (
+                  {item.subItems.map((subItem) => (
                     <NavLink
                       key={subItem.name}
                       to={subItem.path}
@@ -338,6 +341,7 @@ const Header = () => {
 
         <div className="flex gap-5 items-center">
           <CurrencySelector />
+
           <button
             onClick={() => navigate("/trackorder")}
             className="hidden lg:flex bg-[#0B4D81] text-[#FFFFFF] px-2 py-2 hover:bg-[#093a63] transition-colors duration-200 text-sm"
@@ -363,8 +367,9 @@ const Header = () => {
         </div>
       </div>
 
+      {/* ✅ MOBILE MENU FIXED PART ONLY */}
       {menuOpen && (
-        <div className=" fixed top-0 right-0 w-2/3 h-screen bg-[#0B4D81] text-white p-5 z-50 transition-transform">
+        <div className="fixed top-0 right-0 w-2/3 h-screen bg-[#0B4D81] text-white p-5 z-50 transition-transform">
           <div className="flex justify-between items-center">
             <h1 className="text-lg font-semibold">Menu</h1>
             <button
@@ -377,76 +382,84 @@ const Header = () => {
           </div>
 
           <ul className="flex flex-col gap-4 mt-6">
-            {[...productNavItems, ...mainNavItems].map((item) => (
-              <div key={item.name} className="relative group">
-                <NavLink
-                  to={item.path}
-                  onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `flex items-center text-sm justify-between ${
-                      isActive
-                        ? "text-[#00B0A7] font-semibold"
-                        : "text-[#FFFFFF] hover:text-[#00ADA4]"
-                    }`
+            {[...productNavItems, ...mainNavItems].map((item, i) => (
+              <li key={i} className="flex flex-col">
+                {/* MAIN ITEM */}
+                <div
+                  className="flex justify-between items-center cursor-pointer"
+                  onClick={() =>
+                    setOpenMain(openMain === item.name ? null : item.name)
                   }
                 >
-                  {item.name}
-                  {item.subItems && <FiChevronDown className="text-lg mt-1" />}
-                </NavLink>
+                  <NavLink
+                    to={item.path}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-sm text-white"
+                  >
+                    {item.name}
+                  </NavLink>
 
-                {item.subItems && (
-                  <div className="absolute left-0 mt-2 w-40 bg-white border rounded-lg shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
-                    {item.subItems.map((subItem, index) => (
-                      <div
-                        key={subItem.name}
-                        onMouseEnter={() => setHoveredSubItem(subItem.name)}
-                        onMouseLeave={() => setHoveredSubItem(null)}
-                        className="flex items-center justify-between"
-                      >
-                        <NavLink
-                          to={subItem.path}
-                          state={{ category: subItem.name }}
-                          className="flex px-2 py-2 text-gray-800 hover:bg-gray-200 items-center justify-between w-full text-sm"
+                  {item.subItems && (
+                    <FiChevronDown
+                      className={`transition-transform ${
+                        openMain === item.name ? "rotate-180" : ""
+                      }`}
+                    />
+                  )}
+                </div>
+
+                {/* SUB ITEMS */}
+                {item.subItems && openMain === item.name && (
+                  <div className="ml-4 mt-2 flex flex-col gap-2">
+                    {item.subItems.map((sub) => (
+                      <div key={sub.name}>
+                        <div
+                          className="flex justify-between items-center cursor-pointer text-sm"
+                          onClick={() =>
+                            setOpenSub(openSub === sub.name ? null : sub.name)
+                          }
                         >
-                          {subItem.name}
-                          {subItem.subsubItems && (
-                            <FiChevronDown className="text-gray-600 mt-1 -rotate-90 text-lg" />
-                          )}
-                        </NavLink>
-
-                        {subItem.subsubItems &&
-                          hoveredSubItem === subItem.name && (
-                            <div
-                              className="absolute left-40  w-40 bg-white border rounded-lg shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out"
-                              style={{ top: `${index * 36}px` }}
+                          {/* ✅ FIX ONLY HERE */}
+                          {sub.subsubItems ? (
+                            <span className="text-gray-200">{sub.name}</span>
+                          ) : (
+                            <NavLink
+                              to={sub.path}
+                              onClick={() => setMenuOpen(false)}
+                              className="text-gray-200"
                             >
-                              {subItem.subsubItems.map((subsubItem, index) => (
-                                <div
-                                  onMouseLeave={() =>
-                                    setHoveredSubSubItem(null)
-                                  }
-                                  className=""
-                                >
-                                  <NavLink
-                                    onMouseEnter={() =>
-                                      setHoveredSubSubItem(subsubItem.name)
-                                    }
-                                    key={subsubItem.name}
-                                    to={subsubItem.path}
-                                    state={{ category: subsubItem.name }}
-                                    className="flex items-center justify-between px-4 py-2 text-gray-800 hover:bg-gray-200"
-                                  >
-                                    {subsubItem.name}
-                                  </NavLink>
-                                </div>
-                              ))}
-                            </div>
+                              {sub.name}
+                            </NavLink>
                           )}
+
+                          {sub.subsubItems && (
+                            <FiChevronDown
+                              className={`transition-transform ${
+                                openSub === sub.name ? "rotate-180" : ""
+                              }`}
+                            />
+                          )}
+                        </div>
+
+                        {sub.subsubItems && openSub === sub.name && (
+                          <div className="ml-4 mt-2 flex flex-col gap-1 text-sm text-gray-300">
+                            {sub.subsubItems.map((ss) => (
+                              <NavLink
+                                key={ss.name}
+                                to={ss.path}
+                                onClick={() => setMenuOpen(false)}
+                                className="py-1"
+                              >
+                                {ss.name}
+                              </NavLink>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
                 )}
-              </div>
+              </li>
             ))}
           </ul>
         </div>

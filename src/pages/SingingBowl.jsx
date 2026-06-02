@@ -253,9 +253,6 @@ const SingingBowl = () => {
 
                       <div className="flex justify-between items-center">
                         <Price amount={product.price} />
-                        {/* <p className="text-[#bb2821] font-bold ">
-                          ${product.price}
-                        </p> */}
                         <AddToCart product={product} />
                       </div>
                     </div>

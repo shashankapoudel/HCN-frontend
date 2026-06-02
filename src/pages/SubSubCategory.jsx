@@ -133,16 +133,13 @@ const SubSubCategory = () => {
   );
   console.log(filteredProducts);
 
-  // Remove HTML tags and truncate text
   const truncateText = (html, wordLimit) => {
     if (!html) return "";
 
-    // Decode HTML entities
     const txt = document.createElement("textarea");
     txt.innerHTML = html;
     const decoded = txt.value;
 
-    // Remove HTML tags
     const cleanText = decoded.replace(/<[^>]*>/g, "");
 
     // Truncate words

@@ -1,5 +1,3 @@
-// CheckoutForm.jsx
-
 import React, { useState } from "react";
 import { getNames } from "country-list";
 
