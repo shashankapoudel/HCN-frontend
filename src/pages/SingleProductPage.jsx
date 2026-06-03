@@ -179,7 +179,6 @@ const SingleProductPage = () => {
       <div>
         <div className="flex flex-col lg:flex-row gap-8 justify-evenly mt-4 items-start">
           <div className="w-full lg:w-1/2 flex flex-col gap-3">
-            {/* BIG IMAGE */}
             <img
               src={displayImages[mainIndex]}
               alt={product.name}
@@ -187,13 +186,11 @@ const SingleProductPage = () => {
               className="w-full h-auto object-cover rounded transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
             />
 
-            {/* THUMBNAIL CAROUSEL */}
             <div className="relative flex items-center">
               <button onClick={scrollLeft} className="absolute left-0 z-10 p-2">
                 ◀
               </button>
 
-              {/* SCROLLABLE THUMBNAILS */}
               <div
                 ref={thumbsRef}
                 className="flex gap-2 overflow-x-auto scroll-smooth px-8"
@@ -211,7 +208,6 @@ const SingleProductPage = () => {
                 ))}
               </div>
 
-              {/* RIGHT BUTTON */}
               <button
                 onClick={scrollRight}
                 className="absolute right-0 z-10 bg-white shadow p-2 rounded-full"
@@ -228,7 +224,6 @@ const SingleProductPage = () => {
 
             <div className="p-0 lg:p-2">
               <h1 className="font-bold text-lg text-[#0B4D81]">
-                {/* ${product.price} */}
                 <Price amount={product.price} />
               </h1>
             </div>
@@ -286,7 +281,6 @@ const SingleProductPage = () => {
 
             <hr className="my-4" />
 
-            {/* Attributes */}
             <div className="flex flex-col w-full gap-3 p-2 text-[#bb2821]">
               <div className="flex w-full lg:w-1/2 justify-between">
                 <h1 className="text-[#0B4D81] font-bold text-sm">Color</h1>
@@ -386,7 +380,6 @@ const SingleProductPage = () => {
         <AddAccessories />
       </div> */}
 
-      {/* Image modal */}
       {isModalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"

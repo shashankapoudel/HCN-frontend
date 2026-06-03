@@ -241,6 +241,7 @@ const ProductHeader = () => {
       ],
     },
   ];
+  
 
   useEffect(() => {
     setActive(location.pathname);
