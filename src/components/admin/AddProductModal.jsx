@@ -98,6 +98,7 @@ const AddProductModal = ({
       "handmade",
       "machinemade",
       "accessories",
+      "chakra",
     ],
     "ritual-items": [
       "Select sub-category",

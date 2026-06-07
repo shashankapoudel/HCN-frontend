@@ -6,13 +6,14 @@ export const CurrencyProvider = ({ children }) => {
   const [currency, setCurrency] = useState("USD");
   const [rates, setRates] = useState({ USD: 1 });
 
-  // 🔥 Fetch live exchange rates
   const fetchRates = async () => {
     try {
       const res = await fetch("https://open.er-api.com/v6/latest/USD");
       const data = await res.json();
 
-      setRates(data.rates);
+      if (data?.rates) {
+        setRates(data.rates);
+      }
     } catch (err) {
       console.log("Rate fetch error:", err);
     }
@@ -22,11 +23,14 @@ export const CurrencyProvider = ({ children }) => {
     fetchRates();
   }, []);
 
-  // 🔥 Convert price
   const convertPrice = (priceInUSD) => {
-    if (!rates[currency]) return priceInUSD;
+    const rate = rates[currency];
 
-    return (priceInUSD * rates[currency]).toFixed(2);
+    if (!rate) {
+      return Number(priceInUSD).toFixed(2);
+    }
+
+    return (priceInUSD * rate).toFixed(2);
   };
 
   return (

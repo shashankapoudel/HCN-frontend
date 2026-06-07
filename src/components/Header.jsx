@@ -148,6 +148,10 @@ const Header = () => {
             },
           ],
         },
+        {
+          name: "Chakra Set Singing Bowls",
+          path: "/singing-bowls/chakra",
+        },
       ],
     },
 

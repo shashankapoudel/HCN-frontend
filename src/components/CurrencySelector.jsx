@@ -32,47 +32,53 @@ import { useState } from "react";
 import { useCurrency } from "../context/CurrencyContext";
 
 const currencies = [
-  "USD - $",
-  "EUR - €",
-  "GBP - £",
-  "INR - ₹",
-  "JPY - ¥",
-  "CNY - ¥",
-  "AUD - A$",
-  "CAD - C$",
-  "CHF - Fr",
-  "HKD - HK$",
-  "SGD - S$",
-  "AED - د.إ<",
-  "NPR - रू",
+  { code: "USD", symbol: "$" },
+  { code: "EUR", symbol: "€" },
+  { code: "GBP", symbol: "£" },
+  { code: "INR", symbol: "₹" },
+  { code: "JPY", symbol: "¥" },
+  { code: "CNY", symbol: "¥" },
+  { code: "AUD", symbol: "A$" },
+  { code: "CAD", symbol: "C$" },
+  { code: "CHF", symbol: "CHF" },
+  { code: "HKD", symbol: "HK$" },
+  { code: "SGD", symbol: "S$" },
+  { code: "AED", symbol: "د.إ" },
+  { code: "NPR", symbol: "रू" },
 ];
 
 const CurrencySelector = () => {
   const { currency, setCurrency } = useCurrency();
   const [open, setOpen] = useState(false);
 
+  const selectedCurrency =
+    currencies.find((curr) => curr.code === currency) || currencies[0];
+
   return (
-    <div className="relative w-32">
+    <div className="relative w-36">
       <button
         onClick={() => setOpen(!open)}
         className="w-full border bg-white rounded px-3 py-1 text-sm flex items-center justify-between shadow"
       >
-        <span>{currency}</span>
-        <span className="text-xl mb-3">{open ? "⌃" : "⌄"}</span>
+        <span>
+          {selectedCurrency.code} {selectedCurrency.symbol}
+        </span>
+
+        <span>{open ? "▲" : "▼"}</span>
       </button>
 
       {open && (
-        <div className="absolute top-full mt-1 left-0 w-full bg-white border rounded shadow-lg max-h-40 overflow-y-auto z-50">
+        <div className="absolute top-full mt-1 left-0 w-full bg-white border rounded shadow-lg max-h-48 overflow-y-auto z-50">
           {currencies.map((curr) => (
             <div
-              key={curr}
+              key={curr.code}
               onClick={() => {
-                setCurrency(curr);
+                setCurrency(curr.code);
                 setOpen(false);
               }}
               className="px-3 py-2 text-sm hover:bg-gray-100 cursor-pointer"
             >
-              {curr}
+              {curr.code} - {curr.symbol}
             </div>
           ))}
         </div>

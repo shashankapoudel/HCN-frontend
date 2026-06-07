@@ -140,6 +140,10 @@ const ProductHeader = () => {
             },
           ],
         },
+        {
+          name: "Chakra Set Singing Bowls",
+          path: "/singing-bowls/chakra",
+        },
       ],
     },
 
@@ -241,7 +245,6 @@ const ProductHeader = () => {
       ],
     },
   ];
-  
 
   useEffect(() => {
     setActive(location.pathname);
