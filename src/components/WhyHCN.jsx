@@ -55,13 +55,13 @@ const WhyHCN = () => {
   };
 
   return (
-    <div className="p-3 lg:p-5">
+    <div className="p-3 lg:p-5 flex flex-col">
       <h1 className="text-[#0B4D81] text-2xl font-semibold text-center mb-6">
         Why should you choose Us (HCN)?
       </h1>
 
       <div
-        className={`flex flex-col h-80 p-5 rounded-md lg:flex-row justify-evenly gap-4 mt-4 transform-style preserve-3d bg-white shadow-lg ${isFlipping ? "flip-rotate" : ""}`}
+        className={`flex flex-col min-h-80 p-2 lg:p-5 rounded-md lg:flex-row justify-evenly gap-4 mt-4 transform-style preserve-3d bg-white shadow-lg ${isFlipping ? "flip-rotate" : ""}`}
       >
         <div className="w-full lg:w-1/3 mt-3">
           <img
@@ -72,7 +72,7 @@ const WhyHCN = () => {
           />
         </div>
 
-        <div className="w-full lg:w-1/2 p-2">
+        <div className="w-full lg:w-1/2 p-1 lg:p-2">
           <h1 className="text-[#0B4D81] text-xl font-semibold">
             {Services[currentIndex].title}
           </h1>

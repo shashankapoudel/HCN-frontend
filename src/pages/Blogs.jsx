@@ -64,7 +64,9 @@ const BlogPage = () => {
           >
             &larr; Back to blogs
           </button>
-          <h1 className="text-2xl font-bold mb-4">{selectedBlog.title}</h1>
+          <h1 className="text-2xl font-bold mb-4 text-center">
+            {selectedBlog.title}
+          </h1>
           <img
             src={selectedBlog.images[0]}
             alt={selectedBlog.title}

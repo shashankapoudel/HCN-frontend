@@ -67,9 +67,9 @@ const Gallery = () => {
   };
 
   return (
-    <div className="p-8 min-h-screen">
+    <div className="p-4 lg:p-8 min-h-screen">
       {/* IMAGE GRID */}
-      <div className="columns-3 md:columns-3 lg:columns-4 gap-1">
+      <div className="columns-1 md:columns-3 lg:columns-4 gap-1">
         {currentImages.map((img, index) => (
           <img
             key={index}

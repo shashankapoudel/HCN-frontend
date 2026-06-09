@@ -275,8 +275,16 @@ const Header = () => {
 
   return (
     <div className="flex flex-col w-full fixed top-0 z-50">
-      <div className="flex items-center justify-center p-2 bg-[#bb2821] text-[#FFFFFF] text-sm font-medium">
-        Free holiday offer until April 23, 2025
+      <div className="flex items-center justify-around p-2 bg-[#bb2821] text-[#FFFFFF] text-sm font-medium">
+        <a
+          className="bg-[#0B4D81] px-2 py-1 rounded-3xl"
+          href="https://www.singingbowlsmaster.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NSHIS
+        </a>
+        <p>Free holiday offer until April 23, 2025</p>
       </div>
 
       <div className="hidden lg:flex gap-6 py-2 px-3 bg-[#EBEBEB] text-[#111111] justify-center items-center">

@@ -6,7 +6,7 @@ const TermsCondition = () => {
       <h1 className="text-center font-edensor text-4xl font-bold mt-4">
         Terms of Service
       </h1>
-      <div className="min-h-screen p-8 w-1/2 ">
+      <div className="min-h-screen p-5 lg:p-8 w-full lg:w-1/2 text-justify ">
         <p>
           Your access to and use of this website is subject to the following
           terms and conditions (“Terms of Use”) and all applicable laws. By

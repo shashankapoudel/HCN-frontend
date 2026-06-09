@@ -99,11 +99,11 @@ const Story = () => {
           </div>
         </div>
 
-        <div className="p-0 lg:p-8 font-poppins ">
+        <div className="p-4 lg:p-8 font-poppins ">
           <WhyHCN />
         </div>
 
-        <div className="p-0 lg:p-8 font-poppins ">
+        <div className="p-4 lg:p-8 font-poppins ">
           <OurFactories />
         </div>
       </div>

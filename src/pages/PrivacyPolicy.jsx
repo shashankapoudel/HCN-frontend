@@ -2,10 +2,11 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="text-[#111111] min-h-screen p-8">
+    <div className="text-[#111111] min-h-screen p-4 lg:p-8">
       <h1 className="text-center text-2xl font-bold">Privacy Policy</h1>
-      <div className="flex gap-4 p-4 ">
-        <div className="border-4 border-gray-700 p-4 w-1/2 leading-relaxed">
+
+      <div className="flex flex-col lg:flex-row gap-4 p-2 lg:p-4 ">
+        <div className="border-4 border-gray-700 p-4 w-full lg:w-1/2 leading-relaxed">
           <p>
             <strong>Himalayas Craft Nepal</strong>(the “Company”) respects the
             privacy concerns of the users of its website, saktiyogaschool.com,
@@ -19,7 +20,7 @@ const PrivacyPolicy = () => {
           </p>
         </div>
 
-        <div className="border-4 border-gray-700 p-4 w-1/2 leading-relaxed">
+        <div className="border-4 border-gray-700 p-2 lg:p-4 w-full lg:w-1/2 leading-relaxed">
           <p>
             <h1 className="font-bold">The privacy notice describes to you:</h1>
             1. Who we are <br />
@@ -41,7 +42,7 @@ const PrivacyPolicy = () => {
         </div>
       </div>
 
-      <div className="flex flex-col p-4 gap-8">
+      <div className="flex flex-col p-2 lg:p-4 gap-8">
         <div className="border-2 border-gray-600 p-2">
           <p>
             <strong>1.Who are we ?</strong> <br />

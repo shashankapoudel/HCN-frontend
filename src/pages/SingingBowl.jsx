@@ -15,6 +15,7 @@ const SingingBowl = () => {
     handmade: [],
     machinemade: [],
     accessories: [],
+    chakra: [],
   });
 
   useEffect(() => {
@@ -27,6 +28,7 @@ const SingingBowl = () => {
       handmade: filtered.filter((p) => p.subcategory === "handmade"),
       machinemade: filtered.filter((p) => p.subcategory === "machinemade"),
       accessories: filtered.filter((p) => p.subcategory === "accessories"),
+      chakra: filtered.filter((p) => p.subcategory === "chakra"),
     });
   }, [products]);
 
