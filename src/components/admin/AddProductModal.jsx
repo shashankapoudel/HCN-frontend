@@ -79,7 +79,7 @@ const AddProductModal = ({
 
   const productMaterials = [
     "select material",
-    "metal",
+    "Seven metals",
     "crystal",
     "wood",
     "leather",

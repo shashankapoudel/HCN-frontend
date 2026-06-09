@@ -7,7 +7,6 @@ import Price from "../components/Price";
 
 const SingingBowl = () => {
   const { products } = useContext(ProductContext);
-
   const navigate = useNavigate();
 
   const [subcategoryProducts, setSubcategoryProducts] = useState({
