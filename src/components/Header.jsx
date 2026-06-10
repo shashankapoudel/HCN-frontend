@@ -310,7 +310,7 @@ const Header = () => {
           onClick={() => navigate("/")}
         >
           <img
-            src="/Images/Logo.png"
+            src="/Images/Logo1.png"
             className="object-cover w-64"
             alt="Logo"
             loading="lazy"
