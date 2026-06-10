@@ -39,6 +39,7 @@ import SubcategoryPage from "./pages/SubcategoryPage";
 import Wholesale from "./pages/Wholesale";
 import ShippingPolicy from "./pages/ShippingPolicy";
 import SubSubCategory from "./pages/SubSubCategory";
+import SingleBlog from "./pages/SingleBlog";
 
 function App() {
   const location = useLocation();
@@ -73,8 +74,10 @@ function App() {
             path="/policies/terms-condition"
             element={<TermsCondition />}
           />
+
           <Route path="/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<SingleBlog />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<Order />} />
