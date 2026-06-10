@@ -275,16 +275,19 @@ const Header = () => {
 
   return (
     <div className="flex flex-col w-full fixed top-0 z-50">
-      <div className=" p-2 bg-[#bb2821] text-[#FFFFFF] text-sm font-medium">
-        <div className="w-1/2 flex items-center justify-between">
+      <div className="flex w-full text-[#FFFFFF] text-sm font-medium">
+        <div className="w-1/5 flex items-center justify-center bg-[#0B4D81]">
           <a
-            className="bg-[#0B4D81] px-2 py-1 rounded-3xl"
+            className=" px-2 py-1 rounded-3xl"
             href="https://www.singingbowlsmaster.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            NSHIS
+            NSHISchool
           </a>
+        </div>
+
+        <div className="flex bg-[#bb2821] items-center justify-center w-4/5 p-2">
           <p>Free holiday offer until April 23, 2025</p>
         </div>
       </div>

@@ -18,7 +18,7 @@ const Footer = () => {
     <div className="flex flex-col justify-between items-center lg:flex-row lg:justify-between p-4 md:p-8 bg-[#FFFFFF]  bottom-0 gap-4 font-sans font-normal">
       <div className="w-full p-2 flex flex-col items-center justify-center lg:items-start lg:justify-start gap-2 tracking-wide">
         <img
-          src="/Images/logo_FOOTER.png"
+          src="/Images/logo_Footer.png"
           className="object-cover w-44"
           alt="Logo"
           loading="lazy"
@@ -108,35 +108,59 @@ const Footer = () => {
           <h1 className="text-[#bb2821] font-semibold">About Us</h1>
 
           <div className="text-[#090914] text-sm flex flex-col gap-2 mt-2">
-            <NavLink to="/about/story" className="">
+            <NavLink
+              to="/about/story"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               About HCN
             </NavLink>
 
-            <NavLink to="/gallery" className="">
+            <NavLink
+              to="/gallery"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               Gallery
             </NavLink>
 
-            <NavLink to="/about/team" className="">
+            <NavLink
+              to="/about/team"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               HCN Team
             </NavLink>
 
-            <NavLink to="/policies/terms-condition" className="">
+            <NavLink
+              to="/policies/terms-condition"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               Terms and Conditions
             </NavLink>
 
-            <NavLink to="/about" className="">
+            <NavLink
+              to="/about"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               Refund Policy
             </NavLink>
 
-            <NavLink to="/wholesale" className="">
+            <NavLink
+              to="/wholesale"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               Wholesale
             </NavLink>
 
-            <NavLink to="/policies/private-policy" className="">
+            <NavLink
+              to="/policies/private-policy"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               Privacy Policy
             </NavLink>
 
-            <NavLink to="/shipping-policy" className="">
+            <NavLink
+              to="/shipping-policy"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               Shipping Policy
             </NavLink>
           </div>
@@ -145,16 +169,28 @@ const Footer = () => {
         <div className=" ">
           <h1 className="text-[#bb2821] font-semibold">Resources</h1>
           <div className="text-[#090914] text-sm flex flex-col gap-2 mt-2">
-            <NavLink to="/about" className="">
+            <NavLink
+              to="/about"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               How to play singing bowl?
             </NavLink>
-            <NavLink to="/about" className="">
+            <NavLink
+              to="/about"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               How to play singing bowl?
             </NavLink>
-            <NavLink to="/about" className="">
+            <NavLink
+              to="/about"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               How to play singing bowl?
             </NavLink>
-            <NavLink to="/about" className="">
+            <NavLink
+              to="/about"
+              className="text-[#111111] hover:text-[#0B4D81]"
+            >
               How to play singing bowl?
             </NavLink>
           </div>
