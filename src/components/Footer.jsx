@@ -11,7 +11,7 @@ import Newsletter from "./Newsletter";
 
 const Footer = () => {
   const text =
-    "Sign up to our newsletter and get  an exclusive 15% off on your first order.You'll get early notification about our new products, blogs or anything we release.";
+    "Sign up to our newsletter and get  an exclusive 10% off on your first order.You'll get early notification about our new products, blogs or anything we release.";
   const title = "NewsLetter";
 
   return (
@@ -169,47 +169,59 @@ const Footer = () => {
         <div className=" ">
           <h1 className="text-[#bb2821] font-semibold">Resources</h1>
           <div className="text-[#090914] text-sm flex flex-col gap-2 mt-2">
-            <NavLink
-              to="https://www.himalayascraftnepal.com/blogs/68203c6fa859c49dbb6ebea1"
+            <a
+              href="https://www.himalayascraftnepal.com/blogs/68203c6fa859c49dbb6ebea1"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#111111] hover:text-[#0B4D81]"
             >
               History of Singing Bowls
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="https://www.himalayascraftnepal.com/blogs/682598e888f223446c359d1b"
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.himalayascraftnepal.com/blogs/682598e888f223446c359d1b"
               className="text-[#111111] hover:text-[#0B4D81]"
             >
               How to play singing bowl?
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="https://www.himalayascraftnepal.com/blogs/68258d0c88f223446c359d0d"
+            <a
+              href="https://www.himalayascraftnepal.com/blogs/68258d0c88f223446c359d0d"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#111111] hover:text-[#0B4D81]"
             >
               How to clean your singing bowl?
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="https://www.himalayascraftnepal.com/blogs/6860ef427be7fbaccc8a3817"
+            <a
+              href="https://www.himalayascraftnepal.com/blogs/6860ef427be7fbaccc8a3817"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#111111] hover:text-[#0B4D81]"
             >
               Benefits of Sound Healing and Sound Bath
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="https://www.himalayascraftnepal.com/blogs/6863945b895a2227a0fe5834"
+            <a
+              href="https://www.himalayascraftnepal.com/blogs/6863945b895a2227a0fe5834"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#111111] hover:text-[#0B4D81]"
             >
               Choosing the best shop for buying healing products
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="https://www.himalayascraftnepal.com/blogs/6863bbec47d926ea427ff064"
+            <a
+              href="https://www.himalayascraftnepal.com/blogs/6863bbec47d926ea427ff064"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#111111] hover:text-[#0B4D81]"
             >
               How do we make singing bowls?
-            </NavLink>
+            </a>
           </div>
         </div>
       </div>

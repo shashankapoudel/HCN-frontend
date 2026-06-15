@@ -1,102 +1,121 @@
 import React, { useEffect, useState } from "react";
-import Newsletter from "./Newsletter";
+import BASE_URL from "../config/api"; // Adjust path if needed
 
 const OfferPopUp = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setEmail(e.target.value);
+    setError("");
   };
 
   const handleSubmit = async () => {
-    const res = await fetch(`${BASE_URL}/newsletter/getsubscription`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
-    const result = await res.json();
-    if (res.ok) {
-      setEmail("");
-    } else {
-      setError(result.message || "Invalid credentials");
+    try {
+      const res = await fetch(`${BASE_URL}/newsletter/getsubscription`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        setEmail("");
+        setError("");
+        setIsOpen(false); // Close popup after successful subscription
+      } else {
+        setError(result.message || "Something went wrong");
+      }
+    } catch (err) {
+      setError("Failed to subscribe. Please try again.");
     }
   };
-
-  const text = "Subscribe to our newsletter";
 
   useEffect(() => {
     setIsOpen(true);
   }, []);
 
+  if (!isOpen) return null;
+
   return (
-    <>
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-[#ffffff] p-6 rounded-lg shadow-xl w-2/3 relative flex h-2/3 ">
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-2 text-gray-600 hover:text-red-500"
-            >
-              ✕
-            </button>
-            <div className="w-1/2 ">
-              <img
-                src="/Images/OurStory5.jpg"
-                className="w-full h-full object-cover"
-                loading="lazy"
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+      <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row">
+        {/* Close Button */}
+        <button
+          onClick={() => setIsOpen(false)}
+          className="absolute top-3 right-3 text-xl font-bold text-gray-600 hover:text-red-500 z-10"
+        >
+          ✕
+        </button>
+
+        {/* Image Section */}
+        <div className="w-full md:w-1/2 h-64 md:h-auto">
+          <img
+            src="/Images/OurStory5.jpg"
+            alt="Offer"
+            className="w-full h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Content Section */}
+        <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
+          <div className="text-center">
+            <p className="text-lg font-bold">
+              <span className="text-2xl">Unlock</span>
+              <br />
+              <strong className="text-3xl md:text-4xl text-[#a7594d]">
+                20% OFF
+              </strong>
+              <br />
+              on singing bowls
+              <br />
+              this week only!
+            </p>
+
+            <p className="font-semibold text-sm md:text-base mt-5">
+              Use code:
+              <span className="text-xl md:text-2xl text-[#a7594d] font-bold ml-2">
+                HIMALAYA2025
+              </span>
+              <br />
+              at checkout
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <p className="text-center md:text-left text-gray-700 text-sm mb-3">
+              Subscribe to our newsletter
+            </p>
+
+            <div className="flex flex-col gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                className="border border-gray-300 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#bb2821]"
               />
-            </div>
 
-            <div className="w-1/2 mt-12 ">
-              <p className="text-center mb-8 text-lg font-bold ">
-                <span className="text-2xl font-bold ">Unlock</span> <br />{" "}
-                <strong className="text-4xl text-[#a7594d]">20% OFF on</strong>{" "}
-                <br />
-                singing bowls this week <br />
-                only!
-              </p>
+              <button
+                onClick={handleSubmit}
+                className="bg-[#bb2821] text-white py-3 rounded-md hover:bg-[#093a63] transition-colors duration-300"
+              >
+                Subscribe Now
+              </button>
 
-              <p className="text-center font-semibold text-base mt-2">
-                Use code:{" "}
-                <strong className="text-xl text-[#a7594d]">HIMALAYA2025</strong>{" "}
-                at checkout.
-              </p>
-
-              <div className="flex flex-col w-full p-4 justify-center items-center md:justify-end md:items-end">
-                <div className="w-full md:w-3/4">
-                  <h1 className="text-[#bb2821] font-semibold "></h1>
-                  <p className="text-[#090914] text-sm tracking-wide mt-1">
-                    Subscribe to our newsletter
-                  </p>
-
-                  <div className="flex flex-col gap-2 mt-4 ">
-                    <input
-                      className="border text-[#94A3B8] px-4 py-2 shadow-xl"
-                      value={email}
-                      onChange={(e) => handleChange(e)}
-                      placeholder="Enter your email"
-                      type="email"
-                    />
-                    <button
-                      onClick={handleSubmit}
-                      className="bg-[#bb2821] text-white px-4 py-2 hover:bg-[#093a63] transition-colors duration-200
-"
-                    >
-                      Subscribe now
-                    </button>
-                  </div>
-                </div>
-              </div>
+              {error && (
+                <p className="text-red-500 text-sm text-center">{error}</p>
+              )}
             </div>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 };
 
