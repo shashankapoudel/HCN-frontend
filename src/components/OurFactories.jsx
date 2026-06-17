@@ -32,7 +32,7 @@ const OurFactories = () => {
     {
       title: "Stick factory",
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.",
+        "In our stick Factory, skilled woodworkers bring raw timber to life, creating stunning pieces of art and decor. Here, you'll find the creation of intricate wooden masks, beautifully carved windows, unique decorative items, and detailed wooden statues. Each piece is a testament to the artisan's patience and precision, transforming natural wood into cultural expressions. This factory combines traditional carving techniques with artistic vision, ensuring that every wooden item you receive carries a piece of Nepal's rich artistic heritage.",
       images: [
         "/Images/StickFactory_001.jpg",
         "/Images/StickFactory_002.jpg",
@@ -44,7 +44,7 @@ const OurFactories = () => {
     {
       title: "Cushion factory",
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo error ad hic cumque, similique tenetur, ipsum, aliquam alias nostrum magnam quos ducimus unde quam architecto perspiciatis numquam eaque consequuntur temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, iusto? Corrupti dignissimos nulla iure saepe eveniet perferendis! Tempore laudantium fugiat corporis esse nostrum vitae rerum error doloremque, dicta quod repellendus.",
+        "In our Cushion Factory, skilled artisans transform high-quality fabrics and materials into beautiful, comfortable, and decorative cushion covers and pillows. Here, you'll find the creation of handcrafted cushion covers featuring traditional Nepali patterns, vibrant colors, intricate embroidery, and unique designs that add warmth and character to any space. Every piece is carefully stitched and finished with attention to detail, ensuring both durability and elegance. By combining traditional craftsmanship with modern design trends, our Cushion Factory produces home décor pieces that reflect Nepal's rich cultural heritage while bringing comfort and style to homes around the world.",
       images: [
         "/Images/Cushion_Factory/1.jpg",
         "/Images/Cushion_Factory/2.jpg",

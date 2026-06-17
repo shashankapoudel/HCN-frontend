@@ -103,126 +103,121 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex  justify-between w-full p-4">
-        <div className="">
-          <h1 className="text-[#bb2821] font-semibold">About Us</h1>
+      <div className="w-full flex flex-col items-start justify-start">
+        <h1 className="text-[#bb2821] font-semibold">About Us</h1>
 
-          <div className="text-[#090914] text-sm flex flex-col gap-2 mt-2">
-            <NavLink
-              to="/about/story"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              About HCN
-            </NavLink>
+        <div className="text-[#090914] text-sm flex flex-col gap-2 mt-2">
+          <NavLink
+            to="/about/story"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            About HCN
+          </NavLink>
 
-            <NavLink
-              to="/gallery"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              Gallery
-            </NavLink>
+          <NavLink
+            to="/gallery"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            Gallery
+          </NavLink>
 
-            <NavLink
-              to="/about/team"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              HCN Team
-            </NavLink>
+          <NavLink
+            to="/about/team"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            HCN Team
+          </NavLink>
 
-            <NavLink
-              to="/policies/terms-condition"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              Terms and Conditions
-            </NavLink>
+          <NavLink
+            to="/policies/terms-condition"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            Terms and Conditions
+          </NavLink>
 
-            <NavLink
-              to="/about"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              Refund Policy
-            </NavLink>
+          <NavLink to="/about" className="text-[#111111] hover:text-[#0B4D81]">
+            Refund Policy
+          </NavLink>
 
-            <NavLink
-              to="/wholesale"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              Wholesale
-            </NavLink>
+          <NavLink
+            to="/wholesale"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            Wholesale
+          </NavLink>
 
-            <NavLink
-              to="/policies/private-policy"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              Privacy Policy
-            </NavLink>
+          <NavLink
+            to="/policies/private-policy"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            Privacy Policy
+          </NavLink>
 
-            <NavLink
-              to="/shipping-policy"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              Shipping Policy
-            </NavLink>
-          </div>
+          <NavLink
+            to="/shipping-policy"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            Shipping Policy
+          </NavLink>
         </div>
+      </div>
 
-        <div className=" ">
-          <h1 className="text-[#bb2821] font-semibold">Resources</h1>
-          <div className="text-[#090914] text-sm flex flex-col gap-2 mt-2">
-            <a
-              href="https://www.himalayascraftnepal.com/blogs/68203c6fa859c49dbb6ebea1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              History of Singing Bowls
-            </a>
+      <div className="w-full flex flex-col items-start justify-start">
+        <h1 className="text-[#bb2821] font-semibold">Resources</h1>
+        <div className="text-[#090914] text-sm flex flex-col gap-2 mt-2">
+          <a
+            href="https://www.himalayascraftnepal.com/blogs/68203c6fa859c49dbb6ebea1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            History of Singing Bowls
+          </a>
 
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.himalayascraftnepal.com/blogs/682598e888f223446c359d1b"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              How to play singing bowl?
-            </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.himalayascraftnepal.com/blogs/682598e888f223446c359d1b"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            How to play singing bowl?
+          </a>
 
-            <a
-              href="https://www.himalayascraftnepal.com/blogs/68258d0c88f223446c359d0d"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              How to clean your singing bowl?
-            </a>
+          <a
+            href="https://www.himalayascraftnepal.com/blogs/68258d0c88f223446c359d0d"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            How to clean your singing bowl?
+          </a>
 
-            <a
-              href="https://www.himalayascraftnepal.com/blogs/6860ef427be7fbaccc8a3817"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              Benefits of Sound Healing and Sound Bath
-            </a>
+          <a
+            href="https://www.himalayascraftnepal.com/blogs/6860ef427be7fbaccc8a3817"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            Benefits of Sound Healing and Sound Bath
+          </a>
 
-            <a
-              href="https://www.himalayascraftnepal.com/blogs/6863945b895a2227a0fe5834"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              Choosing the best shop for buying healing products
-            </a>
+          <a
+            href="https://www.himalayascraftnepal.com/blogs/6863945b895a2227a0fe5834"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            Choosing the best shop for buying healing products
+          </a>
 
-            <a
-              href="https://www.himalayascraftnepal.com/blogs/6863bbec47d926ea427ff064"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#111111] hover:text-[#0B4D81]"
-            >
-              How do we make singing bowls?
-            </a>
-          </div>
+          <a
+            href="https://www.himalayascraftnepal.com/blogs/6863bbec47d926ea427ff064"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#111111] hover:text-[#0B4D81]"
+          >
+            How do we make singing bowls?
+          </a>
         </div>
       </div>
 
