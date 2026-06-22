@@ -45,6 +45,26 @@ const OurTeam = () => {
     },
   ];
 
+  const artisans = [
+    {
+      name: "Women",
+      description: "",
+      image: "",
+    },
+
+    {
+      name: "Women",
+      description: "",
+      image: "",
+    },
+
+    {
+      name: "Women",
+      description: "",
+      image: "",
+    },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -112,6 +132,20 @@ const OurTeam = () => {
           />
         </motion.div>
       </motion.div>
+
+      <h1 className="text-2xl font-bold mt-4 text-[#666666]">Our Artisans</h1>
+      {artisans.map((a) => (
+        <div className="flex items-center justify-center w-full">
+          <div className="w-1/2 flex flex-col">
+            <p>{a.name}</p>
+            <p>{a.description}</p>
+          </div>
+
+          <div className="w-1/2">
+            <img />
+          </div>
+        </div>
+      ))}
 
       <h1 className="text-2xl font-bold mt-4 text-[#666666] ">OUR TEAM</h1>
 

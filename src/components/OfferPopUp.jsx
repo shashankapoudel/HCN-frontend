@@ -63,18 +63,16 @@ const OfferPopUp = () => {
         </div>
 
         {/* Content Section */}
-        <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
+        <div className="w-full md:w-1/2 p-4 md:p-8 flex flex-col justify-center">
           <div className="text-center">
             <p className="text-lg font-bold">
-              <span className="text-2xl">Unlock</span>
+              <span className="text-2xl">Get </span>
               <br />
-              <strong className="text-3xl md:text-4xl text-[#a7594d]">
-                20% OFF
+              <strong className="text-2xl md:text-4xl text-[#a7594d]">
+                Your First Healing Instruments
               </strong>
               <br />
-              on singing bowls
-              <br />
-              this week only!
+              In USD $200
             </p>
 
             <p className="font-semibold text-sm md:text-base mt-5">
