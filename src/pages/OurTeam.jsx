@@ -47,20 +47,30 @@ const OurTeam = () => {
 
   const artisans = [
     {
-      name: "Women",
-      description: "",
+      name: "Supporting Women through meaningful work",
+      description:
+        "Our Cushion, Bag, and Incense Stick Factory is more than just a place where products are made. It is also a place where local women can learn skills, earn an income, and support their families.We work with many women artisans who carefully make our meditation cushions, handcrafted bags, and incense sticks. By providing training and job opportunities, we help women gain confidence, develop their skills, and become financially independent.Every product is made with care, patience, and attention to detail. Behind each item is the hard work of skilled women who take pride in what they create.When you choose our products, you are not only supporting traditional craftsmanship but also helping create opportunities for women and their communities. We are proud to be part of their journey and committed to providing a safe and supportive workplace where they can grow and thrive",
+      image: "/Images/Cushion_Factory/1.jpg",
+    },
+
+    {
+      name: "Singing Bowl Artisans",
+      description:
+        "Our Singing Bowl Artisans carry forward a centuries-old tradition of creating authentic Himalayan singing bowls. Each bowl is carefully handcrafted using traditional techniques that require patience, precision, and deep knowledge of the craft.These artisans dedicate years to mastering the art of shaping, tuning, and finishing each bowl to produce its unique sound and vibration. Their work is not only a livelihood but also a way to preserve cultural heritage.By supporting our singing bowls, you are helping sustain this timeless craft and empowering artisans to continue their legacy. Every bowl reflects dedication, skill, and a deep connection to tradition.",
       image: "",
     },
 
     {
-      name: "Women",
-      description: "",
+      name: "Engraving and Carved Artisans",
+      description:
+        "Our Engraving and Carving Artisans are masters of detail, transforming simple surfaces into meaningful works of art. Using traditional tools and techniques, they carefully engrave sacred symbols, patterns, and designs onto singing bowls and other handcrafted items.Each engraving requires precision, patience, and creativity, making every piece truly one of a kind. Their work reflects both artistic expression and cultural significance.By choosing engraved and carved products, you are supporting artisans who keep this intricate tradition alive while adding unique beauty and meaning to every creation.",
       image: "",
     },
 
     {
-      name: "Women",
-      description: "",
+      name: "Singing Bowl Coloring (Antique Artisans)",
+      description:
+        "Our Antique Coloring Artisans bring life and character to singing bowls through specialized coloring and finishing techniques. Their work enhances the aesthetic appeal while preserving the authentic, antique look that reflects history and tradition.Using natural methods and careful handwork, these artisans ensure that each piece has a unique and timeless appearance. Their craftsmanship adds depth, beauty, and cultural value to every bowl.By supporting this art, you help preserve traditional finishing techniques and sustain the livelihoods of artisans dedicated to this unique craft.",
       image: "",
     },
   ];
@@ -133,16 +143,24 @@ const OurTeam = () => {
         </motion.div>
       </motion.div>
 
-      <h1 className="text-2xl font-bold mt-4 text-[#666666]">Our Artisans</h1>
+      <h1 className="text-2xl font-bold mt-4  text-[#0B4D81]">Our Artisans</h1>
       {artisans.map((a) => (
         <div className="flex items-center justify-center w-full">
-          <div className="w-1/2 flex flex-col">
-            <p>{a.name}</p>
-            <p>{a.description}</p>
+          <div className="w-full lg:w-1/2 p-2 lg:p-4">
+            <p className="text-3xl font-bold text-[#666666] font-edensor">
+              {a.name}
+            </p>
+            <p className="text-[#666666] mt-2 font-poppins  lg:tracking-normal tracking-normal text-justify max-w-6xl text-sm lg:text-lg">
+              {a.description}
+            </p>
           </div>
 
-          <div className="w-1/2">
-            <img />
+          <div className=" w-full h-full lg:w-1/2 mt-3 p-2">
+            <img
+              src={a.image}
+              className="object-cover w-full h-full rounded-md"
+              loading="lazy"
+            />
           </div>
         </div>
       ))}
