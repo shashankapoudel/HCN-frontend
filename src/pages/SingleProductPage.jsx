@@ -144,32 +144,36 @@ const SingleProductPage = () => {
   const accessoryPrice = hasAccessory ? 30 : 0;
   const finalPrice = Number(product.price) + accessoryPrice;
 
+  console.log(product.category);
+  console.log(product.subcategory);
+  console.log(product.subcategorycategory);
+
   return (
     <div className="min-h-screen  flex flex-col">
       <div className="flex gap-1 font-poppins text-sm font-extralight px-2 lg:px-6 py-2 lg:py-4 ">
         <button
-          className="text-[#f0b3b0] hover:text-[#bb2821] text-left"
+          className="text-[#f0b3b0] hover:text-[#8a0c06] text-left"
           onClick={handleBackToHome}
         >
           Home /
         </button>
 
         <button
-          className=" text-[#f0b3b0] hover:text-[#bb2821] text-left"
+          className=" text-[#f0b3b0] hover:text-[#8a0c06] text-left"
           onClick={handleBackToCategory}
         >
           {product.category} /
         </button>
 
         <button
-          className="text-[#f0b3b0] hover:text-[#bb2821]  text-left"
+          className="text-[#f0b3b0] hover:text-[#8a0c06] text-left"
           onClick={handleBack}
         >
           {product.subcategory} /
         </button>
 
         <button
-          className="text-[#f0b3b0] hover:text-[#bb2821] text-left"
+          className="text-[#f0b3b0] hover:text-[#8a0c06] text-left"
           onClick={handleBackToSubcategorycategory}
         >
           {product.subcategorycategory}
@@ -183,11 +187,11 @@ const SingleProductPage = () => {
               src={displayImages[mainIndex]}
               alt={product.name}
               loading="lazy"
-              className="w-full h-auto object-cover rounded transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
+              className="w-full h-auto object-cover rounded  cursor-pointer"
             />
 
-            <div className="relative flex items-center">
-              <button onClick={scrollLeft} className="absolute left-0 z-10 p-2">
+            <div className="flex items-center">
+              <button onClick={scrollLeft} className="p-2">
                 ◀
               </button>
 
@@ -201,7 +205,7 @@ const SingleProductPage = () => {
                     src={img}
                     loading="lazy"
                     onClick={() => handleImageClick(index)}
-                    className={`w-24 h-24 object-cover rounded cursor-pointer border flex-shrink-0
+                    className={`w-20 h-20 object-cover rounded cursor-pointer border flex-shrink-0
             ${mainIndex === index ? "border-[#bb2821]" : "border-transparent"}
           `}
                   />
@@ -210,7 +214,7 @@ const SingleProductPage = () => {
 
               <button
                 onClick={scrollRight}
-                className="absolute right-0 z-10 bg-white shadow p-2 rounded-full"
+                className=" bg-white shadow p-2 rounded-full"
               >
                 ▶
               </button>
