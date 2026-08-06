@@ -39,6 +39,7 @@ const AddProductModal = ({
   const [noteCategory, setNoteCategory] = useState("");
   const [accessoriesCategory, setAccessoriesCategory] = useState("");
   const [groupId, setGroupId] = useState("");
+  const [etsyUrl, setetsyUrl] = useState("");
 
   const [filteredSubcategories, setFilteredSubcategories] = useState([]);
   const [filteredSubcategorycategory, setFilteredSubcategorycategory] =
@@ -249,6 +250,7 @@ const AddProductModal = ({
     formData.append("material", material);
     formData.append("label", label);
     formData.append("groupId", groupId);
+    formData.append("etsyUrl", etsyUrl);
     formData.append("overview", overview);
     formData.append("description", description);
 
@@ -292,6 +294,7 @@ const AddProductModal = ({
       setImages([]);
       setAudio(null);
       setGroupId("");
+      setetsyUrl("");
       setFilteredSubcategories([]);
       setFilteredSubcategorycategory([]);
       onClose();
@@ -497,6 +500,18 @@ const AddProductModal = ({
                   type="text"
                   className="w-full p-2 border rounded mb-4"
                   placeholder="Enter size"
+                />
+              </div>
+
+              <div>
+                <label className="block mb-2">Etsy URL</label>
+
+                <input
+                  value={etsyUrl}
+                  onChange={(e) => setetsyUrl(e.target.value)}
+                  type="text"
+                  className="w-full p-2 border rounded mb-4"
+                  placeholder="Enter your Etsy URL"
                 />
               </div>
             </div>

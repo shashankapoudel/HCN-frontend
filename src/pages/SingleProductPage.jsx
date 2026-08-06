@@ -145,8 +145,8 @@ const SingleProductPage = () => {
   const finalPrice = Number(product.price) + accessoryPrice;
 
   return (
-    <div className="min-h-screen p-3 lg:p-8 flex flex-col">
-      <div className="flex gap-1 font-poppins italic -skew-x-12 text-sm font-thin ">
+    <div className="min-h-screen  flex flex-col">
+      <div className="flex gap-1 font-poppins text-sm font-extralight px-2 lg:px-6 py-2 lg:py-4 ">
         <button
           className="text-[#f0b3b0] hover:text-[#bb2821] text-left"
           onClick={handleBackToHome}
@@ -176,7 +176,7 @@ const SingleProductPage = () => {
         </button>
       </div>
 
-      <div>
+      <div className="px-6">
         <div className="flex flex-col lg:flex-row gap-8 justify-evenly mt-4 items-start">
           <div className="w-full lg:w-1/2 flex flex-col gap-3">
             <img

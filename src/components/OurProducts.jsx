@@ -68,7 +68,6 @@ const OurProducts = () => {
               </div>
 
               <div className="flex justify-between items-center">
-                {/* <p className="text-[#bb2821] font-bold ">${product.price}</p> */}
                 <Price amount={product.price} />
                 <AddToCart product={product} />
               </div>
