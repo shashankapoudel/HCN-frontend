@@ -148,6 +148,15 @@ const SingleProductPage = () => {
   console.log(product.subcategory);
   console.log(product.subcategorycategory);
 
+  const handleWhatsAppBuy = () => {
+    const phoneNumber = "9779849779322";
+    const message = `Hello, I want to buy ${product.name}`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="min-h-screen  flex flex-col">
       <div className="flex gap-1 font-poppins text-sm font-extralight px-2 lg:px-6 py-2 lg:py-4 ">
@@ -226,10 +235,39 @@ const SingleProductPage = () => {
               {product.name}
             </h1>
 
-            <div className="p-0 lg:p-2">
-              <h1 className="font-bold text-lg text-[#0B4D81]">
-                <Price amount={product.price} />
-              </h1>
+            <div className="p-0 lg:p-2 flex gap-4">
+              <div className="flex flex-col gap-2 items-center justify-center">
+                <div>
+                  <div className="relative inline-block">
+                    <button className="font-medium bg-[#bb2821] text-lg border-2 border-[#bb2821] px-2 py-1 text-white">
+                      <Price amount={product.price} />
+                    </button>
+
+                    <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <span className="w-[150%] h-[2px] bg-white rotate-[-25deg]"></span>
+                    </span>
+                  </div>
+
+                  <button className="font-medium text-lg border-2 text-[#bb2821] border-[#bb2821]  px-2 py-1 ">
+                    $500.00
+                  </button>
+                </div>
+
+                <div>
+                  <button
+                    onClick={handleWhatsAppBuy}
+                    className="bg-[#0B4D81] text-[#FFFFFF] px-2 py-1 font-medium "
+                  >
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <button className="font-medium text-lg text-[#bb2821]  border-2 border-[#bb2821] px-4 py-1">
+                  Buy in Etsy
+                </button>
+              </div>
             </div>
 
             <p className="text-sm p-2  text-[#606060] tracking-wide leading-relaxed text-justify max-w-4xl">
@@ -284,29 +322,6 @@ const SingleProductPage = () => {
             </div>
 
             <hr className="my-4" />
-
-            <div className="flex flex-col w-full gap-3 p-2 text-[#bb2821]">
-              <div className="flex w-full lg:w-1/2 justify-between">
-                <h1 className="text-[#0B4D81] font-bold text-sm">Color</h1>
-                <p className="text-sm">{product.color}</p>
-              </div>
-
-              <div className="flex w-full lg:w-1/2 justify-between">
-                <h1 className="text-[#0B4D81] font-bold text-sm">Size</h1>
-                <p className="text-sm">{product.size}cm</p>
-              </div>
-
-              <div className="flex w-full lg:w-1/2 justify-between">
-                <h1 className="text-[#0B4D81] font-bold text-sm">Stock</h1>
-                <p className="text-sm">{product.stock} units</p>
-              </div>
-
-              <div className="flex w-full lg:w-1/2 justify-between">
-                <h1 className="text-[#0B4D81] font-bold text-sm">Material</h1>
-                <p className="text-sm">{product.material}</p>
-              </div>
-            </div>
-
             <div className="mt-4 gap-4 flex">
               <AddToCart
                 product={product}

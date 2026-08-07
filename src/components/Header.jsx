@@ -384,7 +384,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ✅ MOBILE MENU FIXED PART ONLY */}
       {menuOpen && (
         <div className="fixed top-0 right-0 w-2/3 h-screen bg-[#0B4D81] text-white p-5 z-50 transition-transform">
           <div className="flex justify-between items-center">
