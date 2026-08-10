@@ -263,11 +263,15 @@ const SingleProductPage = () => {
                 </div>
               </div>
 
-              <div>
-                <button className="font-medium text-lg text-[#bb2821]  border-2 border-[#bb2821] px-4 py-1">
+              <a
+                href={product.etsyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="font-medium text-lg text-[#bb2821] border-2 border-[#bb2821] px-4 py-1">
                   Buy in Etsy
                 </button>
-              </div>
+              </a>
             </div>
 
             <p className="text-sm p-2  text-[#606060] tracking-wide leading-relaxed text-justify max-w-4xl">

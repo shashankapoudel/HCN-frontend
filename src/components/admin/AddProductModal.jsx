@@ -205,6 +205,7 @@ const AddProductModal = ({
       setNoteCategory(existingData.note || null);
       setAccessoriesCategory(existingData.accessoriesBundle || null);
       setSubcategorycategory(existingData.subcategorycategory || "");
+      setetsyUrl(existingData.etsyUrl || "");
       setGroupId(existingData.groupId || "");
     } else {
       setName("");
