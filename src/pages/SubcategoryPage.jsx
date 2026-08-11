@@ -61,7 +61,7 @@ const SubcategoryPage = () => {
           {filteredProducts.map((product) => (
             <div
               key={product._id}
-              className="w-full flex flex-col p-4 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
+              className="w-full flex flex-col p-4 lg:p-6 bg-white shadow-lg  cursor-pointer"
             >
               <div
                 onClick={() => navigate(`/product/${product._id}`)}
@@ -91,7 +91,7 @@ const SubcategoryPage = () => {
                   </h1>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: truncateText(product.description, 15),
+                      __html: truncateText(product.description, 16),
                     }}
                     className=" text-[#606060]  font-edensor text-base"
                   />

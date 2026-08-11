@@ -203,7 +203,7 @@ const SubSubCategory = () => {
                   </h1>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: truncateText(product.description, 15),
+                      __html: truncateText(product.description, 17),
                     }}
                     className="text-[#606060] text-sm"
                   />

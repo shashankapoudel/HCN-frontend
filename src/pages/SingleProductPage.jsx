@@ -395,6 +395,28 @@ const SingleProductPage = () => {
                 </div>
               </div>
             </div>
+
+            <div className="mt-4 p-2">
+              <h1 className="font-semibold text-[#bb2821]">Add-ons</h1>
+              <div className="flex gap-4">
+                <div className="flex flex-col">
+                  <button className="border border-[#bb2821] text-[#bb2821] px-2 py-1 hover:bg-[#0B4D81] hover:text-white">
+                    Logo Engraved
+                  </button>
+                  <button className="bg-[#bb2821] text-[#ffffff] w-full lg:w-1/2">
+                    (+$70)
+                  </button>
+                </div>
+                <div className="flex flex-col">
+                  <button className="border border-[#bb2821] text-[#bb2821] px-2 py-1 hover:bg-[#0B4D81] hover:text-white">
+                    Accessories
+                  </button>
+                  <button className="bg-[#bb2821] text-[#ffffff] w-full lg:w-1/2">
+                    (+$50)
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
