@@ -76,7 +76,7 @@ const SingingBowl = () => {
                 {subcategoryProducts.handmade.slice(0, 4).map((product) => (
                   <div
                     key={product._id}
-                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
+                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg gap-2 cursor-pointer"
                   >
                     <div
                       onClick={() => navigate(`/product/${product._id}`)}
@@ -149,7 +149,7 @@ const SingingBowl = () => {
                 {subcategoryProducts.handmade.slice(0, 4).map((product) => (
                   <div
                     key={product._id}
-                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
+                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg gap-2 cursor-pointer"
                   >
                     <div
                       onClick={() => navigate(`/product/${product._id}`)}
@@ -218,7 +218,76 @@ const SingingBowl = () => {
                 {subcategoryProducts.machinemade.slice(0, 4).map((product) => (
                   <div
                     key={product._id}
-                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
+                    className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg gap-2 cursor-pointer"
+                  >
+                    <div
+                      onClick={() => navigate(`/product/${product._id}`)}
+                      className="relative w-full aspect-square overflow-hidden group"
+                    >
+                      <img
+                        src={product.images[0]}
+                        alt={product.name}
+                        loading="lazy"
+                        className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
+                      />
+
+                      <img
+                        src={product.images[1]}
+                        alt={product.name}
+                        loading="lazy"
+                        className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                      <div>
+                        <h1 className="text-left text-[#111111] font-bold text-base capitalize">
+                          {product.name}
+                        </h1>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: truncateText(product.description, 15),
+                          }}
+                          className=" text-[#606060]  font-edensor text-base"
+                        ></p>
+                      </div>
+
+                      <div className="flex justify-between items-center">
+                        <Price amount={product.price} />
+                        <AddToCart product={product} />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex w-full items-end justify-end">
+                <button
+                  onClick={() => navigate("/singing-bowls/machinemade")}
+                  className="underline hover:text-red-300"
+                >
+                  See more
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="p-10 font-medium text-2xl text-center">
+              No Products Found
+            </div>
+          )}
+        </div>
+
+        <div className="mt-3">
+          <h2 className="text-2xl font-bold mb-2 text-center">
+            Chakra Set Singing Bowls
+          </h2>
+
+          {subcategoryProducts.chakra.length > 0 ? (
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {subcategoryProducts.chakra.slice(0, 4).map((product) => (
+                  <div
+                    key={product._id}
+                    className="w-full flex flex-col p-3 lg:p-6 gap-2 bg-white shadow-lg cursor-pointer"
                   >
                     <div
                       onClick={() => navigate(`/product/${product._id}`)}
@@ -284,7 +353,7 @@ const SingingBowl = () => {
             {subcategoryProducts.accessories.slice(0, 4).map((product) => (
               <div
                 key={product._id}
-                className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
+                className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg gap-2 cursor-pointer"
               >
                 <div
                   onClick={() => navigate(`/product/${product._id}`)}

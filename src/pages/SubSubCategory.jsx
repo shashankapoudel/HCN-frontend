@@ -170,7 +170,7 @@ const SubSubCategory = () => {
           {filteredProducts.map((product) => (
             <div
               key={product._id}
-              className="w-full flex flex-col p-6 bg-white shadow-lg justify-between"
+              className="w-full flex flex-col p-2 lg:p-4 bg-white shadow-lg gap-2"
             >
               <div
                 onClick={() => navigate(`/product/${product._id}`)}
