@@ -23,6 +23,13 @@ const testimonials = [
   },
 
   {
+    name: "Etsy Buyer",
+    text: "I always told myself that I will get one when I have my own house, it took me a while to choose one and I’m so happy I went with this prayer wheel and this seller! It is absolutely beautiful, it came securely packaged and wrapped in a shiny red gift paper like a Christmas gift! Shipping was fast and seller included DHL tracking number. I placed it by my front door, that way it will remind me to say a prayer before leaving the house and to express gratitude for the blessings of my life and of very own home upon returning to it! Thank you so very much 🙏🏻🥰😁",
+    avatar:
+      "https://i.etsystatic.com/iusa/84dfa3/95684875/iusa_75x75.95684875_pui3.jpg?version=0",
+  },
+
+  {
     name: "Alicja",
 
     text: "Amazing transaction, professional service. Helpful. Easy. My singing bowl sounds incredibly good 👍 Highly recommend. Will buy again Love and Light",
@@ -95,20 +102,20 @@ export default function TestimonialsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full p-8">
           {testimonials.map((t, index) => (
-            <div key={index} className="bg-white shadow-xl rounded-2xl p-4">
-              <div className="flex items-start gap-4">
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  className="w-16 h-16 rounded-full"
-                  loading="lazy"
-                />
-                <div>
+            <div key={index} className="bg-white shadow-xl rounded-2xl p-2">
+              <div className="flex flex-col items-start gap-4">
+                <div className="flex gap-2 items-center justify-center">
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="w-16 h-16 rounded-full"
+                    loading="lazy"
+                  />
                   <p className="font-semibold">
                     {t.name} <span className="text-gray-500">{t.handle}</span>
                   </p>
-                  <p className="text-sm text-gray-700 mt-1">{t.text}</p>
                 </div>
+                <p className="text-sm text-gray-700 mt-1">{t.text}</p>
               </div>
             </div>
           ))}
