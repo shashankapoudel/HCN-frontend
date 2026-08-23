@@ -24,6 +24,7 @@ const SingleProductPage = () => {
   const [displayImages, setDisplayImages] = useState([]);
   const [mainIndex, setmainIndex] = useState(0);
   const [hasAccessory, setHasAccessory] = useState(false);
+  const [hasLogoEngraved, setHasLogoEngraved] = useState(false);
 
   const category1 = ["Matte Black", "Tiger", "Silver", "Gold"];
   const category2 = ["Note 1", "Note 2"];
@@ -104,8 +105,6 @@ const SingleProductPage = () => {
 
   const handleImageClick = (index) => {
     setmainIndex(index);
-    // setIsModalOpen(true);
-    // setSelectedImage(displayImages[index]);
   };
 
   const closeModal = () => {
@@ -150,7 +149,16 @@ const SingleProductPage = () => {
 
   const handleWhatsAppBuy = () => {
     const phoneNumber = "9779849779322";
-    const message = `Hello, I want to buy ${product.name}`;
+
+    let message = `Hello, I want to buy ${product.name}`;
+
+    if (hasAccessory) {
+      message += `. Accessory needed too`;
+    }
+
+    if (hasLogoEngraved) {
+      message += `. I need logo engraving too`;
+    }
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -400,8 +408,11 @@ const SingleProductPage = () => {
               <h1 className="font-semibold text-[#bb2821]">Add-ons</h1>
               <div className="flex gap-4">
                 <div className="flex flex-col">
-                  <button className="border border-[#bb2821] text-[#bb2821] px-2 py-1 hover:bg-[#0B4D81] hover:text-white">
-                    Logo Engraved
+                  <button
+                    onClick={() => setHasLogoEngraved((prev) => !prev)}
+                    className="border border-[#bb2821] text-[#bb2821] px-2 py-1 hover:bg-[#0B4D81] hover:text-white"
+                  >
+                    {hasLogoEngraved ? "Logo engraved needed" : "Logo engrave"}
                   </button>
                   <button className="bg-[#bb2821] text-[#ffffff] w-full lg:w-1/2">
                     (+$70)
