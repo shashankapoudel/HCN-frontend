@@ -309,28 +309,6 @@ const SingleProductPage = () => {
                   </div>
                 )}
               </div>
-              <div className="w-full rounded-md shadow-md">
-                <div
-                  onClick={handleShowOverview}
-                  className="flex items-center justify-between border p-4 cursor-pointer"
-                >
-                  <h1 className="text-[#0B4D81] font-bold">Product Guide</h1>
-                  <button>
-                    {!showOverview ? <FaChevronDown /> : <FaChevronUp />}
-                  </button>
-                </div>
-
-                {showOverview && (
-                  <div className="p-2">
-                    <p
-                      className="text-[#606060] tracking-wide leading-relaxed text-sm"
-                      dangerouslySetInnerHTML={{
-                        __html: product.overview,
-                      }}
-                    />
-                  </div>
-                )}
-              </div>
             </div>
 
             <hr className="my-4" />
@@ -386,7 +364,7 @@ const SingleProductPage = () => {
               </div>
             </div> */}
 
-            <div className="mt-4 p-2">
+            {/* <div className="mt-4 p-2">
               <div className="flex gap-4 py-3">
                 <div className="">
                   <button
@@ -402,7 +380,7 @@ const SingleProductPage = () => {
                   <h1 className="text-center">+$30</h1>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="mt-4 p-2">
               <h1 className="font-semibold text-[#bb2821]">Add-ons</h1>
@@ -410,7 +388,11 @@ const SingleProductPage = () => {
                 <div className="flex flex-col">
                   <button
                     onClick={() => setHasLogoEngraved((prev) => !prev)}
-                    className="border border-[#bb2821] text-[#bb2821] px-2 py-1 hover:bg-[#0B4D81] hover:text-white"
+                    className={`border border-[#bb2821] text-[#bb2821] px-2 py-1 hover:bg-[#0B4D81] hover:text-white ${
+                      hasLogoEngraved
+                        ? "bg-[#0B4D81] text-white"
+                        : "text-[#0B4D81]"
+                    }`}
                   >
                     {hasLogoEngraved ? "Logo engraved needed" : "Logo engrave"}
                   </button>
@@ -418,9 +400,17 @@ const SingleProductPage = () => {
                     (+$70)
                   </button>
                 </div>
+
                 <div className="flex flex-col">
-                  <button className="border border-[#bb2821] text-[#bb2821] px-2 py-1 hover:bg-[#0B4D81] hover:text-white">
-                    Accessories
+                  <button
+                    onClick={() => setHasAccessory((prev) => !prev)}
+                    className={`border border-[#bb2821] text-[#bb2821] px-2 py-1 hover:bg-[#0B4D81] hover:text-white ${
+                      hasAccessory
+                        ? "bg-[#0B4D81] text-white"
+                        : "text-[#0B4D81]"
+                    }`}
+                  >
+                    {hasAccessory ? "Accessory Added ✓" : "Add Accessories"}
                   </button>
                   <button className="bg-[#bb2821] text-[#ffffff] w-full lg:w-1/2">
                     (+$50)

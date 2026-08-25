@@ -92,9 +92,9 @@ const testimonials = [
 export default function TestimonialsPage() {
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0B4D81] to-[#bb2821] opacity-70 z-0" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-[#0B4D81] to-[#bb2821] opacity-70 z-0" /> */}
 
-      <div className="relative z-10 flex flex-col items-center px-4 pt-20">
+      <div className="relative z-10 flex flex-col items-center px-4 pt-20 bg-gradient-to-b from-[#0B4D81] to-[#bb2821] opacity-70 ">
         <h1 className="text-2xl md:text-4xl font-bold text-center text-[white]">
           YOU ARE <br className="block md:hidden" />
           <span className="text-[white]">THE CENTER OF OUR UNIVERSE</span>
@@ -120,8 +120,41 @@ export default function TestimonialsPage() {
             </div>
           ))}
         </div>
-
         <div className="absolute bottom-0 left-0 w-full h-[300px] bg-[url('/rocket-bg.png')] bg-no-repeat bg-bottom bg-contain pointer-events-none z-0" />
+      </div>
+
+      <div className="flex flex-col items-center justify-center mt-10">
+        <h1 className="text-4xl font-bold">Google Reviews</h1>
+        <div className="w-full lg:w-1/3 bg-white rounded-md flex items-center font-sans">
+          <div className="w-full flex justify-center items-center">
+            <img src="Images/Google.png" alt="Google" className="w-44 h-40" />
+          </div>
+
+          <div className="">
+            <p className="text-[18px] font-medium leading-tight">
+              Google Rating
+            </p>
+
+            <div className="flex items-center gap-2">
+              <span className="text-[25px] font-medium">4.8</span>
+              <span className="text-[#FBBC04] text-[25px] tracking-[-4px]">
+                ★★★★★
+              </span>
+            </div>
+          </div>
+
+          <div className="h-[62px] w-px bg-gray-400 mx-4" />
+
+          <div className="flex items-center gap-4">
+            <span className="text-[25px] font-bold">1000+</span>
+
+            <span className="text-[17px] font-medium leading-[18px]">
+              Google
+              <br />
+              Reviews
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );
