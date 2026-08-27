@@ -3,7 +3,7 @@ import React from "react";
 const ShippingPolicy = () => {
   return (
     <div className="min-h-screen flex items-center justify-center w-full p-4 lg:p-8">
-      <div className="w-full lg:w-1/2 font-poppins tracking-wide text-justify">
+      <div className="w-full lg:w-1/2 text-sm font-edensor font-extralight text-justify">
         At <strong>Himalayas Craft Nepal</strong>, we take great care in
         preparing and delivering our handmade products to customers across the
         world. Each item is crafted with love, carefully inspected, and safely

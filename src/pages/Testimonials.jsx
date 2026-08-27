@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const testimonials = [
   {
@@ -90,6 +91,8 @@ const testimonials = [
 ];
 
 export default function TestimonialsPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
       {/* <div className="absolute inset-0 bg-gradient-to-b from-[#0B4D81] to-[#bb2821] opacity-70 z-0" /> */}
@@ -135,7 +138,15 @@ export default function TestimonialsPage() {
               Google Rating
             </p>
 
-            <div className="flex items-center gap-2">
+            <div
+              onClick={() =>
+                window.open(
+                  "https://www.google.com/search?q=himalayas+Craft+Nepal",
+                  "_blank",
+                )
+              }
+              className="flex items-center gap-2 cursor-pointer"
+            >
               <span className="text-[25px] font-medium">4.8</span>
               <span className="text-[#FBBC04] text-[25px] tracking-[-4px]">
                 ★★★★★
