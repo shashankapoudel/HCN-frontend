@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductProvider";
 import AddToCart from "../components/AddToCart";
 import QuickViewProd from "../components/QuickViewProd";
@@ -63,8 +63,8 @@ const SubcategoryPage = () => {
               key={product._id}
               className="w-full flex flex-col p-2 lg:p-4 gap-2 bg-white shadow-lg  cursor-pointer"
             >
-              <div
-                onClick={() => navigate(`/product/${product._id}`)}
+              <Link
+                to={`/product/${product._id}`}
                 className="relative w-full aspect-square overflow-hidden group"
               >
                 <QuickViewProd product={product} />
@@ -82,7 +82,7 @@ const SubcategoryPage = () => {
                   loading="lazy"
                   className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"
                 />
-              </div>
+              </Link>
 
               <div className="flex flex-col gap-2">
                 <div>

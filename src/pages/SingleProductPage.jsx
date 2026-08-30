@@ -309,6 +309,29 @@ const SingleProductPage = () => {
                   </div>
                 )}
               </div>
+
+              <div className="w-full rounded-md">
+                <div
+                  onClick={handleShowOverview}
+                  className="flex items-center justify-between border p-4 cursor-pointer"
+                >
+                  <h1 className="text-[#0B4D81] font-bold">Product Guide</h1>
+                  <button className="">
+                    {!showOverview ? <FaChevronDown /> : <FaChevronUp />}
+                  </button>
+                </div>
+
+                {showOverview && (
+                  <div className="p-2">
+                    <p
+                      className="text-[#606060] tracking-wide leading-relaxed text-justify max-w-4xl text-sm whitespace-pre-line"
+                      dangerouslySetInnerHTML={{
+                        __html: product.overview,
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
             <hr className="my-4" />

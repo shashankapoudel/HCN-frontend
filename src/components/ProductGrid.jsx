@@ -3,6 +3,7 @@ import AddToCart from "./AddToCart";
 import { useNavigate } from "react-router-dom";
 import QuickViewProd from "./QuickViewProd";
 import Price from "./Price";
+import { Link } from "react-router-dom";
 
 const ProductGrid = ({ title, description, products }) => {
   const truncateText = (text, wordLimit) => {
@@ -17,8 +18,8 @@ const ProductGrid = ({ title, description, products }) => {
     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
       <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.map((product) => (
-          <div
-            onClick={() => navigate(`/product/${product._id}`)}
+          <Link
+            to={`/product/${product._id}`}
             key={product._id}
             className="w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-3 lg:p-6 relative"
           >
@@ -57,7 +58,7 @@ const ProductGrid = ({ title, description, products }) => {
                 <AddToCart product={product} />
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

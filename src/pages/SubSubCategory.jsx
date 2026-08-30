@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductProvider";
 import AddToCart from "../components/AddToCart";
 import QuickViewProd from "../components/QuickViewProd";
@@ -25,7 +25,7 @@ const SubSubCategory = () => {
       name: "naga",
       title: "Naga Singing Bowls",
       description:
-        "Naga or Pedestal singing bowls come from the Himalayan region and are believed to have been used since ancient times by monks and healers for spiritual and healing practices. The name “Naga” may be connected to sacred snake figures , giving them spiritual meaning. These bowls are unique because they have a pedestal base, which gives them a cup-like shape with a stand and allows them to be played without holding the bowl directly. They are usually small to medium in size and are made from a mix of metals, sometimes with simple symbols or designs. Because of the pedestal design, they produce clear, pure, and long-lasting sounds without being muffled by the hand. People often use Naga bowls for meditation, sound healing, and spiritual practices, as their steady vibrations help improve focus, balance energy, and create a calm environment.",
+        "Naga or Pedestal singing bowls come from the Himalayan region and are believed to have been used since ancient times by monks and healers for spiritual and healing practices. The name “Naga” may be connected to sacred snake figures, giving them spiritual meaning. These bowls are unique because they have a pedestal base, which gives them a cup-like shape with a stand and allows them to be played without holding the bowl directly. They are usually small to medium in size and are made from a mix of metals, sometimes with simple symbols or designs. Because of the pedestal design, they produce clear, pure, and long-lasting sounds without being muffled by the hand. People often use Naga bowls for meditation, sound healing, and spiritual practices, as their steady vibrations help improve focus, balance energy, and create a calm environment.",
     },
 
     {
@@ -102,28 +102,24 @@ const SubSubCategory = () => {
       name: "chakra",
       title: "Chakra Set Singing Bowls",
       description:
-        "The  Chakra Healing Singing Bowl Set features eight beautifully handcrafted singing bowls, each precisely tuned to a distinct note in the fourth octave (C4, D4, E4, F4, G4, A4, B4). Thoughtfully designed for both beginners and experienced practitioners, the set represents the traditional musical notes—Sa (Do), Re (Re), Ga (Mi), Ma (Fa), Pa (Sol), Dha (La), and Ni (Ti)—creating a complete and harmonious sound scale for healing and meditation practices. Each bowl ranges approximately from 10 to 16 cm in size, offering a balanced progression of tone, vibration, and resonance. The bowls produce clear, rich, and long-lasting sounds that blend together beautifully to create a deeply calming and immersive soundscape. Inspired by the strength and energy of the tiger, this set is ideal for chakra healing, meditation, sound therapy, yoga sessions, mindfulness practices, and creating a peaceful atmosphere for relaxation and inner balance.",
+        "The Chakra Healing Singing Bowl Set features eight beautifully handcrafted singing bowls, each precisely tuned to a distinct note in the fourth octave (C4, D4, E4, F4, G4, A4, B4). Thoughtfully designed for both beginners and experienced practitioners, the set represents the traditional musical notes—Sa (Do), Re (Re), Ga (Mi), Ma (Fa), Pa (Sol), Dha (La), and Ni (Ti)—creating a complete and harmonious sound scale for healing and meditation practices. Each bowl ranges approximately from 10 to 16 cm in size, offering a balanced progression of tone, vibration, and resonance. The bowls produce clear, rich, and long-lasting sounds that blend together beautifully to create a deeply calming and immersive soundscape. Inspired by the strength and energy of the tiger, this set is ideal for chakra healing, meditation, sound therapy, yoga sessions, mindfulness practices, and creating a peaceful atmosphere for relaxation and inner balance.",
     },
 
     {
       name: "hand-hammered",
-      description:
-        "Hand Hammered Singing Bowls come from the Himalayan region and have been used since ancient times for meditation, healing, and spiritual practices. These bowls are made by skilled artisans using traditional hand-hammering techniques passed down through generations. They usually have a round shape with slightly uneven surfaces due to the handmade process. Hand hammered bowls come in different sizes, from small to large, depending on their use. In the past, they were used in rituals, prayer, and traditional ceremonies. Today, they are widely used for meditation, yoga, sound therapy, and relaxation. The sound produced by these bowls is deep, rich, and long-lasting. Their strong vibrations help calm the mind and reduce stress. These bowls are valued for their natural sound quality and traditional craftsmanship. They are useful for both personal meditation and professional healing practices.",
-    },
-
-    {
-      name: "hand-hammered",
+      title: "Hand Hammered Singing Bowls",
       description:
         "Hand Hammered Singing Bowls come from the Himalayan region and have been used since ancient times for meditation, healing, and spiritual practices. These bowls are made by skilled artisans using traditional hand-hammering techniques passed down through generations. They usually have a round shape with slightly uneven surfaces due to the handmade process. Hand hammered bowls come in different sizes, from small to large, depending on their use. In the past, they were used in rituals, prayer, and traditional ceremonies. Today, they are widely used for meditation, yoga, sound therapy, and relaxation. The sound produced by these bowls is deep, rich, and long-lasting. Their strong vibrations help calm the mind and reduce stress. These bowls are valued for their natural sound quality and traditional craftsmanship. They are useful for both personal meditation and professional healing practices.",
     },
   ];
 
   const { category, subcategory, subsubcategory } = useParams();
+
   console.log(category);
   console.log(subcategory);
   console.log(subsubcategory);
+
   const { products } = useContext(ProductContext);
-  const navigate = useNavigate();
 
   const filteredProducts = products.filter(
     (p) =>
@@ -131,6 +127,7 @@ const SubSubCategory = () => {
       p.subcategory === subcategory &&
       p.subcategorycategory === subsubcategory,
   );
+
   console.log(filteredProducts);
 
   const truncateText = (html, wordLimit) => {
@@ -138,12 +135,13 @@ const SubSubCategory = () => {
 
     const txt = document.createElement("textarea");
     txt.innerHTML = html;
+
     const decoded = txt.value;
 
     const cleanText = decoded.replace(/<[^>]*>/g, "");
 
-    // Truncate words
     const words = cleanText.split(" ");
+
     return words.length <= wordLimit
       ? cleanText
       : words.slice(0, wordLimit).join(" ") + "...";
@@ -155,29 +153,34 @@ const SubSubCategory = () => {
 
   return (
     <div className="min-h-screen p-3 lg:p-9">
+      {/* Page Title */}
       <h1 className="text-3xl font-bold mb-6 capitalize text-center font-roboto">
-        {filteredDescription?.title || subsubcategory.replace("-", " ")}
+        {filteredDescription?.title || subsubcategory?.replace("-", " ")}
       </h1>
 
-      <p className="text-none lg:text-center text-[#606060] text-justify font-serif text-lg  tracking-wide">
+      {/* Description */}
+      <p className="text-none lg:text-center text-[#606060] text-justify font-serif text-lg tracking-wide">
         {filteredDescription?.description}
       </p>
 
+      {/* Products */}
       {filteredProducts.length === 0 ? (
-        <p className="text-center text-xl">No Products Found</p>
+        <p className="text-center text-xl mt-8">No Products Found</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
           {filteredProducts.map((product) => (
             <div
               key={product._id}
               className="w-full flex flex-col p-2 lg:p-4 bg-white shadow-lg gap-2"
             >
-              <div
-                onClick={() => navigate(`/product/${product._id}`)}
-                className="relative w-full aspect-square overflow-hidden group cursor-pointer"
+              {/* Product Image */}
+              <Link
+                to={`/product/${product._id}`}
+                className="relative w-full aspect-square overflow-hidden group cursor-pointer block"
               >
                 <QuickViewProd product={product} />
 
+                {/* First Image */}
                 <img
                   src={product.images[0]}
                   alt={product.name}
@@ -185,6 +188,7 @@ const SubSubCategory = () => {
                   className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
                 />
 
+                {/* Second Image */}
                 {product.images[1] && (
                   <img
                     src={product.images[1]}
@@ -193,14 +197,15 @@ const SubSubCategory = () => {
                     className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 )}
-              </div>
+              </Link>
 
-              {/* Product Info */}
+              {/* Product Information */}
               <div className="flex flex-col gap-2 mt-4">
                 <div>
                   <h1 className="text-[#111111] font-bold text-base capitalize font-roboto">
                     {product.name}
                   </h1>
+
                   <p
                     dangerouslySetInnerHTML={{
                       __html: truncateText(product.description, 17),
@@ -209,9 +214,10 @@ const SubSubCategory = () => {
                   />
                 </div>
 
+                {/* Price + Cart */}
                 <div className="flex justify-between items-center">
                   <Price amount={product.price} />
-                  {/* <p className="text-[#bb2821] font-bold">${product.price}</p> */}
+
                   <AddToCart product={product} />
                 </div>
               </div>

@@ -1,47 +1,53 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../context/ProductProvider";
 import AddToCart from "./AddToCart";
-import { useNavigate } from "react-router-dom";
 import QuickViewProd from "./QuickViewProd";
 import Price from "./Price";
 import CurrencySelector from "./CurrencySelector";
+import { Link } from "react-router-dom";
 
 const OurProducts = () => {
-  const navigate = useNavigate();
-
   const { products } = useContext(ProductContext);
+
   console.log(products);
 
   const truncateText = (text, wordLimit) => {
     const words = text.split(" ");
+
     if (words.length <= wordLimit) return text;
+
     return words.slice(0, wordLimit).join(" ") + "...";
   };
 
   return (
     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
-      <div className="">
+      {/* Heading */}
+      <div>
         <h1 className="text-[#111111] text-center font-edensor text-lg">
           Himalayas Collections
         </h1>
+
         <p className="text-[#606060] text-sm md:text-base text-center">
           We offer authentic Himalayan handicrafts and traditional Nepalese
           products inspired by Tibetan and Nepali culture.
         </p>
       </div>
 
+      {/* Products */}
       <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-5">
         {products.slice(0, 4).map((product) => (
           <div
             key={product._id}
             className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
           >
-            <div
-              onClick={() => navigate(`/product/${product._id}`)}
+            {/* Product Image */}
+            <Link
+              to={`/product/${product._id}`}
               className="relative w-full aspect-square overflow-hidden group"
             >
               <QuickViewProd product={product} />
 
+              {/* First Image */}
               <img
                 src={product.images[0]}
                 alt={product.name}
@@ -49,26 +55,31 @@ const OurProducts = () => {
                 className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
               />
 
+              {/* Second Image */}
               <img
                 src={product.images[1]}
                 alt={product.name}
                 loading="lazy"
                 className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"
               />
-            </div>
+            </Link>
 
+            {/* Product Information */}
             <div className="flex flex-col gap-2">
               <div>
                 <h1 className="text-left text-[#111111] font-bold text-base capitalize">
                   {product.name}
                 </h1>
-                <p className=" text-[#606060]  font-edensor text-base">
+
+                <p className="text-[#606060] font-edensor text-base">
                   {truncateText(product.description, 20)}
                 </p>
               </div>
 
+              {/* Price + Cart */}
               <div className="flex justify-between items-center">
                 <Price amount={product.price} />
+
                 <AddToCart product={product} />
               </div>
             </div>

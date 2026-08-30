@@ -130,7 +130,7 @@ export default function TestimonialsPage() {
         <h1 className="text-4xl font-bold">Google Reviews</h1>
         <div className="w-full lg:w-1/3 bg-white rounded-md flex items-center font-sans">
           <div className="w-full flex justify-center items-center">
-            <img src="Images/Google.png" alt="Google" className="w-44 h-40" />
+            <img src="Images/Google.png" alt="Google" className="w-52 h-40" />
           </div>
 
           <div className="">
