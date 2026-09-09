@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 import BASE_URL from "../config/api";
@@ -329,6 +329,9 @@ const SingleProductPage = () => {
                         __html: product.overview,
                       }}
                     />
+                    <Link to="https://www.himalayascraftnepal.com/blogs/68258d0c88f223446c359d0d">
+                      How to clean your singing bowl
+                    </Link>
                   </div>
                 )}
               </div>

@@ -26,7 +26,9 @@ const AddProductModal = ({
   const [subcategory, setSubCategory] = useState("");
   const [stock, setStock] = useState("");
   const [price, setPrice] = useState("");
-  const [size, setSize] = useState("");
+  const [height, setHeight] = useState("");
+  const [length, setLength] = useState("");
+  const [width, setWidth] = useState("");
   const [material, setMaterial] = useState("");
   const [overview, setOverview] = useState("");
   const [description, setDescription] = useState("");
@@ -40,6 +42,9 @@ const AddProductModal = ({
   const [accessoriesCategory, setAccessoriesCategory] = useState("");
   const [groupId, setGroupId] = useState("");
   const [etsyUrl, setetsyUrl] = useState("");
+  const [size, setSize] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+  const [salesPrice, setSalesPrice] = useState("");
 
   const [filteredSubcategories, setFilteredSubcategories] = useState([]);
   const [filteredSubcategorycategory, setFilteredSubcategorycategory] =
@@ -88,9 +93,24 @@ const AddProductModal = ({
 
   const category1 = ["Select Color", "Matte Black", "Tiger", "Silver", "Gold"];
 
-  const category2 = ["Select Notes", "Note 1", "Note 2"];
-
   const category3 = ["Select Accessories", "Accessories1", "Accessories 2"];
+
+  const totalNotes = [
+    "Select a note",
+    "C — Root Chakra — Sa / Do",
+    "C# — Root–Sacral — Sa# / Do#",
+    "D — Sacral Chakra — Re / Ré",
+    "D# — Sacral–Solar Plexus — Re# / Ré#",
+    "E — Solar Plexus — Ga / Mi",
+    "F — Heart Chakra — Ma / Fa",
+    "F# — Heart–Throat — Ma# / Fa#",
+    "G — Throat Chakra — Pa / Sol",
+    "G# — Throat–Third Eye — Pa# / Sol#",
+    "A — Third Eye — Dha / La",
+    "A# — Third Eye–Crown — Dha# / La#",
+    "B — Crown Chakra — Ni / Ti",
+    "C′ — Higher Octave — Sa′ / Do′",
+  ];
 
   const categorySubcategories = {
     "singing-bowls": [
@@ -194,7 +214,12 @@ const AddProductModal = ({
       setSubCategory(existingData.subcategory || "");
       setStock(existingData.stock || "");
       setPrice(existingData.price || "");
+      setSalesPrice(existingData.salesPrice || "");
+      setProductPrice(existingData.productPrice || "");
       setSize(existingData.size || "");
+      setHeight(existingData.height || "");
+      setWidth(existingData.width || "");
+      setLength(existingData.length || "");
       setMaterial(existingData.material || "");
       setLabel(existingData.Label || "");
       setOverview(existingData.overview || "");
@@ -214,7 +239,11 @@ const AddProductModal = ({
       setSubCategory("");
       setStock("");
       setPrice("");
-      setSize("");
+      setSalesPrice("");
+      setProductPrice("");
+      setHeight("");
+      setLength("");
+      setWidth("");
       setMaterial("");
       setLabel("");
       setOverview("");
@@ -235,7 +264,12 @@ const AddProductModal = ({
     formData.append("weight", weight);
     formData.append("stock", stock);
     formData.append("price", price);
+    formData.append("productPrice", productPrice);
+    formData.append("salesPrice", salesPrice);
     formData.append("size", size);
+    formData.append("height", height);
+    formData.append("length", length);
+    formData.append("width", width);
     formData.append(
       "color",
       colorCategory !== "Select Color" ? colorCategory : "",
@@ -287,7 +321,12 @@ const AddProductModal = ({
       setSubcategorycategory("");
       setStock("");
       setPrice("");
+      setProductPrice("");
+      setSalesPrice("");
       setSize("");
+      setHeight("");
+      setWidth("");
+      setLength("");
       setMaterial("");
       setOverview("");
       setDescription("");
@@ -399,14 +438,29 @@ const AddProductModal = ({
               </div>
 
               <div>
-                <label className="block mb-2">Selling Price (in dollars)</label>
-                <input
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  type="text"
-                  className="w-full p-2 border rounded mb-4"
-                  placeholder="Enter price"
-                />
+                <label className="block mb-2">Price (in dollars)*</label>
+                <div className="flex gap-2">
+                  <div>
+                    <label className="block mb-2">Product Price</label>
+                    <input
+                      value={productPrice}
+                      onChange={(e) => setProductPrice(e.target.value)}
+                      type="text"
+                      className="w-full p-2 border rounded mb-4"
+                      placeholder="Enter price"
+                    />
+                  </div>
+                  <div>
+                    <label className="block mb-2">Selling Price</label>
+                    <input
+                      value={salesPrice}
+                      onChange={(e) => setSalesPrice(e.target.value)}
+                      type="text"
+                      className="w-full p-2 border rounded mb-4"
+                      placeholder="Enter price"
+                    />
+                  </div>
+                </div>
               </div>
 
               <div>
@@ -425,15 +479,43 @@ const AddProductModal = ({
               </div>
 
               <div>
-                <label className="block mb-2">Size (in cms)</label>
+                <label className="block mb-2">Sizes (in cms)*</label>
+                <div className="flex gap-2">
+                  <div>
+                    <label>Height</label>
 
-                <input
-                  value={size}
-                  onChange={(e) => setSize(e.target.value)}
-                  type="text"
-                  className="w-full p-2 border rounded mb-4"
-                  placeholder="Enter size"
-                />
+                    <input
+                      value={height}
+                      onChange={(e) => setHeight(e.target.value)}
+                      type="text"
+                      className="w-full p-2 border rounded mb-4"
+                      placeholder="Enter Height"
+                    />
+                  </div>
+
+                  <div>
+                    <label>Length</label>
+
+                    <input
+                      value={size}
+                      onChange={(e) => setLength(e.target.value)}
+                      type="text"
+                      className="w-full p-2 border rounded mb-4"
+                      placeholder="Enter Length"
+                    />
+                  </div>
+
+                  <div>
+                    <label>Width</label>
+                    <input
+                      value={width}
+                      onChange={(e) => setWidth(e.target.value)}
+                      type="text"
+                      className="w-full p-2 border rounded mb-4"
+                      placeholder="Enter Width"
+                    />
+                  </div>
+                </div>
               </div>
 
               <div>
@@ -473,8 +555,8 @@ const AddProductModal = ({
                   onChange={(e) => setNoteCategory(e.target.value)}
                   className="w-full p-2 border rounded mb-4"
                 >
-                  {category2.map((cat, index) => (
-                    <option key={index}>{cat}</option>
+                  {totalNotes.map((note, index) => (
+                    <option key={index}>{note}</option>
                   ))}
                 </select>
               </div>
