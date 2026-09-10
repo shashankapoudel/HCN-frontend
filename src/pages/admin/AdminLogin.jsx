@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import BASE_URL from "../../config/api";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const AdminLogin = ({ setAdmin }) => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async () => {
     try {
@@ -56,7 +58,6 @@ const AdminLogin = ({ setAdmin }) => {
             Enter Username and Password to get access to admin panel
           </p>
         </div>
-
         <div className="flex flex-col">
           <label>Username</label>
           <input
@@ -66,15 +67,25 @@ const AdminLogin = ({ setAdmin }) => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-
         <div className="flex flex-col">
           <label>Password</label>
-          <input
-            type="password"
-            className="border p-2 w-full bg-[#F7F7F7]"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              className="border p-2 w-full bg-[#F7F7F7] pr-10"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
         </div>
 
         <button
