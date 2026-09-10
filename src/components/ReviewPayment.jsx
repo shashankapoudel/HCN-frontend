@@ -46,48 +46,50 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
 
   const handlePlaceOrder = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/payment/create", {
-        method: "POST",
+      const response = await fetch(
+        "http://localhost:5000/api/payment/create-checkout-session",
+        {
+          method: "POST",
 
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify({
-          amount: total,
-
-          currency: "USD",
-
-          customerName: formData.fullName,
-
-          customerEmail: formData.email,
-
-          customerPhone: formData.phone,
-
-          shippingAddress: {
-            address1: formData.address,
-            city: formData.city,
-            countryCode: "NP",
-            postalCode: formData.postalCode,
+          headers: {
+            "Content-Type": "application/json",
           },
 
-          items: items,
-        }),
-      });
+          body: JSON.stringify({
+            customer: {
+              name: formData.personalInfo.fullName,
+              email: formData.personalInfo.email,
+            },
+
+            items: items.map((item) => ({
+              productId: item._id,
+              quantity: item.quantity,
+            })),
+
+            shippingAddress: {
+              country: formData.shippingAddress.country,
+              state: formData.shippingAddress.state,
+              city: formData.shippingAddress.city,
+              street: formData.shippingAddress.street,
+              zip: formData.shippingAddress.zip,
+            },
+          }),
+        },
+      );
 
       const data = await response.json();
 
       console.log(data);
 
-      if (data.success) {
-        window.location.href = data.paymentURL;
+      if (response.ok && data.success) {
+        // Redirect customer to Stripe
+        window.location.href = data.url;
       } else {
-        alert(data.message || "Payment Failed");
+        alert(data.message || "Unable to start payment");
       }
     } catch (error) {
-      console.log(error);
-
-      alert("Something went wrong");
+      console.error("Payment error:", error);
+      alert("Something went wrong while starting payment");
     }
   };
 

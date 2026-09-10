@@ -7,20 +7,42 @@ const AdminLogin = ({ setAdmin }) => {
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
-    const res = await fetch(`${BASE_URL}/users/adminlogin`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
-    const result = await res.json();
-    if (res.ok) {
-      setAdmin(true);
-    } else {
-      setError(result.message || "Invalid credentials");
+    try {
+      const res = await fetch(`${BASE_URL}/users/adminlogin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
+
+      const text = await res.text();
+
+      console.log("Status:", res.status);
+      console.log("Response:", text);
+
+      let result;
+
+      try {
+        result = JSON.parse(text);
+      } catch (error) {
+        console.error("Invalid JSON response:", text);
+        setError("Server returned an invalid response.");
+        return;
+      }
+
+      if (res.ok) {
+        setAdmin(true);
+      } else {
+        setError(result.message || "Invalid credentials");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setError("Unable to connect to the server.");
     }
-    setAdmin(true);
   };
 
   return (

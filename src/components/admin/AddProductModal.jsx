@@ -497,7 +497,7 @@ const AddProductModal = ({
                     <label>Length</label>
 
                     <input
-                      value={size}
+                      value={length}
                       onChange={(e) => setLength(e.target.value)}
                       type="text"
                       className="w-full p-2 border rounded mb-4"
