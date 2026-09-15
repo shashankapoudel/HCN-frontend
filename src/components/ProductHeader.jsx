@@ -197,9 +197,10 @@ const ProductHeader = () => {
     },
 
     { name: "Statues", path: "/statues" },
+    { name: "Shankha", path: "/shankha" },
 
     {
-      name: "Himalayas Art and Paintings",
+      name: "Himalayas Art & Paintings",
       path: "/himalayas-art&paintings",
       subItems: [
         {
@@ -251,7 +252,7 @@ const ProductHeader = () => {
   }, [location]);
 
   return (
-    <div className="hidden lg:flex w-full  px-4 py-2">
+    <div className="hidden lg:flex w-full px-2 py-2">
       <div className="flex gap-6 w-full justify-center text-[#111111] text-sm ">
         {navItems.map((item) => (
           <div key={item.name} className="relative group">
@@ -281,7 +282,7 @@ const ProductHeader = () => {
                     <NavLink
                       to={subItem.path}
                       state={{ category: subItem.name }}
-                      className="flex px-4 py-2 text-[#111111] hover:bg-gray-200 items-center justify-between w-full"
+                      className="flex px-2 py-2 text-[#111111] hover:bg-gray-200 items-center justify-between w-full"
                     >
                       {subItem.name}
                       {subItem.subsubItems && (

@@ -205,6 +205,7 @@ const Header = () => {
     },
 
     { name: "Statues", path: "/statues" },
+    { name: "Shankha", path: "/shankha" },
 
     {
       name: "Himalayas Art and Paintings",
@@ -292,13 +293,13 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="hidden lg:flex gap-6 py-2 px-3 bg-[#EBEBEB] text-[#111111] justify-center items-center">
+      <div className="hidden lg:flex gap-4 py-2 px-0  bg-[#EBEBEB] text-[#111111] justify-center items-center">
         <div>
           <ProductHeader />
         </div>
 
         <div className="flex items-center justify-center gap-5">
-          <div className="flex gap-2 text-sm">
+          <div className="flex gap-1 text-sm">
             <p className="text-center">Kathmandu,Nepal</p>
             <a href="tel:+9779849779322" className="hover:underline">
               +977- 9849779890

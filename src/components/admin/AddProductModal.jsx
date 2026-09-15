@@ -55,6 +55,7 @@ const AddProductModal = ({
     "singing-bowls",
     "ritual-items",
     "statues",
+    "shankha",
     "himalayas-art&paintings",
     "himalayas-hemp",
     "himalayas-crystals",
@@ -520,17 +521,11 @@ const AddProductModal = ({
 
               <div>
                 <label className="block mb-2">Material</label>
-                <select
+                <input
                   value={material}
                   onChange={(e) => setMaterial(e.target.value)}
                   className="w-full p-2 border rounded mb-4"
-                >
-                  {productMaterials.map((material, index) => (
-                    <option key={index} value={material}>
-                      {material}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
 
               <div>

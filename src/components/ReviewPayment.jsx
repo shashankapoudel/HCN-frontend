@@ -44,17 +44,64 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
     });
   };
 
+  // const handlePlaceOrder = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       "http://localhost:5000/api/payment/create-checkout-session",
+  //       {
+  //         method: "POST",
+
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+
+  //         body: JSON.stringify({
+  //           customer: {
+  //             name: formData.personalInfo.fullName,
+  //             email: formData.personalInfo.email,
+  //           },
+
+  //           items: items.map((item) => ({
+  //             productId: item._id,
+  //             quantity: item.quantity,
+  //           })),
+
+  //           shippingAddress: {
+  //             country: formData.shippingAddress.country,
+  //             state: formData.shippingAddress.state,
+  //             city: formData.shippingAddress.city,
+  //             street: formData.shippingAddress.street,
+  //             zip: formData.shippingAddress.zip,
+  //           },
+  //         }),
+  //       },
+  //     );
+
+  //     const data = await response.json();
+
+  //     console.log(data);
+
+  //     if (response.ok && data.success) {
+  //       // Redirect customer to Stripe
+  //       window.location.href = data.url;
+  //     } else {
+  //       alert(data.message || "Unable to start payment");
+  //     }
+  //   } catch (error) {
+  //     console.error("Payment error:", error);
+  //     alert("Something went wrong while starting payment");
+  //   }
+  // };
+
   const handlePlaceOrder = async () => {
     try {
       const response = await fetch(
         "http://localhost:5000/api/payment/create-checkout-session",
         {
           method: "POST",
-
           headers: {
             "Content-Type": "application/json",
           },
-
           body: JSON.stringify({
             customer: {
               name: formData.personalInfo.fullName,
@@ -62,7 +109,7 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
             },
 
             items: items.map((item) => ({
-              productId: item._id,
+              productId: item.id, // ✅ CHANGE THIS
               quantity: item.quantity,
             })),
 
@@ -79,10 +126,9 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
 
       const data = await response.json();
 
-      console.log(data);
+      console.log("PAYMENT RESPONSE:", data);
 
       if (response.ok && data.success) {
-        // Redirect customer to Stripe
         window.location.href = data.url;
       } else {
         alert(data.message || "Unable to start payment");
