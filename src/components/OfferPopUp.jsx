@@ -55,7 +55,7 @@ const OfferPopUp = () => {
         {/* Image Section */}
         <div className="w-full md:w-1/2 h-64 md:h-auto">
           <img
-            src="/Images/OurStory5.jpg"
+            src="/Images/image.png"
             alt="Offer"
             className="w-full h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
             loading="lazy"

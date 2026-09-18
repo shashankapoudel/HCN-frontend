@@ -1,4 +1,5 @@
 import { FaTrashAlt, FaLock } from "react-icons/fa";
+import BASE_URL from "../config/api";
 
 const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
   const items = formData.items || [];
@@ -96,7 +97,7 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
   const handlePlaceOrder = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/payment/create-checkout-session",
+        `${BASE_URL}/payment/create-checkout-session`,
         {
           method: "POST",
           headers: {
