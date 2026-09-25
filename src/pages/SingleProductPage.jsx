@@ -243,43 +243,10 @@ const SingleProductPage = () => {
               {product.name}
             </h1>
 
-            <div className="p-0 lg:p-2 flex gap-4">
-              <div className="flex flex-col gap-2 items-center justify-center">
-                <div>
-                  <div className="relative inline-block">
-                    <button className="font-medium bg-[#bb2821] text-lg border-2 border-[#bb2821] px-2 py-1 text-white">
-                      <Price amount={product.price} />
-                    </button>
-
-                    <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <span className="w-[150%] h-[2px] bg-white rotate-[-25deg]"></span>
-                    </span>
-                  </div>
-
-                  <button className="font-medium text-lg border-2 text-[#bb2821] border-[#bb2821]  px-2 py-1 ">
-                    $500.00
-                  </button>
-                </div>
-
-                <div>
-                  <button
-                    onClick={handleWhatsAppBuy}
-                    className="bg-[#0B4D81] text-[#FFFFFF] px-2 py-1 font-medium "
-                  >
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-
-              <a
-                href={product.etsyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="font-medium text-lg text-[#bb2821] border-2 border-[#bb2821] px-4 py-1">
-                  Buy in Etsy
-                </button>
-              </a>
+            <div>
+              <button className="font-medium bg-[#bb2821] text-lg border-2 border-[#bb2821] px-2 py-1 text-white">
+                <Price amount={product.price} />
+              </button>
             </div>
 
             <p className="text-sm p-2  text-[#606060] tracking-wide leading-relaxed text-justify max-w-4xl">
@@ -346,7 +313,7 @@ const SingleProductPage = () => {
               />
               <button
                 onClick={() =>
-                  navigate("/order", {
+                  navigate("/cart", {
                     state: {
                       name: product.name,
                       price: product.price,

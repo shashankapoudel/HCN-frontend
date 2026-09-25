@@ -20,7 +20,7 @@ const Price = ({ amount }) => {
   const { currency, convertPrice } = useCurrency();
 
   return (
-    <span className="font-medium  text-[#FFFFFF]">
+    <span className="font-medium ">
       {symbols[currency]} {convertPrice(amount)}
     </span>
   );

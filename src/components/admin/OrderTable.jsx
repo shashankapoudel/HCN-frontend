@@ -150,10 +150,8 @@ const OrderTable = ({ searchQuery, filterStatus, sortOrder }) => {
           {sortedOrders.length > 0 ? (
             sortedOrders.map((order) => (
               <tr key={order.orderID} className="border-b">
-                {/* Order ID */}
                 <td className="p-3">{order.orderID}</td>
 
-                {/* Product Name */}
                 <td className="p-3">
                   {order.items?.map((item, index) => (
                     <div key={index}>
@@ -162,30 +160,25 @@ const OrderTable = ({ searchQuery, filterStatus, sortOrder }) => {
                   ))}
                 </td>
 
-                {/* Customer Name */}
                 <td className="p-3">{order.customer?.name || "N/A"}</td>
 
-                {/* Address */}
                 <td className="p-3">
                   {order.shippingAddress?.street}, {order.shippingAddress?.city}
                   , {order.shippingAddress?.state},{" "}
                   {order.shippingAddress?.country}, {order.shippingAddress?.zip}
                 </td>
 
-                {/* Amount */}
                 <td className="p-3">
                   {order.currency?.toUpperCase()}{" "}
                   {Number(order.totalAmount || 0).toFixed(2)}
                 </td>
 
-                {/* Order Date */}
                 <td className="p-3">
                   {order.createdAt
                     ? new Date(order.createdAt).toLocaleDateString()
                     : "N/A"}
                 </td>
 
-                {/* Status */}
                 <td className="p-3">
                   <select
                     value={order.orderStatus || "pending"}

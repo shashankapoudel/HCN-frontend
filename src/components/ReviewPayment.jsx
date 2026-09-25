@@ -45,6 +45,7 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
     });
   };
 
+  console.log(items);
   // const handlePlaceOrder = async () => {
   //   try {
   //     const response = await fetch(
@@ -110,7 +111,7 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
             },
 
             items: items.map((item) => ({
-              productId: item.id, // ✅ CHANGE THIS
+              productId: item.id,
               quantity: item.quantity,
             })),
 
