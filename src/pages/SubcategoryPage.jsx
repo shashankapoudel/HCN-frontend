@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductProvider";
@@ -9,7 +8,6 @@ import Price from "../components/Price";
 const SubcategoryPage = () => {
   const { category, subcategory } = useParams();
   const { products } = useContext(ProductContext);
-
 
   const [maxPrice, setMaxPrice] = useState(10000);
 
@@ -24,7 +22,6 @@ const SubcategoryPage = () => {
       return [...previousSizes, size];
     });
   };
-
 
   const filteredProducts = products.filter((product) => {
     // First check category and subcategory
@@ -68,7 +65,6 @@ const SubcategoryPage = () => {
     return matchesSize;
   });
 
-
   const text = [
     {
       category: "handmade",
@@ -95,7 +91,6 @@ const SubcategoryPage = () => {
       text: "Chakra Set Singing bowls are specially designed singing bowls associated with the seven chakras of the body and are commonly used for meditation, sound healing, yoga, relaxation, and spiritual practices. These bowls produce soothing and resonant sounds that can help create a peaceful environment during meditation and mindfulness sessions. Each chakra singing bowl is often connected with a specific chakra and may feature corresponding symbols, colors, or designs representing different energy centers. Our chakra singing bowls are carefully crafted with attention to their shape, finish, and sound quality. They are suitable for beginners, meditation practitioners, yoga instructors, sound therapists, and anyone looking to enhance their relaxation and mindfulness practices.",
     },
   ];
-
 
   const truncateText = (description, wordLimit) => {
     if (!description) {
@@ -126,7 +121,6 @@ const SubcategoryPage = () => {
 
   return (
     <div className="min-h-screen p-5 lg:p-8">
-
       <div className="p-2 lg:p-4 shadow-lg mb-6">
         <h1 className="text-2xl lg:text-3xl font-bold mb-4 capitalize text-center">
           {pageTitle}
@@ -138,8 +132,6 @@ const SubcategoryPage = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-6">
- 
-
         <aside className="w-full lg:w-60 xl:w-64 flex-shrink-0">
           <div className="bg-white shadow-lg p-5 lg:sticky lg:top-5">
             <div className="flex justify-between items-center mb-6">
@@ -158,8 +150,6 @@ const SubcategoryPage = () => {
             <div className="mb-8">
               <h3 className="text-lg font-bold mb-5">Price Range</h3>
 
-     
-
               <div className="flex justify-between text-sm mb-2">
                 <span>$1</span>
 
@@ -175,7 +165,6 @@ const SubcategoryPage = () => {
                 className="w-full accent-[#bb2821] cursor-pointer"
               />
 
-
               <div className="flex items-center gap-2 mt-4">
                 <div className="border border-gray-300 px-2 py-2 text-sm w-full text-center">
                   $1
@@ -189,12 +178,10 @@ const SubcategoryPage = () => {
               </div>
             </div>
 
-
             <div>
               <h3 className="text-lg font-bold mb-4">Sizes</h3>
 
               <div className="space-y-4">
-
                 <label className="flex items-start gap-2 cursor-pointer">
                   <input
                     type="checkbox"
@@ -205,7 +192,6 @@ const SubcategoryPage = () => {
 
                   <span className="text-sm leading-5">Small (Angel Set)</span>
                 </label>
-
 
                 <label className="flex items-start gap-2 cursor-pointer">
                   <input
@@ -233,10 +219,7 @@ const SubcategoryPage = () => {
           </div>
         </aside>
 
-
         <div className="flex-1">
-  
-
           <div className="flex justify-between items-center mb-4">
             <p className="text-gray-600 text-sm">
               {filteredProducts.length}{" "}
@@ -258,14 +241,12 @@ const SubcategoryPage = () => {
               </div>
             </div>
           ) : (
-
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
                 <div
                   key={product._id}
                   className="w-full flex flex-col p-2 lg:p-4 gap-2 bg-white shadow-lg cursor-pointer"
                 >
-
                   <Link
                     to={`/product/${product._id}`}
                     className="relative w-full aspect-square overflow-hidden group"
@@ -301,7 +282,6 @@ const SubcategoryPage = () => {
                         className="text-[#606060] font-edensor text-base"
                       />
                     </div>
-
 
                     <div className="flex justify-between items-center">
                       <Price amount={product.price} />
