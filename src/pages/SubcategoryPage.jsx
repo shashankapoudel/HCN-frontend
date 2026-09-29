@@ -12,6 +12,11 @@
 //   const [maxPrice, setMaxPrice] = useState(10000);
 
 //   const [selectedSizes, setSelectedSizes] = useState([]);
+//   const [selectedMaterials, setSelectedMaterials] = useState([]);
+//   const [selectedColors, setSelectedColors] = useState([]);
+//   const [selectedLabels, setSelectedLabels] = useState([]);
+
+//   const [inStockOnly, setInStockOnly] = useState(false);
 
 //   const handleSizeChange = (size) => {
 //     setSelectedSizes((previousSizes) => {
@@ -23,8 +28,37 @@
 //     });
 //   };
 
+//   const handleMaterialChange = (material) => {
+//     setSelectedMaterials((previousMaterials) => {
+//       if (previousMaterials.includes(material)) {
+//         return previousMaterials.filter((item) => item !== material);
+//       }
+
+//       return [...previousMaterials, material];
+//     });
+//   };
+
+//   const handleColorChange = (color) => {
+//     setSelectedColors((previousColors) => {
+//       if (previousColors.includes(color)) {
+//         return previousColors.filter((item) => item !== color);
+//       }
+
+//       return [...previousColors, color];
+//     });
+//   };
+
+//   const handleLabelChange = (label) => {
+//     setSelectedLabels((previousLabels) => {
+//       if (previousLabels.includes(label)) {
+//         return previousLabels.filter((item) => item !== label);
+//       }
+
+//       return [...previousLabels, label];
+//     });
+//   };
+
 //   const filteredProducts = products.filter((product) => {
-//     // First check category and subcategory
 //     const matchesCategory =
 //       product.category === category && product.subcategory === subcategory;
 
@@ -40,29 +74,77 @@
 //       return false;
 //     }
 
-//     if (selectedSizes.length === 0) {
-//       return true;
+//     if (selectedSizes.length > 0) {
+//       const productSize = String(product.size || "").toLowerCase();
+
+//       const matchesSize = selectedSizes.some((selectedSize) => {
+//         if (selectedSize === "small") {
+//           return productSize.includes("small") || productSize.includes("angel");
+//         }
+
+//         if (selectedSize === "medium") {
+//           return productSize.includes("medium") || productSize.includes("mini");
+//         }
+
+//         if (selectedSize === "large") {
+//           return (
+//             productSize.includes("large") || productSize.includes("master")
+//           );
+//         }
+
+//         return false;
+//       });
+
+//       if (!matchesSize) {
+//         return false;
+//       }
 //     }
 
-//     const productSize = String(product.size || "").toLowerCase();
+//     if (selectedMaterials.length > 0) {
+//       const productMaterial = String(product.material || "").toLowerCase();
 
-//     const matchesSize = selectedSizes.some((selectedSize) => {
-//       if (selectedSize === "small") {
-//         return productSize.includes("small") || productSize.includes("angel");
+//       const matchesMaterial = selectedMaterials.some(
+//         (material) => productMaterial === material.toLowerCase(),
+//       );
+
+//       if (!matchesMaterial) {
+//         return false;
 //       }
+//     }
 
-//       if (selectedSize === "medium") {
-//         return productSize.includes("medium") || productSize.includes("mini");
+//     if (selectedColors.length > 0) {
+//       const productColor = String(product.color || "").toLowerCase();
+
+//       const matchesColor = selectedColors.some(
+//         (color) => productColor === color.toLowerCase(),
+//       );
+
+//       if (!matchesColor) {
+//         return false;
 //       }
+//     }
 
-//       if (selectedSize === "large") {
-//         return productSize.includes("large") || productSize.includes("master");
+//     if (selectedLabels.length > 0) {
+//       const productLabel = String(product.label || "").toLowerCase();
+
+//       const matchesLabel = selectedLabels.some(
+//         (label) => productLabel === label.toLowerCase(),
+//       );
+
+//       if (!matchesLabel) {
+//         return false;
 //       }
+//     }
 
-//       return false;
-//     });
+//     if (inStockOnly) {
+//       const stock = Number(product.stock) || 0;
 
-//     return matchesSize;
+//       if (stock <= 0) {
+//         return false;
+//       }
+//     }
+
+//     return true;
 //   });
 
 //   const text = [
@@ -106,7 +188,6 @@
 //     return words.slice(0, wordLimit).join(" ") + "...";
 //   };
 
-//   // Find description for current subcategory
 //   const filteredText = text.find((item) => item.category === subcategory);
 
 //   const pageTitle =
@@ -117,7 +198,19 @@
 //   const clearFilters = () => {
 //     setMaxPrice(10000);
 //     setSelectedSizes([]);
+//     setSelectedMaterials([]);
+//     setSelectedColors([]);
+//     setSelectedLabels([]);
+//     setInStockOnly(false);
 //   };
+
+//   const hasActiveFilters =
+//     maxPrice < 10000 ||
+//     selectedSizes.length > 0 ||
+//     selectedMaterials.length > 0 ||
+//     selectedColors.length > 0 ||
+//     selectedLabels.length > 0 ||
+//     inStockOnly;
 
 //   return (
 //     <div className="min-h-screen p-5 lg:p-8">
@@ -137,7 +230,7 @@
 //             <div className="flex justify-between items-center mb-6">
 //               <h2 className="text-xl font-bold">Filters</h2>
 
-//               {(selectedSizes.length > 0 || maxPrice < 10000) && (
+//               {hasActiveFilters && (
 //                 <button
 //                   onClick={clearFilters}
 //                   className="text-sm text-[#bb2821] hover:underline"
@@ -178,10 +271,10 @@
 //               </div>
 //             </div>
 
-//             <div>
-//               <h3 className="text-lg font-bold mb-4">Sizes</h3>
+//             <div className="mb-4">
+//               <h3 className="text-lg font-bold mb-2">Sizes</h3>
 
-//               <div className="space-y-4">
+//               <div className="space-y-1">
 //                 <label className="flex items-start gap-2 cursor-pointer">
 //                   <input
 //                     type="checkbox"
@@ -216,11 +309,101 @@
 //                 </label>
 //               </div>
 //             </div>
+
+//             <div className="mb-4">
+//               <h3 className="text-lg font-bold mb-2">Material</h3>
+
+//               <div className="space-y-1">
+//                 {["Seven metals", "Brass", "Bronze", "Copper", "Crystal"].map(
+//                   (material) => (
+//                     <label
+//                       key={material}
+//                       className="flex items-center gap-1 cursor-pointer"
+//                     >
+//                       <input
+//                         type="checkbox"
+//                         checked={selectedMaterials.includes(material)}
+//                         onChange={() => handleMaterialChange(material)}
+//                         className="accent-[#bb2821] cursor-pointer"
+//                       />
+
+//                       <span className="text-sm">{material}</span>
+//                     </label>
+//                   ),
+//                 )}
+//               </div>
+//             </div>
+
+//             <div className="mb-4">
+//               <h3 className="text-lg font-bold mb-2">Color</h3>
+
+//               <div className="space-y-1">
+//                 {["Tiger", "Gold", "Black", "Silver", "Brown", "Antique"].map(
+//                   (color) => (
+//                     <label
+//                       key={color}
+//                       className="flex items-center gap-1 cursor-pointer"
+//                     >
+//                       <input
+//                         type="checkbox"
+//                         checked={selectedColors.includes(color)}
+//                         onChange={() => handleColorChange(color)}
+//                         className="accent-[#bb2821] cursor-pointer"
+//                       />
+
+//                       <span className="text-sm">{color}</span>
+//                     </label>
+//                   ),
+//                 )}
+//               </div>
+//             </div>
+
+//             <div className="mb-4">
+//               <h3 className="text-lg font-bold mb-2">Featured</h3>
+
+//               <div className="space-y-1">
+//                 {[
+//                   "People's favourite",
+//                   "New Arrival",
+//                   "Best Seller",
+//                   "Featured",
+//                 ].map((label) => (
+//                   <label
+//                     key={label}
+//                     className="flex items-center gap-1 cursor-pointer"
+//                   >
+//                     <input
+//                       type="checkbox"
+//                       checked={selectedLabels.includes(label)}
+//                       onChange={() => handleLabelChange(label)}
+//                       className="accent-[#bb2821] cursor-pointer"
+//                     />
+
+//                     <span className="text-sm">{label}</span>
+//                   </label>
+//                 ))}
+//               </div>
+//             </div>
+
+//             <div>
+//               <h3 className="text-lg font-bold mb-2">Availability</h3>
+
+//               <label className="flex items-center gap-1 cursor-pointer">
+//                 <input
+//                   type="checkbox"
+//                   checked={inStockOnly}
+//                   onChange={(e) => setInStockOnly(e.target.checked)}
+//                   className="accent-[#bb2821] cursor-pointer"
+//                 />
+
+//                 <span className="text-sm">In Stock Only</span>
+//               </label>
+//             </div>
 //           </div>
 //         </aside>
 
 //         <div className="flex-1">
-//           <div className="flex justify-between items-center mb-4">
+//           <div className="flex justify-between items-center mb-2">
 //             <p className="text-gray-600 text-sm">
 //               {filteredProducts.length}{" "}
 //               {filteredProducts.length === 1 ? "Product" : "Products"}
@@ -259,6 +442,7 @@
 //                       loading="lazy"
 //                       className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
 //                     />
+
 //                     {product.images?.[1] && (
 //                       <img
 //                         src={product.images[1]}
@@ -277,7 +461,7 @@
 
 //                       <p
 //                         dangerouslySetInnerHTML={{
-//                           __html: truncateText(product.description, 16),
+//                           __html: truncateText(product.description, 19),
 //                         }}
 //                         className="text-[#606060] font-edensor text-base"
 //                       />
@@ -446,7 +630,6 @@ const SubcategoryPage = () => {
         return false;
       }
     }
-
     return true;
   });
 
@@ -527,9 +710,30 @@ const SubcategoryPage = () => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6">
-        <aside className="w-full lg:w-60 xl:w-64 flex-shrink-0">
-          <div className="bg-white shadow-lg p-5 lg:sticky lg:top-5">
+      <div className="flex flex-col lg:flex-row gap-6 items-start">
+        <aside
+          className="
+            w-full
+            lg:w-60
+            xl:w-64
+            flex-shrink-0
+          "
+        >
+          <div
+            className="
+              bg-white
+              shadow-lg
+              p-5
+
+              lg:sticky
+              lg:top-5
+
+              lg:max-h-[calc(100vh-40px)]
+              lg:overflow-y-auto
+
+              scrollbar-thin
+            "
+          >
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold">Filters</h2>
 
@@ -705,7 +909,7 @@ const SubcategoryPage = () => {
           </div>
         </aside>
 
-        <div className="flex-1">
+        <div className="flex-1 min-w-0 w-full">
           <div className="flex justify-between items-center mb-2">
             <p className="text-gray-600 text-sm">
               {filteredProducts.length}{" "}
@@ -731,11 +935,27 @@ const SubcategoryPage = () => {
               {filteredProducts.map((product) => (
                 <div
                   key={product._id}
-                  className="w-full flex flex-col p-2 lg:p-4 gap-2 bg-white shadow-lg cursor-pointer"
+                  className="
+                    w-full
+                    flex
+                    flex-col
+                    p-2
+                    lg:p-4
+                    gap-2
+                    bg-white
+                    shadow-lg
+                    cursor-pointer
+                  "
                 >
                   <Link
                     to={`/product/${product._id}`}
-                    className="relative w-full aspect-square overflow-hidden group"
+                    className="
+                      relative
+                      w-full
+                      aspect-square
+                      overflow-hidden
+                      group
+                    "
                   >
                     <QuickViewProd product={product} />
 
@@ -743,7 +963,17 @@ const SubcategoryPage = () => {
                       src={product.images?.[0]}
                       alt={product.name}
                       loading="lazy"
-                      className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
+                      className="
+                        object-cover
+                        w-full
+                        h-full
+                        absolute
+                        inset-0
+                        transition-opacity
+                        duration-300
+                        group-hover:opacity-0
+                        cursor-pointer
+                      "
                     />
 
                     {product.images?.[1] && (
@@ -751,14 +981,33 @@ const SubcategoryPage = () => {
                         src={product.images[1]}
                         alt={product.name}
                         loading="lazy"
-                        className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"
+                        className="
+                          object-cover
+                          w-full
+                          h-full
+                          absolute
+                          inset-0
+                          opacity-0
+                          transition-opacity
+                          duration-300
+                          group-hover:opacity-100
+                          cursor-pointer
+                        "
                       />
                     )}
                   </Link>
 
                   <div className="flex flex-col gap-2">
                     <div>
-                      <h1 className="text-left text-[#111111] font-bold text-base capitalize">
+                      <h1
+                        className="
+                          text-left
+                          text-[#111111]
+                          font-bold
+                          text-base
+                          capitalize
+                        "
+                      >
                         {product.name}
                       </h1>
 
@@ -766,13 +1015,15 @@ const SubcategoryPage = () => {
                         dangerouslySetInnerHTML={{
                           __html: truncateText(product.description, 19),
                         }}
-                        className="text-[#606060] font-edensor text-base"
+                        className="
+                          text-[#606060]
+                          font-edensor
+                          text-base
+                        "
                       />
                     </div>
-
                     <div className="flex justify-between items-center">
                       <Price amount={product.price} />
-
                       <AddToCart product={product} />
                     </div>
                   </div>
