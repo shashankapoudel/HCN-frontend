@@ -312,10 +312,6 @@ const SubcategoryPage = () => {
   const { category, subcategory } = useParams();
   const { products } = useContext(ProductContext);
 
-  // =========================
-  // FILTER STATES
-  // =========================
-
   const [maxPrice, setMaxPrice] = useState(10000);
 
   const [selectedSizes, setSelectedSizes] = useState([]);
@@ -324,10 +320,6 @@ const SubcategoryPage = () => {
   const [selectedLabels, setSelectedLabels] = useState([]);
 
   const [inStockOnly, setInStockOnly] = useState(false);
-
-  // =========================
-  // SIZE FILTER
-  // =========================
 
   const handleSizeChange = (size) => {
     setSelectedSizes((previousSizes) => {
@@ -339,10 +331,6 @@ const SubcategoryPage = () => {
     });
   };
 
-  // =========================
-  // MATERIAL FILTER
-  // =========================
-
   const handleMaterialChange = (material) => {
     setSelectedMaterials((previousMaterials) => {
       if (previousMaterials.includes(material)) {
@@ -352,10 +340,6 @@ const SubcategoryPage = () => {
       return [...previousMaterials, material];
     });
   };
-
-  // =========================
-  // COLOR FILTER
-  // =========================
 
   const handleColorChange = (color) => {
     setSelectedColors((previousColors) => {
@@ -367,10 +351,6 @@ const SubcategoryPage = () => {
     });
   };
 
-  // =========================
-  // LABEL FILTER
-  // =========================
-
   const handleLabelChange = (label) => {
     setSelectedLabels((previousLabels) => {
       if (previousLabels.includes(label)) {
@@ -381,12 +361,7 @@ const SubcategoryPage = () => {
     });
   };
 
-  // =========================
-  // FILTER PRODUCTS
-  // =========================
-
   const filteredProducts = products.filter((product) => {
-    // 1. CATEGORY + SUBCATEGORY
     const matchesCategory =
       product.category === category && product.subcategory === subcategory;
 
@@ -394,7 +369,6 @@ const SubcategoryPage = () => {
       return false;
     }
 
-    // 2. PRICE
     const productPrice = Number(product.price) || 0;
 
     const matchesPrice = productPrice <= maxPrice;
@@ -403,7 +377,6 @@ const SubcategoryPage = () => {
       return false;
     }
 
-    // 3. SIZE
     if (selectedSizes.length > 0) {
       const productSize = String(product.size || "").toLowerCase();
 
@@ -430,7 +403,6 @@ const SubcategoryPage = () => {
       }
     }
 
-    // 4. MATERIAL
     if (selectedMaterials.length > 0) {
       const productMaterial = String(product.material || "").toLowerCase();
 
@@ -443,7 +415,6 @@ const SubcategoryPage = () => {
       }
     }
 
-    // 5. COLOR
     if (selectedColors.length > 0) {
       const productColor = String(product.color || "").toLowerCase();
 
@@ -456,7 +427,6 @@ const SubcategoryPage = () => {
       }
     }
 
-    // 6. LABEL
     if (selectedLabels.length > 0) {
       const productLabel = String(product.label || "").toLowerCase();
 
@@ -469,7 +439,6 @@ const SubcategoryPage = () => {
       }
     }
 
-    // 7. STOCK
     if (inStockOnly) {
       const stock = Number(product.stock) || 0;
 
@@ -480,10 +449,6 @@ const SubcategoryPage = () => {
 
     return true;
   });
-
-  // =========================
-  // DESCRIPTION TEXT
-  // =========================
 
   const text = [
     {
@@ -512,10 +477,6 @@ const SubcategoryPage = () => {
     },
   ];
 
-  // =========================
-  // TRUNCATE DESCRIPTION
-  // =========================
-
   const truncateText = (description, wordLimit) => {
     if (!description) {
       return "";
@@ -530,24 +491,12 @@ const SubcategoryPage = () => {
     return words.slice(0, wordLimit).join(" ") + "...";
   };
 
-  // =========================
-  // CURRENT DESCRIPTION
-  // =========================
-
   const filteredText = text.find((item) => item.category === subcategory);
-
-  // =========================
-  // PAGE TITLE
-  // =========================
 
   const pageTitle =
     subcategory === "chakra"
       ? "Chakra Set Singing Bowls"
       : `${subcategory.replace("-", " ")} Singing Bowls`;
-
-  // =========================
-  // CLEAR FILTERS
-  // =========================
 
   const clearFilters = () => {
     setMaxPrice(10000);
@@ -558,10 +507,6 @@ const SubcategoryPage = () => {
     setInStockOnly(false);
   };
 
-  // =========================
-  // CHECK IF ANY FILTER ACTIVE
-  // =========================
-
   const hasActiveFilters =
     maxPrice < 10000 ||
     selectedSizes.length > 0 ||
@@ -570,16 +515,8 @@ const SubcategoryPage = () => {
     selectedLabels.length > 0 ||
     inStockOnly;
 
-  // =========================
-  // RETURN
-  // =========================
-
   return (
     <div className="min-h-screen p-5 lg:p-8">
-      {/* =========================
-          PAGE DESCRIPTION
-      ========================= */}
-
       <div className="p-2 lg:p-4 shadow-lg mb-6">
         <h1 className="text-2xl lg:text-3xl font-bold mb-4 capitalize text-center">
           {pageTitle}
@@ -591,14 +528,8 @@ const SubcategoryPage = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* =========================
-            FILTER SIDEBAR
-        ========================= */}
-
         <aside className="w-full lg:w-60 xl:w-64 flex-shrink-0">
           <div className="bg-white shadow-lg p-5 lg:sticky lg:top-5">
-            {/* FILTER HEADER */}
-
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold">Filters</h2>
 
@@ -611,10 +542,6 @@ const SubcategoryPage = () => {
                 </button>
               )}
             </div>
-
-            {/* =========================
-                PRICE
-            ========================= */}
 
             <div className="mb-8">
               <h3 className="text-lg font-bold mb-5">Price Range</h3>
@@ -647,14 +574,10 @@ const SubcategoryPage = () => {
               </div>
             </div>
 
-            {/* =========================
-                SIZE
-            ========================= */}
+            <div className="mb-4">
+              <h3 className="text-lg font-bold mb-2">Sizes</h3>
 
-            <div className="mb-8">
-              <h3 className="text-lg font-bold mb-4">Sizes</h3>
-
-              <div className="space-y-4">
+              <div className="space-y-1">
                 <label className="flex items-start gap-2 cursor-pointer">
                   <input
                     type="checkbox"
@@ -690,19 +613,15 @@ const SubcategoryPage = () => {
               </div>
             </div>
 
-            {/* =========================
-                MATERIAL
-            ========================= */}
+            <div className="mb-4">
+              <h3 className="text-lg font-bold mb-2">Material</h3>
 
-            <div className="mb-8">
-              <h3 className="text-lg font-bold mb-4">Material</h3>
-
-              <div className="space-y-4">
+              <div className="space-y-1">
                 {["Seven metals", "Brass", "Bronze", "Copper", "Crystal"].map(
                   (material) => (
                     <label
                       key={material}
-                      className="flex items-center gap-2 cursor-pointer"
+                      className="flex items-center gap-1 cursor-pointer"
                     >
                       <input
                         type="checkbox"
@@ -718,19 +637,15 @@ const SubcategoryPage = () => {
               </div>
             </div>
 
-            {/* =========================
-                COLOR
-            ========================= */}
+            <div className="mb-4">
+              <h3 className="text-lg font-bold mb-2">Color</h3>
 
-            <div className="mb-8">
-              <h3 className="text-lg font-bold mb-4">Color</h3>
-
-              <div className="space-y-4">
+              <div className="space-y-1">
                 {["Tiger", "Gold", "Black", "Silver", "Brown", "Antique"].map(
                   (color) => (
                     <label
                       key={color}
-                      className="flex items-center gap-2 cursor-pointer"
+                      className="flex items-center gap-1 cursor-pointer"
                     >
                       <input
                         type="checkbox"
@@ -746,14 +661,10 @@ const SubcategoryPage = () => {
               </div>
             </div>
 
-            {/* =========================
-                LABEL
-            ========================= */}
+            <div className="mb-4">
+              <h3 className="text-lg font-bold mb-2">Featured</h3>
 
-            <div className="mb-8">
-              <h3 className="text-lg font-bold mb-4">Featured</h3>
-
-              <div className="space-y-4">
+              <div className="space-y-1">
                 {[
                   "People's favourite",
                   "New Arrival",
@@ -762,7 +673,7 @@ const SubcategoryPage = () => {
                 ].map((label) => (
                   <label
                     key={label}
-                    className="flex items-center gap-2 cursor-pointer"
+                    className="flex items-center gap-1 cursor-pointer"
                   >
                     <input
                       type="checkbox"
@@ -777,14 +688,10 @@ const SubcategoryPage = () => {
               </div>
             </div>
 
-            {/* =========================
-                STOCK
-            ========================= */}
-
             <div>
-              <h3 className="text-lg font-bold mb-4">Availability</h3>
+              <h3 className="text-lg font-bold mb-2">Availability</h3>
 
-              <label className="flex items-center gap-2 cursor-pointer">
+              <label className="flex items-center gap-1 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={inStockOnly}
@@ -798,12 +705,8 @@ const SubcategoryPage = () => {
           </div>
         </aside>
 
-        {/* =========================
-            PRODUCTS
-        ========================= */}
-
         <div className="flex-1">
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-2">
             <p className="text-gray-600 text-sm">
               {filteredProducts.length}{" "}
               {filteredProducts.length === 1 ? "Product" : "Products"}
@@ -830,8 +733,6 @@ const SubcategoryPage = () => {
                   key={product._id}
                   className="w-full flex flex-col p-2 lg:p-4 gap-2 bg-white shadow-lg cursor-pointer"
                 >
-                  {/* IMAGE */}
-
                   <Link
                     to={`/product/${product._id}`}
                     className="relative w-full aspect-square overflow-hidden group"
@@ -855,8 +756,6 @@ const SubcategoryPage = () => {
                     )}
                   </Link>
 
-                  {/* PRODUCT INFORMATION */}
-
                   <div className="flex flex-col gap-2">
                     <div>
                       <h1 className="text-left text-[#111111] font-bold text-base capitalize">
@@ -865,7 +764,7 @@ const SubcategoryPage = () => {
 
                       <p
                         dangerouslySetInnerHTML={{
-                          __html: truncateText(product.description, 16),
+                          __html: truncateText(product.description, 19),
                         }}
                         className="text-[#606060] font-edensor text-base"
                       />
