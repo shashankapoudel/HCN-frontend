@@ -289,7 +289,7 @@ const Header = () => {
         </div>
 
         <div className="flex bg-[#bb2821] items-center justify-center w-4/5 p-2">
-          <p>Free holiday offer until April 23, 2025</p>
+          <p>Authentic Singing Bowls, Sacred Rituals & Himalayan Handicrafts</p>
         </div>
       </div>
 
