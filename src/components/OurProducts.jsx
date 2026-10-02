@@ -23,24 +23,22 @@ const OurProducts = () => {
     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
       {/* Heading */}
       <div>
-        <h1 className="text-[#111111] text-center font-edensor text-lg">
+        <h1 className="text-[#111111] text-center font-edensor text-2xl md:text-lg">
           Himalayas Collections
         </h1>
 
-        <p className="text-[#606060] text-sm md:text-base text-center">
+        <p className="text-[#606060] text-lg  md:text-base text-center">
           We offer authentic Himalayan handicrafts and traditional Nepalese
           products inspired by Tibetan and Nepali culture.
         </p>
       </div>
 
-      {/* Products */}
       <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-5">
         {products.slice(0, 4).map((product) => (
           <div
             key={product._id}
             className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
           >
-            {/* Product Image */}
             <Link
               to={`/product/${product._id}`}
               className="relative w-full aspect-square overflow-hidden group"
@@ -67,11 +65,11 @@ const OurProducts = () => {
             {/* Product Information */}
             <div className="flex flex-col gap-2">
               <div>
-                <h1 className="text-left text-[#111111] font-bold text-base capitalize">
+                <h1 className="text-left text-[#111111] font-bold text-lg md:text-base capitalize">
                   {product.name}
                 </h1>
 
-                <p className="text-[#606060] font-edensor text-base">
+                <p className="text-[#606060] font-edensor text-xl md:text-base">
                   {truncateText(product.description, 20)}
                 </p>
               </div>

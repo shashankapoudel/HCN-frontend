@@ -19,10 +19,10 @@ const CategorySingingBowl = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
       <div>
-        <h1 className="text-[#111111] text-center font-edensor text-lg">
+        <h1 className="text-[#111111] text-center font-edensor text-2xl md:text-lg">
           Himalayas Healer Collection
         </h1>
-        <p className="text-[#606060] text-sm md:text-base text-center">
+        <p className="text-[#606060] text-lg md:text-base text-center">
           We offer specially crafted Himalayan singing bowls and sound healing
           tools for healers, meditators, and spiritual practitioners.
         </p>
@@ -54,14 +54,14 @@ const CategorySingingBowl = () => {
 
             <div className="flex flex-col gap-2 mt-4">
               <div>
-                <h1 className="text-left text-[#111111] font-bold text-base capitalize">
+                <h1 className="text-left text-[#111111] font-bold text-lg md:text-base capitalize">
                   {product.name}
                 </h1>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: truncateText(product.description, 15),
                   }}
-                  className="text-[#606060] font-edensor text-base"
+                  className="text-[#606060] font-edensor text-xl md:text-base"
                 ></p>
               </div>
 

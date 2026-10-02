@@ -315,7 +315,7 @@ const Header = () => {
         >
           <img
             src="/Images/Logo1.png"
-            className="object-cover w-64"
+            className="object-cover w-full lg:w-64"
             alt="Logo"
             loading="lazy"
           />
@@ -353,7 +353,7 @@ const Header = () => {
           ))}
         </div>
 
-        <div className="w-2/3 md:w-1/5">
+        <div className="hidden md:block w-2/3 md:w-1/5">
           <SearchBox />
         </div>
 

@@ -38,7 +38,7 @@ const ProductBadges = () => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`pb-2 relative font-edensor font-semibold capitalize text-sm md:text-base transition ${
+            className={`pb-2 relative font-edensor font-semibold capitalize text-lg md:text-base transition ${
               activeTab === tab ? "text-[#bb2821]" : "text-[#999]"
             }`}
           >

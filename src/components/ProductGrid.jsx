@@ -41,14 +41,14 @@ const ProductGrid = ({ title, description, products }) => {
 
             <div className="flex flex-col gap-2">
               <div className="">
-                <h1 className="text-[#111111] font-bold text-base capitalize">
+                <h1 className="text-[#111111] font-bold text-lg md:text-base capitalize">
                   {product.name}
                 </h1>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: truncateText(product.description, 15),
                   }}
-                  className="text-[#606060] text-base font-edensor"
+                  className="text-[#606060] text-xl md:text-base font-edensor"
                 ></p>
               </div>
 

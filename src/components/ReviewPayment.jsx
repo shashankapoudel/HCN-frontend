@@ -8,10 +8,10 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
     return acc + item.price * item.quantity;
   }, 0);
 
-  const shipping = 1250;
-  const tax = 1250;
+  // const shipping = 1250;
+  // const tax = 1250;
 
-  const total = subtotal + shipping + tax;
+  const total = subtotal;
 
   const handleQuantity = (id, type) => {
     const updatedItems = items.map((item) => {
@@ -46,54 +46,6 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
   };
 
   console.log(items);
-  // const handlePlaceOrder = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       "http://localhost:5000/api/payment/create-checkout-session",
-  //       {
-  //         method: "POST",
-
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-
-  //         body: JSON.stringify({
-  //           customer: {
-  //             name: formData.personalInfo.fullName,
-  //             email: formData.personalInfo.email,
-  //           },
-
-  //           items: items.map((item) => ({
-  //             productId: item._id,
-  //             quantity: item.quantity,
-  //           })),
-
-  //           shippingAddress: {
-  //             country: formData.shippingAddress.country,
-  //             state: formData.shippingAddress.state,
-  //             city: formData.shippingAddress.city,
-  //             street: formData.shippingAddress.street,
-  //             zip: formData.shippingAddress.zip,
-  //           },
-  //         }),
-  //       },
-  //     );
-
-  //     const data = await response.json();
-
-  //     console.log(data);
-
-  //     if (response.ok && data.success) {
-  //       // Redirect customer to Stripe
-  //       window.location.href = data.url;
-  //     } else {
-  //       alert(data.message || "Unable to start payment");
-  //     }
-  //   } catch (error) {
-  //     console.error("Payment error:", error);
-  //     alert("Something went wrong while starting payment");
-  //   }
-  // };
 
   const handlePlaceOrder = async () => {
     try {
@@ -213,18 +165,18 @@ const ReviewPayment = ({ nextStep, prevStep, formData, setFormData }) => {
 
             <span>${subtotal.toFixed(2)}</span>
           </div>
-
+          {/* 
           <div className="flex justify-between">
             <span>Shipping</span>
 
             <span>${shipping.toFixed(2)}</span>
-          </div>
-
+          </div> */}
+          {/* 
           <div className="flex justify-between">
             <span>Tax</span>
 
             <span>${tax.toFixed(2)}</span>
-          </div>
+          </div> */}
 
           <div className="border-t pt-4 flex justify-between font-bold text-lg">
             <span>Total</span>
