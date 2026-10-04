@@ -8,6 +8,7 @@ import AddToCart from "../components/AddToCart";
 
 import { useRef } from "react";
 import Price from "../components/Price";
+import ProductSEO from "../components/ProductSEO";
 
 const SingleProductPage = () => {
   const thumbsRef = useRef(null);
@@ -167,6 +168,7 @@ const SingleProductPage = () => {
 
   return (
     <div className="min-h-screen  flex flex-col">
+      <ProductSEO product={product} />
       <div className="flex gap-1 font-poppins text-sm font-extralight px-2 lg:px-6 py-2 lg:py-4 ">
         <button
           className="text-[#f0b3b0] hover:text-[#8a0c06] text-left"

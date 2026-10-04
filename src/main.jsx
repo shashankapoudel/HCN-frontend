@@ -5,13 +5,16 @@ import "./App.css";
 import App from "./App.jsx";
 import { ProductProvider } from "./context/ProductProvider.jsx";
 import { CurrencyProvider } from "./context/CurrencyContext";
+import { HelmetProvider } from "react-helmet-async";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ProductProvider>
-      <CurrencyProvider>
-        <App />
-      </CurrencyProvider>
+      <HelmetProvider>
+        <CurrencyProvider>
+          <App />
+        </CurrencyProvider>
+      </HelmetProvider>
     </ProductProvider>
   </StrictMode>,
 );
