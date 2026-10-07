@@ -157,7 +157,7 @@ export default function TestimonialsPage() {
           <div className="h-[62px] w-px bg-gray-400 mx-4" />
 
           <div className="flex items-center gap-4">
-            <span className="text-[25px] font-bold">1000+</span>
+            <span className="text-[25px] font-bold">10+</span>
 
             <span className="text-[17px] font-medium leading-[18px]">
               Google

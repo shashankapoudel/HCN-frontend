@@ -335,7 +335,7 @@ const SingleProductPage = () => {
                   <div className="">
                     <button
                       onClick={() => handleColorClick(cat)}
-                      className="border border-[#bb2821] text-[#0B4D81] w-full p-4 hover:bg-[#0B4D81] hover:text-white"
+                      className="border border-[#bb2821] text-[#0B4D81] w-full p-1 hover:bg-[#0B4D81] hover:text-white"
                     >
                       {cat}
                     </button>

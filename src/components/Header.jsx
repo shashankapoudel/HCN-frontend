@@ -284,7 +284,7 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            NSHISchool
+            NSHISCHOOL
           </a>
         </div>
 
