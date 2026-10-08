@@ -343,39 +343,6 @@ const SingleProductPage = () => {
                 ))}
               </div>
             </div>
-            {/* 
-            <div className="mt-4 p-2">
-              <h1 className="font-semibold text-[#bb2821]">
-                Select Accessories Bundle:
-              </h1>
-              <div className="flex gap-4 py-3">
-                {category3.map((cat, index) => (
-                  <div className="">
-                    <button className="border border-[#bb2821] text-[#0B4D81] p-4">
-                      {cat}
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div> */}
-
-            {/* <div className="mt-4 p-2">
-              <div className="flex gap-4 py-3">
-                <div className="">
-                  <button
-                    onClick={() => setHasAccessory((prev) => !prev)}
-                    className={`border p-4 hover:bg-[#ADD8E6] hover:text-[#FFFFFF] ${
-                      hasAccessory
-                        ? "bg-[#0B4D81] text-white"
-                        : "text-[#0B4D81]"
-                    }`}
-                  >
-                    {hasAccessory ? "Accessory Added ✓" : "Add Accessories"}
-                  </button>
-                  <h1 className="text-center">+$30</h1>
-                </div>
-              </div>
-            </div> */}
 
             <div className="mt-4 p-2">
               <h1 className="font-semibold text-[#bb2821]">Add-ons</h1>

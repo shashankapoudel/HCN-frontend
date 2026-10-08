@@ -353,6 +353,7 @@ const AddProductModal = ({
     "Latest Products",
     "On Sale",
     "Himalayas Products",
+    "Healer's Collection",
   ];
 
   if (!isOpen) return null;
