@@ -347,7 +347,13 @@ const AddProductModal = ({
     }
   };
 
-  const Label = ["Select", " People's favourite", "Latest Products", "On Sale"];
+  const Label = [
+    "Select",
+    " People's favourite",
+    "Latest Products",
+    "On Sale",
+    "Himalayas Products",
+  ];
 
   if (!isOpen) return null;
 
