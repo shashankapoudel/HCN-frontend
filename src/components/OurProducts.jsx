@@ -63,7 +63,7 @@ const OurProducts = () => {
             </Link>
 
             {/* Product Information */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 mt-2">
               <div>
                 <h1 className="text-left text-[#111111] font-bold text-lg md:text-base capitalize">
                   {product.name}

@@ -1,71 +1,4 @@
-// import React from "react";
-// import AddToCart from "./AddToCart";
-// import { useNavigate } from "react-router-dom";
-// import QuickViewProd from "./QuickViewProd";
-// import Price from "./Price";
-// import { Link } from "react-router-dom";
 
-// const ProductGrid = ({ title, description, products }) => {
-//   const truncateText = (text, wordLimit) => {
-//     const words = text.split(" ");
-//     if (words.length <= wordLimit) return text;
-//     return words.slice(0, wordLimit).join(" ") + "...";
-//   };
-//   const navigate = useNavigate();
-
-//   console.log(products);
-//   return (
-//     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
-//       <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-//         {products.map((product) => (
-//           <Link
-//             to={`/product/${product._id}`}
-//             key={product._id}
-//             className="w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-3 lg:p-6 relative"
-//           >
-//             <div className="relative bg-[#EBEBEB]  w-full aspect-square overflow-hidden group">
-//               <QuickViewProd product={product} />
-//               <img
-//                 src={product.images[0]}
-//                 alt={product.name}
-//                 loading="lazy"
-//                 className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
-//               />
-//               <img
-//                 src={product.images[1]}
-//                 alt={product.name}
-//                 loading="lazy"
-//                 className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"
-//               />
-//             </div>
-
-//             <div className="flex flex-col gap-2">
-//               <div className="">
-//                 <h1 className="text-[#111111] font-bold text-lg md:text-base capitalize">
-//                   {product.name}
-//                 </h1>
-//                 <p
-//                   dangerouslySetInnerHTML={{
-//                     __html: truncateText(product.description, 15),
-//                   }}
-//                   className="text-[#606060] text-xl md:text-base font-edensor"
-//                 ></p>
-//               </div>
-
-//               <div className="flex justify-between items-center">
-//                 <Price amount={product.price} />
-//                 {/* <p className='text-[#bb2821] font-bold'>${product.price}</p> */}
-//                 <AddToCart product={product} />
-//               </div>
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductGrid;
 
 import React from "react";
 import AddToCart from "./AddToCart";
@@ -74,8 +7,8 @@ import Price from "./Price";
 import { Link } from "react-router-dom";
 
 const ProductGrid = ({ title, description, products }) => {
-  const truncateText = (text, wordLimit) => {
-    const words = text.split(" ");
+  const truncateText = (text = "", wordLimit = 16) => {
+    const words = text.split(/\s+/).filter(Boolean);
 
     if (words.length <= wordLimit) return text;
 
@@ -84,53 +17,68 @@ const ProductGrid = ({ title, description, products }) => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
-      <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 items-stretch">
         {products.map((product) => (
           <div
             key={product._id}
-            className="w-full flex flex-col justify-between bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-3 lg:p-6 relative"
+            className="w-full h-full flex flex-col bg-white shadow-md rounded-md overflow-hidden transition-all duration-200 hover:shadow-lg p-3 lg:p-5"
           >
-            {/* ONLY IMAGE IS CLICKABLE */}
-            <Link to={`/product/${product._id}`}>
+            {/* IMAGE: Same aspect ratio for every product */}
+            <Link
+              to={`/product/${product._id}`}
+              className="block w-full shrink-0"
+            >
               <div className="relative bg-[#EBEBEB] w-full aspect-square overflow-hidden group">
                 <QuickViewProd product={product} />
 
-                <img
-                  src={product.images[0]}
-                  alt={product.name}
-                  loading="lazy"
-                  className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
-                />
+                {product.images?.[0] && (
+                  <img
+                    src={product.images[0]}
+                    alt={product.name}
+                    loading="lazy"
+                    className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
+                  />
+                )}
 
-                {product.images[1] && (
+                {product.images?.[1] && (
                   <img
                     src={product.images[1]}
                     alt={product.name}
                     loading="lazy"
-                    className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"
+                    className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 )}
               </div>
             </Link>
 
-            <div className="flex flex-col gap-2 mt-3">
-              <div>
-                <h1 className="text-[#111111] font-bold text-lg md:text-base capitalize">
+            {/* CONTENT: Fills the remaining card height */}
+            <div className="flex flex-col flex-1 min-w-0 mt-3">
+              {/* TITLE: Reserve space for two lines */}
+              <div className="min-h-[3.5rem]">
+                <h2 className="text-[#111111] font-bold text-base lg:text-lg capitalize leading-7 line-clamp-2">
                   {product.name}
-                </h1>
-
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: truncateText(product.description, 15),
-                  }}
-                  className="text-[#606060] text-xl md:text-base font-edensor"
-                ></p>
+                </h2>
               </div>
 
-              <div className="flex justify-between items-center">
-                <Price amount={product.price} />
+              {/* DESCRIPTION: Reserve space for three lines */}
+              <div className="min-h-[4.5rem] mt-1">
+                <p
+                  className="text-[#606060] text-base font-edensor leading-6 line-clamp-3"
+                  dangerouslySetInnerHTML={{
+                    __html: truncateText(product.description, 16),
+                  }}
+                />
+              </div>
 
-                <AddToCart product={product} />
+              {/* PRICE + ADD TO CART: Always at the bottom */}
+              <div className="flex justify-between items-center gap-2 mt-auto pt-3">
+                <div className="min-w-0">
+                  <Price amount={product.price} />
+                </div>
+
+                <div className="shrink-0">
+                  <AddToCart product={product} />
+                </div>
               </div>
             </div>
           </div>
