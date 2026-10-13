@@ -19,6 +19,10 @@ const OurProducts = () => {
     return words.slice(0, wordLimit).join(" ") + "...";
   };
 
+  const filteredProducts = products.filter(
+    (p) => p.label === "Himalayas Products",
+  );
+
   return (
     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
       {/* Heading */}
@@ -34,7 +38,7 @@ const OurProducts = () => {
       </div>
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-5">
-        {products.slice(0, 4).map((product) => (
+        {filteredProducts.slice(0, 4).map((product) => (
           <div
             key={product._id}
             className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"

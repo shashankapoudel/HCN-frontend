@@ -57,7 +57,7 @@ const OurTeam = () => {
       name: "Singing Bowl Artisans",
       description:
         "Our Singing Bowl Artisans carry forward a centuries-old tradition of creating authentic Himalayan singing bowls. Each bowl is carefully handcrafted using traditional techniques that require patience, precision, and deep knowledge of the craft.These artisans dedicate years to mastering the art of shaping, tuning, and finishing each bowl to produce its unique sound and vibration. Their work is not only a livelihood but also a way to preserve cultural heritage.By supporting our singing bowls, you are helping sustain this timeless craft and empowering artisans to continue their legacy. Every bowl reflects dedication, skill, and a deep connection to tradition.",
-      image: "",
+      image: "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY3.jpg",
     },
 
     {
@@ -71,7 +71,7 @@ const OurTeam = () => {
       name: "Singing Bowl Coloring (Antique Artisans)",
       description:
         "Our Antique Coloring Artisans bring life and character to singing bowls through specialized coloring and finishing techniques. Their work enhances the aesthetic appeal while preserving the authentic, antique look that reflects history and tradition.Using natural methods and careful handwork, these artisans ensure that each piece has a unique and timeless appearance. Their craftsmanship adds depth, beauty, and cultural value to every bowl.By supporting this art, you help preserve traditional finishing techniques and sustain the livelihoods of artisans dedicated to this unique craft.",
-      image: "",
+      image: "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY5.jpg",
     },
   ];
 
@@ -155,10 +155,10 @@ const OurTeam = () => {
             </p>
           </div>
 
-          <div className=" w-full h-full lg:w-1/2 mt-3 p-2">
+          <div className=" w-full h-full lg:w-1/2 mt-3 p-5">
             <img
               src={a.image}
-              className="object-cover w-full h-full rounded-md"
+              className="object-cover w-full h-full rounded-md border-4 border-gray-400 "
               loading="lazy"
             />
           </div>

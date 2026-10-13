@@ -121,7 +121,7 @@ const WhyHCN = () => {
       title: "Our own Factories and Artisans",
       description:
         "We're not just a shop; we're the makers. We proudly craft our own products right here in Nepal, in our very own workshops. This means we work directly with our incredibly talented Nepali artisans, ensuring every single piece is created under ethical conditions and with fair wages. Because we oversee the entire process, from the first step to the last, you receive exceptionally high-quality crafts made with genuine, time-honored traditional methods. It's quality and authenticity, guaranteed.",
-      image: "/Images/homeImage.png",
+      image: "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY3.jpg",
     },
 
     {
@@ -135,7 +135,7 @@ const WhyHCN = () => {
       title: "Unwavering Authenticity",
       description:
         "In a market full of fakes, we stand firm on guaranteed authenticity. Every single item, from our detailed Thangka paintings to our hand-beaten singing bowls, is a genuine product of Nepal. They're made using traditional techniques and local materials. We share clear information about where our products come from and how they're made, so you can be completely sure you're getting a true piece of Himalayan heritage.",
-      image: "/Images/image.png",
+      image: "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY5.jpg",
     },
 
     {
@@ -149,14 +149,14 @@ const WhyHCN = () => {
       title: "Curated by Sound Healing Experts",
       description:
         "Our Himalayan singing bowls are far from just a random collection. Each one is carefully chosen by certified sound healing experts. This special process means every bowl isn't just beautiful to look at, but more importantly, it delivers superior sound vibrations and real healing potential. When you pick a singing bowl from us, you're getting a powerful tool that's been professionally checked and approved to create truly deep, healing sounds.",
-      image: "/Images/homeImage.png",
+      image: "/Images/team.jpg",
     },
 
     {
       title: "Healer's Collections",
       description:
         "Healer’s Collections is a celebration of wellness, balance, and natural healing. Each piece in this collection is thoughtfully curated and crafted to promote peace, positivity, and holistic well-being. Inspired by traditional practices and the wisdom of nature, our products are made using authentic materials and mindful techniques by skilled Nepali artisans. Whether it’s for relaxation, spiritual connection, or everyday harmony, every item is designed to nurture your mind, body, and soul—bringing a sense of calm and healing into your daily life.",
-      image: "/Images/homeImage.png",
+      image: "/Images/OurStory4.jpg",
     },
   ];
 
