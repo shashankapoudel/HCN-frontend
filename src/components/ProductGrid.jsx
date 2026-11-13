@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import AddToCart from "./AddToCart";
 import QuickViewProd from "./QuickViewProd";
@@ -13,6 +11,12 @@ const ProductGrid = ({ title, description, products }) => {
     if (words.length <= wordLimit) return text;
 
     return words.slice(0, wordLimit).join(" ") + "...";
+  };
+
+  const optimizeImage = (url, width = 400) => {
+    if (!url) return "";
+
+    return url.replace("/upload/", `/upload/f_auto,q_auto,w_${width},c_limit/`);
   };
 
   return (
@@ -42,7 +46,7 @@ const ProductGrid = ({ title, description, products }) => {
 
                 {product.images?.[1] && (
                   <img
-                    src={product.images[1]}
+                    src={optimizeImage(product.images[1], 400)}
                     alt={product.name}
                     loading="lazy"
                     className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -51,16 +55,13 @@ const ProductGrid = ({ title, description, products }) => {
               </div>
             </Link>
 
-            {/* CONTENT: Fills the remaining card height */}
             <div className="flex flex-col flex-1 min-w-0 mt-3">
-              {/* TITLE: Reserve space for two lines */}
               <div className="min-h-[3.5rem]">
                 <h2 className="text-[#111111] font-bold text-base lg:text-lg capitalize leading-7 line-clamp-2">
                   {product.name}
                 </h2>
               </div>
 
-              {/* DESCRIPTION: Reserve space for three lines */}
               <div className="min-h-[4.5rem] mt-1">
                 <p
                   className="text-[#606060] text-base font-edensor leading-6 line-clamp-3"
@@ -70,7 +71,6 @@ const ProductGrid = ({ title, description, products }) => {
                 />
               </div>
 
-              {/* PRICE + ADD TO CART: Always at the bottom */}
               <div className="flex justify-between items-center gap-2 mt-auto pt-3">
                 <div className="min-w-0">
                   <Price amount={product.price} />

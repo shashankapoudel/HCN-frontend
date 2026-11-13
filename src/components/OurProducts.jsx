@@ -1,17 +1,121 @@
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
+// import { ProductContext } from "../context/ProductProvider";
+// import AddToCart from "./AddToCart";
+// import QuickViewProd from "./QuickViewProd";
+// import Price from "./Price";
+// import CurrencySelector from "./CurrencySelector";
+// import { Link } from "react-router-dom";
+
+// const OurProducts = () => {
+//   const { products } = useContext(ProductContext);
+
+//   console.log(products);
+
+//   const truncateText = (text, wordLimit) => {
+//     const words = text.split(" ");
+
+//     if (words.length <= wordLimit) return text;
+
+//     return words.slice(0, wordLimit).join(" ") + "...";
+//   };
+
+//   const filteredProducts = products.filter(
+//     (p) => p.label === "Himalayas Products",
+//   );
+
+//   return (
+//     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
+//       {/* Heading */}
+//       <div>
+//         <h1 className="text-[#111111] text-center font-edensor text-2xl md:text-lg">
+//           Himalayas Collections
+//         </h1>
+
+//         <p className="text-[#606060] text-lg  md:text-base text-center">
+//           We offer authentic Himalayan handicrafts and traditional Nepalese
+//           products inspired by Tibetan and Nepali culture.
+//         </p>
+//       </div>
+
+//       <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-5">
+//         {filteredProducts.slice(0, 4).map((product) => (
+//           <div
+//             key={product._id}
+//             className="w-full flex flex-col p-3 lg:p-6 bg-white shadow-lg justify-between cursor-pointer"
+//           >
+//             <Link
+//               to={`/product/${product._id}`}
+//               className="relative w-full aspect-square overflow-hidden group"
+//             >
+//               <QuickViewProd product={product} />
+
+//               <img
+//                 src={product.images[0]}
+//                 alt={product.name}
+//                 loading="lazy"
+//                 className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
+//               />
+
+//               <img
+//                 src={product.images[1]}
+//                 alt={product.name}
+//                 loading="lazy"
+//                 className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"
+//               />
+//             </Link>
+
+//             {/* Product Information */}
+//             <div className="flex flex-col gap-2 mt-2">
+//               <div>
+//                 <h1 className="text-left text-[#111111] font-bold text-lg md:text-base capitalize">
+//                   {product.name}
+//                 </h1>
+
+//                 <p className="text-[#606060] font-edensor text-xl md:text-base">
+//                   {truncateText(product.description, 20)}
+//                 </p>
+//               </div>
+
+//               {/* Price + Cart */}
+//               <div className="flex justify-between items-center">
+//                 <Price amount={product.price} />
+
+//                 <AddToCart product={product} />
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default OurProducts;
+
+import React, { useContext, useMemo } from "react";
 import { ProductContext } from "../context/ProductProvider";
 import AddToCart from "./AddToCart";
 import QuickViewProd from "./QuickViewProd";
 import Price from "./Price";
-import CurrencySelector from "./CurrencySelector";
 import { Link } from "react-router-dom";
+
+const optimizeImage = (url, width = 400) => {
+  if (!url) return "";
+
+  return url.replace("/upload/", `/upload/f_auto,q_auto,w_${width},c_limit/`);
+};
 
 const OurProducts = () => {
   const { products } = useContext(ProductContext);
 
-  console.log(products);
+  const filteredProducts = useMemo(
+    () => products.filter((p) => p.label === "Himalayas Products"),
+    [products],
+  );
 
   const truncateText = (text, wordLimit) => {
+    if (!text) return "";
+
     const words = text.split(" ");
 
     if (words.length <= wordLimit) return text;
@@ -19,19 +123,14 @@ const OurProducts = () => {
     return words.slice(0, wordLimit).join(" ") + "...";
   };
 
-  const filteredProducts = products.filter(
-    (p) => p.label === "Himalayas Products",
-  );
-
   return (
     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
-      {/* Heading */}
       <div>
         <h1 className="text-[#111111] text-center font-edensor text-2xl md:text-lg">
           Himalayas Collections
         </h1>
 
-        <p className="text-[#606060] text-lg  md:text-base text-center">
+        <p className="text-[#606060] text-lg md:text-base text-center">
           We offer authentic Himalayan handicrafts and traditional Nepalese
           products inspired by Tibetan and Nepali culture.
         </p>
@@ -49,24 +148,27 @@ const OurProducts = () => {
             >
               <QuickViewProd product={product} />
 
-              {/* First Image */}
-              <img
-                src={product.images[0]}
-                alt={product.name}
-                loading="lazy"
-                className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
-              />
+              {product.images?.[0] && (
+                <img
+                  src={optimizeImage(product.images[0], 400)}
+                  alt={product.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
+                />
+              )}
 
-              {/* Second Image */}
-              <img
-                src={product.images[1]}
-                alt={product.name}
-                loading="lazy"
-                className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"
-              />
+              {product.images?.[1] && (
+                <img
+                  src={optimizeImage(product.images[1], 400)}
+                  alt={`${product.name} alternate view`}
+                  loading="lazy"
+                  decoding="async"
+                  className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                />
+              )}
             </Link>
 
-            {/* Product Information */}
             <div className="flex flex-col gap-2 mt-2">
               <div>
                 <h1 className="text-left text-[#111111] font-bold text-lg md:text-base capitalize">
@@ -78,7 +180,6 @@ const OurProducts = () => {
                 </p>
               </div>
 
-              {/* Price + Cart */}
               <div className="flex justify-between items-center">
                 <Price amount={product.price} />
 
