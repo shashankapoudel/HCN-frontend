@@ -211,6 +211,12 @@ const SubcategoryPage = () => {
     selectedLabels.length > 0 ||
     inStockOnly;
 
+  const optimizeImage = (url, width = 400) => {
+    if (!url) return "";
+
+    return url.replace("/upload/", `/upload/f_auto,q_auto,w_${width},c_limit/`);
+  };
+
   return (
     <div className="min-h-screen p-5 lg:p-8">
       <div className="p-2 lg:p-4 shadow-lg mb-6">
@@ -465,7 +471,7 @@ const SubcategoryPage = () => {
                     <QuickViewProd product={product} />
 
                     <img
-                      src={product.images?.[0]}
+                      src={optimizeImage(product.images[0], 400)}
                       alt={product.name}
                       loading="lazy"
                       className="
@@ -483,7 +489,7 @@ const SubcategoryPage = () => {
 
                     {product.images?.[1] && (
                       <img
-                        src={product.images[1]}
+                        src={optimizeImage(product.images[1], 400)}
                         alt={product.name}
                         loading="lazy"
                         className="

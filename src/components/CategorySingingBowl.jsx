@@ -16,6 +16,12 @@ const CategorySingingBowl = () => {
     return words.slice(0, wordLimit).join(" ") + "...";
   };
 
+  const optimizeImage = (url, width = 400) => {
+    if (!url) return "";
+
+    return url.replace("/upload/", `/upload/f_auto,q_auto,w_${width},c_limit/`);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center w-full p-2 lg:p-4 gap-2">
       <div>
@@ -38,14 +44,14 @@ const CategorySingingBowl = () => {
               <QuickViewProd product={product} />
 
               <img
-                src={product.images[0]}
+                src={optimizeImage(product.images[0], 400)}
                 alt={product.name}
                 loading="lazy"
                 className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
               />
 
               <img
-                src={product.images[1]}
+                src={optimizeImage(product.images[1], 400)}
                 alt={product.name}
                 loading="lazy"
                 className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer"

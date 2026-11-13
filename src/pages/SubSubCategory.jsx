@@ -151,6 +151,12 @@ const SubSubCategory = () => {
     (s) => s.name === subsubcategory,
   );
 
+  const optimizeImage = (url, width = 400) => {
+    if (!url) return "";
+
+    return url.replace("/upload/", `/upload/f_auto,q_auto,w_${width},c_limit/`);
+  };
+
   return (
     <div className="min-h-screen p-3 lg:p-9">
       {/* Page Title */}
@@ -173,16 +179,14 @@ const SubSubCategory = () => {
               key={product._id}
               className="w-full flex flex-col p-2 lg:p-4 bg-white shadow-lg gap-2"
             >
-              {/* Product Image */}
               <Link
                 to={`/product/${product._id}`}
                 className="relative w-full aspect-square overflow-hidden group cursor-pointer block"
               >
                 <QuickViewProd product={product} />
 
-                {/* First Image */}
                 <img
-                  src={product.images[0]}
+                  src={optimizeImage(product.images[0], 400)}
                   alt={product.name}
                   loading="lazy"
                   className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
@@ -191,7 +195,7 @@ const SubSubCategory = () => {
                 {/* Second Image */}
                 {product.images[1] && (
                   <img
-                    src={product.images[1]}
+                    src={optimizeImage(product.images[1], 400)}
                     alt={product.name}
                     loading="lazy"
                     className="object-cover w-full h-full absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"

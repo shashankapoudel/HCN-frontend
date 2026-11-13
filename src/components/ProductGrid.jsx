@@ -37,7 +37,7 @@ const ProductGrid = ({ title, description, products }) => {
 
                 {product.images?.[0] && (
                   <img
-                    src={product.images[0]}
+                    src={optimizeImage(product.images[0], 400)}
                     alt={product.name}
                     loading="lazy"
                     className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
