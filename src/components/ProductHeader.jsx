@@ -253,10 +253,10 @@ const ProductHeader = () => {
 
   return (
     <div className="hidden lg:flex w-full px-2 py-2">
-      <div className="flex gap-6 w-full justify-center text-[#111111] text-sm ">
+      <div className="flex gap-5 w-full justify-center text-[#111111] text-[13px] ">
         {navItems.map((item) => (
           <div key={item.name} className="relative group">
-            <div className="flex items-center gap-1 cursor-pointer font-semibold">
+            <div className="flex items-center gap-0 cursor-pointer font-semibold">
               <NavLink
                 to={item.path}
                 className={
