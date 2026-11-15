@@ -166,6 +166,12 @@ const SingleProductPage = () => {
     window.open(url, "_blank");
   };
 
+  const optimizeImage = (url, width = 400) => {
+    if (!url) return "";
+
+    return url.replace("/upload/", `/upload/f_auto,q_auto,w_${width},c_limit/`);
+  };
+
   return (
     <div className="min-h-screen  flex flex-col">
       <ProductSEO product={product} />
@@ -221,7 +227,7 @@ const SingleProductPage = () => {
                 {displayImages.map((img, index) => (
                   <img
                     key={index}
-                    src={img}
+                    src={optimizeImage(img, 400)}
                     loading="lazy"
                     onClick={() => handleImageClick(index)}
                     className={`w-20 h-20 object-cover rounded cursor-pointer border flex-shrink-0
