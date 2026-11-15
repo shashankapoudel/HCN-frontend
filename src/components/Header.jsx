@@ -299,7 +299,7 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-center gap-5">
-          <div className="flex gap-1 text-sm">
+          <div className="flex gap-1 text-[13px]">
             <p className="text-center">Kathmandu,Nepal</p>
             <a href="tel:+9779849779322" className="hover:underline">
               +977- 9849779890
