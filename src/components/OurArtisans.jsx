@@ -29,14 +29,14 @@ const OurArtisans = () => {
       name: "Stitched with Care, Sewn by Women of Strength",
       description:
         "Our cushion makers sew each piece by hand, with strong seams that hold their shape. A good cushion keeps a singing bowl steady and makes a long practice more comfortable. Many of our cushion makers are women, and this work gives them a source of income and independence. Every stitch reflects their skill and pride",
-      image: "/Images/Artisans/1.jpeg",
+      image: "/Images/Artisans/4.jpeg",
     },
 
     {
       name: "Every Line Drawn by Hand",
       description:
         "Our etching artists create fine patterns and images on metal by hand. They draw the design, then carefully mark it into the surface, one line at a time. This slow method gives each piece a unique look, and the detail often reflects the spiritual symbols and art of Nepal and Tibet.",
-      image: "/Images/Artisans/1.jpeg",
+      image: "/Images/Artisans/5.jpeg",
     },
   ];
 
