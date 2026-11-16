@@ -157,7 +157,7 @@ const OurArtisans = () => {
   const currentArtisan = artisans[currentIndex];
 
   return (
-    <div className="p-3 lg:p-5 flex flex-col">
+    <div className="p-3 lg:p-5 flex flex-col w-full lg:w-2/3">
       <h1 className="text-[#0B4D81] text-2xl font-semibold text-center mb-6">
         Our Artisans
       </h1>

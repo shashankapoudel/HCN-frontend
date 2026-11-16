@@ -116,7 +116,7 @@ const OurTeam = () => {
         </motion.div>
       </motion.div>
 
-      <div>
+      <div className="flex items-center justify-center">
         <OurArtisans />
       </div>
 
