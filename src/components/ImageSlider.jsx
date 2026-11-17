@@ -57,9 +57,9 @@ const ImageSlider = () => {
         <div className="w-full max-w-[1450px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-[850px]">
             {/* Small Heading */}
-            <p className="text-sm md:text-base tracking-[3px] font-semibold text-white/90 uppercase mb-6">
+            {/* <p className="text-sm md:text-base tracking-[3px] font-semibold text-white/90 uppercase mb-6">
               Established 2014 · Kathmandu, Nepal
-            </p>
+            </p> */}
 
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl  leading-[1.08] text-white font-medium font-edensor">
