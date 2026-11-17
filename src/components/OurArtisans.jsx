@@ -162,7 +162,7 @@ const OurArtisans = () => {
         Our Artisans
       </h1>
 
-      <div className="flex flex-col lg:flex-row h-[550px] lg:h-[400px] p-2 lg:p-5 rounded-md justify-evenly gap-4 mt-4 bg-white shadow-lg">
+      <div className="flex flex-col lg:flex-row h-[550px] lg:h-[400px] p-4 lg:p-5 rounded-md justify-evenly gap-4 mt-4 bg-white shadow-lg">
         {/* Artisan Image */}
         <div className="w-full lg:w-1/3 h-[220px] lg:h-full mt-3">
           <img
@@ -180,7 +180,7 @@ const OurArtisans = () => {
             {currentArtisan.name}
           </h1>
 
-          <p className="text-[#666666] mt-2 font-medium text-sm lg:text-base font-poppins text-justify tracking-wide">
+          <p className="text-[#666666] mt-2 font-medium text-base lg:text-base font-poppins text-justify tracking-wide">
             {currentArtisan.description}
           </p>
         </div>

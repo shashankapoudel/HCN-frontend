@@ -280,7 +280,7 @@ const Header = () => {
         <div className="w-1/5 flex items-center justify-center bg-[#0B4D81]">
           <a
             className=" px-2 py-1 rounded-3xl"
-            href="https://www.singingbowlsmaster.com/"
+            href="https://nshischool.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
