@@ -277,7 +277,7 @@ const Header = () => {
   return (
     <div className="flex flex-col w-full fixed top-0 z-50">
       <div className="flex w-full text-[#FFFFFF] text-sm font-medium">
-        <div className="w-1/5 flex items-center justify-center bg-[#0B4D81]">
+        <div className="w-1/4 flex items-center justify-center bg-[#0B4D81]">
           <a
             className=" px-2 py-1 rounded-3xl"
             href="https://nshischool.com/"
@@ -288,7 +288,7 @@ const Header = () => {
           </a>
         </div>
 
-        <div className="flex bg-[#bb2821] items-center justify-center w-4/5 p-2">
+        <div className="flex bg-[#bb2821] items-center justify-center w-3/4 p-2">
           <p>Authentic Singing Bowls, Sacred Rituals & Himalayan Handicrafts</p>
         </div>
       </div>
