@@ -62,16 +62,15 @@ const ImageSlider = () => {
             </p> */}
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl  leading-[1.08] text-white font-medium font-edensor">
-              Experience the Harmony of Handmade Singing Bowls
+              Handcrafted Healing Sounds from Healers and Artisans
             </h1>
 
             <p className="text-lg md:text-xl lg:text-2xl text-blue-100 mt-8">
-              Authentic Himalayan Crafts · Traditional Artistry · Holistic
-              Wellbeing
+              HEALERS SHOP
             </p>
 
             <p className="text-xl md:text-2xl lg:text-3xl text-white italic font-edensor mt-8">
-              Rooted in the Himalayas. Resonating Around the World.
+              Rooted in the Himalayas, Crafted by Artisans, Inspired by Healers.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-10">
