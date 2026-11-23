@@ -52,7 +52,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="flex w-full items-center justify-center lg:items-start lg:justify-start mt-4">
+        <div className="flex w-full items-center justify-center mt-4">
           <div className="relative group overflow-hidden border p-4">
             <div className="absolute inset-0 bg-[#0B4D81] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
             <a

@@ -5,6 +5,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import SearchBox from "./SearchBox";
 import ProductHeader from "./ProductHeader";
 import CurrencySelector from "./CurrencySelector";
+import { ImLocation2 } from "react-icons/im";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -279,7 +280,7 @@ const Header = () => {
       <div className="flex w-full text-[#FFFFFF] text-sm font-medium">
         <div className="w-1/4 flex items-center justify-center bg-[#0B4D81]">
           <a
-            className=" px-2 py-1 rounded-3xl"
+            className=" px-2 py-1 rounded-xl"
             href="https://nshischool.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -299,8 +300,17 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-center gap-5">
-          <div className="flex gap-1 text-[13px]">
-            <p className="text-center">Kathmandu,Nepal</p>
+          <div className="flex gap-2 items-center justify-center text-[14px]">
+            <a
+              className="flex items-center justify-center"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/dir//Himalayas+Crafts+Nepal,+Bhagwati+Bahal,+Kathmandu,+Bagmati+Province+44600/@27.6976367,85.3029789,13.58z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39eb198882a94b4b:0x6773834407b50d40!2m2!1d85.3112734!2d27.7160761?entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D"
+            >
+              <ImLocation2 />
+              <p className="text-center">Kathmandu,Nepal</p>
+            </a>
+
             <a href="tel:+9779849779322" className="hover:underline">
               +977- 9849779890
             </a>
