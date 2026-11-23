@@ -65,7 +65,7 @@ const ImageSlider = () => {
               Handcrafted Healing Sounds from Himalayan Healers and Artisans
             </h1>
 
-            <p className="text-xl  lg:text-2xl text-blue-100 mt-8">
+            <p className="text-xl  lg:text-3xl text-[#bb2821] font-semibold mt-8">
               HEALERS SHOP
             </p>
 
