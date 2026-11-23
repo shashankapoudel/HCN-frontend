@@ -32,14 +32,14 @@ const ImageSlider = () => {
     <div className="relative w-full h-[550px] md:h-[650px] lg:h-[calc(100vh-185px)] overflow-hidden">
       {/* Background Image */}
       <img
-        src="/Images/HomePage.jpg"
+        src="/Images/HomePage2.jpeg"
         alt="Himalayan Singing Bowl Healing"
         className="absolute inset-0 w-full h-full object-cover object-center"
         loading="lazy"
       />
 
       {/* Blue Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#052F5F]/95 via-[#06447A]/75 via-55% to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#052F5F]/95 via-[#06447A]/50 via-55% to-transparent z-10"></div>
 
       {/* Additional Dark Overlay for Better Text Visibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#031F3D]/40 via-transparent to-transparent z-10"></div>
@@ -65,7 +65,7 @@ const ImageSlider = () => {
               Handcrafted Healing Sounds from Himalayan Healers and Artisans
             </h1>
 
-            <p className="text-xl  lg:text-3xl text-[#bb2821] font-semibold mt-8">
+            <p className="text-xl  lg:text-4xl text-[#bb2821] font-semibold mt-8 font-edensor">
               HEALERS SHOP
             </p>
 
