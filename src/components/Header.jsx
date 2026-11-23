@@ -6,6 +6,7 @@ import SearchBox from "./SearchBox";
 import ProductHeader from "./ProductHeader";
 import CurrencySelector from "./CurrencySelector";
 import { ImLocation2 } from "react-icons/im";
+import { MdOutlinePhoneCallback } from "react-icons/md";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -302,7 +303,7 @@ const Header = () => {
         <div className="flex items-center justify-center gap-5">
           <div className="flex flex-col  items-center justify-center text-[14px]">
             <a
-              className="flex items-center justify-center gap-1"
+              className="flex items-center justify-center gap-1 hover:underline"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.google.com/maps/dir//Himalayas+Crafts+Nepal,+Bhagwati+Bahal,+Kathmandu,+Bagmati+Province+44600/@27.6976367,85.3029789,13.58z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39eb198882a94b4b:0x6773834407b50d40!2m2!1d85.3112734!2d27.7160761?entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D"
@@ -311,7 +312,11 @@ const Header = () => {
               <p className="text-center">Kathmandu,Nepal</p>
             </a>
 
-            <a href="tel:+9779849779322" className="hover:underline">
+            <a
+              href="tel:+9779849779322"
+              className="hover:underline flex gap-1 items-center justify-center"
+            >
+              <MdOutlinePhoneCallback className="text-[#0B4D81] text-base" />{" "}
               +977- 9849779890
             </a>
           </div>
