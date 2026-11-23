@@ -300,9 +300,9 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-center gap-5">
-          <div className="flex flex-col gap-1 items-center justify-center text-[14px]">
+          <div className="flex flex-col  items-center justify-center text-[14px]">
             <a
-              className="flex items-center justify-center"
+              className="flex items-center justify-center gap-1"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.google.com/maps/dir//Himalayas+Crafts+Nepal,+Bhagwati+Bahal,+Kathmandu,+Bagmati+Province+44600/@27.6976367,85.3029789,13.58z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39eb198882a94b4b:0x6773834407b50d40!2m2!1d85.3112734!2d27.7160761?entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D"
