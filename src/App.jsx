@@ -82,7 +82,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<Order />} />
           <Route path="/trackorder" element={<TrackOrder />} />
-          {/* <Route path='/products' element={<Products />} /> */}
+          <Route path="/products" element={<Products />} />
           <Route path="/singing-bowls" element={<SingingBowl />} />
           <Route path="/:category/:subcategory" element={<SubcategoryPage />} />
           <Route
