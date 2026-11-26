@@ -363,7 +363,10 @@ const AddProductModal = ({
       <div className="bg-white p-6 rounded-lg w-[85%] h-[80vh] shadow-lg flex flex-col">
         <h2 className="text-xl font-bold mb-4">Add New Product</h2>
 
-        <form className="flex flex-grow w-full overflow-hidden">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="flex flex-grow w-full overflow-hidden"
+        >
           {/* Left Side: Scrollable Form */}
           <div className="flex flex-col w-2/3 pr-4 overflow-y-auto h-full">
             <div className="grid grid-cols-2 gap-4">

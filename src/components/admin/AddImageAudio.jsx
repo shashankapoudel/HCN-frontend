@@ -1,4 +1,3 @@
-
 // import { useState, useRef, useEffect } from "react";
 // import { useDropzone } from "react-dropzone";
 // import { FiUpload, FiTrash2 } from "react-icons/fi";
@@ -8,7 +7,6 @@
 //     const [isPlaying, setIsPlaying] = useState(false);
 //     const audioRef = useRef(null);
 
-  
 //     useEffect(() => {
 //         if (audio && typeof audio === "string") {
 //             audioRef.current = new Audio(audio);
@@ -65,7 +63,7 @@
 
 //     return (
 //         <div className="w-full p-4">
-           
+
 //             <div className="mb-4">
 //                 <label className="block font-semibold mb-2">Sound</label>
 //                 <div className="flex items-center gap-2 border rounded p-2">
@@ -92,7 +90,6 @@
 //                 </div>
 //             </div>
 
-           
 //             <label className="block font-semibold mb-2">
 //                 Product Images <span className="text-red-500">*</span> (Recommendation 1:1)
 //             </label>
@@ -105,7 +102,6 @@
 //                 <p className="text-gray-600">Drag or click to upload files</p>
 //             </div>
 
-           
 //             <div className="mt-4 grid grid-cols-3 gap-2">
 //                 {images.map((image, index) => {
 //                     const src = typeof image === "string" ? image : URL.createObjectURL(image);
@@ -132,48 +128,33 @@
 
 // export default ProductUpload;
 
-
-
 import { useState, useRef, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { FiUpload, FiTrash2 } from "react-icons/fi";
 import { FaPlay, FaPause, FaVolumeUp } from "react-icons/fa";
 
-/**
- * Props:
- * images: array of File objects OR existing URLs (strings)
- * setImages: setter for images
- * audio: File object or existing URL
- * setAudio: setter for audio
- */
 const ProductUpload = ({ images, setImages, audio, setAudio }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
-  // Initialize audio player for existing URL
   useEffect(() => {
     if (audio && typeof audio === "string") {
       audioRef.current = new Audio(audio);
     }
   }, [audio]);
 
-  // Dropzone setup
   const { getRootProps, getInputProps } = useDropzone({
     accept: { "image/*": [] }, // Accept all image types
     multiple: true,
     onDrop: (acceptedFiles) => {
-      // Filter out duplicates by name (only for File objects)
       const filtered = acceptedFiles.filter(
         (file) =>
-          !images.some(
-            (img) => img instanceof File && img.name === file.name
-          )
+          !images.some((img) => img instanceof File && img.name === file.name),
       );
       setImages((prev) => [...prev, ...filtered]);
     },
   });
 
-  // Handle audio upload
   const handleAudioUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -183,7 +164,6 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
     }
   };
 
-  // Toggle audio playback
   const togglePlay = () => {
     if (!audioRef.current) return;
     if (isPlaying) {
@@ -194,7 +174,6 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
     setIsPlaying(!isPlaying);
   };
 
-  // Remove single image
   const removeImage = (index) => {
     const updated = [...images];
     updated.splice(index, 1);
@@ -239,7 +218,11 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
               <button className="text-blue-600">
                 <FaVolumeUp />
               </button>
-              <button onClick={removeAudio} className="text-red-500">
+              <button
+                type="button"
+                onClick={removeAudio}
+                className="text-red-500"
+              >
                 <FiTrash2 />
               </button>
             </div>
@@ -249,7 +232,8 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
 
       {/* Image Upload */}
       <label className="block font-semibold mb-2">
-        Product Images <span className="text-red-500">*</span> (Recommendation 1:1)
+        Product Images <span className="text-red-500">*</span> (Recommendation
+        1:1)
       </label>
       <div
         {...getRootProps()}
@@ -264,9 +248,7 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
       <div className="mt-4 grid grid-cols-3 gap-2">
         {images.map((image, index) => {
           const src =
-            typeof image === "string"
-              ? image
-              : URL.createObjectURL(image); // only for new File objects
+            typeof image === "string" ? image : URL.createObjectURL(image); // only for new File objects
           return (
             <div key={index} className="relative">
               <img
@@ -275,6 +257,7 @@ const ProductUpload = ({ images, setImages, audio, setAudio }) => {
                 className="w-full h-28 object-cover rounded-lg"
               />
               <button
+                type="button"
                 onClick={() => removeImage(index)}
                 className="absolute top-1 right-1 bg-white p-1 rounded-full shadow-md"
               >
