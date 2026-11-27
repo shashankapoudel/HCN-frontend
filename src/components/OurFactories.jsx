@@ -1,178 +1,361 @@
+// import React, { useEffect, useState } from "react";
+// import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+
+// const OurFactories = () => {
+//   const Services = [
+//     {
+//       title: "Singing Bowl Factory",
+//       description:
+//         "In our Singing Bowl Factory, you'll find a team of over 10 dedicated craftsmen meticulously shaping and tuning each bowl.This isn't just work; it's a labor of love passed down through generations.These artisans use time- honored techniques; hammering and refining the metal by hand; to create the deep, resonant tones that make our singing bowls truly exceptional.Witnessing their precision and dedication firsthand is an experience in itself, showcasing the heart and soul poured into every single bowl.",
+//       images: [
+//         "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY1.jpg",
+//         "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY2.jpg",
+//         "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY3.jpg",
+//         "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY4.jpg",
+//         "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY5.jpg",
+//       ],
+//     },
+
+//     {
+//       title: "Incense Factory",
+//       description:
+//         "The fragrant heart of our operation, the Incense Factory, is another place where over 20 Nepalese women apply their expertise. Here, they meticulously blend natural ingredients, roll, and prepare our authentic Himalayan incense. This factory is a testament to our commitment to providing meaningful employment opportunities for women, allowing them to hone their traditional skills in creating aromatic blends that have been used for centuries in spiritual practices. Like our Accessories Factory, this is a wholly-owned facility, ensuring rigorous quality control and ethical production from start to finish.",
+//       images: [
+//         "/Images/Incense_Factory/IINCENSE_FACTORY1.jpg",
+//         "/Images/Incense_Factory/INCENSE_FACTORY2.jpg",
+//         "/Images/Incense_Factory/INCENSE_FACTORY3.jpg",
+//         "/Images/Incense_Factory/INCENSE_FACTORY4.jpg",
+//         "/Images/Incense_Factory/INCENSE_FACTORY5.jpg",
+//       ],
+//     },
+
+//     {
+//       title: "Stick factory",
+//       description:
+//         "In our stick Factory, skilled woodworkers bring raw timber to life, creating stunning pieces of art and decor. Here, you'll find the creation of intricate wooden masks, beautifully carved windows, unique decorative items, and detailed wooden statues. Each piece is a testament to the artisan's patience and precision, transforming natural wood into cultural expressions. This factory combines traditional carving techniques with artistic vision, ensuring that every wooden item you receive carries a piece of Nepal's rich artistic heritage.",
+//       images: [
+//         "/Images/StickFactory_001.jpg",
+//         "/Images/StickFactory_002.jpg",
+//         "/Images/StickFactory_003.jpg",
+//         "/Images/StickFactory_004.jpg",
+//         "/Images/StickFactory_005.jpg",
+//       ],
+//     },
+//     {
+//       title: "Cushion factory",
+//       description:
+//         "In our Cushion Factory, skilled artisans transform high-quality fabrics and materials into beautiful, comfortable, and decorative cushion covers and pillows. Here, you'll find the creation of handcrafted cushion covers featuring traditional Nepali patterns, vibrant colors, intricate embroidery, and unique designs that add warmth and character to any space. Every piece is carefully stitched and finished with attention to detail, ensuring both durability and elegance. By combining traditional craftsmanship with modern design trends, our Cushion Factory produces home décor pieces that reflect Nepal's rich cultural heritage while bringing comfort and style to homes around the world.",
+//       images: [
+//         "/Images/Cushion_Factory/1.jpg",
+//         "/Images/Cushion_Factory/2.jpg",
+//         "/Images/Cushion_Factory/3.jpg",
+//         "/Images/Cushion_Factory/4.jpg",
+//         "/Images/Cushion_Factory/5.jpg",
+//       ],
+//     },
+//   ];
+
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+//   const [isFlipping, setIsFlipping] = useState(false);
+
+//   useEffect(() => {
+//     setCurrentImageIndex(0);
+//   }, [currentIndex]);
+
+//   useEffect(() => {
+//     const imageTimer = setInterval(() => {
+//       setCurrentImageIndex((prev) =>
+//         prev === Services[currentIndex].images.length - 1 ? 0 : prev + 1,
+//       );
+//     }, 2000);
+
+//     return () => clearInterval(imageTimer);
+//   }, [currentIndex]);
+
+//   useEffect(() => {
+//     const serviceTimer = setInterval(() => {
+//       setIsFlipping(true);
+//       setTimeout(() => {
+//         setCurrentIndex((prev) => (prev + 1) % Services.length);
+//         setIsFlipping(false);
+//       }, 500);
+//     }, 8000);
+
+//     return () => clearInterval(serviceTimer);
+//   }, []);
+
+//   const handleNext = () => {
+//     setIsFlipping(true);
+//     setTimeout(() => {
+//       setCurrentIndex((prev) => (prev + 1) % Services.length);
+//       setIsFlipping(false);
+//     }, 500);
+//   };
+
+//   const handlePrevious = () => {
+//     setIsFlipping(true);
+//     setTimeout(() => {
+//       setCurrentIndex((prev) => (prev === 0 ? Services.length - 1 : prev - 1));
+//       setIsFlipping(false);
+//     }, 500);
+//   };
+
+//   const handlePreviousImage = () => {
+//     setCurrentImageIndex((prev) =>
+//       prev === 0 ? Services[currentIndex].images.length - 1 : prev - 1,
+//     );
+//   };
+
+//   const handleNextImage = () => {
+//     setCurrentImageIndex((prev) =>
+//       prev === Services[currentIndex].images.length - 1 ? 0 : prev + 1,
+//     );
+//   };
+
+//   return (
+//     <div className="p-3 lg:p-5">
+//       <h1 className="text-[#0B4D81] text-2xl font-semibold text-center mb-6">
+//         Our Factories
+//       </h1>
+
+//       <div
+//         className={`flex flex-col p-2 lg:p-5 rounded-md lg:flex-row-reverse justify-evenly gap-4 mt-4 transform-style preserve-3d bg-white shadow-lg ${isFlipping ? "flip-rotate" : ""}`}
+//       >
+//         <div className="w-full lg:w-1/3 mt-3">
+//           {Services[currentIndex].images && (
+//             <div className="flex items-center justify-center">
+//               <button
+//                 className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
+//                 onClick={handlePreviousImage}
+//               >
+//                 <GrFormPrevious />
+//               </button>
+
+//               <img
+//                 src={Services[currentIndex].images[currentImageIndex]}
+//                 className="object-cover rounded-md w-96 h-64"
+//                 alt="Factory"
+//                 loading="lazy"
+//               />
+
+//               <button
+//                 className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
+//                 onClick={handleNextImage}
+//               >
+//                 <GrFormNext />
+//               </button>
+//             </div>
+//           )}
+//         </div>
+
+//         <div className="w-full lg:w-1/2 p-2">
+//           <h1 className="text-[#0B4D81] text-xl font-semibold">
+//             {Services[currentIndex].title}
+//           </h1>
+//           <p className="text-[#666666] mt-2 font-medium font-poppins text-justify tracking-wide">
+//             {Services[currentIndex].description}
+//           </p>
+//         </div>
+//       </div>
+
+//       <div className="flex items-center justify-center mt-4">
+//         <button
+//           className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
+//           onClick={handlePrevious}
+//         >
+//           <GrFormPrevious />
+//         </button>
+
+//         <button
+//           className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
+//           onClick={handleNext}
+//         >
+//           <GrFormNext />
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default OurFactories;
+
 import React, { useEffect, useState } from "react";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
+const Factories = [
+  {
+    title: "Singing Bowl Factory",
+    tab: "Singing Bowls",
+    description:
+      "In our Singing Bowl Factory, you'll find a team of over 10 dedicated craftsmen meticulously shaping and tuning each bowl. This isn't just work; it's a labor of love passed down through generations. These artisans use time-honored techniques; hammering and refining the metal by hand; to create the deep, resonant tones that make our singing bowls truly exceptional. Witnessing their precision and dedication firsthand is an experience in itself, showcasing the heart and soul poured into every single bowl.",
+    images: [
+      "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY1.jpg",
+      "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY2.jpg",
+      "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY3.jpg",
+      "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY4.jpg",
+      "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY5.jpg",
+    ],
+  },
+  {
+    title: "Incense Factory",
+    tab: "Incense",
+    description:
+      "The fragrant heart of our operation, the Incense Factory, is another place where over 20 Nepalese women apply their expertise. Here, they meticulously blend natural ingredients, roll, and prepare our authentic Himalayan incense. This factory is a testament to our commitment to providing meaningful employment opportunities for women, allowing them to hone their traditional skills in creating aromatic blends that have been used for centuries in spiritual practices. Like our Accessories Factory, this is a wholly-owned facility, ensuring rigorous quality control and ethical production from start to finish.",
+    images: [
+      "/Images/Incense_Factory/IINCENSE_FACTORY1.jpg",
+      "/Images/Incense_Factory/INCENSE_FACTORY2.jpg",
+      "/Images/Incense_Factory/INCENSE_FACTORY3.jpg",
+      "/Images/Incense_Factory/INCENSE_FACTORY4.jpg",
+      "/Images/Incense_Factory/INCENSE_FACTORY5.jpg",
+    ],
+  },
+  {
+    title: "Stick Factory",
+    tab: "Wood Carving",
+    description:
+      "In our stick Factory, skilled woodworkers bring raw timber to life, creating stunning pieces of art and decor. Here, you'll find the creation of intricate wooden masks, beautifully carved windows, unique decorative items, and detailed wooden statues. Each piece is a testament to the artisan's patience and precision, transforming natural wood into cultural expressions. This factory combines traditional carving techniques with artistic vision, ensuring that every wooden item you receive carries a piece of Nepal's rich artistic heritage.",
+    images: [
+      "/Images/StickFactory_001.jpg",
+      "/Images/StickFactory_002.jpg",
+      "/Images/StickFactory_003.jpg",
+      "/Images/StickFactory_004.jpg",
+      "/Images/StickFactory_005.jpg",
+    ],
+  },
+  {
+    title: "Cushion Factory",
+    tab: "Cushions",
+    description:
+      "In our Cushion Factory, skilled artisans transform high-quality fabrics and materials into beautiful, comfortable, and decorative cushion covers and pillows. Here, you'll find the creation of handcrafted cushion covers featuring traditional Nepali patterns, vibrant colors, intricate embroidery, and unique designs that add warmth and character to any space. Every piece is carefully stitched and finished with attention to detail, ensuring both durability and elegance. By combining traditional craftsmanship with modern design trends, our Cushion Factory produces home décor pieces that reflect Nepal's rich cultural heritage while bringing comfort and style to homes around the world.",
+    images: [
+      "/Images/Cushion_Factory/1.jpg",
+      "/Images/Cushion_Factory/2.jpg",
+      "/Images/Cushion_Factory/3.jpg",
+      "/Images/Cushion_Factory/4.jpg",
+      "/Images/Cushion_Factory/5.jpg",
+    ],
+  },
+];
+
 const OurFactories = () => {
-  const Services = [
-    {
-      title: "Singing Bowl Factory",
-      description:
-        "In our Singing Bowl Factory, you'll find a team of over 10 dedicated craftsmen meticulously shaping and tuning each bowl.This isn't just work; it's a labor of love passed down through generations.These artisans use time- honored techniques; hammering and refining the metal by hand; to create the deep, resonant tones that make our singing bowls truly exceptional.Witnessing their precision and dedication firsthand is an experience in itself, showcasing the heart and soul poured into every single bowl.",
-      images: [
-        "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY1.jpg",
-        "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY2.jpg",
-        "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY3.jpg",
-        "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY4.jpg",
-        "/Images/Singing_Bowl_Factory/Singingbowl_FACTORY5.jpg",
-      ],
-    },
-
-    {
-      title: "Incense Factory",
-      description:
-        "The fragrant heart of our operation, the Incense Factory, is another place where over 20 Nepalese women apply their expertise. Here, they meticulously blend natural ingredients, roll, and prepare our authentic Himalayan incense. This factory is a testament to our commitment to providing meaningful employment opportunities for women, allowing them to hone their traditional skills in creating aromatic blends that have been used for centuries in spiritual practices. Like our Accessories Factory, this is a wholly-owned facility, ensuring rigorous quality control and ethical production from start to finish.",
-      images: [
-        "/Images/Incense_Factory/IINCENSE_FACTORY1.jpg",
-        "/Images/Incense_Factory/INCENSE_FACTORY2.jpg",
-        "/Images/Incense_Factory/INCENSE_FACTORY3.jpg",
-        "/Images/Incense_Factory/INCENSE_FACTORY4.jpg",
-        "/Images/Incense_Factory/INCENSE_FACTORY5.jpg",
-      ],
-    },
-
-    {
-      title: "Stick factory",
-      description:
-        "In our stick Factory, skilled woodworkers bring raw timber to life, creating stunning pieces of art and decor. Here, you'll find the creation of intricate wooden masks, beautifully carved windows, unique decorative items, and detailed wooden statues. Each piece is a testament to the artisan's patience and precision, transforming natural wood into cultural expressions. This factory combines traditional carving techniques with artistic vision, ensuring that every wooden item you receive carries a piece of Nepal's rich artistic heritage.",
-      images: [
-        "/Images/StickFactory_001.jpg",
-        "/Images/StickFactory_002.jpg",
-        "/Images/StickFactory_003.jpg",
-        "/Images/StickFactory_004.jpg",
-        "/Images/StickFactory_005.jpg",
-      ],
-    },
-    {
-      title: "Cushion factory",
-      description:
-        "In our Cushion Factory, skilled artisans transform high-quality fabrics and materials into beautiful, comfortable, and decorative cushion covers and pillows. Here, you'll find the creation of handcrafted cushion covers featuring traditional Nepali patterns, vibrant colors, intricate embroidery, and unique designs that add warmth and character to any space. Every piece is carefully stitched and finished with attention to detail, ensuring both durability and elegance. By combining traditional craftsmanship with modern design trends, our Cushion Factory produces home décor pieces that reflect Nepal's rich cultural heritage while bringing comfort and style to homes around the world.",
-      images: [
-        "/Images/Cushion_Factory/1.jpg",
-        "/Images/Cushion_Factory/2.jpg",
-        "/Images/Cushion_Factory/3.jpg",
-        "/Images/Cushion_Factory/4.jpg",
-        "/Images/Cushion_Factory/5.jpg",
-      ],
-    },
-  ];
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isFlipping, setIsFlipping] = useState(false);
 
-  useEffect(() => {
-    setCurrentImageIndex(0);
-  }, [currentIndex]);
+  const factory = Factories[currentIndex];
 
+  // Gentle photo rotation inside the active factory
   useEffect(() => {
-    const imageTimer = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentImageIndex((prev) =>
-        prev === Services[currentIndex].images.length - 1 ? 0 : prev + 1,
+        prev === Factories[currentIndex].images.length - 1 ? 0 : prev + 1,
       );
-    }, 2000);
-
-    return () => clearInterval(imageTimer);
+    }, 4000);
+    return () => clearInterval(timer);
   }, [currentIndex]);
 
-  useEffect(() => {
-    const serviceTimer = setInterval(() => {
-      setIsFlipping(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % Services.length);
-        setIsFlipping(false);
-      }, 500);
-    }, 8000);
-
-    return () => clearInterval(serviceTimer);
-  }, []);
-
-  const handleNext = () => {
-    setIsFlipping(true);
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % Services.length);
-      setIsFlipping(false);
-    }, 500);
+  const selectFactory = (i) => {
+    setCurrentIndex(i);
+    setCurrentImageIndex(0);
   };
 
-  const handlePrevious = () => {
-    setIsFlipping(true);
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev === 0 ? Services.length - 1 : prev - 1));
-      setIsFlipping(false);
-    }, 500);
-  };
-
-  const handlePreviousImage = () => {
+  const handlePreviousImage = () =>
     setCurrentImageIndex((prev) =>
-      prev === 0 ? Services[currentIndex].images.length - 1 : prev - 1,
+      prev === 0 ? factory.images.length - 1 : prev - 1,
     );
-  };
 
-  const handleNextImage = () => {
+  const handleNextImage = () =>
     setCurrentImageIndex((prev) =>
-      prev === Services[currentIndex].images.length - 1 ? 0 : prev + 1,
+      prev === factory.images.length - 1 ? 0 : prev + 1,
     );
-  };
 
   return (
-    <div className="p-3 lg:p-5">
-      <h1 className="text-[#0B4D81] text-2xl font-semibold text-center mb-6">
+    <div className="font-poppins">
+      <h2 className="text-2xl lg:text-3xl text-[#0B4D81] font-edensor font-medium">
         Our Factories
-      </h1>
+      </h2>
+      <p className="mt-2 text-[#666666] text-sm lg:text-base max-w-2xl">
+        Every product is made in workshops we own and run in Nepal, by the
+        people you see here.
+      </p>
 
-      <div
-        className={`flex flex-col p-2 lg:p-5 rounded-md lg:flex-row-reverse justify-evenly gap-4 mt-4 transform-style preserve-3d bg-white shadow-lg ${isFlipping ? "flip-rotate" : ""}`}
-      >
-        <div className="w-full lg:w-1/3 mt-3">
-          {Services[currentIndex].images && (
-            <div className="flex items-center justify-center">
-              <button
-                className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
-                onClick={handlePreviousImage}
-              >
-                <GrFormPrevious />
-              </button>
-
-              <img
-                src={Services[currentIndex].images[currentImageIndex]}
-                className="object-cover rounded-md w-96 h-64"
-                alt="Factory"
-                loading="lazy"
-              />
-
-              <button
-                className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
-                onClick={handleNextImage}
-              >
-                <GrFormNext />
-              </button>
-            </div>
-          )}
-        </div>
-
-        <div className="w-full lg:w-1/2 p-2">
-          <h1 className="text-[#0B4D81] text-xl font-semibold">
-            {Services[currentIndex].title}
-          </h1>
-          <p className="text-[#666666] mt-2 font-medium font-poppins text-justify tracking-wide">
-            {Services[currentIndex].description}
-          </p>
-        </div>
+      {/* Tabs */}
+      <div className="mt-8 flex gap-6 sm:gap-8 overflow-x-auto border-b border-gray-200">
+        {Factories.map((f, i) => (
+          <button
+            key={f.title}
+            onClick={() => selectFactory(i)}
+            className={`shrink-0 pb-3 -mb-px text-sm sm:text-base font-medium border-b-2 transition-colors ${
+              i === currentIndex
+                ? "border-[#bb2821] text-[#0B4D81]"
+                : "border-transparent text-gray-500 hover:text-[#0B4D81]"
+            }`}
+          >
+            {f.tab}
+          </button>
+        ))}
       </div>
 
-      <div className="flex items-center justify-center mt-4">
-        <button
-          className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
-          onClick={handlePrevious}
-        >
-          <GrFormPrevious />
-        </button>
+      {/* Content */}
+      <div className="mt-8 flex flex-col lg:flex-row gap-8 lg:gap-12">
+        {/* Photos */}
+        <div className="w-full lg:w-1/2">
+          <div className="relative">
+            <img
+              src={factory.images[currentImageIndex]}
+              alt={factory.title}
+              loading="lazy"
+              className="w-full h-[260px] sm:h-[360px] lg:h-[400px] object-cover rounded"
+            />
+            <button
+              onClick={handlePreviousImage}
+              aria-label="Previous photo"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 text-[#0B4D81] text-2xl hover:bg-white shadow"
+            >
+              <GrFormPrevious />
+            </button>
+            <button
+              onClick={handleNextImage}
+              aria-label="Next photo"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 text-[#0B4D81] text-2xl hover:bg-white shadow"
+            >
+              <GrFormNext />
+            </button>
+          </div>
 
-        <button
-          className="text-[#bb2821] rounded-full hover:bg-opacity-70 transition text-3xl font-semibold mx-2"
-          onClick={handleNext}
-        >
-          <GrFormNext />
-        </button>
+          {/* Thumbnails */}
+          <div className="mt-3 grid grid-cols-5 gap-2">
+            {factory.images.map((img, i) => (
+              <button
+                key={img}
+                onClick={() => setCurrentImageIndex(i)}
+                aria-label={`Show photo ${i + 1}`}
+                className={`overflow-hidden rounded border-2 transition ${
+                  i === currentImageIndex
+                    ? "border-[#bb2821]"
+                    : "border-transparent opacity-70 hover:opacity-100"
+                }`}
+              >
+                <img
+                  src={img}
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-14 sm:h-16 object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Text */}
+        <div className="w-full lg:w-1/2">
+          <h3 className="text-xl lg:text-2xl text-[#0B4D81] font-edensor font-medium">
+            {factory.title}
+          </h3>
+          <p className="mt-4 text-[#555555] text-sm lg:text-base leading-7">
+            {factory.description}
+          </p>
+        </div>
       </div>
     </div>
   );

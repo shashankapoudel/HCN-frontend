@@ -638,7 +638,15 @@ const AddProductModal = ({
           </div>
 
           <div className="w-1/3 pl-4">
-            <div className="mb-4">
+            {/* <div className="mb-4">
+              <ProductUpload
+                images={images}
+                setImages={setImages}
+                audio={audio}
+                setAudio={setAudio}
+              />
+            </div> */}
+            <div className="w-full pl-4 h-full overflow-y-auto">
               <ProductUpload
                 images={images}
                 setImages={setImages}

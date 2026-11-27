@@ -302,7 +302,7 @@ const Header = () => {
 
         <div className="flex items-center justify-center gap-5">
           <div className="flex flex-col  items-center justify-center text-[14px]">
-            <a
+            {/* <a
               className="flex items-center justify-center gap-1 hover:underline"
               target="_blank"
               rel="noopener noreferrer"
@@ -310,7 +310,7 @@ const Header = () => {
             >
               <ImLocation2 className="text-[#0B4D81] text-base" />
               <p className="text-center">Kathmandu,Nepal</p>
-            </a>
+            </a> */}
 
             <a
               href="tel:+9779849779322"
